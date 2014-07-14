@@ -8,6 +8,13 @@
 
 #import "MSPendingLetterTableViewCell.h"
 
+@interface MSPendingLetterTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *pendingLetterOpenDate;
+@property (weak, nonatomic) IBOutlet UILabel *pendingLetterTitle;
+
+@end
+
 @implementation MSPendingLetterTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,4 +38,9 @@
     // Configure the view for the selected state
 }
 
+-(void)setLetter:(Letter *)letter{
+    _letter = letter;
+    self.pendingLetterOpenDate.text = letter.letterOpenDate.description;
+    self.pendingLetterTitle.text = letter.letterTitle;
+}
 @end

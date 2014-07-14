@@ -8,11 +8,7 @@
 
 #import "MSPendingTableViewController.h"
 #import "Letter+myAPI.h"
-
-@interface MSPendingTableViewController ()
-@property (nonatomic,strong,readwrite) NSMutableArray *pedingLetters;
-@end
-
+#import "MSPendingLetterTableViewCell.h"
 @implementation MSPendingTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -22,6 +18,26 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self configureFetch];
+}
+
+-(void)configureFetch{
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    
+    NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
+    fetch.sortDescriptors = @[orderByDate];
+    
+    NSPredicate *onlyPendingLettersQuery = [NSPredicate predicateWithFormat:@"(letterStatus == %d) OR (letterStatus == %d)",MSPending,MSReadyToOpen];
+    fetch.predicate =onlyPendingLettersQuery;
+    
+    NSFetchedResultsController *results = [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:self.manageDocument.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    
+    self.fetchedResultsController = results;
+    
 }
 
 - (void)viewDidLoad
@@ -43,92 +59,28 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return the number of sections.
-    return 0;
+    MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pendingLetterCell" forIndexPath:indexPath];
+    Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.letter = letter;
+    return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 0;
-}
-
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 #pragma mark -
 #pragma mark - IBAction
+
 - (IBAction)addletterButtonTouched:(UIBarButtonItem*)sender {
     Letter *newLetter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
-    newLetter.letterTitle = @"Titulo de prueba";
-    newLetter.letterOpenDate = [NSDate date];
+    newLetter.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:[self randomFloatBetween:0 and:100000000.00]];
+    int random = arc4random()%100;
+    NSLog(@"Soy %d",random);
+    newLetter.letterTitle = [NSString stringWithFormat:@"Soy %d",random];
+    //[self.pedingLetters addObject:newLetter];
 }
 
-#pragma mark -
-#pragma mark - Getters & Setters
-
--(NSMutableArray*)pedingLetters{
-    if (_pedingLetters == nil) {
-        _pedingLetters = [[NSMutableArray alloc]init];
-    }
-    return _pedingLetters;
+- (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {
+    float diff = bigNumber - smallNumber;
+    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
 }
 @end

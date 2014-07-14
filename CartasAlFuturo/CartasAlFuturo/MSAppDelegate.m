@@ -19,7 +19,6 @@
 {
     [self prepareFirstController];
     return YES;
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

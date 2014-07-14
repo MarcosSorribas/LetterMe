@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
-@interface MSPendingTableViewController : UITableViewController
+@interface MSPendingTableViewController : CoreDataTableViewController
 @property (nonatomic,strong,readwrite) UIManagedDocument *manageDocument;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Letter.h"
 @interface MSPendingLetterTableViewCell : UITableViewCell
-
+@property (nonatomic,strong,readwrite) Letter *letter;
 @end
