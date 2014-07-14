@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A46B5631973C1D8001CF9C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5621973C1D8001CF9C6 /* Foundation.framework */; };
+		6A46B5651973C1D8001CF9C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */; };
+		6A46B5671973C1D8001CF9C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5661973C1D8001CF9C6 /* UIKit.framework */; };
+		6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B56B1973C1D8001CF9C6 /* InfoPlist.strings */; };
+		6A46B56F1973C1D8001CF9C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B56E1973C1D8001CF9C6 /* main.m */; };
+		6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */; };
+		6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5741973C1D8001CF9C6 /* Images.xcassets */; };
+		6A46B57C1973C1D8001CF9C6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B57B1973C1D8001CF9C6 /* XCTest.framework */; };
+		6A46B57D1973C1D8001CF9C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5621973C1D8001CF9C6 /* Foundation.framework */; };
+		6A46B57E1973C1D8001CF9C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5661973C1D8001CF9C6 /* UIKit.framework */; };
+		6A46B5861973C1D8001CF9C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */; };
+		6A46B5881973C1D8001CF9C6 /* CartasAlFuturoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5871973C1D8001CF9C6 /* CartasAlFuturoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A46B57F1973C1D8001CF9C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A46B5571973C1D8001CF9C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A46B55E1973C1D8001CF9C6;
+			remoteInfo = CartasAlFuturo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartasAlFuturo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46B5621973C1D8001CF9C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6A46B5661973C1D8001CF9C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturo-Info.plist"; sourceTree = "<group>"; };
+		6A46B56C1973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A46B56E1973C1D8001CF9C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6A46B5701973C1D8001CF9C6 /* CartasAlFuturo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CartasAlFuturo-Prefix.pch"; sourceTree = "<group>"; };
+		6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
+		6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
+		6A46B5741973C1D8001CF9C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartasAlFuturoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46B57B1973C1D8001CF9C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturoTests-Info.plist"; sourceTree = "<group>"; };
+		6A46B5851973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6A46B5871973C1D8001CF9C6 /* CartasAlFuturoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartasAlFuturoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A46B55C1973C1D8001CF9C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A46B5651973C1D8001CF9C6 /* CoreGraphics.framework in Frameworks */,
+				6A46B5671973C1D8001CF9C6 /* UIKit.framework in Frameworks */,
+				6A46B5631973C1D8001CF9C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A46B5771973C1D8001CF9C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A46B57C1973C1D8001CF9C6 /* XCTest.framework in Frameworks */,
+				6A46B57E1973C1D8001CF9C6 /* UIKit.framework in Frameworks */,
+				6A46B57D1973C1D8001CF9C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A46B5561973C1D8001CF9C6 = {
+			isa = PBXGroup;
+			children = (
+				6A46B5681973C1D8001CF9C6 /* CartasAlFuturo */,
+				6A46B5811973C1D8001CF9C6 /* CartasAlFuturoTests */,
+				6A46B5611973C1D8001CF9C6 /* Frameworks */,
+				6A46B5601973C1D8001CF9C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A46B5601973C1D8001CF9C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */,
+				6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A46B5611973C1D8001CF9C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5621973C1D8001CF9C6 /* Foundation.framework */,
+				6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */,
+				6A46B5661973C1D8001CF9C6 /* UIKit.framework */,
+				6A46B57B1973C1D8001CF9C6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A46B5681973C1D8001CF9C6 /* CartasAlFuturo */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */,
+				6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */,
+				6A46B5741973C1D8001CF9C6 /* Images.xcassets */,
+				6A46B5691973C1D8001CF9C6 /* Supporting Files */,
+			);
+			path = CartasAlFuturo;
+			sourceTree = "<group>";
+		};
+		6A46B5691973C1D8001CF9C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */,
+				6A46B56B1973C1D8001CF9C6 /* InfoPlist.strings */,
+				6A46B56E1973C1D8001CF9C6 /* main.m */,
+				6A46B5701973C1D8001CF9C6 /* CartasAlFuturo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A46B5811973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5871973C1D8001CF9C6 /* CartasAlFuturoTests.m */,
+				6A46B5821973C1D8001CF9C6 /* Supporting Files */,
+			);
+			path = CartasAlFuturoTests;
+			sourceTree = "<group>";
+		};
+		6A46B5821973C1D8001CF9C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */,
+				6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */;
+			buildPhases = (
+				6A46B55B1973C1D8001CF9C6 /* Sources */,
+				6A46B55C1973C1D8001CF9C6 /* Frameworks */,
+				6A46B55D1973C1D8001CF9C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CartasAlFuturo;
+			productName = CartasAlFuturo;
+			productReference = 6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A46B5791973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */;
+			buildPhases = (
+				6A46B5761973C1D8001CF9C6 /* Sources */,
+				6A46B5771973C1D8001CF9C6 /* Frameworks */,
+				6A46B5781973C1D8001CF9C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A46B5801973C1D8001CF9C6 /* PBXTargetDependency */,
+			);
+			name = CartasAlFuturoTests;
+			productName = CartasAlFuturoTests;
+			productReference = 6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A46B5571973C1D8001CF9C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = MarcosSorribas;
+				TargetAttributes = {
+					6A46B5791973C1D8001CF9C6 = {
+						TestTargetID = 6A46B55E1973C1D8001CF9C6;
+					};
+				};
+			};
+			buildConfigurationList = 6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "CartasAlFuturo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6A46B5561973C1D8001CF9C6;
+			productRefGroup = 6A46B5601973C1D8001CF9C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */,
+				6A46B5791973C1D8001CF9C6 /* CartasAlFuturoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A46B55D1973C1D8001CF9C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
+				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A46B5781973C1D8001CF9C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A46B5861973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A46B55B1973C1D8001CF9C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
+				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A46B5761973C1D8001CF9C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A46B5881973C1D8001CF9C6 /* CartasAlFuturoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A46B5801973C1D8001CF9C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */;
+			targetProxy = 6A46B57F1973C1D8001CF9C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A46B56B1973C1D8001CF9C6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A46B56C1973C1D8001CF9C6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A46B5851973C1D8001CF9C6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A46B5891973C1D8001CF9C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6A46B58A1973C1D8001CF9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A46B58C1973C1D8001CF9C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6A46B58D1973C1D8001CF9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6A46B58F1973C1D8001CF9C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CartasAlFuturo.app/CartasAlFuturo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CartasAlFuturoTests/CartasAlFuturoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6A46B5901973C1D8001CF9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CartasAlFuturo.app/CartasAlFuturo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturoTests/CartasAlFuturoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "CartasAlFuturo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A46B5891973C1D8001CF9C6 /* Debug */,
+				6A46B58A1973C1D8001CF9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A46B58C1973C1D8001CF9C6 /* Debug */,
+				6A46B58D1973C1D8001CF9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A46B58F1973C1D8001CF9C6 /* Debug */,
+				6A46B5901973C1D8001CF9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A46B5571973C1D8001CF9C6 /* Project object */;
+}
