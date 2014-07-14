@@ -56,13 +56,6 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     MSPendingTableViewController *pendingTableView = (MSPendingTableViewController *)navigationController.topViewController;
     pendingTableView.manageDocument = self.managedDocument;
-    
-    
-    
-    
-    //    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iphone" bundle:nil];
-    //    MSPendingTableViewController *pendingTableView = (MSPendingTableViewController*) [[mainStoryBoard instantiateViewControllerWithIdentifier:@"PendingController"] visibleViewController];
-    //    pendingTableView.manageDocument = self.managedDocument;
 }
 
 #pragma mark -

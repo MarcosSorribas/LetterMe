@@ -19,12 +19,15 @@
 		6A46B57E1973C1D8001CF9C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5661973C1D8001CF9C6 /* UIKit.framework */; };
 		6A46B5861973C1D8001CF9C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */; };
 		6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
-		6A46B5991973C511001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5981973C511001CF9C6 /* Letter.m */; };
 		6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */; };
 		6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */; };
-		6A46B5AF1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5AE1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m */; };
 		6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */; };
 		6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */; };
+		6A46B5BB1973E5A7001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5BA1973E5A7001CF9C6 /* Letter.m */; };
+		6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */; };
+		6A46B5C31973E97A001CF9C6 /* NSDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C21973E97A001CF9C6 /* NSDateTests.m */; };
+		6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C41973F445001CF9C6 /* LetterTests.m */; };
+		6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,16 +57,19 @@
 		6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturoTests-Info.plist"; sourceTree = "<group>"; };
 		6A46B5851973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		6A46B5971973C511001CF9C6 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
-		6A46B5981973C511001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 		6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iphone.storyboard; sourceTree = "<group>"; };
 		6A46B5A71973D395001CF9C6 /* MSPendingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPendingTableViewController.h; sourceTree = "<group>"; };
 		6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingTableViewController.m; sourceTree = "<group>"; };
-		6A46B5AE1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingTableViewControllerTests.m; sourceTree = "<group>"; };
 		6A46B5B01973E285001CF9C6 /* MSPendingLetterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPendingLetterTableViewCell.h; sourceTree = "<group>"; };
 		6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingLetterTableViewCell.m; sourceTree = "<group>"; };
 		6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Letter+myAPI.h"; sourceTree = "<group>"; };
 		6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Letter+myAPI.m"; sourceTree = "<group>"; };
+		6A46B5B91973E5A7001CF9C6 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
+		6A46B5BA1973E5A7001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
+		6A46B5BF1973E8FC001CF9C6 /* NSDate+CustomizableDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CustomizableDate.h"; sourceTree = "<group>"; };
+		6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CustomizableDate.m"; sourceTree = "<group>"; };
+		6A46B5C21973E97A001CF9C6 /* NSDateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateTests.m; sourceTree = "<group>"; };
+		6A46B5C41973F445001CF9C6 /* LetterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 			children = (
 				6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */,
 				6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */,
+				6A46B5BE1973E893001CF9C6 /* Categories */,
 				6A46B59A1973C517001CF9C6 /* Model */,
 				6A46B59B1973C51D001CF9C6 /* View */,
 				6A46B59C1973C521001CF9C6 /* Controller */,
@@ -148,8 +155,9 @@
 		6A46B5811973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
 			isa = PBXGroup;
 			children = (
+				6A46B5C41973F445001CF9C6 /* LetterTests.m */,
+				6A46B5C21973E97A001CF9C6 /* NSDateTests.m */,
 				6A46B5821973C1D8001CF9C6 /* Supporting Files */,
-				6A46B5AE1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m */,
 			);
 			path = CartasAlFuturoTests;
 			sourceTree = "<group>";
@@ -194,12 +202,21 @@
 		6A46B59D1973C52E001CF9C6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B5971973C511001CF9C6 /* Letter.h */,
-				6A46B5981973C511001CF9C6 /* Letter.m */,
+				6A46B5B91973E5A7001CF9C6 /* Letter.h */,
+				6A46B5BA1973E5A7001CF9C6 /* Letter.m */,
 				6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */,
 				6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		6A46B5BE1973E893001CF9C6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5BF1973E8FC001CF9C6 /* NSDate+CustomizableDate.h */,
+				6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,10 +319,11 @@
 				6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */,
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
+				6A46B5BB1973E5A7001CF9C6 /* Letter.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
+				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,
 				6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */,
-				6A46B5991973C511001CF9C6 /* Letter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +331,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A46B5AF1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m in Sources */,
+				6A46B5C31973E97A001CF9C6 /* NSDateTests.m in Sources */,
+				6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */,
+				6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
 				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -438,6 +459,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
 				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

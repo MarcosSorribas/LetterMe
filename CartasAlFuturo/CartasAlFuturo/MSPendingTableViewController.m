@@ -117,7 +117,7 @@
 #pragma mark -
 #pragma mark - IBAction
 - (IBAction)addletterButtonTouched:(UIBarButtonItem*)sender {
-    Letter *newLetter = [Letter createALetterInContext:self.manageDocument.managedObjectContext];
+    Letter *newLetter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
     newLetter.letterTitle = @"Titulo de prueba";
     newLetter.letterOpenDate = [NSDate date];
 }
