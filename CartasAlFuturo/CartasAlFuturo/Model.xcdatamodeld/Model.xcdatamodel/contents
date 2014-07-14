@@ -3,7 +3,7 @@
     <entity name="Letter" representedClassName="Letter" syncable="YES">
         <attribute name="letterContent" attributeType="String" minValueString="1" defaultValueString="Default content" syncable="YES"/>
         <attribute name="letterDescription" optional="YES" attributeType="String" minValueString="1" syncable="YES"/>
-        <attribute name="letterOpenDate" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="letterOpenDate" attributeType="Date" defaultDateTimeInterval="0" indexed="YES" syncable="YES"/>
         <attribute name="letterSendDate" attributeType="Date" syncable="YES"/>
         <attribute name="letterStatus" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="letterTitle" attributeType="String" minValueString="1" maxValueString="100" defaultValueString="Default title" indexed="YES" syncable="YES"/>

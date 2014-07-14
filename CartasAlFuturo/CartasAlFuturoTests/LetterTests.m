@@ -6,12 +6,10 @@
 //  Copyright (c) 2014 MarcosSorribas. All rights reserved.
 //
 
-
 #import <XCTest/XCTest.h>
 //#import <OCMock/OCMock.h>
 #import "Letter.h"
 #import "Letter+myAPI.h"
-
 
 @interface LetterTests : XCTestCase {
     // Core Data stack objects.
@@ -25,7 +23,6 @@
 
 @end
 
-
 @implementation LetterTests
 
 #pragma mark - Set up and tear down
@@ -37,7 +34,6 @@
     [self createFixture];
     [self createSut];
 }
-
 
 - (void) createCoreDataStack {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
@@ -52,16 +48,13 @@
     context.persistentStoreCoordinator = coordinator;
 }
 
-
 - (void) createFixture {
     // Test data
 }
 
-
 - (void) createSut {
     sut = [Letter createLetterInContext:context];
 }
-
 
 - (void) tearDown {
     [self releaseSut];
@@ -71,16 +64,13 @@
     [super tearDown];
 }
 
-
 - (void) releaseSut {
     sut = nil;
 }
 
-
 - (void) releaseFixture {
 
 }
-
 
 - (void) releaseCoreDataStack {
     context = nil;
@@ -95,11 +85,19 @@
     sut = [NSEntityDescription insertNewObjectForEntityForName:@"Letter" inManagedObjectContext:context];
     XCTAssertNotNil(sut, @"The Letter can't be nil");
 }
+
+- (void) testCanCreateALetterWithNotNilNotOptionalValues{
+    XCTAssertNotNil(sut.letterTitle, @"Letter title can't be nil");
+    XCTAssertNotNil(sut.letterSendDate, @"Letter sendDate can't be nil");
+    XCTAssertNotNil(sut.letterOpenDate, @"Letter OpenDate can't be nil");
+    XCTAssertNotNil(sut.letterContent, @"Letter Content can't be nil");
+    XCTAssertNotNil(sut.letterStatus, @"Letter Status can't be nil");
+}
+
 - (void) testCanCreateALetterWithConvenienceConstructor{
     sut = [Letter createLetterInContext:context];
     XCTAssertNotNil(sut, @"The Letter can't be nil");
 }
-
 - (void) testCanCreateAletterAndSetHisTitle{
     NSString *tituloPrueba = @"Mi titulo de prueba";
     sut.letterTitle = tituloPrueba;
@@ -126,9 +124,10 @@
     XCTAssertEqualObjects(sut.letterDescription, descripcionPrueba, @"Letter description should be equal to descripcionPrueba");
 }
 
-//- (void)testCanCreateAletterAndSetHisStatus{
-//    NSDate *date = [NSDate date];
-//    sut.letterOpenDate = date;
-//    XCTAssertEqualObjects(sut.letterOpenDate, date, @"Letter openDate should equal to date");
-//}
+- (void)testCanCreateAletterAndSetHisStatus{
+    sut.letterStatus = [NSNumber numberWithInt:MSReadyToOpen];
+    XCTAssertTrue([sut.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSReadyToOpen]], @"Letter status should be equtal to MSReadyToOpen");
+}
+
+
 @end

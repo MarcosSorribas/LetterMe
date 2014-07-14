@@ -23,11 +23,11 @@
 		6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */; };
 		6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */; };
 		6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */; };
-		6A46B5BB1973E5A7001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5BA1973E5A7001CF9C6 /* Letter.m */; };
 		6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */; };
 		6A46B5C31973E97A001CF9C6 /* NSDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C21973E97A001CF9C6 /* NSDateTests.m */; };
 		6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C41973F445001CF9C6 /* LetterTests.m */; };
 		6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
+		6A46B5CC19740E82001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CB19740E82001CF9C6 /* Letter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +64,12 @@
 		6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingLetterTableViewCell.m; sourceTree = "<group>"; };
 		6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Letter+myAPI.h"; sourceTree = "<group>"; };
 		6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Letter+myAPI.m"; sourceTree = "<group>"; };
-		6A46B5B91973E5A7001CF9C6 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
-		6A46B5BA1973E5A7001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 		6A46B5BF1973E8FC001CF9C6 /* NSDate+CustomizableDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CustomizableDate.h"; sourceTree = "<group>"; };
 		6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CustomizableDate.m"; sourceTree = "<group>"; };
 		6A46B5C21973E97A001CF9C6 /* NSDateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateTests.m; sourceTree = "<group>"; };
 		6A46B5C41973F445001CF9C6 /* LetterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterTests.m; sourceTree = "<group>"; };
+		6A46B5CA19740E82001CF9C6 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
+		6A46B5CB19740E82001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +202,8 @@
 		6A46B59D1973C52E001CF9C6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B5B91973E5A7001CF9C6 /* Letter.h */,
-				6A46B5BA1973E5A7001CF9C6 /* Letter.m */,
+				6A46B5CA19740E82001CF9C6 /* Letter.h */,
+				6A46B5CB19740E82001CF9C6 /* Letter.m */,
 				6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */,
 				6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */,
 			);
@@ -319,7 +319,7 @@
 				6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */,
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
-				6A46B5BB1973E5A7001CF9C6 /* Letter.m in Sources */,
+				6A46B5CC19740E82001CF9C6 /* Letter.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
 				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,

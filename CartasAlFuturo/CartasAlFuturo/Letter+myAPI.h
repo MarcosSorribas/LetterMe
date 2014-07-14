@@ -8,6 +8,13 @@
 
 #import "Letter.h"
 
+enum {
+    MSPending = 0,
+    MSReadyToOpen = 1,
+    MSRead = 2,
+};
+typedef NSInteger MSStatusLetter;
+
 @interface Letter (myAPI)
 
 NSString extern *const letterEntityName;
