@@ -28,7 +28,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Pending" id="Io7-1C-Czm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
+                            <connections>
+                                <action selector="addletterButtonTouched:" destination="oiF-n2-yZh" id="EfZ-NX-Pk6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXv-o2-8qu" userLabel="First Responder" sceneMemberID="firstResponder"/>

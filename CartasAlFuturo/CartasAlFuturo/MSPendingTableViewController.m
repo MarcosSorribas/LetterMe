@@ -7,9 +7,10 @@
 //
 
 #import "MSPendingTableViewController.h"
+#import "Letter+myAPI.h"
 
 @interface MSPendingTableViewController ()
-
+@property (nonatomic,strong,readwrite) NSMutableArray *pedingLetters;
 @end
 
 @implementation MSPendingTableViewController
@@ -113,5 +114,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark -
+#pragma mark - IBAction
+- (IBAction)addletterButtonTouched:(UIBarButtonItem*)sender {
+    Letter *newLetter = [Letter createALetterInContext:self.manageDocument.managedObjectContext];
+    newLetter.letterTitle = @"Titulo de prueba";
+    newLetter.letterOpenDate = [NSDate date];
+}
 
+#pragma mark -
+#pragma mark - Getters & Setters
+
+-(NSMutableArray*)pedingLetters{
+    if (_pedingLetters == nil) {
+        _pedingLetters = [[NSMutableArray alloc]init];
+    }
+    return _pedingLetters;
+}
 @end
