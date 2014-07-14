@@ -7,6 +7,7 @@
 //
 
 #import "MSAppDelegate.h"
+#import "MSPendingTableViewController.h"
 
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
@@ -16,11 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [self prepareFirstController];
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -31,7 +30,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -49,5 +48,50 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark -
+#pragma mark - Controllers methods
+
+-(void)prepareFirstController{
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    MSPendingTableViewController *pendingTableView = (MSPendingTableViewController *)navigationController.topViewController;
+    pendingTableView.manageDocument = self.managedDocument;
+    
+    
+    
+    
+    //    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iphone" bundle:nil];
+    //    MSPendingTableViewController *pendingTableView = (MSPendingTableViewController*) [[mainStoryBoard instantiateViewControllerWithIdentifier:@"PendingController"] visibleViewController];
+    //    pendingTableView.manageDocument = self.managedDocument;
+}
+
+#pragma mark -
+#pragma mark - Core Data stack
+
+- (UIManagedDocument *)managedDocument {
+    if (_managedDocument == nil) {
+        NSURL *myModelURL = [[self getDocumentsDirectory] URLByAppendingPathComponent:@"Model.model"];
+        _managedDocument = [[UIManagedDocument alloc] initWithFileURL:myModelURL];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[myModelURL path]]) {
+            [_managedDocument openWithCompletionHandler:^(BOOL success) {
+                if (!success) {
+                    //ERROR
+                }
+            }];
+        } else {
+            [_managedDocument saveToURL:myModelURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+                if (!success) {
+                    //ERROR
+                }
+            }];
+        }
+    }
+    return _managedDocument;
+}
+
+-(NSURL*)getDocumentsDirectory{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
 
 @end

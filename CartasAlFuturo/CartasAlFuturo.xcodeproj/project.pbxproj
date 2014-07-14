@@ -20,7 +20,9 @@
 		6A46B5861973C1D8001CF9C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */; };
 		6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
 		6A46B5991973C511001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5981973C511001CF9C6 /* Letter.m */; };
-		6A46B5A11973C57F001CF9C6 /* Letter+Advanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5A01973C57F001CF9C6 /* Letter+Advanced.m */; };
+		6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */; };
+		6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */; };
+		6A46B5AF1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5AE1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,10 @@
 		6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6A46B5971973C511001CF9C6 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
 		6A46B5981973C511001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
-		6A46B59F1973C57F001CF9C6 /* Letter+Advanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Letter+Advanced.h"; sourceTree = "<group>"; };
-		6A46B5A01973C57F001CF9C6 /* Letter+Advanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Letter+Advanced.m"; sourceTree = "<group>"; };
+		6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iphone.storyboard; sourceTree = "<group>"; };
+		6A46B5A71973D395001CF9C6 /* MSPendingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPendingTableViewController.h; sourceTree = "<group>"; };
+		6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingTableViewController.m; sourceTree = "<group>"; };
+		6A46B5AE1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingTableViewControllerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				6A46B5821973C1D8001CF9C6 /* Supporting Files */,
+				6A46B5AE1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m */,
 			);
 			path = CartasAlFuturoTests;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		6A46B59B1973C51D001CF9C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 		6A46B59C1973C521001CF9C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6A46B5A71973D395001CF9C6 /* MSPendingTableViewController.h */,
+				6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -180,8 +188,6 @@
 			children = (
 				6A46B5971973C511001CF9C6 /* Letter.h */,
 				6A46B5981973C511001CF9C6 /* Letter.m */,
-				6A46B59F1973C57F001CF9C6 /* Letter+Advanced.h */,
-				6A46B5A01973C57F001CF9C6 /* Letter+Advanced.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			files = (
 				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
 				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
+				6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */,
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
-				6A46B5A11973C57F001CF9C6 /* Letter+Advanced.m in Sources */,
 				6A46B5991973C511001CF9C6 /* Letter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A46B5AF1973DC8D001CF9C6 /* MSPendingTableViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
