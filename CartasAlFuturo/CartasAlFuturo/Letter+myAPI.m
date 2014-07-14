@@ -15,23 +15,15 @@ NSTimeInterval const predeterminedTime = 2592000; //Segundos de 1 mes.
 
 +(Letter*)createLetterInContext:(NSManagedObjectContext*)context;
 {
-    return [NSEntityDescription insertNewObjectForEntityForName:letterEntityName inManagedObjectContext:context];
+    Letter *letter = [NSEntityDescription insertNewObjectForEntityForName:letterEntityName inManagedObjectContext:context];
+    return letter;
 }
 
--(NSDate*)letterOpenDate{
-    NSString *key = @"letterOpenDate";
-    if ([self primitiveValueForKey:key] == nil) {
-        [self setPrimitiveValue:[NSDate dateWithTimeIntervalSinceNow:predeterminedTime] forKey:key];
-    }
-    return [self primitiveValueForKey:key];
-}
 
--(NSDate *)letterSendDate{
-    NSString *key = @"letterSendDate";
-    if ([self primitiveValueForKey:key] == nil) {
-        [self setPrimitiveValue:[NSDate date] forKey:key];
-    }
-    return [self primitiveValueForKey:key];
+- (void) awakeFromInsert
+{
+    [super awakeFromInsert];
+    self.letterSendDate = [NSDate date];
+    self.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:predeterminedTime];
 }
-
 @end
