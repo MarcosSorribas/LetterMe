@@ -8,6 +8,10 @@
 
 #import "MSAppDelegate.h"
 
+@interface MSAppDelegate ()
+@property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
+@end
+
 @implementation MSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

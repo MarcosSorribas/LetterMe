@@ -18,7 +18,9 @@
 		6A46B57D1973C1D8001CF9C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5621973C1D8001CF9C6 /* Foundation.framework */; };
 		6A46B57E1973C1D8001CF9C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5661973C1D8001CF9C6 /* UIKit.framework */; };
 		6A46B5861973C1D8001CF9C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */; };
-		6A46B5881973C1D8001CF9C6 /* CartasAlFuturoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5871973C1D8001CF9C6 /* CartasAlFuturoTests.m */; };
+		6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
+		6A46B5991973C511001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5981973C511001CF9C6 /* Letter.m */; };
+		6A46B5A11973C57F001CF9C6 /* Letter+Advanced.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5A01973C57F001CF9C6 /* Letter+Advanced.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,11 @@
 		6A46B57B1973C1D8001CF9C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturoTests-Info.plist"; sourceTree = "<group>"; };
 		6A46B5851973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6A46B5871973C1D8001CF9C6 /* CartasAlFuturoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartasAlFuturoTests.m; sourceTree = "<group>"; };
+		6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6A46B5971973C511001CF9C6 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
+		6A46B5981973C511001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
+		6A46B59F1973C57F001CF9C6 /* Letter+Advanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Letter+Advanced.h"; sourceTree = "<group>"; };
+		6A46B5A01973C57F001CF9C6 /* Letter+Advanced.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Letter+Advanced.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 			children = (
 				6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */,
 				6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */,
+				6A46B59A1973C517001CF9C6 /* Model */,
+				6A46B59B1973C51D001CF9C6 /* View */,
+				6A46B59C1973C521001CF9C6 /* Controller */,
 				6A46B5741973C1D8001CF9C6 /* Images.xcassets */,
 				6A46B5691973C1D8001CF9C6 /* Supporting Files */,
 			);
@@ -129,7 +138,6 @@
 		6A46B5811973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B5871973C1D8001CF9C6 /* CartasAlFuturoTests.m */,
 				6A46B5821973C1D8001CF9C6 /* Supporting Files */,
 			);
 			path = CartasAlFuturoTests;
@@ -142,6 +150,40 @@
 				6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A46B59A1973C517001CF9C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */,
+				6A46B59D1973C52E001CF9C6 /* Entities */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6A46B59B1973C51D001CF9C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6A46B59C1973C521001CF9C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		6A46B59D1973C52E001CF9C6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6A46B5971973C511001CF9C6 /* Letter.h */,
+				6A46B5981973C511001CF9C6 /* Letter.m */,
+				6A46B59F1973C57F001CF9C6 /* Letter+Advanced.h */,
+				6A46B5A01973C57F001CF9C6 /* Letter+Advanced.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +284,9 @@
 			files = (
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
+				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
+				6A46B5A11973C57F001CF9C6 /* Letter+Advanced.m in Sources */,
+				6A46B5991973C511001CF9C6 /* Letter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A46B5881973C1D8001CF9C6 /* CartasAlFuturoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +492,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */,
+			);
+			currentVersion = 6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6A46B5571973C1D8001CF9C6 /* Project object */;
 }
