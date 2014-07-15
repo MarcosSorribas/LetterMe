@@ -8,6 +8,7 @@
 
 #import "MSAppDelegate.h"
 #import "MSPendingTableViewController.h"
+#import "MSOpenedLettersTableViewController.h"
 
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
@@ -53,7 +54,7 @@
 
 -(void)prepareFirstController{
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MSPendingTableViewController *pendingTableView = (MSPendingTableViewController *)navigationController.topViewController;
+    CoreDataTableViewController *pendingTableView = (CoreDataTableViewController *)navigationController.topViewController;
     pendingTableView.manageDocument = self.managedDocument;
 }
 
@@ -84,6 +85,4 @@
 -(NSURL*)getDocumentsDirectory{
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
-
 @end

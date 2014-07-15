@@ -22,21 +22,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
-    //Configure fetch
-    NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
-    self.fetchedResultsController = results;
+    [self configureFetchResultController];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +38,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark - Private methods
+
+-(void)configureFetchResultController{
+    NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
+    self.fetchedResultsController = results;
+}
+
+#pragma mark -
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,11 +61,13 @@
 #pragma mark - IBAction
 
 - (IBAction)addletterButtonTouched:(UIBarButtonItem*)sender {
+    [self.manageDocument.managedObjectContext.undoManager beginUndoGrouping];
     Letter *newLetter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
     newLetter.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:[self randomFloatBetween:0 and:100000000.00]];
     int random = arc4random()%100;
     NSLog(@"Soy %d",random);
     newLetter.letterTitle = [NSString stringWithFormat:@"Soy %d",random];
+    [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
 }
 
 - (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {

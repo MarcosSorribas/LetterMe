@@ -50,4 +50,9 @@
 // Set to YES to get some debugging output in the console.
 @property BOOL debug;
 
+
+
+//MARCOS
+@property (nonatomic,strong,readwrite) UIManagedDocument *manageDocument;
+
 @end

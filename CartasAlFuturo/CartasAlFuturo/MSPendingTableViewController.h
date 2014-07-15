@@ -10,5 +10,4 @@
 #import "CoreDataTableViewController.h"
 
 @interface MSPendingTableViewController : CoreDataTableViewController
-@property (nonatomic,strong,readwrite) UIManagedDocument *manageDocument;
 @end
