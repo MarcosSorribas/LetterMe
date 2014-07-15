@@ -10,10 +10,15 @@
 #import "Letter+myAPI.h"
 
 @interface MSOpenedLettersTableViewController ()
-
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControlNavigator;
 @end
 
 @implementation MSOpenedLettersTableViewController
+
+
+
+
+
 
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -26,6 +31,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"" forIndexPath:indexPath];
+#warning FALTA IDENTIFICADOR
     Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     //Pintar la carta
