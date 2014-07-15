@@ -22,22 +22,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self configureFetch];
-}
 
--(void)configureFetch{
-    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
-    
-    NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
-    fetch.sortDescriptors = @[orderByDate];
-    
-    NSPredicate *onlyPendingLettersQuery = [NSPredicate predicateWithFormat:@"(letterStatus == %d) OR (letterStatus == %d)",MSPending,MSReadyToOpen];
-    fetch.predicate =onlyPendingLettersQuery;
-    
-    NSFetchedResultsController *results = [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:self.manageDocument.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    
+    //Configure fetch
+    NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
     self.fetchedResultsController = results;
-    
 }
 
 - (void)viewDidLoad
@@ -76,7 +64,6 @@
     int random = arc4random()%100;
     NSLog(@"Soy %d",random);
     newLetter.letterTitle = [NSString stringWithFormat:@"Soy %d",random];
-    //[self.pedingLetters addObject:newLetter];
 }
 
 - (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {

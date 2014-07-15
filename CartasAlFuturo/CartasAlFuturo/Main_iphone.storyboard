@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Pending Table View Controller - Pending-->
+        <!--Pending Table View Controller - Pendientes-->
         <scene sceneID="AhA-V9-b89">
             <objects>
                 <tableViewController id="oiF-n2-yZh" customClass="MSPendingTableViewController" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="oiF-n2-yZh" id="LDf-rM-ULA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pending" id="Io7-1C-Czm">
+                    <navigationItem key="navigationItem" title="Pendientes" id="Io7-1C-Czm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
                             <connections>
                                 <action selector="addletterButtonTouched:" destination="oiF-n2-yZh" id="EfZ-NX-Pk6"/>

@@ -20,5 +20,5 @@ typedef NSInteger MSStatusLetter;
 NSString extern *const letterEntityName;
 
 +(Letter*)createLetterInContext:(NSManagedObjectContext*)context;
-
++(NSFetchedResultsController*)pendingLettersToShowInContext:(NSManagedObjectContext *)context;
 @end

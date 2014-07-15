@@ -26,4 +26,18 @@ NSTimeInterval const predeterminedTime = 2592000; //Segundos de 1 mes.
     self.letterSendDate = [NSDate date];
     self.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:predeterminedTime];
 }
+
+
++(NSFetchedResultsController*)pendingLettersToShowInContext:(NSManagedObjectContext *)context{
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
+    fetch.sortDescriptors = @[orderByDate];
+    NSPredicate *onlyPendingLettersQuery = [NSPredicate predicateWithFormat:@"(letterStatus == %d) OR (letterStatus == %d)",MSPending,MSReadyToOpen];
+    fetch.predicate =onlyPendingLettersQuery;
+    return [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+}
+
+
+
+
 @end
