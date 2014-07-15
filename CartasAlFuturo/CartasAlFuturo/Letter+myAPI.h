@@ -21,4 +21,5 @@ NSString extern *const letterEntityName;
 
 +(Letter*)createLetterInContext:(NSManagedObjectContext*)context;
 +(NSFetchedResultsController*)pendingLettersToShowInContext:(NSManagedObjectContext *)context;
++(NSFetchedResultsController*)openedLettersToShowInContext:(NSManagedObjectContext *) context;
 @end

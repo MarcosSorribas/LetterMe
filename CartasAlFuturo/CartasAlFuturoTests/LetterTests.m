@@ -29,7 +29,7 @@
 
 - (void) setUp {
     [super setUp];
-
+    
     [self createCoreDataStack];
     [self createFixture];
     [self createSut];
@@ -60,7 +60,7 @@
     [self releaseSut];
     [self releaseFixture];
     [self releaseCoreDataStack];
-
+    
     [super tearDown];
 }
 
@@ -69,7 +69,7 @@
 }
 
 - (void) releaseFixture {
-
+    
 }
 
 - (void) releaseCoreDataStack {
@@ -129,5 +129,61 @@
     XCTAssertTrue([sut.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSReadyToOpen]], @"Letter status should be equtal to MSReadyToOpen");
 }
 
+- (void) testFetchPendingLettersIsCorrect{
+    
+    //Inserto 7 cartas en el contexto.
+    for (int i = 0; i < 7; i++) {
+        Letter *letter = [Letter createLetterInContext:context];
+        letter.letterStatus = [NSNumber numberWithInt:arc4random()%3];
+    }
+    
+    NSFetchedResultsController *pendingFetch = [Letter pendingLettersToShowInContext:context];
+    NSMutableArray *pendingLetters = [[NSMutableArray alloc]initWithArray:[context executeFetchRequest:pendingFetch.fetchRequest error:nil]];
+    
+    
+    NSFetchRequest *allFetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    allFetch.predicate = nil;
+    NSArray *allLetters = [context executeFetchRequest:allFetch error:nil];
+    
+    for (Letter *letter in allLetters) {
+        if ([letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSReadyToOpen]] || [letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSPending]]) {
+            XCTAssertTrue([pendingLetters containsObject:letter], @"Pending and readyToOpen Letters must be in a pendingLetter fetch");
+            [pendingLetters removeObject:letter];
+        }else{
+            XCTAssertFalse([pendingLetters containsObject:letter], @"Other status Letter can't be in a pendingLetter");
+        }
+    }
+    XCTAssertTrue(pendingLetters.count == 0, @"All pending Letters must be analyzed");
+    
+}
+
+
+- (void)testFetchOpenedLettersIsCorrect{
+    //Inserto 7 cartas en el contexto.
+    for (int i = 0; i < 7; i++) {
+        Letter *letter = [Letter createLetterInContext:context];
+        letter.letterStatus = [NSNumber numberWithInt:arc4random()%3];
+    }
+    
+    NSFetchedResultsController *openedFetch = [Letter openedLettersToShowInContext:context];
+    NSMutableArray *openedLetters = [[NSMutableArray alloc]initWithArray:[context executeFetchRequest:openedFetch.fetchRequest error:nil]];
+    
+    
+    NSFetchRequest *allFetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    allFetch.predicate = nil;
+    NSArray *allLetters = [context executeFetchRequest:allFetch error:nil];
+    
+    for (Letter *letter in allLetters) {
+        if ([letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSRead]]) {
+             XCTAssertTrue([openedLetters containsObject:letter], @"read Letters must be in a openedLetter fetch");
+            [openedLetters removeObject:letter];
+        }else{
+            XCTAssertFalse([openedLetters containsObject:letter], @"Other status Letter can't be in a openedLetter fetch");
+        }
+    }
+    
+    XCTAssertTrue(openedLetters.count == 0, @"All opened Letters must be analyzed");
+
+}
 
 @end

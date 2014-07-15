@@ -29,6 +29,7 @@
 		6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
 		6A46B5CC19740E82001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CB19740E82001CF9C6 /* Letter.m */; };
 		6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */; };
+		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		6A46B5CB19740E82001CF9C6 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 		6A46B5CD19741853001CF9C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
+		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 				6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */,
 				6A46B5A71973D395001CF9C6 /* MSPendingTableViewController.h */,
 				6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */,
+				6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */,
+				6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
+				6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */,
 				6A46B5CC19740E82001CF9C6 /* Letter.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
@@ -530,6 +536,7 @@
 				6A46B58D1973C1D8001CF9C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +545,7 @@
 				6A46B5901973C1D8001CF9C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

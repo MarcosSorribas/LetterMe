@@ -19,7 +19,6 @@ NSTimeInterval const predeterminedTime = 2592000; //Segundos de 1 mes.
     return letter;
 }
 
-
 - (void) awakeFromInsert
 {
     [super awakeFromInsert];
@@ -37,7 +36,14 @@ NSTimeInterval const predeterminedTime = 2592000; //Segundos de 1 mes.
     return [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
 }
 
-
++(NSFetchedResultsController*)openedLettersToShowInContext:(NSManagedObjectContext *) context{
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
+    fetch.sortDescriptors = @[orderByDate];
+    NSPredicate *onlyOpenedLettersQuery = [NSPredicate predicateWithFormat:@"(letterStatus == %d)",MSRead];
+    fetch.predicate = onlyOpenedLettersQuery;
+    return [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+}
 
 
 @end
