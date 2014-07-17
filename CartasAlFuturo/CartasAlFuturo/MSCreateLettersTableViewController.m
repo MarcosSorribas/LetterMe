@@ -96,27 +96,6 @@ NSString *const contentSectionViewName = @"MSContentSectionView";
 
 #pragma mark -
 #pragma mark - TableViewDelegate methods
-//
-//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [self.tableView beginUpdates];
-//    
-//    switch ([self compareIndexPath:indexPath]) {
-//        case TitleCell:
-//            //[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//            break;
-//        case DateCell:
-//            
-//            break;
-//        case ContentCell:
-//            
-//            break;
-//        default:
-//            break;
-//    }
-//    [self.tableView endUpdates];
-//    return indexPath;
-//}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     switch ([self compareIndexPath:indexPath]) {
         case TitleCell:
@@ -153,24 +132,66 @@ NSString *const contentSectionViewName = @"MSContentSectionView";
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view;
+    UITapGestureRecognizer *tapGesture;
     switch (section) {
         case titleSection:
             view = [[[NSBundle mainBundle] loadNibNamed:titleSectionViewName owner:self options:nil]firstObject];
+            tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(titleSectionTouched)];
             break;
         case dateSection:
             view = [[[NSBundle mainBundle] loadNibNamed:dateSectionViewName owner:self options:nil] firstObject];
+            tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dateSectionTouched)];
             break;
         case contentSection:
             view = [[[NSBundle mainBundle] loadNibNamed:contentSectionViewName owner:self options:nil] firstObject];
+            tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(contentSectionTouched)];
             break;
         default:
             break;
     }
+    [view addGestureRecognizer:tapGesture];
     return view;
 }
 
 #pragma mark -
 #pragma mark - Private methods
+
+-(void)titleSectionTouched{
+    [self.tableView beginUpdates];
+    
+    
+    [self.tableView endUpdates];
+}
+
+-(void)dateSectionTouched{
+    [self.tableView beginUpdates];
+    self.titleRowHeight = 1;
+    self.titleSectionHeight = 55;
+    
+
+    NSMutableIndexSet *set = [[NSMutableIndexSet alloc]initWithIndex:0];
+    [set addIndex:1];
+    [set addIndex:2];
+    
+    self.dateRowHeight = 355;
+    self.dateSectionHeight = 25;
+
+    self.contentRowHeight = 1;
+    self.contentSectionHeight = 70;
+    [self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationAutomatic];
+
+   // [self.tableView reloadData];
+    [self resignFirstResponder];
+    [self.tableView endUpdates];
+}
+
+-(void)contentSectionTouched{
+    [self.tableView beginUpdates];
+    
+    
+    [self.tableView endUpdates];
+}
+
 
 -(cellIdentificator)compareIndexPath:(NSIndexPath*)indexPath{
     switch (indexPath.section) {
@@ -194,7 +215,6 @@ NSString *const contentSectionViewName = @"MSContentSectionView";
     }
     return UnknowCell;
 }
-
 
 #pragma mark -
 #pragma mark - IBActions
