@@ -53,9 +53,14 @@
 #pragma mark - Controllers methods
 
 -(void)prepareFirstController{
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    CoreDataTableViewController *pendingTableView = (CoreDataTableViewController *)navigationController.topViewController;
+#warning Muy feo  - Preguntar para refactorizar.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navController = (UINavigationController *)[tabBarController.viewControllers firstObject];
+    CoreDataTableViewController *pendingTableView =(CoreDataTableViewController*)navController.topViewController;
     pendingTableView.manageDocument = self.managedDocument;
+    navController = (UINavigationController *)[tabBarController.viewControllers lastObject];
+    CoreDataTableViewController *openedTableView =(CoreDataTableViewController*)navController.topViewController;
+    openedTableView.manageDocument = self.managedDocument;
 }
 
 #pragma mark -

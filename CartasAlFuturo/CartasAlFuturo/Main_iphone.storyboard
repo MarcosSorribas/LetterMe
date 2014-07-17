@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uPa-mP-PuU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ifc-yK-i4b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="oiF-n2-yZh" id="LDf-rM-ULA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Pending" id="3gV-Li-uA6"/>
+                    <tabBarItem key="tabBarItem" title="Pendientes" id="3gV-Li-uA6"/>
                     <navigationItem key="navigationItem" title="Pendientes" id="Io7-1C-Czm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
                             <connections>
@@ -56,12 +56,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXv-o2-8qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="-110"/>
+            <point key="canvasLocation" x="3277" y="-124"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Pendientes-->
         <scene sceneID="PIc-qT-ntJ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2Z-hK-cuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="PendingController" automaticallyAdjustsScrollViewInsets="NO" id="uPa-mP-PuU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pendientes" id="Ylk-1M-3xa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eSK-kf-R8F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -72,11 +74,10 @@
                         <segue destination="oiF-n2-yZh" kind="relationship" relationship="rootViewController" id="hdS-eS-y9J"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y2Z-hK-cuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="-110"/>
+            <point key="canvasLocation" x="2751" y="-124"/>
         </scene>
-        <!--Opened Letters Table View Controller - Opened-->
+        <!--Opened Letters Table View Controller - Leidas-->
         <scene sceneID="GeO-Ka-6qY">
             <objects>
                 <tableViewController id="3va-nb-ESt" customClass="MSOpenedLettersTableViewController" sceneMemberID="viewController">
@@ -125,10 +126,7 @@
                             <outlet property="delegate" destination="3va-nb-ESt" id="FgN-xl-JFX"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Opened" id="CSB-Eh-CC8"/>
-                    <navigationItem key="navigationItem" id="2Cg-dB-ahF">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ey6-bL-Wwa"/>
+                    <navigationItem key="navigationItem" title="Leidas" id="2Cg-dB-ahF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5CM-RE-UYR">
                             <connections>
                                 <action selector="addOpenedLetter:" destination="3va-nb-ESt" id="qCe-oc-pJT"/>
@@ -138,25 +136,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqt-lj-0HJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="615"/>
+            <point key="canvasLocation" x="3283" y="577"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lVu-kI-61u">
+        <!--Navigation Controller - Leidas-->
+        <scene sceneID="6Jl-qI-1W8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TTk-R2-sk6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9E-BS-UQg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Leidas" id="CSB-Eh-CC8"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N1Z-8e-tPu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfk-NT-pjG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="3va-nb-ESt" kind="relationship" relationship="rootViewController" id="J7T-IC-2Jo"/>
+                        <segue destination="3va-nb-ESt" kind="relationship" relationship="rootViewController" id="tcK-N8-8xn"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cOo-BM-wGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3LL-WG-kv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="615"/>
+            <point key="canvasLocation" x="2751" y="577"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wZC-fK-egV">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ifc-yK-i4b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WIt-3d-2no">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uPa-mP-PuU" kind="relationship" relationship="viewControllers" id="gUg-bH-r3J"/>
+                        <segue destination="g9E-BS-UQg" kind="relationship" relationship="viewControllers" id="8BZ-Xq-Qin"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MWL-wX-4bF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="226"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
