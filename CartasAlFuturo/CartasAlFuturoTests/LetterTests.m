@@ -156,8 +156,6 @@
     XCTAssertTrue(pendingLetters.count == 0, @"All pending Letters must be analyzed");
     
 }
-
-
 - (void)testFetchOpenedLettersIsCorrect{
     //Inserto 7 cartas en el contexto.
     for (int i = 0; i < 7; i++) {
@@ -184,6 +182,37 @@
     
     XCTAssertTrue(openedLetters.count == 0, @"All opened Letters must be analyzed");
 
+}
+
+
+- (void)testFetchNextReadyToOpenLettersIsCorrect{
+    //Inserto 7 cartas en el contexto.
+    for (int i = 0; i < 7; i++) {
+        Letter *letter = [Letter createLetterInContext:context];
+        letter.letterStatus = [NSNumber numberWithInt:MSPending];
+        //3 cartas listas para abrir y 4 todavia no.
+        letter.letterOpenDate = [NSDate dateWithTimeInterval:i*24*60*60 sinceDate:[NSDate dateWithTimeIntervalSinceNow:-3*24*60*60]];
+    }
+    
+    NSMutableArray *readyToOpen = [Letter checkReadyToOpenLettersInContext:context].mutableCopy;
+
+    
+    
+    NSFetchRequest *allFetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    allFetch.predicate = nil;
+    NSArray *allLetters = [context executeFetchRequest:allFetch error:nil];
+    
+    for (Letter *letter in allLetters) {
+        if ([letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSPending]] && [letter.letterOpenDate compare:[NSDate date]] == NSOrderedAscending) {
+            XCTAssertTrue([readyToOpen containsObject:letter], @"past time Letters must be in a readyToOpen fetch");
+            [readyToOpen removeObject:letter];
+        }else{
+            XCTAssertFalse([readyToOpen containsObject:letter], @"Other status Letter can't be in a openedLetter fetch");
+        }
+    }
+    
+    XCTAssertTrue(readyToOpen.count == 0, @"All opened Letters must be analyzed");
+    
 }
 
 @end

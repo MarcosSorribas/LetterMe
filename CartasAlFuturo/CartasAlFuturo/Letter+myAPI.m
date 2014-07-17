@@ -11,7 +11,7 @@
 @implementation Letter (myAPI)
 
 NSString *const letterEntityName = @"Letter";
-NSTimeInterval const predeterminedTime = 2592000; //Segundos de 1 mes.
+NSTimeInterval const predeterminedTime = 24*60*60; //Segundos de 1 dia.
 
 +(Letter*)createLetterInContext:(NSManagedObjectContext*)context;
 {
@@ -28,22 +28,43 @@ NSTimeInterval const predeterminedTime = 2592000; //Segundos de 1 mes.
 
 
 +(NSFetchedResultsController*)pendingLettersToShowInContext:(NSManagedObjectContext *)context{
-    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
     NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
-    fetch.sortDescriptors = @[orderByDate];
     NSPredicate *onlyPendingLettersQuery = [NSPredicate predicateWithFormat:@"(letterStatus == %d) OR (letterStatus == %d)",MSPending,MSReadyToOpen];
-    fetch.predicate =onlyPendingLettersQuery;
+    NSFetchRequest *fetch = [Letter configureFetchWithSortDescriptor:orderByDate andPredicate:onlyPendingLettersQuery];
     return [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
 }
 
 +(NSFetchedResultsController*)openedLettersToShowInContext:(NSManagedObjectContext *) context{
-    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    
     NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
-    fetch.sortDescriptors = @[orderByDate];
     NSPredicate *onlyOpenedLettersQuery = [NSPredicate predicateWithFormat:@"(letterStatus == %d)",MSRead];
-    fetch.predicate = onlyOpenedLettersQuery;
+    NSFetchRequest *fetch = [Letter configureFetchWithSortDescriptor:orderByDate andPredicate:onlyOpenedLettersQuery];
     return [[NSFetchedResultsController alloc] initWithFetchRequest:fetch managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
 }
 
++(NSArray*)checkReadyToOpenLettersInContext:(NSManagedObjectContext *) context{
+    NSDate *now = [NSDate date];
+    NSPredicate *onlyNextReadyToOpenLetters = [NSPredicate predicateWithFormat:@"(letterStatus == %d AND letterOpenDate <= %@)",MSPending,now];
+    NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
+
+    NSFetchRequest *fetch = [Letter configureFetchWithSortDescriptor:orderByDate andPredicate:onlyNextReadyToOpenLetters];
+    
+    NSArray *result = [context executeFetchRequest:fetch error:nil];
+
+    return result;
+}
+
+#pragma mark -
+#pragma mark - Private Methods
+
++(NSFetchRequest*)configureFetchWithSortDescriptor:(NSSortDescriptor*)descriptor andPredicate:(NSPredicate*)predicate{
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:letterEntityName];
+    NSSortDescriptor *sortDescriptor = descriptor;
+    if(sortDescriptor) {
+        fetch.sortDescriptors = @[sortDescriptor];
+    }
+    fetch.predicate = predicate;
+    return fetch;
+}
 
 @end

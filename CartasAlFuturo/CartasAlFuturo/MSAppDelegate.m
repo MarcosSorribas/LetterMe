@@ -7,9 +7,8 @@
 //
 
 #import "MSAppDelegate.h"
-#import "MSPendingTableViewController.h"
-#import "MSOpenedLettersTableViewController.h"
-
+#import "CoreDataTableViewController.h"
+#import "MSMailMan.h"
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
 @end
@@ -18,7 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
+    
     [self prepareFirstController];
+    
     return YES;
 }
 
@@ -42,6 +45,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -53,7 +59,9 @@
 #pragma mark - Controllers methods
 
 -(void)prepareFirstController{
+    
 #warning Muy feo  - Preguntar para refactorizar.
+    
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UINavigationController *navController = (UINavigationController *)[tabBarController.viewControllers firstObject];
     CoreDataTableViewController *pendingTableView =(CoreDataTableViewController*)navController.topViewController;
