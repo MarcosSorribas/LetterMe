@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" title="Pendientes" id="Io7-1C-Czm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
                             <connections>
-                                <segue destination="FF1-me-F1m" kind="push" id="S1M-qw-ocp"/>
+                                <segue destination="sZV-Pq-eoj" kind="modal" id="gaD-bB-DVs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -129,7 +129,7 @@
                     <navigationItem key="navigationItem" title="Leidas" id="2Cg-dB-ahF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5CM-RE-UYR">
                             <connections>
-                                <segue destination="FF1-me-F1m" kind="push" id="Fys-uH-jzc"/>
+                                <segue destination="sZV-Pq-eoj" kind="modal" id="TsF-dN-RfI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -237,6 +237,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="fY9-qQ-aMH">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="dI8-Oi-OTU">
+                            <connections>
+                                <action selector="cancelTouched:" destination="FF1-me-F1m" id="gJx-XQ-F82"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Enviar" style="plain" id="bkj-5u-wa4">
                             <connections>
                                 <action selector="doneTouched:" destination="FF1-me-F1m" id="V8a-K3-kHs"/>
@@ -246,7 +251,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQz-Oe-xFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3716" y="-296"/>
+            <point key="canvasLocation" x="4311" y="-503"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wZC-fK-egV">
@@ -267,6 +272,24 @@
             </objects>
             <point key="canvasLocation" x="2153" y="-246"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ajv-2F-SrM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sZV-Pq-eoj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JIF-bz-WjE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FF1-me-F1m" kind="relationship" relationship="rootViewController" id="NWK-WW-jbA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lV-Mq-rXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3785" y="-503"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -274,6 +297,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="S1M-qw-ocp"/>
+        <segue reference="gaD-bB-DVs"/>
     </inferredMetricsTieBreakers>
 </document>

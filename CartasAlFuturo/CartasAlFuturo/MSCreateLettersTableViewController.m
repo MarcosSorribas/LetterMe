@@ -179,6 +179,9 @@ NSUInteger const contentSection = 2;
 - (IBAction)doneTouched:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)cancelTouched:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark -
 #pragma mark - Getters & Setters
