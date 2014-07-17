@@ -7,7 +7,6 @@
 //
 
 #import "MSCreateLettersTableViewController.h"
-#import "MSTitleTableViewCell.h"
 
 enum : NSUInteger {
     TitleCell = 0,
@@ -31,8 +30,6 @@ typedef NSInteger cellIdentificator;
 @property (nonatomic,strong) NSIndexPath *datePath;
 @property (nonatomic,strong) NSIndexPath *contentPath;
 
-@property (nonatomic,strong) MSTitleTableViewCell *cell;
-
 @end
 
 @implementation MSCreateLettersTableViewController
@@ -46,6 +43,14 @@ NSUInteger const numberOfRowsInSection = 1;
 NSUInteger const titleSection = 0;
 NSUInteger const dateSection = 1;
 NSUInteger const contentSection = 2;
+
+NSString * const titleClassCellName = @"MSTitleTableViewCell";
+NSString * const dateClassCellName = @"MSDateTableViewCell";
+NSString * const contentClassCellName = @"MSContentTableViewCell";
+
+NSString *const titleSectionViewName = @"MSTitleSectionView";
+NSString *const dateSectionViewName = @"MSDateSectionView";
+NSString *const contentSectionViewName = @"MSContentSectionView";
 
 #pragma mark -
 #pragma mark - DataSource methods
@@ -63,14 +68,13 @@ NSUInteger const contentSection = 2;
     
     switch ([self compareIndexPath:indexPath]) {
         case TitleCell:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"titleCell" forIndexPath:indexPath];
-            self.cell = (MSTitleTableViewCell*)cell;
+            cell = [tableView dequeueReusableCellWithIdentifier:titleClassCellName forIndexPath:indexPath];
             break;
         case DateCell:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"dateCell" forIndexPath:indexPath];
+            cell = [tableView dequeueReusableCellWithIdentifier:dateClassCellName forIndexPath:indexPath];
             break;
         case ContentCell:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"contentCell" forIndexPath:indexPath];
+            cell = [tableView dequeueReusableCellWithIdentifier:contentClassCellName forIndexPath:indexPath];
             break;
         default:
             break;
@@ -92,26 +96,26 @@ NSUInteger const contentSection = 2;
 
 #pragma mark -
 #pragma mark - TableViewDelegate methods
-
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.tableView beginUpdates];
-    
-    switch ([self compareIndexPath:indexPath]) {
-        case TitleCell:
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            break;
-        case DateCell:
-            
-            break;
-        case ContentCell:
-            
-            break;
-        default:
-            break;
-    }
-    [self.tableView endUpdates];
-    return indexPath;
-}
+//
+//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    [self.tableView beginUpdates];
+//    
+//    switch ([self compareIndexPath:indexPath]) {
+//        case TitleCell:
+//            //[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//            break;
+//        case DateCell:
+//            
+//            break;
+//        case ContentCell:
+//            
+//            break;
+//        default:
+//            break;
+//    }
+//    [self.tableView endUpdates];
+//    return indexPath;
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     switch ([self compareIndexPath:indexPath]) {
@@ -146,6 +150,25 @@ NSUInteger const contentSection = 2;
     }
     return 0;
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view;
+    switch (section) {
+        case titleSection:
+            view = [[[NSBundle mainBundle] loadNibNamed:titleSectionViewName owner:self options:nil]firstObject];
+            break;
+        case dateSection:
+            view = [[[NSBundle mainBundle] loadNibNamed:dateSectionViewName owner:self options:nil] firstObject];
+            break;
+        case contentSection:
+            view = [[[NSBundle mainBundle] loadNibNamed:contentSectionViewName owner:self options:nil] firstObject];
+            break;
+        default:
+            break;
+    }
+    return view;
+}
+
 #pragma mark -
 #pragma mark - Private methods
 

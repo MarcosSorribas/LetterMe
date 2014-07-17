@@ -1,5 +1,5 @@
 //
-//  MSTitleTableViewCell.h
+//  MSDateTableViewCell.h
 //  CartasAlFuturo
 //
 //  Created by Marcos Sorribas Lopez on 17/07/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSTitleTableViewCell : UITableViewCell
+@interface MSDateTableViewCell : UITableViewCell
 
 @end

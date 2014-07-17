@@ -1,16 +1,14 @@
 //
-//  MSTitleTableViewCell.m
+//  MSContentTableViewCell.m
 //  CartasAlFuturo
 //
 //  Created by Marcos Sorribas Lopez on 17/07/14.
 //  Copyright (c) 2014 MarcosSorribas. All rights reserved.
 //
 
-#import "MSTitleTableViewCell.h"
+#import "MSContentTableViewCell.h"
 
-@implementation MSTitleTableViewCell
-- (IBAction)myTextField:(id)sender {
-}
+@implementation MSContentTableViewCell
 
 - (void)awakeFromNib
 {
