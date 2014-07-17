@@ -9,6 +9,7 @@
 #import "MSPendingTableViewController.h"
 #import "Letter+myAPI.h"
 #import "MSPendingLetterTableViewCell.h"
+
 @implementation MSPendingTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -38,13 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
-#pragma mark - Private methods
 
--(void)configureFetchResultController{
-    NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
-    self.fetchedResultsController = results;
-}
 
 #pragma mark -
 #pragma mark - Table view data source
@@ -74,4 +69,33 @@
     float diff = bigNumber - smallNumber;
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
 }
+
+#pragma mark -
+#pragma mark - Private methods
+
+-(void)configureFetchResultController{
+    NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
+    self.fetchedResultsController = results;
+}
+
+-(void)setUpNextController:(UITableViewController*)myController{
+    //Oculto la tabBar
+    myController.hidesBottomBarWhenPushed = YES;
+    //Cambio el titulo del boton back
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar"
+                                                                      style:UIBarButtonItemStyleBordered
+                                                                     target:nil
+                                                                     action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
+    
+}
+
+#pragma mark -
+#pragma mark - Navigation methods
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+#warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
+    [self setUpNextController:[segue destinationViewController]];
+}
+
 @end

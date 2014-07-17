@@ -66,12 +66,9 @@
         case UITableViewCellEditingStyleNone:
             break;
         case UITableViewCellEditingStyleDelete:
-            
             [self.manageDocument.managedObjectContext.undoManager beginUndoGrouping];
-            
             [self.manageDocument.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
             [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
-            
             break;
         case UITableViewCellEditingStyleInsert:
             break;
@@ -79,4 +76,23 @@
             break;
     }
 }
+
+-(void)setUpNextController:(UITableViewController*)myController{
+    //Oculto la tabBar
+    myController.hidesBottomBarWhenPushed = YES;
+    //Cambio el titulo del boton back
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar"
+                                                                      style:UIBarButtonItemStyleBordered
+                                                                     target:nil
+                                                                     action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
+    
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+#warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
+    [self setUpNextController:[segue destinationViewController]];
+}
+
 @end
