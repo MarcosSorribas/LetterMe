@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED7541977BAB4008BD0AE /* MSMailMan.m */; };
-		6A0ED7581977CDDE008BD0AE /* MSCreateLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED7571977CDDE008BD0AE /* MSCreateLettersTableViewController.m */; };
 		6A46B5631973C1D8001CF9C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5621973C1D8001CF9C6 /* Foundation.framework */; };
 		6A46B5651973C1D8001CF9C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */; };
 		6A46B5671973C1D8001CF9C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5661973C1D8001CF9C6 /* UIKit.framework */; };
@@ -32,12 +31,7 @@
 		6A46B5CC19740E82001CF9C6 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CB19740E82001CF9C6 /* Letter.m */; };
 		6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */; };
 		6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */; };
-		6AF3535019782645009CEAF0 /* MSDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3534E19782645009CEAF0 /* MSDateTableViewCell.m */; };
-		6AF353551978266D009CEAF0 /* MSContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353531978266D009CEAF0 /* MSContentTableViewCell.m */; };
-		6AF3535A19782E09009CEAF0 /* MSTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3535819782E09009CEAF0 /* MSTitleTableViewCell.m */; };
-		6AF3535F1978333B009CEAF0 /* MSTitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3535E1978333B009CEAF0 /* MSTitleSectionView.xib */; };
-		6AF35361197833BB009CEAF0 /* MSDateSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF35360197833BB009CEAF0 /* MSDateSectionView.xib */; };
-		6AF3536319783418009CEAF0 /* MSContentSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3536219783418009CEAF0 /* MSContentSectionView.xib */; };
+		6AF35367197905BB009CEAF0 /* MSCreateLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */; };
 		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +48,6 @@
 /* Begin PBXFileReference section */
 		6A0ED7531977BAB4008BD0AE /* MSMailMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMailMan.h; sourceTree = "<group>"; };
 		6A0ED7541977BAB4008BD0AE /* MSMailMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMailMan.m; sourceTree = "<group>"; };
-		6A0ED7561977CDDE008BD0AE /* MSCreateLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCreateLettersTableViewController.h; sourceTree = "<group>"; };
-		6A0ED7571977CDDE008BD0AE /* MSCreateLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCreateLettersTableViewController.m; sourceTree = "<group>"; };
 		6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartasAlFuturo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A46B5621973C1D8001CF9C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,15 +81,8 @@
 		6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedTableViewCell.h; sourceTree = "<group>"; };
 		6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedTableViewCell.m; sourceTree = "<group>"; };
-		6AF3534D19782645009CEAF0 /* MSDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDateTableViewCell.h; sourceTree = "<group>"; };
-		6AF3534E19782645009CEAF0 /* MSDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDateTableViewCell.m; sourceTree = "<group>"; };
-		6AF353521978266D009CEAF0 /* MSContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSContentTableViewCell.h; sourceTree = "<group>"; };
-		6AF353531978266D009CEAF0 /* MSContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSContentTableViewCell.m; sourceTree = "<group>"; };
-		6AF3535719782E09009CEAF0 /* MSTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTitleTableViewCell.h; sourceTree = "<group>"; };
-		6AF3535819782E09009CEAF0 /* MSTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTitleTableViewCell.m; sourceTree = "<group>"; };
-		6AF3535E1978333B009CEAF0 /* MSTitleSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTitleSectionView.xib; sourceTree = "<group>"; };
-		6AF35360197833BB009CEAF0 /* MSDateSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSDateSectionView.xib; sourceTree = "<group>"; };
-		6AF3536219783418009CEAF0 /* MSContentSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSContentSectionView.xib; sourceTree = "<group>"; };
+		6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCreateLetterViewController.h; sourceTree = "<group>"; };
+		6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCreateLetterViewController.m; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,8 +213,6 @@
 				6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */,
 				6A46B5B01973E285001CF9C6 /* MSPendingLetterTableViewCell.h */,
 				6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */,
-				6AF3535D1978330A009CEAF0 /* Section xibs */,
-				6AF3535C197830E4009CEAF0 /* Dynamic cells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -237,14 +220,8 @@
 		6A46B59C1973C521001CF9C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B5CD19741853001CF9C6 /* CoreDataTableViewController.h */,
-				6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */,
-				6A46B5A71973D395001CF9C6 /* MSPendingTableViewController.h */,
-				6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */,
-				6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */,
-				6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */,
-				6A0ED7561977CDDE008BD0AE /* MSCreateLettersTableViewController.h */,
-				6A0ED7571977CDDE008BD0AE /* MSCreateLettersTableViewController.m */,
+				6AF353681979181D009CEAF0 /* Creation controllers */,
+				6AF353641979058E009CEAF0 /* Main controllers */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,27 +246,26 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		6AF3535C197830E4009CEAF0 /* Dynamic cells */ = {
+		6AF353641979058E009CEAF0 /* Main controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6AF3535719782E09009CEAF0 /* MSTitleTableViewCell.h */,
-				6AF3535819782E09009CEAF0 /* MSTitleTableViewCell.m */,
-				6AF3534D19782645009CEAF0 /* MSDateTableViewCell.h */,
-				6AF3534E19782645009CEAF0 /* MSDateTableViewCell.m */,
-				6AF353521978266D009CEAF0 /* MSContentTableViewCell.h */,
-				6AF353531978266D009CEAF0 /* MSContentTableViewCell.m */,
+				6A46B5CD19741853001CF9C6 /* CoreDataTableViewController.h */,
+				6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */,
+				6A46B5A71973D395001CF9C6 /* MSPendingTableViewController.h */,
+				6A46B5A81973D395001CF9C6 /* MSPendingTableViewController.m */,
+				6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */,
+				6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */,
 			);
-			name = "Dynamic cells";
+			name = "Main controllers";
 			sourceTree = "<group>";
 		};
-		6AF3535D1978330A009CEAF0 /* Section xibs */ = {
+		6AF353681979181D009CEAF0 /* Creation controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6AF3535E1978333B009CEAF0 /* MSTitleSectionView.xib */,
-				6AF35360197833BB009CEAF0 /* MSDateSectionView.xib */,
-				6AF3536219783418009CEAF0 /* MSContentSectionView.xib */,
+				6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */,
+				6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */,
 			);
-			name = "Section xibs";
+			name = "Creation controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +344,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AF3536319783418009CEAF0 /* MSContentSectionView.xib in Resources */,
-				6AF3535F1978333B009CEAF0 /* MSTitleSectionView.xib in Resources */,
 				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
 				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
 				6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */,
-				6AF35361197833BB009CEAF0 /* MSDateSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,22 +365,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AF35367197905BB009CEAF0 /* MSCreateLetterViewController.m in Sources */,
 				6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */,
-				6AF353551978266D009CEAF0 /* MSContentTableViewCell.m in Sources */,
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
 				6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */,
-				6AF3535A19782E09009CEAF0 /* MSTitleTableViewCell.m in Sources */,
 				6A46B5CC19740E82001CF9C6 /* Letter.m in Sources */,
 				6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
 				6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */,
-				6A0ED7581977CDDE008BD0AE /* MSCreateLettersTableViewController.m in Sources */,
 				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,
 				6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */,
-				6AF3535019782645009CEAF0 /* MSDateTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
