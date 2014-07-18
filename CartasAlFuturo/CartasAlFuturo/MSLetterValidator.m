@@ -7,13 +7,26 @@
 //
 
 #import "MSLetterValidator.h"
+#import "Letter+myAPI.h"
 
 @implementation MSLetterValidator
 
 -(BOOL)isAValidLetter:(Letter*)letter{
-    
+    if (![self isAValidLetterTitle:letter.letterTitle]){
+        return NO;
+    }
+    if (![self isAValidLetterOpenDate:letter.letterOpenDate]) {
+        return NO;
+    }
+    if (![self isAValidLetterContent:letter.letterContent]) {
+        return NO;
+    }
+    if (![self isAValidLetterSendDate:letter.letterSendDate]) {
+        return NO;
+    }
     return YES;
 }
+
 -(BOOL)isAValidLetterTitle:(NSString*)letterTitle{
     if (letterTitle.length > 100 || letterTitle.length < 1) {
         return NO;
@@ -25,6 +38,7 @@
     }
     return YES;
 }
+
 -(BOOL)isAValidLetterOpenDate:(NSDate*)letterOpenDate{
     //Minimo un dia
     NSDate *now = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
@@ -33,6 +47,7 @@
     }
     return YES;
 }
+
 -(BOOL)isAValidLetterContent:(NSString*)letterContent{
     if (letterContent.length < 1) {
         return NO;
@@ -45,4 +60,10 @@
     return YES;
 }
 
+-(BOOL)isAValidLetterSendDate:(NSDate*)date{
+    if (date == nil) {
+        return NO;
+    }
+    return YES;
+}
 @end

@@ -33,7 +33,7 @@
 		6AF35367197905BB009CEAF0 /* MSCreateLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */; };
 		6AF3536B1979312D009CEAF0 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A1979312D009CEAF0 /* Letter.m */; };
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
-		6AF35371197937D0009CEAF0 /* LetterValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35370197937D0009CEAF0 /* LetterValidatorTests.m */; };
+		6AF35373197955F5009CEAF0 /* MSLetterValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */; };
 		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +87,7 @@
 		6AF3536A1979312D009CEAF0 /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 		6AF3536D197931B6009CEAF0 /* MSLetterValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLetterValidator.h; sourceTree = "<group>"; };
 		6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidator.m; sourceTree = "<group>"; };
-		6AF35370197937D0009CEAF0 /* LetterValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterValidatorTests.m; sourceTree = "<group>"; };
+		6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidatorTests.m; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,7 +186,7 @@
 		6A46B5811973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
 			isa = PBXGroup;
 			children = (
-				6AF35370197937D0009CEAF0 /* LetterValidatorTests.m */,
+				6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */,
 				6A46B5C41973F445001CF9C6 /* LetterTests.m */,
 				6A46B5C21973E97A001CF9C6 /* NSDateTests.m */,
 				6A46B5821973C1D8001CF9C6 /* Supporting Files */,
@@ -396,8 +396,8 @@
 			files = (
 				6A46B5C31973E97A001CF9C6 /* NSDateTests.m in Sources */,
 				6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */,
-				6AF35371197937D0009CEAF0 /* LetterValidatorTests.m in Sources */,
 				6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */,
+				6AF35373197955F5009CEAF0 /* MSLetterValidatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

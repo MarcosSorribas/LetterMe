@@ -8,20 +8,23 @@
 
 #import "MSCreateLetterViewController.h"
 #import "Letter+myAPI.h"
+#import "MSLetterValidator.h"
 
- enum : NSUInteger {
+enum : NSUInteger {
     TitleState = 0,
     DateState = 1,
     ContentState = 2,
     UnknowState = -1,
- }; typedef NSInteger ControllerState;
+}; typedef NSInteger ControllerState;
 
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate>
 
 #pragma mark -
 #pragma mark - Private properties
+
 @property (nonatomic) ControllerState controllerState;
 @property (nonatomic,strong) Letter *letter;
+@property (nonatomic,strong) MSLetterValidator *validator;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -42,14 +45,22 @@
 
 @implementation MSCreateLetterViewController
 
+NSInteger const oneDayInSeconds = 60*60*24;
+
+#pragma mark -
+#pragma mark - View methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setUpTitleState];
-    [self createALetterWithoutData];
-    
+    self.datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:oneDayInSeconds];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self createALetterWithoutData];
+}
 
 #pragma mark -
 #pragma mark - TextFieldDelegate methods
@@ -57,9 +68,6 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     self.letter.letterTitle = textField.text;
 }
-
-
-
 
 #pragma mark -
 #pragma mark - TextViewDelegate methods
@@ -71,8 +79,6 @@
 - (IBAction)createOpenDate:(UIDatePicker *)sender {
     self.letter.letterOpenDate =  sender.date;
 }
-
-
 
 #pragma mark -
 #pragma mark - Touched methods
@@ -157,14 +163,29 @@
                          [self.view layoutIfNeeded]; 
                      }];
 }
+
 #pragma mark -
 #pragma mark - IBAction
 
 - (IBAction)createLetter:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([self.validator isAValidLetter:self.letter]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
+
 - (IBAction)cancelLetter:(id)sender {
     [self.manageDocument.undoManager undo];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark -
+#pragma mark - Getters & Setters
+
+-(MSLetterValidator *)validator{
+    if (_validator == nil) {
+        _validator = [[MSLetterValidator alloc]init];
+    }
+    return _validator;
+}
+
 @end
