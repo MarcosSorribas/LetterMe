@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
+    //[MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
     
     [self prepareFirstController];
     

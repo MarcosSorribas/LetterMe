@@ -10,6 +10,7 @@
 #import "Letter+myAPI.h"
 #import "MSPendingLetterTableViewCell.h"
 #import "MSCreateLetterViewController.h"
+#import "MSMailMan.h"
 
 @implementation MSPendingTableViewController
 
@@ -31,7 +32,6 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +59,7 @@
 -(void)configureFetchResultController{
     NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
     self.fetchedResultsController = results;
+    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
 }
 
 
