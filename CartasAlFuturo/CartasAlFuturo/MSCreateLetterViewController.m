@@ -11,10 +11,9 @@
 #import "MSLetterValidator.h"
 
 enum : NSUInteger {
-    TitleState = 0,
-    DateState = 1,
-    ContentState = 2,
-    UnknowState = -1,
+    TitleState = 1,
+    DateState = 2,
+    ContentState = 3,
 }; typedef NSInteger ControllerState;
 
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate>
@@ -107,12 +106,11 @@ NSInteger const oneDayInSeconds = 60*60*24;
 -(void)createALetterWithoutData{
     [self.manageDocument.undoManager beginUndoGrouping];
     self.letter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
-    [self.manageDocument.undoManager endUndoGrouping];
+    
 }
 
 
 -(void)setUpTitleState{
-    self.controllerState = TitleState;
     [self.titleTextField becomeFirstResponder];
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:0.5
@@ -126,11 +124,13 @@ NSInteger const oneDayInSeconds = 60*60*24;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      }];
-
+    
+    [self temporalValidate];
+    self.controllerState = TitleState;
 }
 
 -(void)setUpDateState{
-    self.controllerState = DateState;
+    
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:0.5
                      animations:^{
@@ -144,11 +144,12 @@ NSInteger const oneDayInSeconds = 60*60*24;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      }];
-    
+    [self temporalValidate];
+    self.controllerState = DateState;
 }
 
 -(void)setUpContentState{
-    self.controllerState = ContentState;
+    
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:0.5
                      animations:^{
@@ -162,6 +163,31 @@ NSInteger const oneDayInSeconds = 60*60*24;
                          self.contentViewHeightConstraint.constant = 155+20;
                          [self.view layoutIfNeeded]; 
                      }];
+    [self temporalValidate];
+    self.controllerState = ContentState;
+}
+
+-(void)temporalValidate{
+    switch (self.controllerState) {
+        case TitleState:
+            if (![self.validator isAValidLetterTitle:self.letter.letterTitle]) {
+                NSLog(@"Errores en el titulo");
+            }
+            break;
+        case DateState:
+            if (![self.validator isAValidLetterOpenDate:self.letter.letterOpenDate]) {
+                NSLog(@"Errores en la fecha");
+            }
+            break;
+        case ContentState:
+            if (![self.validator isAValidLetterContent:self.letter.letterContent]) {
+                NSLog(@"Errores en el contenido");
+            }
+            break;
+        default:
+            break;
+    }
+
 }
 
 #pragma mark -
@@ -169,11 +195,15 @@ NSInteger const oneDayInSeconds = 60*60*24;
 
 - (IBAction)createLetter:(id)sender {
     if ([self.validator isAValidLetter:self.letter]) {
+        [self.manageDocument.undoManager endUndoGrouping];
         [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        NSLog(@"Tiene algun fallo, no podemos crearla");
     }
 }
 
 - (IBAction)cancelLetter:(id)sender {
+    [self.manageDocument.undoManager endUndoGrouping];
     [self.manageDocument.undoManager undo];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
