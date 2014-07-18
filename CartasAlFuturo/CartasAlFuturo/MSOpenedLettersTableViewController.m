@@ -9,6 +9,7 @@
 #import "MSOpenedLettersTableViewController.h"
 #import "Letter+myAPI.h"
 #import "MSOpenedTableViewCell.h"
+#import "MSCreateLetterViewController.h"
 
 @interface MSOpenedLettersTableViewController ()
 @end
@@ -77,22 +78,11 @@
     }
 }
 
--(void)setUpNextController:(UITableViewController*)myController{
-    //Oculto la tabBar
-    myController.hidesBottomBarWhenPushed = YES;
-    //Cambio el titulo del boton back
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar"
-                                                                      style:UIBarButtonItemStyleBordered
-                                                                     target:nil
-                                                                     action:nil];
-    [[self navigationItem] setBackBarButtonItem:newBackButton];
-    
-}
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 #warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
-    [self setUpNextController:[segue destinationViewController]];
+    MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
+    nextView.manageDocument = self.manageDocument;
 }
 
 @end

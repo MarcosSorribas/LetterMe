@@ -206,6 +206,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="DV6-YT-htg" id="UuF-bT-hB4"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Escribe un titulo para tu carta:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-n4-tSN">
                                                 <rect key="frame" x="20" y="37" width="207" height="18"/>
@@ -275,6 +278,9 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </mutableData>
                                                 </timeZone>
+                                                <connections>
+                                                    <action selector="createOpenDate:" destination="DV6-YT-htg" eventType="valueChanged" id="VQS-eU-zvd"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" red="0.56609260470602552" green="0.6796152232295809" blue="0.99675941469999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -317,6 +323,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="DV6-YT-htg" id="sRW-KM-naj"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.42351182552714678" green="0.99675941469999996" blue="0.40612060470575934" alpha="1" colorSpace="calibratedRGB"/>

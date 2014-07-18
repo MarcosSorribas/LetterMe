@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MSCreateLetterViewController : UIViewController
-
+@property (nonatomic,strong) UIManagedDocument *manageDocument;
 @end

@@ -9,6 +9,7 @@
 #import "MSPendingTableViewController.h"
 #import "Letter+myAPI.h"
 #import "MSPendingLetterTableViewCell.h"
+#import "MSCreateLetterViewController.h"
 
 @implementation MSPendingTableViewController
 
@@ -53,24 +54,6 @@
 }
 
 #pragma mark -
-#pragma mark - IBAction
-
-- (IBAction)addletterButtonTouched:(UIBarButtonItem*)sender {
-    [self.manageDocument.managedObjectContext.undoManager beginUndoGrouping];
-    Letter *newLetter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
-    newLetter.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:[self randomFloatBetween:0 and:100000000.00]];
-    int random = arc4random()%100;
-    NSLog(@"Soy %d",random);
-    newLetter.letterTitle = [NSString stringWithFormat:@"Soy %d",random];
-    [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
-}
-
-- (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {
-    float diff = bigNumber - smallNumber;
-    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
-}
-
-#pragma mark -
 #pragma mark - Private methods
 
 -(void)configureFetchResultController{
@@ -78,24 +61,17 @@
     self.fetchedResultsController = results;
 }
 
--(void)setUpNextController:(UITableViewController*)myController{
-    //Oculto la tabBar
-    myController.hidesBottomBarWhenPushed = YES;
-    //Cambio el titulo del boton back
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar"
-                                                                      style:UIBarButtonItemStyleBordered
-                                                                     target:nil
-                                                                     action:nil];
-    [[self navigationItem] setBackBarButtonItem:newBackButton];
-    
-}
+
 
 #pragma mark -
 #pragma mark - Navigation methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 #warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
-    [self setUpNextController:[segue destinationViewController]];
+    
+    
+    MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
+    nextView.manageDocument = self.manageDocument;
 }
 
 @end

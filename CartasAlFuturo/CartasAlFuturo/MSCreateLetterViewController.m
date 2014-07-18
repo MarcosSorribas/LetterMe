@@ -7,6 +7,7 @@
 //
 
 #import "MSCreateLetterViewController.h"
+#import "Letter+myAPI.h"
 
  enum : NSUInteger {
     TitleState = 0,
@@ -15,12 +16,12 @@
     UnknowState = -1,
  }; typedef NSInteger ControllerState;
 
-@interface MSCreateLetterViewController ()
+@interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate>
 
 #pragma mark -
 #pragma mark - Private properties
 @property (nonatomic) ControllerState controllerState;
-
+@property (nonatomic,strong) Letter *letter;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -45,7 +46,33 @@
 {
     [super viewDidLoad];
     [self setUpTitleState];
+    [self createALetterWithoutData];
+    
 }
+
+
+#pragma mark -
+#pragma mark - TextFieldDelegate methods
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    self.letter.letterTitle = textField.text;
+}
+
+
+
+
+#pragma mark -
+#pragma mark - TextViewDelegate methods
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    self.letter.letterContent = textView.text;
+}
+
+- (IBAction)createOpenDate:(UIDatePicker *)sender {
+    self.letter.letterOpenDate =  sender.date;
+}
+
+
 
 #pragma mark -
 #pragma mark - Touched methods
@@ -71,11 +98,18 @@
 #pragma mark -
 #pragma mark - Private methods
 
+-(void)createALetterWithoutData{
+    [self.manageDocument.undoManager beginUndoGrouping];
+    self.letter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
+    [self.manageDocument.undoManager endUndoGrouping];
+}
+
+
 -(void)setUpTitleState{
     self.controllerState = TitleState;
     [self.titleTextField becomeFirstResponder];
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:0.5
                      animations:^{
                          self.navigationItem.title = @"Escriba un titulo";
                          self.titleHeaderHeightConstraint.constant = 25;
@@ -92,7 +126,7 @@
 -(void)setUpDateState{
     self.controllerState = DateState;
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:0.5
                      animations:^{
                          [self.view endEditing:YES];
                          self.navigationItem.title = @"Elija fecha de entrega";
@@ -110,7 +144,7 @@
 -(void)setUpContentState{
     self.controllerState = ContentState;
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:0.5
                      animations:^{
                          [self.contentTextView becomeFirstResponder];
                          self.navigationItem.title = @"Escriba una carta";
@@ -123,7 +157,6 @@
                          [self.view layoutIfNeeded]; 
                      }];
 }
-
 #pragma mark -
 #pragma mark - IBAction
 
@@ -131,6 +164,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)cancelLetter:(id)sender {
+    [self.manageDocument.undoManager undo];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
