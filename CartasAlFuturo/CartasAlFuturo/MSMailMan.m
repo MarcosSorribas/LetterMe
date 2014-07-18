@@ -24,7 +24,9 @@
         [document.managedObjectContext.undoManager endUndoGrouping];
     }
 
-    //Avisar al usuario?
+    if (letters.count != 0) {
+        //Avisar al usuario?
+    }
 }
 
 @end

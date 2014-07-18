@@ -217,5 +217,4 @@ NSInteger const oneDayInSeconds = 60*60*24;
     }
     return _validator;
 }
-
 @end
