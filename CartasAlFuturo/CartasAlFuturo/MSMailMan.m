@@ -28,7 +28,7 @@
 
     if (letters.count != 0) {
         UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"AlertReadyToOpenLetterView" owner:[MSPendingTableViewController class] options:nil]firstObject];
-        view.frame = CGRectMake(0, 0, 280, 120);
+        view.frame = CGRectMake(0, 0, 280, 140);
         [CXCardView showWithView:view draggable:YES];
     }
 }

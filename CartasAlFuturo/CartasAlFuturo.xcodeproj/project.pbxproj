@@ -39,6 +39,7 @@
 		6AF353781979651C009CEAF0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6AF353771979651B009CEAF0 /* Podfile */; };
 		6AF353BF19796934009CEAF0 /* AlertReadyToOpenLetterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */; };
 		6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */; };
+		6AF353C6197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353C5197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m */; };
 		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,8 @@
 		6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertReadyToOpenLetterView.xib; sourceTree = "<group>"; };
 		6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadyToOpenTableViewCell.h; sourceTree = "<group>"; };
 		6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadyToOpenTableViewCell.m; sourceTree = "<group>"; };
+		6AF353C4197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFirstTimeReadLetterViewController.h; sourceTree = "<group>"; };
+		6AF353C5197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFirstTimeReadLetterViewController.m; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 		F21CB0E9CC604B56978CCB7F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +248,8 @@
 			children = (
 				6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */,
 				6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */,
+				6AF353C4197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.h */,
+				6AF353C5197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m */,
 				6AF353681979181D009CEAF0 /* Creation controllers */,
 				6AF353641979058E009CEAF0 /* Main controllers */,
 			);
@@ -445,6 +450,7 @@
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */,
 				6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */,
+				6AF353C6197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m in Sources */,
 				6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
 				6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */,

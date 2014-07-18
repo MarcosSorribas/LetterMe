@@ -12,17 +12,10 @@
 #import "MSCreateLetterViewController.h"
 #import "MSReadyToOpenTableViewCell.h"
 #import "MSMailMan.h"
+#import "MSFirstTimeReadLetterViewController.h"
 
 @implementation MSPendingTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -62,6 +55,19 @@
 }
 
 #pragma mark -
+#pragma mark - TableViewDelegate
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return indexPath;
+}
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return indexPath;
+}
+
+#pragma mark -
 #pragma mark - Private methods
 
 -(void)configureFetchResultController{
@@ -76,9 +82,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 #warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
     
-    
-    MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
-    nextView.manageDocument = self.manageDocument;
+    if ([[segue destinationViewController] isKindOfClass:[MSFirstTimeReadLetterViewController class]]) {
+        MSFirstTimeReadLetterViewController *controller = [segue destinationViewController];
+        controller.letter = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    }else{
+        MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
+        nextView.manageDocument = self.manageDocument;
+    }
 }
 
 @end
