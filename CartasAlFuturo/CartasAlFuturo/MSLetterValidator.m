@@ -28,7 +28,7 @@
 }
 
 -(BOOL)isAValidLetterTitle:(NSString*)letterTitle{
-    if (letterTitle.length > 100 || letterTitle.length < 1) {
+    if (letterTitle.length > 50 || letterTitle.length < 1) {
         return NO;
     }
     NSString *aux = letterTitle;

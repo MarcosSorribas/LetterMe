@@ -34,6 +34,7 @@
 		6AF3536B1979312D009CEAF0 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A1979312D009CEAF0 /* Letter.m */; };
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
 		6AF35373197955F5009CEAF0 /* MSLetterValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */; };
+		6AF35376197961F2009CEAF0 /* MSReadLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */; };
 		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		6AF3536D197931B6009CEAF0 /* MSLetterValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLetterValidator.h; sourceTree = "<group>"; };
 		6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidator.m; sourceTree = "<group>"; };
 		6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidatorTests.m; sourceTree = "<group>"; };
+		6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadLetterViewController.h; sourceTree = "<group>"; };
+		6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadLetterViewController.m; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +231,8 @@
 		6A46B59C1973C521001CF9C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */,
+				6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */,
 				6AF353681979181D009CEAF0 /* Creation controllers */,
 				6AF353641979058E009CEAF0 /* Main controllers */,
 			);
@@ -383,6 +388,7 @@
 				6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
+				6AF35376197961F2009CEAF0 /* MSReadLetterViewController.m in Sources */,
 				6AF3536B1979312D009CEAF0 /* Letter.m in Sources */,
 				6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */,
 				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,
