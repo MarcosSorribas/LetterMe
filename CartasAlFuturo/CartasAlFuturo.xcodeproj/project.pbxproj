@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED7541977BAB4008BD0AE /* MSMailMan.m */; };
-		6A0ED7581977CDDE008BD0AE /* MSCreateLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED7571977CDDE008BD0AE /* MSCreateLettersTableViewController.m */; };
 		6A46B5631973C1D8001CF9C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5621973C1D8001CF9C6 /* Foundation.framework */; };
 		6A46B5651973C1D8001CF9C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */; };
 		6A46B5671973C1D8001CF9C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5661973C1D8001CF9C6 /* UIKit.framework */; };
@@ -49,8 +48,6 @@
 /* Begin PBXFileReference section */
 		6A0ED7531977BAB4008BD0AE /* MSMailMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMailMan.h; sourceTree = "<group>"; };
 		6A0ED7541977BAB4008BD0AE /* MSMailMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMailMan.m; sourceTree = "<group>"; };
-		6A0ED7561977CDDE008BD0AE /* MSCreateLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCreateLettersTableViewController.h; sourceTree = "<group>"; };
-		6A0ED7571977CDDE008BD0AE /* MSCreateLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCreateLettersTableViewController.m; sourceTree = "<group>"; };
 		6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartasAlFuturo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A46B5621973C1D8001CF9C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -223,10 +220,7 @@
 		6A46B59C1973C521001CF9C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6A0ED7561977CDDE008BD0AE /* MSCreateLettersTableViewController.h */,
-				6A0ED7571977CDDE008BD0AE /* MSCreateLettersTableViewController.m */,
-				6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */,
-				6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */,
+				6AF353681979181D009CEAF0 /* Creation controllers */,
 				6AF353641979058E009CEAF0 /* Main controllers */,
 			);
 			name = Controller;
@@ -263,6 +257,15 @@
 				6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */,
 			);
 			name = "Main controllers";
+			sourceTree = "<group>";
+		};
+		6AF353681979181D009CEAF0 /* Creation controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */,
+				6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */,
+			);
+			name = "Creation controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,7 +376,6 @@
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
 				6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */,
-				6A0ED7581977CDDE008BD0AE /* MSCreateLettersTableViewController.m in Sources */,
 				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,
 				6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */,
 			);
