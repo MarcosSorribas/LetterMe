@@ -23,6 +23,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 
 #pragma mark -
@@ -75,6 +77,7 @@
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:1
                      animations:^{
+                         self.navigationItem.title = @"Escriba un titulo";
                          self.titleHeaderHeightConstraint.constant = 25;
                          self.titleViewHeightConstraint.constant = 155;
                          self.dateHeaderHeightConstraint.constant = 55;
@@ -88,10 +91,11 @@
 
 -(void)setUpDateState{
     self.controllerState = DateState;
-    [self.view endEditing:YES];
     [self.view layoutIfNeeded];
     [UIView animateWithDuration:1
                      animations:^{
+                         [self.view endEditing:YES];
+                         self.navigationItem.title = @"Elija fecha de entrega";
                          self.titleHeaderHeightConstraint.constant = 55;
                          self.titleViewHeightConstraint.constant = 0;
                          self.dateHeaderHeightConstraint.constant = 25;
@@ -105,14 +109,17 @@
 
 -(void)setUpContentState{
     self.controllerState = ContentState;
+    [self.view layoutIfNeeded];
     [UIView animateWithDuration:1
                      animations:^{
-                         self.titleHeaderHeightConstraint.constant = 55;
+                         [self.contentTextView becomeFirstResponder];
+                         self.navigationItem.title = @"Escriba una carta";
+                         self.titleHeaderHeightConstraint.constant = 45;
                          self.titleViewHeightConstraint.constant = 0;
-                         self.dateHeaderHeightConstraint.constant = 55;
+                         self.dateHeaderHeightConstraint.constant = 45;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentHeaderHeightConstraint.constant = 25;
-                         self.contentViewHeightConstraint.constant = 155;
+                         self.contentViewHeightConstraint.constant = 155+20;
                          [self.view layoutIfNeeded]; 
                      }];
 }
