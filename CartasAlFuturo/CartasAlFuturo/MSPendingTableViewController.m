@@ -10,6 +10,7 @@
 #import "Letter+myAPI.h"
 #import "MSPendingLetterTableViewCell.h"
 #import "MSCreateLetterViewController.h"
+#import "MSReadyToOpenTableViewCell.h"
 #import "MSMailMan.h"
 
 @implementation MSPendingTableViewController
@@ -48,16 +49,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     if ([letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSPending]]) {
-        
+        MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MSPendingLetterTableViewCell" forIndexPath:indexPath];
+        cell.letter = letter;
+        return cell;
     }else{
-        //ready to open
-    
+        MSReadyToOpenTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MSReadyToOpenTableViewCell" forIndexPath:indexPath];
+        cell.letter = letter;
+        return cell;
     }
-    
-    MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MSPendingLetterTableViewCell" forIndexPath:indexPath];
-    cell.letter = letter;
-    return cell;
 }
 
 #pragma mark -
@@ -68,8 +69,6 @@
     self.fetchedResultsController = results;
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
 }
-
-
 
 #pragma mark -
 #pragma mark - Navigation methods

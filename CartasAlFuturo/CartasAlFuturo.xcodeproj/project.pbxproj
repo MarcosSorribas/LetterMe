@@ -234,13 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */,
-				6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */,
-				6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */,
-				6A46B5B01973E285001CF9C6 /* MSPendingLetterTableViewCell.h */,
-				6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */,
 				6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */,
-				6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */,
-				6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */,
+				6AF353C31979796F009CEAF0 /* Cells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -296,6 +291,19 @@
 				6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */,
 			);
 			name = "Creation controllers";
+			sourceTree = "<group>";
+		};
+		6AF353C31979796F009CEAF0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */,
+				6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */,
+				6A46B5B01973E285001CF9C6 /* MSPendingLetterTableViewCell.h */,
+				6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */,
+				6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */,
+				6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,27 +8,21 @@
 
 #import "MSReadyToOpenTableViewCell.h"
 
+@interface MSReadyToOpenTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@end
 @implementation MSReadyToOpenTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)setLetter:(Letter *)letter{
+    _letter = letter;
+    self.titelLabel.text = _letter.letterTitle;
+    self.dateLabel.text = [_letter.letterOpenDate description];
+    self.statusLabel.text = [_letter.letterStatus description];
 }
 
 @end
