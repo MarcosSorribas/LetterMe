@@ -47,8 +47,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pendingLetterCell" forIndexPath:indexPath];
     Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSPending]]) {
+        
+    }else{
+        //ready to open
+    
+    }
+    
+    MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MSPendingLetterTableViewCell" forIndexPath:indexPath];
     cell.letter = letter;
     return cell;
 }
