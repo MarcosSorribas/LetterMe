@@ -17,9 +17,13 @@
 
 @interface MSCreateLetterViewController ()
 
+#pragma mark -
+#pragma mark - Private properties
+@property (nonatomic) ControllerState controllerState;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
-@property (nonatomic) ControllerState controllerState;
 
 #pragma mark -
 #pragma mark - Constains
@@ -45,16 +49,21 @@
 #pragma mark - Touched methods
 
 - (IBAction)titleHeaderTouched:(UITapGestureRecognizer *)sender {
-    [self setUpTitleState];
+    if (self.controllerState != TitleState) {
+        [self setUpTitleState];
+    }
 }
 
 - (IBAction)dateHeaderTouched:(UITapGestureRecognizer *)sender {
-    [self setUpDateState];
-
+    if (self.controllerState != DateState) {
+        [self setUpDateState];
+    }
 }
 
 - (IBAction)contentHeaderTouched:(UITapGestureRecognizer *)sender {
-    [self setUpContentState];
+    if (self.controllerState != ContentState) {
+        [self setUpContentState];
+    }
 }
 
 #pragma mark -
@@ -72,7 +81,7 @@
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.contentViewHeightConstraint.constant = 0;
-                         [self.view layoutIfNeeded]; // Called on parent view
+                         [self.view layoutIfNeeded];
                      }];
 
 }
@@ -89,7 +98,7 @@
                          self.dateViewHeightConstraint.constant = 155+214;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.contentViewHeightConstraint.constant = 0;
-                         [self.view layoutIfNeeded]; // Called on parent view
+                         [self.view layoutIfNeeded];
                      }];
     
 }
@@ -104,7 +113,7 @@
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentHeaderHeightConstraint.constant = 25;
                          self.contentViewHeightConstraint.constant = 155;
-                         [self.view layoutIfNeeded]; // Called on parent view
+                         [self.view layoutIfNeeded]; 
                      }];
 }
 
