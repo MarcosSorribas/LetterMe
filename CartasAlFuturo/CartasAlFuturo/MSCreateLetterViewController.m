@@ -8,54 +8,55 @@
 
 #import "MSCreateLetterViewController.h"
 
+ enum : NSUInteger {
+    TitleState = 0,
+    DateState = 1,
+    ContentState = 2,
+    UnknowState = -1,
+ }; typedef NSInteger ControllerState;
+
+
 @interface MSCreateLetterViewController ()<UITextFieldDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
+@property (nonatomic) ControllerState controllerState;
+
+#pragma mark -
+#pragma mark - Constains
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeaderHeightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewHeightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateViewHeightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
 
 @end
 
 @implementation MSCreateLetterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setUpInitial];
+    [self setUpTitleState];
 }
 
 #pragma mark -
 #pragma mark - Touched methods
 
 - (IBAction)titleHeaderTouched:(UITapGestureRecognizer *)sender {
-    
+    [self setUpTitleState];
 }
 
 - (IBAction)dateHeaderTouched:(UITapGestureRecognizer *)sender {
+    [self setUpDateState];
 
 }
 
 - (IBAction)contentHeaderTouched:(UITapGestureRecognizer *)sender {
-    
+    [self setUpContentState];
 }
 
 
@@ -63,10 +64,30 @@
 #pragma mark -
 #pragma mark - Private methods
 
--(void)setUpInitial{
+-(void)setUpTitleState{
+    self.controllerState = TitleState;
     [self.titleTextField becomeFirstResponder];
+}
 
+-(void)setUpDateState{
+    self.controllerState = DateState;
+    [self.view endEditing:YES];
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:1
+                     animations:^{
+                         self.titleHeaderHeightConstraint.constant = 55;
+                         self.titleViewHeightConstraint.constant = 0;
+                         self.dateHeaderHeightConstraint.constant = 25;
+                         self.dateViewHeightConstraint.constant = 155+214;
+                         self.contentHeaderHeightConstraint.constant = 55;
+                         self.contentViewHeightConstraint.constant = 0;
+                         [self.view layoutIfNeeded]; // Called on parent view
+                     }];
+    
+}
 
+-(void)setUpContentState{
+    self.controllerState = ContentState;
 }
 
 
