@@ -52,6 +52,12 @@
     XCTAssertFalse([sut isAValidLetterContent:@""], @"Content can't be empty");
     
     XCTAssertFalse([sut isAValidLetterContent:@"         "], @"Content can't be only whiteSpaces");
+}
+- (void) testIsAValidLetterOpenDate{
+    MSLetterValidator *sut = [[MSLetterValidator alloc]init];
+
+    XCTAssertTrue([sut isAValidLetterOpenDate:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30]], @"This date should be a correct date");
+    XCTAssertFalse([sut isAValidLetterOpenDate:[NSDate date]], @"This date can't be a correct date ");
     
     
 }
