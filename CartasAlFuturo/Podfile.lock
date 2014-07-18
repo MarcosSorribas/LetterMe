@@ -1,0 +1,10 @@
+PODS:
+  - CXCardView (1.0.0)
+
+DEPENDENCIES:
+  - CXCardView
+
+SPEC CHECKSUMS:
+  CXCardView: 113ff84aceb858d5faf3e610ac3ff524f95b9c21
+
+COCOAPODS: 0.33.1
