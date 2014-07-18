@@ -118,11 +118,7 @@
     sut.letterOpenDate = date;
     XCTAssertEqualObjects(sut.letterOpenDate, date, @"Letter openDate should be equal to date");
 }
-- (void)testCanCreateAletterAndSetHisDescription{
-    NSString *descripcionPrueba = @"Esta es mi descripcion de prueba.";
-    sut.letterDescription = descripcionPrueba;
-    XCTAssertEqualObjects(sut.letterDescription, descripcionPrueba, @"Letter description should be equal to descripcionPrueba");
-}
+
 
 - (void)testCanCreateAletterAndSetHisStatus{
     sut.letterStatus = [NSNumber numberWithInt:MSReadyToOpen];
