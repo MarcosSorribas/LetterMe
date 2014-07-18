@@ -14,7 +14,6 @@
     
     return YES;
 }
-
 -(BOOL)isAValidLetterTitle:(NSString*)letterTitle{
     if (letterTitle.length > 100 || letterTitle.length < 1) {
         return NO;
@@ -31,8 +30,14 @@
     return YES;
 }
 -(BOOL)isAValidLetterContent:(NSString*)letterContent{
-
-
+    if (letterContent.length < 1) {
+        return NO;
+    }
+    NSString *aux = letterContent;
+    aux = [aux stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (aux.length == 0) {
+        return NO;
+    }
     return YES;
 }
 
