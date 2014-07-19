@@ -19,4 +19,12 @@
     [components setDay:day];
     return [calendar dateFromComponents:components];
 }
+
+//-(NSString *)dateWithMyFormat{
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    NSDateComponents *components = [calendar components:(NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:self];
+//    NSString *date = [NSString stringWithFormat:@"%d de %ld del %ld",components.day,components.month,components.year];
+//    return date;
+//}
+
 @end

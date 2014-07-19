@@ -9,6 +9,7 @@
 #import "MSCreateLetterViewController.h"
 #import "Letter+myAPI.h"
 #import "MSLetterValidator.h"
+#import "MSCustomPickerView.h"
 
 enum : NSUInteger {
     TitleState = 1,
@@ -17,7 +18,7 @@ enum : NSUInteger {
     EmptyState = 4,
 }; typedef NSInteger ControllerState;
 
-@interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate>
+@interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate>
 
 #pragma mark -
 #pragma mark - Private properties
@@ -25,10 +26,11 @@ enum : NSUInteger {
 @property (nonatomic) ControllerState controllerState;
 @property (nonatomic,strong) Letter *letter;
 @property (nonatomic,strong) MSLetterValidator *validator;
-
+@property (nonatomic,strong) MSCustomPickerView *customPicker;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *datePicker;
+
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
@@ -50,19 +52,23 @@ enum : NSUInteger {
 
 @implementation MSCreateLetterViewController
 
-NSInteger const oneDayInSeconds = 60*60*24;
 CGFloat const animationDuration = 0.3;
 
 #pragma mark -
 #pragma mark - View methods
 
+-(void)configurePicker{
+    self.datePicker.dataSource = self.customPicker;
+    self.datePicker.delegate = self.customPicker;
+    self.customPicker.delegate = self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self viewInEmptyState];
-    
-    self.datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:oneDayInSeconds];
+    [self configurePicker];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -75,7 +81,9 @@ CGFloat const animationDuration = 0.3;
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     self.letter.letterTitle = textField.text;
-    self.titleHeader.text = textField.text;
+    if ([self.validator isAValidLetterTitle:textField.text]) {
+        self.titleHeader.text = textField.text;
+    }
 }
 
 #pragma mark -
@@ -85,8 +93,9 @@ CGFloat const animationDuration = 0.3;
     self.letter.letterContent = textView.text;
 }
 
-- (IBAction)createOpenDate:(UIDatePicker *)sender {
-    self.letter.letterOpenDate =  sender.date;
+-(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
+    self.letter.letterOpenDate = date;
+    self.dateHeader.text = name;
 }
 
 #pragma mark -
@@ -259,5 +268,11 @@ CGFloat const animationDuration = 0.3;
         _validator = [[MSLetterValidator alloc]init];
     }
     return _validator;
+}
+-(MSCustomPickerView *)customPicker{
+    if (!_customPicker) {
+        _customPicker = [[MSCustomPickerView alloc]init];
+    }
+    return _customPicker;
 }
 @end
