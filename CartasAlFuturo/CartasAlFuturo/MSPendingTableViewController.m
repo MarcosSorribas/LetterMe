@@ -14,12 +14,14 @@
 #import "MSLetterItemProtocol.h"
 #import "MSCellDrawerProtocol.h"
 
+@interface MSPendingTableViewController ()
+@end
+
 @implementation MSPendingTableViewController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self checkNewLetterStatus];
-
 }
 
 - (void)viewDidLoad
