@@ -41,6 +41,7 @@ enum : NSUInteger {
 #pragma mark -
 #pragma mark - Constains
 
+@property (weak, nonatomic) IBOutlet UIView *dateView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
@@ -183,7 +184,6 @@ CGFloat const animationDuration = 0.3;
 -(void)viewInContentState{
     [UIView animateWithDuration:animationDuration
                      animations:^{
-                         [self.contentTextView becomeFirstResponder];
                          self.navigationItem.title = @"Escriba una carta";
                          self.titleHeaderHeightConstraint.constant = 55;
                          self.titleViewHeightConstraint.constant = 0;
@@ -191,6 +191,7 @@ CGFloat const animationDuration = 0.3;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.contentViewHeightConstraint.constant = 125;
+                         [self.contentTextView becomeFirstResponder];
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          [self temporalValidate];
