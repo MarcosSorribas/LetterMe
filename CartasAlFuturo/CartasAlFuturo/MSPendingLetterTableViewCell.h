@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Letter.h"
 @interface MSPendingLetterTableViewCell : UITableViewCell
-@property (nonatomic,strong,readwrite) Letter *letter;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
+
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "MSReadLetterViewController.h"
+#import "LetterStatusEnum.h"
+#import "NSNumber+MSStatusLetter.h"
 
 @interface MSReadLetterViewController ()
 
@@ -27,7 +29,13 @@
 -(void)loadLetter{
     self.sendDateLabel.text = [self.letter.letterSendDate description];
     self.contentLabel.text = self.letter.letterContent;
-    self.navigationController.title = self.letter.letterTitle;
+    self.navigationItem.title = self.letter.letterTitle;
 }
 
+-(void)setLetter:(Letter *)letter{
+    _letter = letter;
+    if ([_letter.letterStatus statusValue] == MSReadyToOpen) {
+        _letter.letterStatus = [NSNumber numberWithInt:MSRead];
+    }
+}
 @end

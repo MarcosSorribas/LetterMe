@@ -10,4 +10,5 @@
 
 @interface MSMailMan : NSObject
 +(void)checkLettersPreparedAndUpdateThemInContext:(UIManagedDocument*)document;
+-(void)showAlertViewIfLettersArePrepared:(UIManagedDocument*)document;
 @end

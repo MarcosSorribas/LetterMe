@@ -11,17 +11,17 @@
 #import "MSMailMan.h"
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
+@property (nonatomic,strong) MSMailMan *mailMan;
 @end
 
 @implementation MSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
-    
+
     [self prepareFirstController];
-    
+    [self mailManStart];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mailManStart) name:UIDocumentStateChangedNotification object:self.managedDocument];
     return YES;
 }
 
@@ -45,9 +45,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
-    
+    [self mailManStart];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -57,6 +55,11 @@
 
 #pragma mark -
 #pragma mark - Controllers methods
+
+
+-(void)mailManStart{
+    [self.mailMan showAlertViewIfLettersArePrepared:self.managedDocument];
+}
 
 -(void)prepareFirstController{
     
@@ -98,4 +101,15 @@
 -(NSURL*)getDocumentsDirectory{
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+#pragma mark -
+#pragma mark - Getters & Setters
+
+-(MSMailMan *)mailMan{
+    if (!_mailMan) {
+        _mailMan = [[MSMailMan alloc]init];
+    }
+    return _mailMan;
+}
+
 @end

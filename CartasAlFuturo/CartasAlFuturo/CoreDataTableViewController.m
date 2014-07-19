@@ -7,6 +7,10 @@
 
 #import "CoreDataTableViewController.h"
 
+
+#import "MSReadLetterViewController.h"
+#import "MSCreateLetterViewController.h"
+
 @interface CoreDataTableViewController()
 @property (nonatomic) BOOL beganUpdates;
 @end
@@ -170,4 +174,16 @@
     }
 }
 
+#pragma mark -
+#pragma mark - Marcos methods
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:NSStringFromClass([MSReadLetterViewController class])]) {
+        MSReadLetterViewController *dController = [segue destinationViewController];
+        dController.letter = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    }else if ([[segue identifier] isEqualToString:NSStringFromClass([MSCreateLetterViewController class])]){
+        MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
+        nextView.manageDocument = self.manageDocument;
+    }
+}
 @end

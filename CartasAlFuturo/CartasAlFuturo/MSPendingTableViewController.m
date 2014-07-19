@@ -8,49 +8,58 @@
 
 #import "MSPendingTableViewController.h"
 #import "Letter+myAPI.h"
-#import "MSPendingLetterTableViewCell.h"
-#import "MSCreateLetterViewController.h"
+
+#import "MSMailMan.h"
+
+#import "MSLetterItemProtocol.h"
+#import "MSCellDrawerProtocol.h"
+
+@interface MSPendingTableViewController ()
+@end
 
 @implementation MSPendingTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self configureFetchResultController];
+    [self checkNewLetterStatus];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self configureFetchResultController];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
-
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 #pragma mark -
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pendingLetterCell" forIndexPath:indexPath];
-    Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.letter = letter;
+    
+    id<MSLetterItemProtocol> item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UITableViewCell *cell = [item.cellDrawer cellForTableView:tableView atIndexPath:indexPath];
+    
+    [item.cellDrawer drawCell:cell withItem:item];
+    
     return cell;
+    
+}
+
+#pragma mark -
+#pragma mark - TableViewDelegate
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return indexPath;
+}
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return indexPath;
 }
 
 #pragma mark -
@@ -61,17 +70,14 @@
     self.fetchedResultsController = results;
 }
 
-
+-(void)checkNewLetterStatus{
+    [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
+}
 
 #pragma mark -
 #pragma mark - Navigation methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-#warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
-    
-    
-    MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
-    nextView.manageDocument = self.manageDocument;
+    [super prepareForSegue:segue sender:sender];    
 }
-
 @end

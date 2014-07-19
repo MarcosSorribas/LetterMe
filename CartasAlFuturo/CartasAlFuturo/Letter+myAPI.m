@@ -44,7 +44,7 @@ NSTimeInterval const predeterminedTime = 24*60*60; //Segundos de 1 dia.
 
 +(NSArray*)checkReadyToOpenLettersInContext:(NSManagedObjectContext *) context{
     NSDate *now = [NSDate date];
-    NSPredicate *onlyNextReadyToOpenLetters = [NSPredicate predicateWithFormat:@"(letterStatus == %d AND letterOpenDate <= %@)",MSPending,now];
+    NSPredicate *onlyNextReadyToOpenLetters = [NSPredicate predicateWithFormat:@"(letterStatus == %d) AND (letterOpenDate <= %@)",MSPending,now];
     NSSortDescriptor *orderByDate = [NSSortDescriptor sortDescriptorWithKey:@"letterOpenDate" ascending:YES];
 
     NSFetchRequest *fetch = [Letter configureFetchWithSortDescriptor:orderByDate andPredicate:onlyNextReadyToOpenLetters];

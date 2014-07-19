@@ -35,6 +35,13 @@
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
 		6AF35373197955F5009CEAF0 /* MSLetterValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */; };
 		6AF35376197961F2009CEAF0 /* MSReadLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */; };
+		6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */; };
+		6AF353CD197A868F009CEAF0 /* MSPendingLetterDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353CC197A868F009CEAF0 /* MSPendingLetterDrawer.m */; };
+		6AF353D0197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353CF197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m */; };
+		6AF353D3197A86BE009CEAF0 /* MSOpenedLetterDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353D2197A86BE009CEAF0 /* MSOpenedLetterDrawer.m */; };
+		6AF353D6197A89BF009CEAF0 /* Letter+DrawerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353D5197A89BF009CEAF0 /* Letter+DrawerItem.m */; };
+		6AF353DD197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353DC197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m */; };
+		6AF353E2197ACD7C009CEAF0 /* MSCustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353E1197ACD7C009CEAF0 /* MSCustomPickerView.m */; };
 		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +98,23 @@
 		6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidatorTests.m; sourceTree = "<group>"; };
 		6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadLetterViewController.h; sourceTree = "<group>"; };
 		6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadLetterViewController.m; sourceTree = "<group>"; };
+		6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadyToOpenTableViewCell.h; sourceTree = "<group>"; };
+		6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadyToOpenTableViewCell.m; sourceTree = "<group>"; };
+		6AF353C7197A8547009CEAF0 /* MSCellDrawerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCellDrawerProtocol.h; sourceTree = "<group>"; };
+		6AF353C9197A8610009CEAF0 /* MSLetterItemProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSLetterItemProtocol.h; sourceTree = "<group>"; };
+		6AF353CB197A868F009CEAF0 /* MSPendingLetterDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPendingLetterDrawer.h; sourceTree = "<group>"; };
+		6AF353CC197A868F009CEAF0 /* MSPendingLetterDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPendingLetterDrawer.m; sourceTree = "<group>"; };
+		6AF353CE197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadyToOpenLetterDrawer.h; sourceTree = "<group>"; };
+		6AF353CF197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadyToOpenLetterDrawer.m; sourceTree = "<group>"; };
+		6AF353D1197A86BE009CEAF0 /* MSOpenedLetterDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLetterDrawer.h; sourceTree = "<group>"; };
+		6AF353D2197A86BE009CEAF0 /* MSOpenedLetterDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLetterDrawer.m; sourceTree = "<group>"; };
+		6AF353D4197A89BF009CEAF0 /* Letter+DrawerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Letter+DrawerItem.h"; sourceTree = "<group>"; };
+		6AF353D5197A89BF009CEAF0 /* Letter+DrawerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Letter+DrawerItem.m"; sourceTree = "<group>"; };
+		6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LetterStatusEnum.h; sourceTree = "<group>"; };
+		6AF353DB197A8C36009CEAF0 /* NSNumber+MSStatusLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MSStatusLetter.h"; sourceTree = "<group>"; };
+		6AF353DC197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MSStatusLetter.m"; sourceTree = "<group>"; };
+		6AF353E0197ACD7C009CEAF0 /* MSCustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCustomPickerView.h; sourceTree = "<group>"; };
+		6AF353E1197ACD7C009CEAF0 /* MSCustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCustomPickerView.m; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +189,7 @@
 			children = (
 				6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */,
 				6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */,
+				6AF353C8197A8551009CEAF0 /* Protocols */,
 				6A46B5BE1973E893001CF9C6 /* Categories */,
 				6A46B59A1973C517001CF9C6 /* Model */,
 				6A46B59B1973C51D001CF9C6 /* View */,
@@ -220,10 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */,
-				6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */,
-				6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */,
-				6A46B5B01973E285001CF9C6 /* MSPendingLetterTableViewCell.h */,
-				6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */,
+				6AF353C31979796F009CEAF0 /* Cells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -244,8 +266,11 @@
 			children = (
 				6AF353691979312D009CEAF0 /* Letter.h */,
 				6AF3536A1979312D009CEAF0 /* Letter.m */,
+				6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */,
 				6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */,
 				6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */,
+				6AF353D4197A89BF009CEAF0 /* Letter+DrawerItem.h */,
+				6AF353D5197A89BF009CEAF0 /* Letter+DrawerItem.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -255,6 +280,8 @@
 			children = (
 				6A46B5BF1973E8FC001CF9C6 /* NSDate+CustomizableDate.h */,
 				6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */,
+				6AF353DB197A8C36009CEAF0 /* NSNumber+MSStatusLetter.h */,
+				6AF353DC197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -277,8 +304,46 @@
 			children = (
 				6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */,
 				6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */,
+				6AF353E0197ACD7C009CEAF0 /* MSCustomPickerView.h */,
+				6AF353E1197ACD7C009CEAF0 /* MSCustomPickerView.m */,
 			);
 			name = "Creation controllers";
+			sourceTree = "<group>";
+		};
+		6AF353C31979796F009CEAF0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6AF353CA197A8679009CEAF0 /* Drawers */,
+				6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */,
+				6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */,
+				6A46B5B01973E285001CF9C6 /* MSPendingLetterTableViewCell.h */,
+				6A46B5B11973E285001CF9C6 /* MSPendingLetterTableViewCell.m */,
+				6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */,
+				6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		6AF353C8197A8551009CEAF0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6AF353C7197A8547009CEAF0 /* MSCellDrawerProtocol.h */,
+				6AF353C9197A8610009CEAF0 /* MSLetterItemProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		6AF353CA197A8679009CEAF0 /* Drawers */ = {
+			isa = PBXGroup;
+			children = (
+				6AF353CB197A868F009CEAF0 /* MSPendingLetterDrawer.h */,
+				6AF353CC197A868F009CEAF0 /* MSPendingLetterDrawer.m */,
+				6AF353CE197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.h */,
+				6AF353CF197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m */,
+				6AF353D1197A86BE009CEAF0 /* MSOpenedLetterDrawer.h */,
+				6AF353D2197A86BE009CEAF0 /* MSOpenedLetterDrawer.m */,
+			);
+			name = Drawers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,17 +447,24 @@
 				6A46B5A91973D395001CF9C6 /* MSPendingTableViewController.m in Sources */,
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */,
+				6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */,
 				6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */,
+				6AF353D6197A89BF009CEAF0 /* Letter+DrawerItem.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
+				6AF353D0197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m in Sources */,
 				6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */,
 				6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */,
+				6AF353CD197A868F009CEAF0 /* MSPendingLetterDrawer.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,
+				6AF353E2197ACD7C009CEAF0 /* MSCustomPickerView.m in Sources */,
 				6A46B5961973C2D7001CF9C6 /* Model.xcdatamodeld in Sources */,
 				6AF35376197961F2009CEAF0 /* MSReadLetterViewController.m in Sources */,
 				6AF3536B1979312D009CEAF0 /* Letter.m in Sources */,
 				6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */,
+				6AF353D3197A86BE009CEAF0 /* MSOpenedLetterDrawer.m in Sources */,
 				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,
 				6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */,
+				6AF353DD197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
