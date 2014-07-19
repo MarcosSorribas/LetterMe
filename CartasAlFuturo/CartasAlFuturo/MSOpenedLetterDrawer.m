@@ -9,6 +9,7 @@
 #import "MSOpenedLetterDrawer.h"
 #import "MSOpenedTableViewCell.h"
 #import "Letter.h"
+#import "NSDate+CustomizableDate.h"
 
 @implementation MSOpenedLetterDrawer
 
@@ -18,9 +19,10 @@
 
 -(void)drawCell:(MSOpenedTableViewCell *)cell withItem:(Letter*)item{
     
-    cell.openedLetterStatus.text = item.letterStatus.description;
-    cell.openedLetterDate.text = item.letterOpenDate.description;
-    cell.openedLetterTitle.text = item.letterTitle;
+    cell.sendDateLabel.text = [NSString stringWithFormat:@"Creada el dia %@",[item.letterSendDate dateWithMyFormat]];
+    cell.openDateLabel.text = [NSString stringWithFormat:@"Abierta el dia %@",[item.letterOpenDate dateWithMyFormat]];
+    
+    cell.titleLabel.text = item.letterTitle;
     
 }
 

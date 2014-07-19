@@ -9,6 +9,7 @@
 #import "MSPendingLetterDrawer.h"
 #import "Letter.h"
 #import "MSPendingLetterTableViewCell.h"
+#import "NSDate+CustomizableDate.h"
 
 @implementation MSPendingLetterDrawer
 
@@ -18,8 +19,8 @@
 
 -(void)drawCell:(MSPendingLetterTableViewCell *)cell withItem:(Letter*)item{
     
-    cell.pendingLetterOpenDate.text = item.letterOpenDate.description;
-    cell.pendingLetterTitle.text = item.letterTitle;
+    cell.countdownLabel.text = [NSString stringWithFormat:@"Dias restantes: %@",[item.letterOpenDate countdownInDays]];
+    cell.titleLabel.text = item.letterTitle;
 
 }
 
