@@ -8,14 +8,8 @@
 
 #import "MSPendingTableViewController.h"
 #import "Letter+myAPI.h"
-#import "MSPendingLetterTableViewCell.h"
-#import "MSCreateLetterViewController.h"
-#import "MSReadyToOpenTableViewCell.h"
+
 #import "MSMailMan.h"
-#import "MSFirstTimeReadLetterViewController.h"
-
-
-
 
 #import "MSLetterItemProtocol.h"
 #import "MSCellDrawerProtocol.h"
@@ -24,12 +18,16 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self configureFetchResultController];
+    [self checkNewLetterStatus];
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self configureFetchResultController];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
 }
 
@@ -68,6 +66,9 @@
 -(void)configureFetchResultController{
     NSFetchedResultsController *results = [Letter pendingLettersToShowInContext:self.manageDocument.managedObjectContext];
     self.fetchedResultsController = results;
+}
+
+-(void)checkNewLetterStatus{
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
 }
 
@@ -75,15 +76,6 @@
 #pragma mark - Navigation methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-#warning Codigo duplicado en mis dos controladores principales - Marcos, ¿que coño haces?
-    
-    if ([[segue destinationViewController] isKindOfClass:[MSFirstTimeReadLetterViewController class]]) {
-        MSFirstTimeReadLetterViewController *controller = [segue destinationViewController];
-        controller.letter = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-    }else{
-        MSCreateLetterViewController *nextView = (MSCreateLetterViewController *)[(UINavigationController*)[segue destinationViewController] topViewController];
-        nextView.manageDocument = self.manageDocument;
-    }
+    [super prepareForSegue:segue sender:sender];    
 }
-
 @end

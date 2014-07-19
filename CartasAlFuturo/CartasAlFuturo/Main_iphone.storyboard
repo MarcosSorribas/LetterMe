@@ -39,11 +39,11 @@
                                     <outlet property="pendingLetterTitle" destination="Dfa-e8-oxZ" id="62a-iV-dTr"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSReadyToOpenTableViewCell" rowHeight="100" id="pON-I8-khD" customClass="MSReadyToOpenTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSReadyToOpenTableViewCell" rowHeight="100" id="pON-I8-khD" customClass="MSReadyToOpenTableViewCell">
                                 <rect key="frame" x="0.0" y="186" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pON-I8-khD" id="kYR-5D-jvg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXc-ec-sn3">
@@ -72,7 +72,7 @@
                                     <outlet property="dateLabel" destination="bDO-Um-3h4" id="Hfy-xy-rI8"/>
                                     <outlet property="statusLabel" destination="qfZ-QG-NcC" id="zXQ-Yw-mzd"/>
                                     <outlet property="titelLabel" destination="mXc-ec-sn3" id="BGL-Zo-Dn5"/>
-                                    <segue destination="ese-cF-1BQ" kind="modal" identifier="firstReadSegue" id="C08-nT-1o0"/>
+                                    <segue destination="m5F-Kr-3Qi" kind="push" identifier="MSReadLetterViewController" id="NRr-3N-GbR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,7 +85,7 @@
                     <navigationItem key="navigationItem" title="Pendientes" id="Io7-1C-Czm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
                             <connections>
-                                <segue destination="znj-Qp-639" kind="modal" identifier="pCreateSegue" id="16s-yk-bNK"/>
+                                <segue destination="znj-Qp-639" kind="modal" identifier="MSCreateLetterViewController" id="16s-yk-bNK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -154,7 +154,7 @@
                                     <outlet property="openedLetterDate" destination="mxs-TH-mT0" id="iVZ-Sj-H9B"/>
                                     <outlet property="openedLetterStatus" destination="b4E-d9-Wkh" id="N26-1e-gz9"/>
                                     <outlet property="openedLetterTitle" destination="BRf-af-n2L" id="XUL-g8-Dag"/>
-                                    <segue destination="m5F-Kr-3Qi" kind="push" id="ocv-XF-OO6"/>
+                                    <segue destination="m5F-Kr-3Qi" kind="push" identifier="MSReadLetterViewController" id="ocv-XF-OO6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" title="Leidas" id="2Cg-dB-ahF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5CM-RE-UYR">
                             <connections>
-                                <segue destination="znj-Qp-639" kind="modal" identifier="lCreateSegue" id="zgB-Xp-e8U"/>
+                                <segue destination="znj-Qp-639" kind="modal" identifier="MSCreateLetterViewController" id="zgB-Xp-e8U"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -178,7 +178,7 @@
         <!--Read Letter View Controller-->
         <scene sceneID="s2p-mG-Lax">
             <objects>
-                <viewController storyboardIdentifier="MSReadLetterViewController" id="m5F-Kr-3Qi" customClass="MSReadLetterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MSReadLetterViewController" hidesBottomBarWhenPushed="YES" id="m5F-Kr-3Qi" customClass="MSReadLetterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2dn-of-Hcb"/>
                         <viewControllerLayoutGuide type="bottom" id="byJ-zJ-igD"/>
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhb-xc-k0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3878" y="313"/>
+            <point key="canvasLocation" x="3966" y="97"/>
         </scene>
         <!--Navigation Controller - Leidas-->
         <scene sceneID="6Jl-qI-1W8">
@@ -489,7 +489,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4948" y="-470"/>
+            <point key="canvasLocation" x="4508" y="-918"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wZC-fK-egV">
@@ -510,36 +510,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2153" y="-246"/>
         </scene>
-        <!--First Time Read Letter View Controller-->
-        <scene sceneID="WXb-po-rm0">
-            <objects>
-                <viewController storyboardIdentifier="MSFirstTimeReadLetterViewController" id="ese-cF-1BQ" customClass="MSFirstTimeReadLetterViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HeO-sk-EsY"/>
-                        <viewControllerLayoutGuide type="bottom" id="Sk3-ER-hmA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pVb-EF-A7i">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aU-lr-YPe">
-                                <rect key="frame" x="137" y="518" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismiss:" destination="ese-cF-1BQ" eventType="touchUpInside" id="Z44-p9-MXU"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.68787502562014913" green="1" blue="0.13215714230649955" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wu-NA-ho9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3878" y="-1013"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="LWF-QQ-CDk">
             <objects>
@@ -556,7 +526,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djd-YA-t9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4406" y="-346"/>
+            <point key="canvasLocation" x="3966" y="-794"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -565,6 +535,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zgB-Xp-e8U"/>
+        <segue reference="16s-yk-bNK"/>
+        <segue reference="NRr-3N-GbR"/>
     </inferredMetricsTieBreakers>
 </document>
