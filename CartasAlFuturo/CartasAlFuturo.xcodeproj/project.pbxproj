@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64713DF53B5B4573B8C80446 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F21CB0E9CC604B56978CCB7F /* libPods.a */; };
 		6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED7541977BAB4008BD0AE /* MSMailMan.m */; };
 		6A46B5631973C1D8001CF9C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5621973C1D8001CF9C6 /* Foundation.framework */; };
 		6A46B5651973C1D8001CF9C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */; };
@@ -36,7 +35,6 @@
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
 		6AF35373197955F5009CEAF0 /* MSLetterValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */; };
 		6AF35376197961F2009CEAF0 /* MSReadLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */; };
-		6AF353781979651C009CEAF0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6AF353771979651B009CEAF0 /* Podfile */; };
 		6AF353BF19796934009CEAF0 /* AlertReadyToOpenLetterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */; };
 		6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */; };
 		6AF353C6197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353C5197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m */; };
@@ -54,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15D03F7CC814428A9BADC2D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6A0ED7531977BAB4008BD0AE /* MSMailMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMailMan.h; sourceTree = "<group>"; };
 		6A0ED7541977BAB4008BD0AE /* MSMailMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMailMan.m; sourceTree = "<group>"; };
 		6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartasAlFuturo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +94,6 @@
 		6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidatorTests.m; sourceTree = "<group>"; };
 		6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadLetterViewController.h; sourceTree = "<group>"; };
 		6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadLetterViewController.m; sourceTree = "<group>"; };
-		6AF353771979651B009CEAF0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertReadyToOpenLetterView.xib; sourceTree = "<group>"; };
 		6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadyToOpenTableViewCell.h; sourceTree = "<group>"; };
 		6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadyToOpenTableViewCell.m; sourceTree = "<group>"; };
@@ -105,7 +101,6 @@
 		6AF353C5197983DC009CEAF0 /* MSFirstTimeReadLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFirstTimeReadLetterViewController.m; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
-		F21CB0E9CC604B56978CCB7F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +111,6 @@
 				6A46B5651973C1D8001CF9C6 /* CoreGraphics.framework in Frameworks */,
 				6A46B5671973C1D8001CF9C6 /* UIKit.framework in Frameworks */,
 				6A46B5631973C1D8001CF9C6 /* Foundation.framework in Frameworks */,
-				64713DF53B5B4573B8C80446 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,12 +141,10 @@
 		6A46B5561973C1D8001CF9C6 = {
 			isa = PBXGroup;
 			children = (
-				6AF353771979651B009CEAF0 /* Podfile */,
 				6A46B5681973C1D8001CF9C6 /* CartasAlFuturo */,
 				6A46B5811973C1D8001CF9C6 /* CartasAlFuturoTests */,
 				6A46B5611973C1D8001CF9C6 /* Frameworks */,
 				6A46B5601973C1D8001CF9C6 /* Products */,
-				15D03F7CC814428A9BADC2D2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,7 +164,6 @@
 				6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */,
 				6A46B5661973C1D8001CF9C6 /* UIKit.framework */,
 				6A46B57B1973C1D8001CF9C6 /* XCTest.framework */,
-				F21CB0E9CC604B56978CCB7F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,11 +309,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */;
 			buildPhases = (
-				A6E09410F9E040EE8F88E527 /* Check Pods Manifest.lock */,
 				6A46B55B1973C1D8001CF9C6 /* Sources */,
 				6A46B55C1973C1D8001CF9C6 /* Frameworks */,
 				6A46B55D1973C1D8001CF9C6 /* Resources */,
-				4DF3B7F8B9DE43718D26852D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,7 +380,6 @@
 			files = (
 				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
 				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
-				6AF353781979651C009CEAF0 /* Podfile in Resources */,
 				6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */,
 				6AF353BF19796934009CEAF0 /* AlertReadyToOpenLetterView.xib in Resources */,
 			);
@@ -406,39 +394,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4DF3B7F8B9DE43718D26852D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6E09410F9E040EE8F88E527 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6A46B55B1973C1D8001CF9C6 /* Sources */ = {
@@ -578,7 +533,6 @@
 		};
 		6A46B58C1973C1D8001CF9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D03F7CC814428A9BADC2D2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -593,7 +547,6 @@
 		};
 		6A46B58D1973C1D8001CF9C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D03F7CC814428A9BADC2D2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
