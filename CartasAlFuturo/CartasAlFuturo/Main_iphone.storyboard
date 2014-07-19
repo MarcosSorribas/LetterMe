@@ -245,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="om3-rH-KzK">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om3-rH-KzK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -253,8 +253,8 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="25"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaU-80-ELb">
-                                                <rect key="frame" x="139" y="2" width="43" height="21"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaU-80-ELb">
+                                                <rect key="frame" x="20" y="2" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,10 +264,12 @@
                                         <color key="backgroundColor" red="1" green="0.6480601748" blue="0.44522868329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="iaU-80-ELb" secondAttribute="trailing" constant="20" id="0k3-rP-lcH"/>
                                             <constraint firstAttribute="centerX" secondItem="iaU-80-ELb" secondAttribute="centerX" constant="-0.5" id="H2L-0w-CQC"/>
                                             <constraint firstAttribute="height" constant="25" id="I34-NP-hTN"/>
                                             <constraint firstAttribute="width" constant="320" id="WhM-TP-UQc"/>
                                             <constraint firstAttribute="centerY" secondItem="iaU-80-ELb" secondAttribute="centerY" id="r4l-cG-bQ9"/>
+                                            <constraint firstItem="iaU-80-ELb" firstAttribute="leading" secondItem="CrD-MN-0Cw" secondAttribute="leading" constant="20" id="se7-eC-GiU"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="crw-Qh-HcQ" appends="YES" id="STl-TT-gZX"/>
@@ -461,12 +463,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
                     <connections>
+                        <outlet property="contentHeader" destination="eqT-8X-Ya7" id="Zno-yK-hto"/>
                         <outlet property="contentHeaderHeightConstraint" destination="GQb-yO-hM9" id="SoK-Ao-WHX"/>
                         <outlet property="contentTextView" destination="1mK-bX-8nV" id="akJ-3J-Yoa"/>
                         <outlet property="contentViewHeightConstraint" destination="aPl-Bm-Cqd" id="OPW-EO-Xqj"/>
+                        <outlet property="dateHeader" destination="vcI-Bp-pLQ" id="ppC-uM-wuc"/>
                         <outlet property="dateHeaderHeightConstraint" destination="zuV-AW-aM4" id="IOo-NI-n0F"/>
                         <outlet property="datePicker" destination="Ckx-aA-0GB" id="xjZ-yj-ZKJ"/>
                         <outlet property="dateViewHeightConstraint" destination="sNa-QQ-Gqi" id="a4j-rv-G7u"/>
+                        <outlet property="titleHeader" destination="iaU-80-ELb" id="WhW-0E-dNe"/>
                         <outlet property="titleHeaderHeightConstraint" destination="I34-NP-hTN" id="gtM-zq-2XR"/>
                         <outlet property="titleTextField" destination="xaK-x8-XHY" id="yhO-XN-dGS"/>
                         <outlet property="titleViewHeightConstraint" destination="OQs-8o-x6L" id="Lzo-kh-y7D"/>
@@ -489,7 +494,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4508" y="-918"/>
+            <point key="canvasLocation" x="4510" y="-910"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wZC-fK-egV">
@@ -535,7 +540,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="16s-yk-bNK"/>
         <segue reference="NRr-3N-GbR"/>
+        <segue reference="zgB-Xp-e8U"/>
     </inferredMetricsTieBreakers>
 </document>

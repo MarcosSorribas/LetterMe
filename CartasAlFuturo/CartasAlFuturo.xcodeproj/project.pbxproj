@@ -35,7 +35,6 @@
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
 		6AF35373197955F5009CEAF0 /* MSLetterValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */; };
 		6AF35376197961F2009CEAF0 /* MSReadLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */; };
-		6AF353BF19796934009CEAF0 /* AlertReadyToOpenLetterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */; };
 		6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */; };
 		6AF353CD197A868F009CEAF0 /* MSPendingLetterDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353CC197A868F009CEAF0 /* MSPendingLetterDrawer.m */; };
 		6AF353D0197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353CF197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m */; };
@@ -98,7 +97,6 @@
 		6AF35372197955F5009CEAF0 /* MSLetterValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLetterValidatorTests.m; sourceTree = "<group>"; };
 		6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadLetterViewController.h; sourceTree = "<group>"; };
 		6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadLetterViewController.m; sourceTree = "<group>"; };
-		6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertReadyToOpenLetterView.xib; sourceTree = "<group>"; };
 		6AF353C0197974A5009CEAF0 /* MSReadyToOpenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSReadyToOpenTableViewCell.h; sourceTree = "<group>"; };
 		6AF353C1197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSReadyToOpenTableViewCell.m; sourceTree = "<group>"; };
 		6AF353C7197A8547009CEAF0 /* MSCellDrawerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCellDrawerProtocol.h; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */,
-				6AF353BE19796934009CEAF0 /* AlertReadyToOpenLetterView.xib */,
 				6AF353C31979796F009CEAF0 /* Cells */,
 			);
 			name = View;
@@ -423,7 +420,6 @@
 				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
 				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
 				6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */,
-				6AF353BF19796934009CEAF0 /* AlertReadyToOpenLetterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
