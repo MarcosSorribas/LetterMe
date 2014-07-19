@@ -20,4 +20,12 @@
         [document.managedObjectContext.undoManager endUndoGrouping];
     }
 }
+
+-(void)showAlertViewIfLettersArePrepared:(UIManagedDocument*)document{
+     NSArray *letters = [Letter checkReadyToOpenLettersInContext:document.managedObjectContext];
+    if (letters.count) {
+       //Crear AlertView
+    }
+    [MSMailMan checkLettersPreparedAndUpdateThemInContext:document];
+}
 @end
