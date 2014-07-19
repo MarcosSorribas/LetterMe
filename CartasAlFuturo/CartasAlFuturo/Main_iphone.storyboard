@@ -234,11 +234,11 @@
                         <viewControllerLayoutGuide type="bottom" id="GMg-te-xcN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b4u-Et-KBd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om3-rH-KzK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrD-MN-0Cw" userLabel="Title Header">
@@ -362,12 +362,12 @@
                                             <outletCollection property="gestureRecognizers" destination="lP8-BD-RJD" appends="YES" id="Q0S-Ip-ddQ"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-ro-gRf" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="354" width="320" height="0.0"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-ro-gRf" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="700" width="320" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-bX-8nV">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-bX-8nV">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -379,8 +379,14 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.42351182552714678" green="0.99675941469999996" blue="0.40612060470575934" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="1mK-bX-8nV" firstAttribute="leading" secondItem="jUn-ro-gRf" secondAttribute="leading" id="P0A-jG-a1z"/>
+                                            <constraint firstItem="1mK-bX-8nV" firstAttribute="top" secondItem="jUn-ro-gRf" secondAttribute="top" id="QgB-6i-dSR"/>
                                             <constraint firstAttribute="width" constant="320" id="Ywa-Cr-nPj"/>
+                                            <constraint firstItem="1mK-bX-8nV" firstAttribute="width" secondItem="jUn-ro-gRf" secondAttribute="width" id="ZDl-yp-Uss"/>
                                             <constraint firstAttribute="height" id="aPl-Bm-Cqd"/>
+                                            <constraint firstItem="1mK-bX-8nV" firstAttribute="height" secondItem="jUn-ro-gRf" secondAttribute="height" id="bgT-L4-iQy"/>
+                                            <constraint firstAttribute="bottom" secondItem="1mK-bX-8nV" secondAttribute="bottom" id="sPB-4V-Wpi"/>
+                                            <constraint firstAttribute="trailing" secondItem="1mK-bX-8nV" secondAttribute="trailing" id="txg-ig-PN3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -429,7 +435,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="800"/>
+                    <size key="freeformSize" width="320" height="1200"/>
                     <connections>
                         <outlet property="contentHeader" destination="eqT-8X-Ya7" id="Zno-yK-hto"/>
                         <outlet property="contentHeaderHeightConstraint" destination="GQb-yO-hM9" id="SoK-Ao-WHX"/>
