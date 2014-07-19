@@ -246,6 +246,7 @@ CGFloat const animationDuration = 0.3;
 #pragma mark - IBAction
 
 - (IBAction)createLetter:(id)sender {
+    [self viewInEmptyState];
     if ([self.validator isAValidLetter:self.letter]) {
         [self.manageDocument.undoManager endUndoGrouping];
         [self dismissViewControllerAnimated:YES completion:nil];
