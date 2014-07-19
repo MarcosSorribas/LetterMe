@@ -10,19 +10,8 @@
 
 @interface MSReadyToOpenTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titelLabel;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end
+
 @implementation MSReadyToOpenTableViewCell
-
-
-
--(void)setLetter:(Letter *)letter{
-    _letter = letter;
-    self.titelLabel.text = _letter.letterTitle;
-    self.dateLabel.text = [_letter.letterOpenDate description];
-    self.statusLabel.text = [_letter.letterStatus description];
-}
 
 @end

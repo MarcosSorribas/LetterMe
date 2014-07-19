@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Letter.h"
 @interface MSReadyToOpenTableViewCell : UITableViewCell
-@property (nonatomic,strong,readwrite) Letter *letter;
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
 @end

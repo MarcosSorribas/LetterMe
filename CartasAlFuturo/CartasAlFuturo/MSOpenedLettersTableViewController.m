@@ -11,9 +11,10 @@
 #import "MSOpenedTableViewCell.h"
 #import "MSCreateLetterViewController.h"
 
-@interface MSOpenedLettersTableViewController ()
-@end
 
+
+#import "MSLetterItemProtocol.h"
+#import "MSCellDrawerProtocol.h"
 @implementation MSOpenedLettersTableViewController
 
 -(void)viewDidLoad{
@@ -31,10 +32,13 @@
 #pragma mark - Data source methods
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MSOpenedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"openedLetterCell" forIndexPath:indexPath];
-    Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.letter = letter;
-    //Pintar la carta
+    
+    id<MSLetterItemProtocol> item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UITableViewCell *cell = [item.cellDrawer cellForTableView:tableView atIndexPath:indexPath];
+    
+    [item.cellDrawer drawCell:cell withItem:item];
+    
     return cell;
 }
 

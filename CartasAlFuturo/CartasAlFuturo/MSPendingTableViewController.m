@@ -14,8 +14,13 @@
 #import "MSMailMan.h"
 #import "MSFirstTimeReadLetterViewController.h"
 
-@implementation MSPendingTableViewController
 
+
+
+#import "MSLetterItemProtocol.h"
+#import "MSCellDrawerProtocol.h"
+
+@implementation MSPendingTableViewController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -28,30 +33,20 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 #pragma mark -
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Letter *letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    if ([letter.letterStatus isEqualToNumber:[NSNumber numberWithInt:MSPending]]) {
-        MSPendingLetterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MSPendingLetterTableViewCell" forIndexPath:indexPath];
-        cell.letter = letter;
-        return cell;
-    }else{
-        MSReadyToOpenTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MSReadyToOpenTableViewCell" forIndexPath:indexPath];
-        cell.letter = letter;
-        return cell;
-    }
+    id<MSLetterItemProtocol> item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UITableViewCell *cell = [item.cellDrawer cellForTableView:tableView atIndexPath:indexPath];
+    
+    [item.cellDrawer drawCell:cell withItem:item];
+    
+    return cell;
+    
 }
 
 #pragma mark -

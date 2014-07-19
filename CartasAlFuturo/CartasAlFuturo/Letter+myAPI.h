@@ -7,13 +7,7 @@
 //
 
 #import "Letter.h"
-
-enum {
-    MSPending = 0,
-    MSReadyToOpen = 1,
-    MSRead = 2,
-};
-typedef NSInteger MSStatusLetter;
+#import "LetterStatusEnum.h"
 
 @interface Letter (myAPI)
 

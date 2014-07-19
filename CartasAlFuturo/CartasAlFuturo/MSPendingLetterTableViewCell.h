@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Letter.h"
 @interface MSPendingLetterTableViewCell : UITableViewCell
-@property (nonatomic,strong,readwrite) Letter *letter;
+@property (weak, nonatomic) IBOutlet UILabel *pendingLetterOpenDate;
+@property (weak, nonatomic) IBOutlet UILabel *pendingLetterTitle;
 @end
