@@ -27,9 +27,10 @@
     return date;
 }
 
--(NSString*)countdownInDays{
+-(NSInteger)countdownInDays{
     NSTimeInterval timeInterval = [self timeIntervalSinceNow];
     NSUInteger days = roundf(timeInterval/(60*60*24));
-    return [NSString stringWithFormat:@"%ld",days];
+    return days;
 }
+
 @end

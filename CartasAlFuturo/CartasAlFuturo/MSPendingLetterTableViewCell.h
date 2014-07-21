@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *blackView;
+
 @end

@@ -28,6 +28,10 @@
 {
     [super viewDidLoad];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prueba_background"]];
+    
+    [self.tableView setBackgroundView:imageView];
+    
     [self configureFetchResultController];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];

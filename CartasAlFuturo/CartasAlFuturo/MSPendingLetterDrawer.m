@@ -19,9 +19,42 @@
 
 -(void)drawCell:(MSPendingLetterTableViewCell *)cell withItem:(Letter*)item{
     
-    cell.countdownLabel.text = [NSString stringWithFormat:@"Dias restantes: %@",[item.letterOpenDate countdownInDays]];
-    cell.titleLabel.text = item.letterTitle;
+    NSString *countdown = [self calculateCountdown:item];
+    cell.countdownLabel.text = countdown;
+    
+    if (item.letterTitle) {
+        NSMutableAttributedString *titleAttributed = [[NSMutableAttributedString alloc] initWithString:[item.letterTitle uppercaseString]];
+        
+        [titleAttributed addAttribute:NSKernAttributeName value:[NSNumber numberWithFloat:2.0] range:NSMakeRange(0, item.letterTitle.length)];
+        
+        cell.titleLabel.attributedText = titleAttributed;
+    }
+    cell.backgroundColor = [UIColor clearColor];
+    
+    
+    
+    cell.blackView.layer.cornerRadius = 15;
+    
+//    CALayer *layer = [CALayer layer];
+//    layer.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.45].CGColor;
+//    layer.frame = CGRectInset(cell.bounds, 10, 10);
+//    layer.cornerRadius = 15;
+//    [cell.layer insertSublayer:layer above:0];
 
+  
+    
 }
 
+-(NSString*)calculateCountdown:(Letter *)letter{
+    NSInteger days = [letter.letterOpenDate countdownInDays];
+    if (days == 0) {
+        return [NSString stringWithFormat:@"Solo quedan unas horas."];
+    }else{
+        if (days == 1) {
+            return [NSString stringWithFormat:@"Mañana podrás abrirla."];
+        }else{
+            return [NSString stringWithFormat:@"%ld días restantes.",days];
+        }
+    }
+}
 @end
