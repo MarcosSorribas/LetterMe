@@ -25,6 +25,8 @@
      NSArray *letters = [Letter checkReadyToOpenLettersInContext:document.managedObjectContext];
     if (letters.count) {
        //Crear AlertView
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Carta preparada" message:@"Tienes una carta lista para ser abierta" delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
+        [alertView show];
     }
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:document];
 }
