@@ -290,8 +290,6 @@ CGFloat const animationDuration = 0.35;
     }
 }
 
-
-
 - (IBAction)cancelLetter:(id)sender {
     [self.manageDocument.undoManager endUndoGrouping];
     [self.manageDocument.undoManager undo];
