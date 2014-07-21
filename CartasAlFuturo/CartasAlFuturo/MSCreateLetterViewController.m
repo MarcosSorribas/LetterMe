@@ -146,7 +146,7 @@ CGFloat const animationDuration = 0.35;
 - (IBAction)contentHeaderTouched:(UITapGestureRecognizer *)sender {
     switch (self.controllerState) {
         case ContentState:
-             [self viewInEmptyState];
+            [self viewInEmptyState];
             break;
         default:
             [self viewInContentState];
@@ -168,15 +168,14 @@ CGFloat const animationDuration = 0.35;
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.dateHeaderHeightConstraint.constant = 55;
-                        self.contentHeaderHeightConstraint.constant = 55;
-                        self.titleHeaderHeightConstraint.constant = 55;
+                         self.contentHeaderHeightConstraint.constant = 55;
+                         self.titleHeaderHeightConstraint.constant = 55;
                          self.titleViewHeightConstraint.constant = 125;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          self.controllerState = TitleState;
-                         [self temporalValidate];
                      }];
 }
 
@@ -192,10 +191,9 @@ CGFloat const animationDuration = 0.35;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
-                         [self temporalValidate];
                          self.controllerState = DateState;
                          if ([self.pickerView selectedRowInComponent:0] == 0) {
-                            #warning OJO ESTO HUELE MAL
+#warning OJO ESTO HUELE MAL
                              self.dateHeader.text = @"Dentro de un dia";
                              self.letter.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
                          }
@@ -212,9 +210,8 @@ CGFloat const animationDuration = 0.35;
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
-                        [self.view layoutIfNeeded];
+                         [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
-                         [self temporalValidate];
                          self.controllerState = ContentState;
                      }];
 }
@@ -223,42 +220,32 @@ CGFloat const animationDuration = 0.35;
     [self.view endEditing:YES];
     [UIView animateWithDuration:animationDuration
                      animations:^{
-        self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
-        self.titleViewHeightConstraint.constant = 0;
-        
-        self.dateHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
-        self.dateViewHeightConstraint.constant = 0;
-        
-        self.contentHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
-        self.contentViewHeightConstraint.constant = 0;
-        
-        [self.view layoutIfNeeded];
-    }completion:^(BOOL finished) {
-        self.controllerState = EmptyState;
-    }];
+                         self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
+                         self.titleViewHeightConstraint.constant = 0;
+                         
+                         self.dateHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
+                         self.dateViewHeightConstraint.constant = 0;
+                         
+                         self.contentHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
+                         self.contentViewHeightConstraint.constant = 0;
+                         
+                         [self.view layoutIfNeeded];
+                     }completion:^(BOOL finished) {
+                         self.controllerState = EmptyState;
+                     }];
 }
 
--(void)temporalValidate{
-    switch (self.controllerState) {
-        case TitleState:
-            if (![self.validator isAValidLetterTitle:self.letter.letterTitle]) {
-                NSLog(@"Errores en el titulo");
-            }
-            break;
-        case DateState:
-            if (![self.validator isAValidLetterOpenDate:self.letter.letterOpenDate]) {
-                NSLog(@"Errores en la fecha");
-            }
-            break;
-        case ContentState:
-            if (![self.validator isAValidLetterContent:self.letter.letterContent]) {
-                NSLog(@"Errores en el contenido");
-            }
-            break;
-        default:
-            break;
+-(ControllerState)localizeMistakesInState{
+    if (![self.validator isAValidLetterTitle:self.letter.letterTitle]) {
+        return TitleState;
     }
-
+    if (![self.validator isAValidLetterOpenDate:self.letter.letterOpenDate]) {
+        return DateState;
+    }
+    if (![self.validator isAValidLetterContent:self.letter.letterContent]) {
+        return ContentState;
+    }
+    return EmptyState;
 }
 
 #pragma mark -
@@ -270,9 +257,40 @@ CGFloat const animationDuration = 0.35;
         [self.manageDocument.undoManager endUndoGrouping];
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
-        NSLog(@"Tiene algun fallo, no podemos crearla");
+        switch ([self localizeMistakesInState]) {
+            case TitleState:{
+                //Falla el titulo
+                UIAlertView *ee = [[UIAlertView alloc]initWithTitle:@"Error en el titulo" message:nil delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
+                
+                [ee show];
+                
+                break;
+            }
+            case ContentState:{
+                //Falla el contenido
+                UIAlertView *ee = [[UIAlertView alloc]initWithTitle:@"Error en el contenido" message:nil delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
+                
+                [ee show];
+                
+                break;
+            }
+            case DateState:{
+                //Falla la fecha
+                UIAlertView *ee = [[UIAlertView alloc]initWithTitle:@"Error en la fecha" message:nil delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
+                
+                [ee show];
+                break;
+            }
+            default:
+                break;
+        }
+        
+        
+        
     }
 }
+
+
 
 - (IBAction)cancelLetter:(id)sender {
     [self.manageDocument.undoManager endUndoGrouping];

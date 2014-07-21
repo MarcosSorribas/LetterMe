@@ -11,7 +11,6 @@
 @implementation Letter (myAPI)
 
 NSString *const letterEntityName = @"Letter";
-NSTimeInterval const predeterminedTime = 24*60*60; //Segundos de 1 dia.
 
 +(Letter*)createLetterInContext:(NSManagedObjectContext*)context;
 {
@@ -23,7 +22,6 @@ NSTimeInterval const predeterminedTime = 24*60*60; //Segundos de 1 dia.
 {
     [super awakeFromInsert];
     self.letterSendDate = [NSDate date];
-    self.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:predeterminedTime];
 }
 
 
