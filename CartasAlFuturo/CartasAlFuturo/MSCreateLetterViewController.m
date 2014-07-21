@@ -52,7 +52,7 @@ enum : NSUInteger {
 
 @implementation MSCreateLetterViewController
 
-CGFloat const animationDuration = 0.32;
+CGFloat const animationDuration = 0.35;
 
 #pragma mark -
 #pragma mark - View methods
@@ -63,7 +63,6 @@ CGFloat const animationDuration = 0.32;
     self.customPicker.delegate = self;
     self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
 }
-
 
 - (void)viewDidLoad
 {
@@ -196,6 +195,11 @@ CGFloat const animationDuration = 0.32;
                      } completion:^(BOOL finished) {
                          [self temporalValidate];
                          self.controllerState = DateState;
+                         if ([self.pickerView selectedRowInComponent:0] == 0) {
+                            #warning OJO ESTO HUELE MAL
+                             self.dateHeader.text = @"Dentro de un dia";
+                             self.letter.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
+                         }
                      }];
 }
 
