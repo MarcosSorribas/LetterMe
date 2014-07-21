@@ -24,7 +24,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-RD-bFU">
                                             <rect key="frame" x="10" y="10" width="300" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="Lqk-Fm-lqW"/>
                                                 <constraint firstAttribute="height" constant="90" id="g1m-fU-Tpf"/>
@@ -117,7 +117,7 @@
         <scene sceneID="PIc-qT-ntJ">
             <objects>
                 <navigationController storyboardIdentifier="PendingController" automaticallyAdjustsScrollViewInsets="NO" id="uPa-mP-PuU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pendientes" id="Ylk-1M-3xa"/>
+                    <tabBarItem key="tabBarItem" title="Pendientes" image="icoEnviadas" id="Ylk-1M-3xa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eSK-kf-R8F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -237,7 +237,7 @@
         <scene sceneID="6Jl-qI-1W8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9E-BS-UQg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Leidas" id="CSB-Eh-CC8"/>
+                    <tabBarItem key="tabBarItem" title="Leidas" image="icoLeidas" id="CSB-Eh-CC8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfk-NT-pjG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -490,7 +490,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ifc-yK-i4b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="WIt-3d-2no">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="WIt-3d-2no">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -521,24 +521,11 @@
             </objects>
             <point key="canvasLocation" x="3922" y="-1342"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="MIV-Zd-Fkp">
-            <objects>
-                <viewController id="3Zb-OT-7xF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LiZ-9x-bd5"/>
-                        <viewControllerLayoutGuide type="bottom" id="bT8-bq-Qhk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qdT-rm-ZI7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccg-4g-brb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
+    <resources>
+        <image name="icoEnviadas" width="30" height="30"/>
+        <image name="icoLeidas" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
