@@ -69,6 +69,7 @@ CGFloat const animationDuration = 0.35;
     [super viewDidLoad];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
+    self.navigationItem.title = @"Crea tu carta";
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -169,7 +170,6 @@ CGFloat const animationDuration = 0.35;
                          self.dateHeaderHeightConstraint.constant = 55;
                         self.contentHeaderHeightConstraint.constant = 55;
                         self.titleHeaderHeightConstraint.constant = 55;
-                         self.navigationItem.title = @"Escriba un titulo";
                          self.titleViewHeightConstraint.constant = 125;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
@@ -184,7 +184,6 @@ CGFloat const animationDuration = 0.35;
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          [self.view endEditing:YES];
-                         self.navigationItem.title = @"Elija fecha de entrega";
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
@@ -207,7 +206,6 @@ CGFloat const animationDuration = 0.35;
     [self.contentTextView becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
                      animations:^{
-                         self.navigationItem.title = @"Escriba una carta";
                          self.titleViewHeightConstraint.constant = 0;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 125;
