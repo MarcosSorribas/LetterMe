@@ -8,7 +8,7 @@
         <scene sceneID="AhA-V9-b89">
             <objects>
                 <tableViewController storyboardIdentifier="MSPendingTableViewController" id="oiF-n2-yZh" customClass="MSPendingTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="a1i-l7-R1i">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="a1i-l7-R1i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,6 +59,7 @@
                                         <constraint firstItem="Dfa-e8-oxZ" firstAttribute="leading" secondItem="PfO-9Y-4IL" secondAttribute="leading" constant="20" id="tsW-hJ-jf6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="blackView" destination="xRw-RD-bFU" id="dUh-oM-ptr"/>
                                     <outlet property="countdownLabel" destination="Dfa-e8-oxZ" id="L2k-bt-F3z"/>
@@ -230,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhb-xc-k0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3966" y="97"/>
+            <point key="canvasLocation" x="4538" y="37"/>
         </scene>
         <!--Navigation Controller - Leidas-->
         <scene sceneID="6Jl-qI-1W8">
@@ -481,7 +482,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4510" y="-910"/>
+            <point key="canvasLocation" x="4486" y="-1518"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wZC-fK-egV">
@@ -518,7 +519,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djd-YA-t9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3966" y="-794"/>
+            <point key="canvasLocation" x="3922" y="-1342"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MIV-Zd-Fkp">

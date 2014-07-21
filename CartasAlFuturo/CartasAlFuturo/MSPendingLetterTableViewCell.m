@@ -13,8 +13,12 @@
 @end
 
 @implementation MSPendingLetterTableViewCell
+
 -(void)awakeFromNib{
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
-
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
+
+
+
 @end

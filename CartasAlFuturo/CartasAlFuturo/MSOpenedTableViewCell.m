@@ -14,5 +14,7 @@
 
 @implementation MSOpenedTableViewCell
 
+-(void)awakeFromNib{
 
+}
 @end
