@@ -28,26 +28,25 @@ enum : NSUInteger {
 @property (nonatomic,strong) MSLetterValidator *validator;
 @property (nonatomic,strong) MSCustomPickerView *customPicker;
 
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UIPickerView *datePicker;
 
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UILabel *dateHeader;
-@property (weak, nonatomic) IBOutlet UILabel *contentHeader;
+
 
 
 #pragma mark -
 #pragma mark - Constains
 
-@property (weak, nonatomic) IBOutlet UIView *dateView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeaderHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
 
 @end
 
@@ -59,8 +58,8 @@ CGFloat const animationDuration = 0.3;
 #pragma mark - View methods
 
 -(void)configurePicker{
-    self.datePicker.dataSource = self.customPicker;
-    self.datePicker.delegate = self.customPicker;
+    self.pickerView.dataSource = self.customPicker;
+    self.pickerView.delegate = self.customPicker;
     self.customPicker.delegate = self;
 }
 
@@ -70,6 +69,7 @@ CGFloat const animationDuration = 0.3;
     [super viewDidLoad];
     [self viewInEmptyState];
     [self configurePicker];
+    self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -92,6 +92,24 @@ CGFloat const animationDuration = 0.3;
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
     self.letter.letterContent = textView.text;
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    CGRect line = [textView caretRectForPosition:
+                   textView.selectedTextRange.start];
+    CGFloat overflow = line.origin.y + line.size.height
+    - ( textView.contentOffset.y + textView.bounds.size.height
+       - textView.contentInset.bottom - textView.contentInset.top - 15);
+    if ( overflow > 0 ) {
+        // We are at the bottom of the visible text and introduced a line feed, scroll down (iOS 7 does not do it)
+        // Scroll caret to visible area
+        CGPoint offset = textView.contentOffset;
+        offset.y += overflow + 7; // leave 7 pixels margin
+        // Cannot animate with setContentOffset:animated: or caret will not appear
+        [UIView animateWithDuration:.2 animations:^{
+            [textView setContentOffset:offset];
+        }];
+    }
 }
 
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
@@ -148,13 +166,13 @@ CGFloat const animationDuration = 0.3;
 -(void)viewInTitleState{
     [UIView animateWithDuration:animationDuration
                      animations:^{
+                         self.dateHeaderHeightConstraint.constant = 55;
+                        self.contentHeaderHeightConstraint.constant = 55;
+                        self.titleHeaderHeightConstraint.constant = 55;
                          [self.titleTextField becomeFirstResponder];
                          self.navigationItem.title = @"Escriba un titulo";
-                         self.titleHeaderHeightConstraint.constant = 55;
                          self.titleViewHeightConstraint.constant = 125;
-                         self.dateHeaderHeightConstraint.constant = 55;
                          self.dateViewHeightConstraint.constant = 0;
-                         self.contentHeaderHeightConstraint.constant = 55;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
@@ -168,11 +186,11 @@ CGFloat const animationDuration = 0.3;
                      animations:^{
                          [self.view endEditing:YES];
                          self.navigationItem.title = @"Elija fecha de entrega";
+                         self.dateHeaderHeightConstraint.constant = 55;
+                         self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
                          self.titleViewHeightConstraint.constant = 0;
-                         self.dateHeaderHeightConstraint.constant = 55;
                          self.dateViewHeightConstraint.constant = 125+214;
-                         self.contentHeaderHeightConstraint.constant = 55;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
@@ -182,17 +200,17 @@ CGFloat const animationDuration = 0.3;
 }
 
 -(void)viewInContentState{
+    [self.contentTextView becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.navigationItem.title = @"Escriba una carta";
-                         self.titleHeaderHeightConstraint.constant = 55;
                          self.titleViewHeightConstraint.constant = 0;
-                         self.dateHeaderHeightConstraint.constant = 55;
                          self.dateViewHeightConstraint.constant = 0;
-                         self.contentHeaderHeightConstraint.constant = 55;
                          self.contentViewHeightConstraint.constant = 125;
-                         [self.contentTextView becomeFirstResponder];
-                         [self.view layoutIfNeeded];
+                         self.dateHeaderHeightConstraint.constant = 55;
+                         self.contentHeaderHeightConstraint.constant = 55;
+                         self.titleHeaderHeightConstraint.constant = 55;
+                        [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          [self temporalValidate];
                          self.controllerState = ContentState;
