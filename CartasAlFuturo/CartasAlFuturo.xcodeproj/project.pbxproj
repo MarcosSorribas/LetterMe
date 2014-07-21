@@ -264,9 +264,9 @@
 		6A46B59D1973C52E001CF9C6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */,
 				6AF353691979312D009CEAF0 /* Letter.h */,
 				6AF3536A1979312D009CEAF0 /* Letter.m */,
-				6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */,
 				6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */,
 				6A46B5B41973E2F4001CF9C6 /* Letter+myAPI.m */,
 				6AF353D4197A89BF009CEAF0 /* Letter+DrawerItem.h */,

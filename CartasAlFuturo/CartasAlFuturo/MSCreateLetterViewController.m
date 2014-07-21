@@ -52,15 +52,16 @@ enum : NSUInteger {
 
 @implementation MSCreateLetterViewController
 
-CGFloat const animationDuration = 0.3;
+CGFloat const animationDuration = 0.32;
 
 #pragma mark -
 #pragma mark - View methods
 
--(void)configurePicker{
+-(void)configurePickerAndTextView{
     self.pickerView.dataSource = self.customPicker;
     self.pickerView.delegate = self.customPicker;
     self.customPicker.delegate = self;
+    self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
 }
 
 
@@ -68,8 +69,7 @@ CGFloat const animationDuration = 0.3;
 {
     [super viewDidLoad];
     [self viewInEmptyState];
-    [self configurePicker];
-    self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+    [self configurePickerAndTextView];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -236,8 +236,6 @@ CGFloat const animationDuration = 0.3;
     }];
 }
 
-
-
 -(void)temporalValidate{
     switch (self.controllerState) {
         case TitleState:
@@ -289,10 +287,12 @@ CGFloat const animationDuration = 0.3;
     }
     return _validator;
 }
+
 -(MSCustomPickerView *)customPicker{
     if (!_customPicker) {
         _customPicker = [[MSCustomPickerView alloc]init];
     }
     return _customPicker;
 }
+
 @end

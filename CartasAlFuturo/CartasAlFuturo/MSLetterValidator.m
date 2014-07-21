@@ -41,7 +41,7 @@
 
 -(BOOL)isAValidLetterOpenDate:(NSDate*)letterOpenDate{
     //Minimo un dia
-    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
+    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:55*50*24];
     if ([now compare:letterOpenDate] == NSOrderedDescending) {
         return NO;
     }
