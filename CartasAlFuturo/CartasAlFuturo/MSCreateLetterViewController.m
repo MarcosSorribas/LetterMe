@@ -164,12 +164,12 @@ CGFloat const animationDuration = 0.3;
 }
 
 -(void)viewInTitleState{
+    [self.titleTextField becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.dateHeaderHeightConstraint.constant = 55;
                         self.contentHeaderHeightConstraint.constant = 55;
                         self.titleHeaderHeightConstraint.constant = 55;
-                         [self.titleTextField becomeFirstResponder];
                          self.navigationItem.title = @"Escriba un titulo";
                          self.titleViewHeightConstraint.constant = 125;
                          self.dateViewHeightConstraint.constant = 0;
