@@ -15,7 +15,6 @@
 #import "MSCellDrawerProtocol.h"
 
 @interface MSPendingTableViewController ()
-@property (nonatomic,strong) CAGradientLayer *gLayer;
 @end
 
 @implementation MSPendingTableViewController
@@ -36,7 +35,7 @@ NSString * const kControllerTitle = @"Pendientes";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self configureNavigationBar];
     [self configureBackground];
     
     
@@ -94,20 +93,19 @@ NSString * const kControllerTitle = @"Pendientes";
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prueba_background"]];
 }
 
+-(void)configureNavigationBar{
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:kControllerTitle attributes:@{NSKernAttributeName:@2}];
+    labelView.textAlignment = NSTextAlignmentCenter;
+    labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
+    labelView.adjustsFontSizeToFitWidth = YES;
+    labelView.attributedText = titleWithAtt;
+    self.navigationItem.titleView = labelView;
+}
 #pragma mark -
 #pragma mark - Navigation methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [super prepareForSegue:segue sender:sender];
-}
-
-#pragma mark -
-#pragma mark - Getters & Setters
-
--(CAGradientLayer *)gLayer{
-    if (!_gLayer) {
-        _gLayer = [CAGradientLayer layer];
-    }
-    return _gLayer;
 }
 @end
