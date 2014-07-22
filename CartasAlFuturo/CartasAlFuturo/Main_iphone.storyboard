@@ -187,6 +187,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Leidas" id="2Cg-dB-ahF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5CM-RE-UYR">
+                            <color key="tintColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="znj-Qp-639" kind="modal" identifier="MSCreateLetterViewController" id="zgB-Xp-e8U"/>
                             </connections>
@@ -242,7 +243,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9E-BS-UQg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Leidas" image="icoLeidas" id="CSB-Eh-CC8"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfk-NT-pjG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gfk-NT-pjG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -535,7 +536,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NRr-3N-GbR"/>
-        <segue reference="16s-yk-bNK"/>
+        <segue reference="ocv-XF-OO6"/>
+        <segue reference="zgB-Xp-e8U"/>
     </inferredMetricsTieBreakers>
 </document>

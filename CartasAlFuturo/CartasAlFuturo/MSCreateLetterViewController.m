@@ -194,8 +194,7 @@ CGFloat const animationDuration = 0.35;
                          self.controllerState = DateState;
                          if ([self.pickerView selectedRowInComponent:0] == 0) {
 #warning OJO ESTO HUELE MAL
-                             self.dateHeader.text = @"Dentro de un dia";
-                             self.letter.letterOpenDate = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
+                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24] andHisName:@"Dentro de un dia"];
                          }
                      }];
 }

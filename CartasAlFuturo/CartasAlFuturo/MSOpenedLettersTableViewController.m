@@ -15,8 +15,16 @@
 
 @implementation MSOpenedLettersTableViewController
 
+#pragma mark -
+#pragma mark - Constans
+
+NSString * const kOpenedLettersTitle = @"Leidas";
+
+
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [super configureNavigationBar:kOpenedLettersTitle];
+    [super configureBackground];
     [self configureFetchResultController];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
 }
@@ -60,6 +68,8 @@
     NSFetchedResultsController *results = [Letter openedLettersToShowInContext:self.manageDocument.managedObjectContext];
     self.fetchedResultsController = results;
 }
+
+
 
 #pragma mark -
 #pragma mark - Navegation methods

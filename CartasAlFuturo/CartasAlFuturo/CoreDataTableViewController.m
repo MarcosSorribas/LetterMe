@@ -186,4 +186,18 @@
         nextView.manageDocument = self.manageDocument;
     }
 }
+
+-(void)configureNavigationBar:(NSString*)titleString{
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@2}];
+    labelView.textAlignment = NSTextAlignmentCenter;
+    labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
+    labelView.adjustsFontSizeToFitWidth = YES;
+    labelView.attributedText = titleWithAtt;
+    self.navigationItem.titleView = labelView;
+}
+
+-(void)configureBackground{
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prueba_background"]];
+}
 @end

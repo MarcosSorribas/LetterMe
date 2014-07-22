@@ -22,7 +22,7 @@
 #pragma mark -
 #pragma mark - Constans
 
-NSString * const kControllerTitle = @"Pendientes";
+NSString * const kPendingControllerTitle = @"Pendientes";
 
 #pragma mark -
 #pragma mark - Views Apperance
@@ -35,8 +35,8 @@ NSString * const kControllerTitle = @"Pendientes";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureNavigationBar];
-    [self configureBackground];
+    [super configureNavigationBar:kPendingControllerTitle];
+    [super configureBackground];
     
     
     [self configureFetchResultController];
@@ -89,19 +89,6 @@ NSString * const kControllerTitle = @"Pendientes";
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
 }
 
--(void)configureBackground{
-    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prueba_background"]];
-}
-
--(void)configureNavigationBar{
-    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:kControllerTitle attributes:@{NSKernAttributeName:@2}];
-    labelView.textAlignment = NSTextAlignmentCenter;
-    labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
-    labelView.adjustsFontSizeToFitWidth = YES;
-    labelView.attributedText = titleWithAtt;
-    self.navigationItem.titleView = labelView;
-}
 #pragma mark -
 #pragma mark - Navigation methods
 

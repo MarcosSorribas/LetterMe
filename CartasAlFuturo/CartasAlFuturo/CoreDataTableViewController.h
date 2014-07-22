@@ -54,5 +54,6 @@
 
 //MARCOS
 @property (nonatomic,strong,readwrite) UIManagedDocument *manageDocument;
-
+-(void)configureNavigationBar:(NSString*)titleString;
+-(void)configureBackground;
 @end
