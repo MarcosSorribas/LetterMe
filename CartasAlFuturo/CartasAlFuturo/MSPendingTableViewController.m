@@ -20,39 +20,17 @@
 
 @implementation MSPendingTableViewController
 
+#pragma mark -
+#pragma mark - Constans
+
+NSString * const kControllerTitle = @"Pendientes";
+
+#pragma mark -
+#pragma mark - Views Apperance
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self checkNewLetterStatus];
-}
-
--(void)configureBackground{
-//    UIColor *firstColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
-//    UIColor *secondColor = [UIColor colorWithRed:0.625 green:0.444 blue:0.483 alpha:1.000];
-//    UIColor *thirdColor = [UIColor colorWithRed:0.225 green:0.206 blue:0.303 alpha:1.000];
-//    
-//    NSArray *colors = @[(id)firstColor.CGColor,(id)secondColor.CGColor,(id)thirdColor.CGColor];
-//    
-//    NSArray *locations = @[@0.3,@0.6,@0.95];
-//
-//    self.gLayer.locations = locations;
-//    self.gLayer.colors = colors;
-//    
-//    self.gLayer.startPoint = CGPointMake(1, 1);
-//    self.gLayer.endPoint = CGPointMake(0, 0);
-//    
-//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"locations"];
-//    animation.fromValue = locations;
-//    animation.toValue = @[@0.1,@0.5,@0.8];
-//    animation.duration = 5;
-//    [self.gLayer addAnimation:animation forKey:@"Animation"];
-    
-    //UIView *view = [[UIView alloc] initWithFrame:self.tableView.frame];
-    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prueba_background"]];
-    //[view.layer insertSublayer:self.gLayer above:0];
-    
-    
-//    self.gLayer.frame = self.tableView.bounds;
-//    [self.tableView.layer addSublayer:self.gLayer];
 }
 
 - (void)viewDidLoad
@@ -61,9 +39,12 @@
     
     [self configureBackground];
     
+    
     [self configureFetchResultController];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
+
+
 }
 
 #pragma mark -
@@ -107,6 +88,10 @@
 
 -(void)checkNewLetterStatus{
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
+}
+
+-(void)configureBackground{
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"prueba_background"]];
 }
 
 #pragma mark -

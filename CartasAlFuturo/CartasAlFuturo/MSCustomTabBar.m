@@ -22,9 +22,7 @@
 
 
 
--(void)awakeFromNib{
-    [[UITabBar appearance] setBarStyle:UIBarStyleBlack];
-    
+-(void)awakeFromNib{    
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1]];
 }
 

@@ -103,6 +103,7 @@
                     <tabBarItem key="tabBarItem" title="Pendientes" id="3gV-Li-uA6"/>
                     <navigationItem key="navigationItem" title="Pendientes" id="Io7-1C-Czm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
+                            <color key="tintColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="znj-Qp-639" kind="modal" identifier="MSCreateLetterViewController" id="16s-yk-bNK"/>
                             </connections>
@@ -119,9 +120,12 @@
                 <navigationController storyboardIdentifier="PendingController" automaticallyAdjustsScrollViewInsets="NO" id="uPa-mP-PuU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pendientes" image="icoEnviadas" id="Ylk-1M-3xa"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eSK-kf-R8F">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="eSK-kf-R8F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -482,7 +486,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4486" y="-1518"/>
+            <point key="canvasLocation" x="5012" y="-1518"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wZC-fK-egV">
@@ -490,7 +494,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ifc-yK-i4b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="WIt-3d-2no" customClass="MSCustomTabBar">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="WIt-3d-2no" customClass="MSCustomTabBar">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -519,7 +523,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djd-YA-t9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3922" y="-1342"/>
+            <point key="canvasLocation" x="4448" y="-1342"/>
         </scene>
     </scenes>
     <resources>
