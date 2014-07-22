@@ -11,10 +11,12 @@
 #import "NSNumber+MSStatusLetter.h"
 
 @interface MSReadLetterViewController ()
+@property (weak, nonatomic) IBOutlet UIView *blackBackgroundView;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLetterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sendDateLabel;
-@property (weak, nonatomic) IBOutlet UITextView *contentLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *openDateLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @end
 
 @implementation MSReadLetterViewController
@@ -24,12 +26,15 @@
 {
     [super viewDidLoad];
     [self loadLetter];
+    self.blackBackgroundView.layer.cornerRadius = 15;
+    
 }
 
 -(void)loadLetter{
+    self.titleLetterLabel.text = self.letter.letterTitle;
     self.sendDateLabel.text = [self.letter.letterSendDate description];
-    self.contentLabel.text = self.letter.letterContent;
-    self.navigationItem.title = self.letter.letterTitle;
+    self.openDateLabel.text = [self.letter.letterOpenDate description];
+    self.contentTextView.text = self.letter.letterContent;
 }
 
 -(void)setLetter:(Letter *)letter{
