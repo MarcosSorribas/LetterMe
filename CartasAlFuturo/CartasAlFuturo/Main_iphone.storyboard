@@ -490,7 +490,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ifc-yK-i4b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="WIt-3d-2no">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="WIt-3d-2no" customClass="MSCustomTabBar">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
