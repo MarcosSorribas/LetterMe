@@ -60,31 +60,54 @@
                                     <outlet property="titleLabel" destination="fkP-Nv-Iqd" id="B4k-Oe-NcF"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSReadyToOpenTableViewCell" rowHeight="100" id="pON-I8-khD" customClass="MSReadyToOpenTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSReadyToOpenTableViewCell" rowHeight="100" id="pON-I8-khD" customClass="MSReadyToOpenTableViewCell">
                                 <rect key="frame" x="0.0" y="186" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pON-I8-khD" id="kYR-5D-jvg">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creada el dia X de X del X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agr-bC-8CG" userLabel="Creada el:">
-                                            <rect key="frame" x="20" y="20" width="267" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHl-96-CbS">
-                                            <rect key="frame" x="20" y="58" width="267" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zys-Yg-Cbm">
+                                            <rect key="frame" x="10" y="10" width="300" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I16-OU-cXn">
+                                                    <rect key="frame" x="0.0" y="20" width="300" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LISTA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrC-MQ-tWn">
+                                                    <rect key="frame" x="20" y="49" width="260" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="I16-OU-cXn" secondAttribute="trailing" id="4PM-vP-g6Y"/>
+                                                <constraint firstItem="ZrC-MQ-tWn" firstAttribute="top" secondItem="I16-OU-cXn" secondAttribute="bottom" constant="8" id="6XQ-9g-h4k"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZrC-MQ-tWn" secondAttribute="trailing" constant="20" id="Eld-VF-lhw"/>
+                                                <constraint firstItem="ZrC-MQ-tWn" firstAttribute="leading" secondItem="zys-Yg-Cbm" secondAttribute="leading" constant="20" id="IDx-nQ-gVN"/>
+                                                <constraint firstItem="I16-OU-cXn" firstAttribute="top" secondItem="zys-Yg-Cbm" secondAttribute="top" constant="20" id="akp-xv-p4p"/>
+                                                <constraint firstItem="I16-OU-cXn" firstAttribute="leading" secondItem="zys-Yg-Cbm" secondAttribute="leading" id="ubH-j5-nbu"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="zys-Yg-Cbm" secondAttribute="bottom" id="MmM-cp-jka"/>
+                                        <constraint firstAttribute="trailing" secondItem="zys-Yg-Cbm" secondAttribute="trailing" constant="10" id="XLR-tb-X88"/>
+                                        <constraint firstItem="zys-Yg-Cbm" firstAttribute="leading" secondItem="kYR-5D-jvg" secondAttribute="leading" constant="10" id="b8P-mE-BnT"/>
+                                        <constraint firstItem="zys-Yg-Cbm" firstAttribute="top" secondItem="kYR-5D-jvg" secondAttribute="top" constant="10" id="xGd-4j-syg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.6480601748" blue="0.44522868329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="sendDate" destination="Agr-bC-8CG" id="Cge-hM-OgS"/>
-                                    <outlet property="titleLabel" destination="CHl-96-CbS" id="AmL-0f-Wxi"/>
+                                    <outlet property="blackBackgroundView" destination="zys-Yg-Cbm" id="SRx-iB-U85"/>
+                                    <outlet property="titleLetterLabel" destination="I16-OU-cXn" id="hYG-4Z-ugu"/>
                                     <segue destination="m5F-Kr-3Qi" kind="push" identifier="MSReadLetterViewController" id="NRr-3N-GbR"/>
                                 </connections>
                             </tableViewCell>
@@ -590,7 +613,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ocv-XF-OO6"/>
-        <segue reference="zgB-Xp-e8U"/>
+        <segue reference="16s-yk-bNK"/>
+        <segue reference="NRr-3N-GbR"/>
     </inferredMetricsTieBreakers>
 </document>

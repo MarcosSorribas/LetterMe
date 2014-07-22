@@ -17,9 +17,11 @@
     return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MSReadyToOpenTableViewCell class]) forIndexPath:indexPath];
 }
 
--(void)drawCell:(MSReadyToOpenTableViewCell *)cell withItem:(Letter*)item{
-    cell.sendDate.text = [NSString stringWithFormat:@"Creada el %@",[item.letterSendDate dateWithMyFormat]];
-    cell.titleLabel.text = item.letterTitle;
+-(void)drawCell:(MSReadyToOpenTableViewCell *)cell withItem:(Letter*)letter{
+    
+    cell.blackBackgroundView.layer.cornerRadius = 15;
+    cell.titleLetterLabel.text = letter.letterTitle;
+    cell.backgroundColor = [UIColor clearColor];
 }
 
 @end

@@ -10,7 +10,7 @@
 #import "Letter.h"
 @interface MSReadyToOpenTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *sendDate;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *blackBackgroundView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLetterLabel;
 
 @end
