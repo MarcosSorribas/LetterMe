@@ -35,14 +35,6 @@
     
     cell.blackView.layer.cornerRadius = 15;
     
-//    CALayer *layer = [CALayer layer];
-//    layer.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.45].CGColor;
-//    layer.frame = CGRectInset(cell.bounds, 10, 10);
-//    layer.cornerRadius = 15;
-//    [cell.layer insertSublayer:layer above:0];
-
-  
-    
 }
 
 -(NSString*)calculateCountdown:(Letter *)letter{

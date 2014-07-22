@@ -12,7 +12,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.65604579448699951" green="1" blue="0.61964553594589233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSPendingLetterTableViewCell" rowHeight="100" id="PLZ-Y7-7fk" customClass="MSPendingLetterTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="100"/>
@@ -24,11 +23,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-RD-bFU">
                                             <rect key="frame" x="10" y="10" width="300" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="300" id="Lqk-Fm-lqW"/>
-                                                <constraint firstAttribute="height" constant="90" id="g1m-fU-Tpf"/>
-                                            </constraints>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dias restantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-e8-oxZ">
                                             <rect key="frame" x="20" y="58" width="280" height="22"/>
@@ -101,7 +96,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Pendientes" id="3gV-Li-uA6"/>
                     <navigationItem key="navigationItem" title="Pendientes" id="Io7-1C-Czm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BLU-9f-srQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BLU-9f-srQ">
                             <color key="tintColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="znj-Qp-639" kind="modal" identifier="MSCreateLetterViewController" id="16s-yk-bNK"/>
@@ -143,37 +138,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSOpenedTableViewCell" rowHeight="114" id="bhs-uU-CbN" customClass="MSOpenedTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSOpenedTableViewCell" rowHeight="114" id="bhs-uU-CbN" customClass="MSOpenedTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bhs-uU-CbN" id="Rsp-WZ-rox">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creada el:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-d9-Wkh">
-                                            <rect key="frame" x="20" y="9" width="267" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-af-n2L">
+                                            <rect key="frame" x="20" y="32" width="267" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-af-n2L">
-                                            <rect key="frame" x="20" y="38" width="280" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creada el:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-d9-Wkh">
+                                            <rect key="frame" x="20" y="61" width="267" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abierta:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxs-TH-mT0">
-                                            <rect key="frame" x="20" y="72" width="267" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b4E-d9-Wkh" firstAttribute="top" secondItem="BRf-af-n2L" secondAttribute="bottom" constant="8" id="5l0-Bu-R6l"/>
+                                        <constraint firstItem="b4E-d9-Wkh" firstAttribute="leading" secondItem="Rsp-WZ-rox" secondAttribute="leading" constant="20" id="G8G-RJ-GEX"/>
+                                        <constraint firstAttribute="centerX" secondItem="BRf-af-n2L" secondAttribute="centerX" constant="-10" id="Rhb-Sx-TfX"/>
+                                        <constraint firstAttribute="trailing" secondItem="b4E-d9-Wkh" secondAttribute="trailing" id="SiG-eW-hKy"/>
+                                        <constraint firstAttribute="trailing" secondItem="BRf-af-n2L" secondAttribute="trailing" id="bCt-0V-xpe"/>
+                                        <constraint firstItem="BRf-af-n2L" firstAttribute="leading" secondItem="Rsp-WZ-rox" secondAttribute="leading" constant="20" id="mMz-ux-d6F"/>
+                                        <constraint firstAttribute="bottom" secondItem="b4E-d9-Wkh" secondAttribute="bottom" constant="31" id="x9d-zF-kN0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="openDateLabel" destination="mxs-TH-mT0" id="2fZ-0j-TXB"/>
                                     <outlet property="sendDateLabel" destination="b4E-d9-Wkh" id="VKB-df-RUE"/>
                                     <outlet property="titleLabel" destination="BRf-af-n2L" id="arC-fC-9zS"/>
                                     <segue destination="m5F-Kr-3Qi" kind="push" identifier="MSReadLetterViewController" id="ocv-XF-OO6"/>
@@ -186,7 +185,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Leidas" id="2Cg-dB-ahF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5CM-RE-UYR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="5CM-RE-UYR">
                             <color key="tintColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="znj-Qp-639" kind="modal" identifier="MSCreateLetterViewController" id="zgB-Xp-e8U"/>
@@ -536,7 +535,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ocv-XF-OO6"/>
-        <segue reference="zgB-Xp-e8U"/>
+        <segue reference="NRr-3N-GbR"/>
+        <segue reference="16s-yk-bNK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,5 @@
 @interface MSOpenedTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *sendDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *openDateLabel;
 
 @end
