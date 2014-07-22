@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Letter.h"
 @interface MSOpenedTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *sendDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

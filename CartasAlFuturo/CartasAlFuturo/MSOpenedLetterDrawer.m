@@ -19,11 +19,8 @@
 
 -(void)drawCell:(MSOpenedTableViewCell *)cell withItem:(Letter*)item{
     
-    
-    cell.sendDateLabel.text = [NSString stringWithFormat:@"Creada el: %@",[item.letterSendDate dateWithMyFormat]];
     cell.backgroundColor = [UIColor clearColor];
     cell.titleLabel.text = item.letterTitle;
-
 }
 
 @end

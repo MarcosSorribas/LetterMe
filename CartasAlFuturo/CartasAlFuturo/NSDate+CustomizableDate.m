@@ -21,10 +21,11 @@
 }
 
 -(NSString *)dateWithMyFormat{
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:self];
-    NSString *date = [NSString stringWithFormat:@"%ld - %ld - %ld",components.day,components.month,components.year];
-    return date;
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"d MMMM 'de' YYYY"];
+    NSString *dateString = [dateFormat stringFromDate:self];
+    return dateString;
 }
 
 -(NSInteger)countdownInDays{

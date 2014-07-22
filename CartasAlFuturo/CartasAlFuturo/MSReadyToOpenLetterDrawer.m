@@ -19,7 +19,7 @@
 
 -(void)drawCell:(MSReadyToOpenTableViewCell *)cell withItem:(Letter*)letter{
     
-    cell.blackBackgroundView.layer.cornerRadius = 15;
+    cell.blackBackgroundView.layer.cornerRadius = 10;
     cell.titleLetterLabel.text = letter.letterTitle;
     cell.backgroundColor = [UIColor clearColor];
 }

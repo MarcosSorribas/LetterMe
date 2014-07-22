@@ -24,7 +24,7 @@
                                             <rect key="frame" x="10" y="10" width="300" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkP-Nv-Iqd">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkP-Nv-Iqd">
                                                     <rect key="frame" x="10" y="20" width="280" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
@@ -33,6 +33,10 @@
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fkP-Nv-Iqd" secondAttribute="trailing" constant="10" id="5uR-MW-XCC"/>
+                                                <constraint firstItem="fkP-Nv-Iqd" firstAttribute="leading" secondItem="xRw-RD-bFU" secondAttribute="leading" constant="10" id="dqL-dh-chW"/>
+                                            </constraints>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dias restantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-e8-oxZ">
                                             <rect key="frame" x="20" y="58" width="280" height="22"/>
@@ -46,6 +50,7 @@
                                         <constraint firstAttribute="trailing" secondItem="xRw-RD-bFU" secondAttribute="trailing" constant="10" id="0lF-7Z-N4Y"/>
                                         <constraint firstItem="xRw-RD-bFU" firstAttribute="leading" secondItem="PfO-9Y-4IL" secondAttribute="leading" constant="10" id="6wD-SK-SC4"/>
                                         <constraint firstItem="xRw-RD-bFU" firstAttribute="top" secondItem="PfO-9Y-4IL" secondAttribute="top" constant="10" id="JxX-ow-lMK"/>
+                                        <constraint firstItem="Dfa-e8-oxZ" firstAttribute="top" secondItem="fkP-Nv-Iqd" secondAttribute="bottom" constant="8" id="M9Q-YI-rIe"/>
                                         <constraint firstAttribute="trailing" secondItem="Dfa-e8-oxZ" secondAttribute="trailing" constant="20" id="R4v-Br-Dmr"/>
                                         <constraint firstItem="Dfa-e8-oxZ" firstAttribute="leading" secondItem="PfO-9Y-4IL" secondAttribute="leading" constant="20" id="WeN-9C-kfO"/>
                                         <constraint firstAttribute="bottom" secondItem="Dfa-e8-oxZ" secondAttribute="bottom" constant="20" id="cyB-UK-vf1"/>
@@ -59,7 +64,7 @@
                                     <outlet property="titleLabel" destination="fkP-Nv-Iqd" id="B4k-Oe-NcF"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSReadyToOpenTableViewCell" rowHeight="100" id="pON-I8-khD" customClass="MSReadyToOpenTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSReadyToOpenTableViewCell" rowHeight="100" id="pON-I8-khD" customClass="MSReadyToOpenTableViewCell">
                                 <rect key="frame" x="0.0" y="186" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pON-I8-khD" id="kYR-5D-jvg">
@@ -70,14 +75,14 @@
                                             <rect key="frame" x="10" y="10" width="300" height="90"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I16-OU-cXn">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I16-OU-cXn">
                                                     <rect key="frame" x="0.0" y="20" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LISTA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrC-MQ-tWn">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No se que pner aqui :( " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrC-MQ-tWn">
                                                     <rect key="frame" x="20" y="49" width="260" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -156,46 +161,47 @@
         <scene sceneID="GeO-Ka-6qY">
             <objects>
                 <tableViewController storyboardIdentifier="MSOpenedLettersTableViewController" id="3va-nb-ESt" customClass="MSOpenedLettersTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" id="PGa-sj-2gf">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="83" sectionHeaderHeight="22" sectionFooterHeight="22" id="PGa-sj-2gf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSOpenedTableViewCell" rowHeight="114" id="bhs-uU-CbN" customClass="MSOpenedTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="114"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSOpenedTableViewCell" rowHeight="83" id="bhs-uU-CbN" customClass="MSOpenedTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bhs-uU-CbN" id="Rsp-WZ-rox">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="113"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-af-n2L">
-                                            <rect key="frame" x="20" y="32" width="267" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-af-n2L">
+                                            <rect key="frame" x="109" y="29" width="69" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Creada el:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-d9-Wkh">
-                                            <rect key="frame" x="20" y="61" width="267" height="21"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rb-1S-vNB">
+                                            <rect key="frame" x="20" y="82" width="267" height="1"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="itL-La-Tcm"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="b4E-d9-Wkh" firstAttribute="top" secondItem="BRf-af-n2L" secondAttribute="bottom" constant="8" id="5l0-Bu-R6l"/>
-                                        <constraint firstItem="b4E-d9-Wkh" firstAttribute="leading" secondItem="Rsp-WZ-rox" secondAttribute="leading" constant="20" id="G8G-RJ-GEX"/>
-                                        <constraint firstAttribute="centerX" secondItem="BRf-af-n2L" secondAttribute="centerX" constant="-10" id="Rhb-Sx-TfX"/>
-                                        <constraint firstAttribute="trailing" secondItem="b4E-d9-Wkh" secondAttribute="trailing" id="SiG-eW-hKy"/>
-                                        <constraint firstAttribute="trailing" secondItem="BRf-af-n2L" secondAttribute="trailing" id="bCt-0V-xpe"/>
-                                        <constraint firstItem="BRf-af-n2L" firstAttribute="leading" secondItem="Rsp-WZ-rox" secondAttribute="leading" constant="20" id="mMz-ux-d6F"/>
-                                        <constraint firstAttribute="bottom" secondItem="b4E-d9-Wkh" secondAttribute="bottom" constant="31" id="x9d-zF-kN0"/>
+                                        <constraint firstItem="1Rb-1S-vNB" firstAttribute="leading" secondItem="Rsp-WZ-rox" secondAttribute="leading" constant="20" id="cWk-Pd-rPr"/>
+                                        <constraint firstAttribute="bottom" secondItem="1Rb-1S-vNB" secondAttribute="bottom" id="eSl-Wy-yxX"/>
+                                        <constraint firstAttribute="centerY" secondItem="BRf-af-n2L" secondAttribute="centerY" id="j2x-GO-9VI" userLabel=" Content View - Label - TITULO"/>
+                                        <constraint firstAttribute="centerX" secondItem="BRf-af-n2L" secondAttribute="centerX" id="j4f-Xg-P3i"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Rb-1S-vNB" secondAttribute="trailing" id="kbC-n7-MZ2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="sendDateLabel" destination="b4E-d9-Wkh" id="VKB-df-RUE"/>
                                     <outlet property="titleLabel" destination="BRf-af-n2L" id="arC-fC-9zS"/>
                                     <segue destination="m5F-Kr-3Qi" kind="push" identifier="MSReadLetterViewController" id="ocv-XF-OO6"/>
                                 </connections>
@@ -239,21 +245,21 @@
                                 <rect key="frame" x="9" y="72" width="303" height="489"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Carta de cumpleaños" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8I-sD-wPy" userLabel="Title - Label">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Carta de cumpleaños" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8I-sD-wPy" userLabel="Title - Label">
                                         <rect key="frame" x="11" y="20" width="280" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Creada el 22/06/2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-MF-dMW" userLabel="SendDate - Label">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Creada el 22/06/2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-MF-dMW" userLabel="SendDate - Label">
                                         <rect key="frame" x="11" y="64" width="280" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Abierta el 25/06/2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8b-BQ-ldp" userLabel="OpenDate - Label">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Abierta el 25/06/2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8b-BQ-ldp" userLabel="OpenDate - Label">
                                         <rect key="frame" x="11" y="91" width="280" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
@@ -261,7 +267,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVh-jB-ZEM" userLabel="Content - TextView">
-                                        <rect key="frame" x="20" y="119" width="260" height="365"/>
+                                        <rect key="frame" x="20" y="115" width="260" height="369"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,7 +277,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="top" secondItem="lOE-MF-dMW" secondAttribute="bottom" constant="8" id="7bB-wN-H8d"/>
+                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="top" secondItem="lOE-MF-dMW" secondAttribute="bottom" constant="4" id="7bB-wN-H8d"/>
                                     <constraint firstItem="T8b-BQ-ldp" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="9ak-vc-for"/>
                                     <constraint firstItem="lOE-MF-dMW" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="EFa-sH-Tsu"/>
                                     <constraint firstAttribute="trailing" secondItem="lOE-MF-dMW" secondAttribute="trailing" constant="20" id="Hbp-j4-LLe"/>

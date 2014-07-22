@@ -16,7 +16,6 @@
 
 -(void)awakeFromNib{
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
-    self.sendDateLabel.adjustsFontSizeToFitWidth = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 @end

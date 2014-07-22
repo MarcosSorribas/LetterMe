@@ -34,8 +34,8 @@
 -(void)loadLetter{
     self.titleLetterLabel.text = self.letter.letterTitle;
     
-    self.sendDateLabel.text = [NSString stringWithFormat:@"Creada el: %@",[self.letter.letterSendDate dateWithMyFormat]];
-    self.openDateLabel.text = [NSString stringWithFormat:@"Abierta el: %@",[self.letter.letterOpenDate dateWithMyFormat]];
+    self.sendDateLabel.text = [NSString stringWithFormat:@"Creada el %@",[self.letter.letterSendDate dateWithMyFormat]];
+    self.openDateLabel.text = [NSString stringWithFormat:@"Abierta el %@",[self.letter.letterOpenDate dateWithMyFormat]];
     
     
     
