@@ -23,7 +23,7 @@
 -(NSString *)dateWithMyFormat{
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:self];
-    NSString *date = [NSString stringWithFormat:@"%ld del %ld del %ld",components.day,components.month,components.year];
+    NSString *date = [NSString stringWithFormat:@"%ld - %ld - %ld",components.day,components.month,components.year];
     return date;
 }
 

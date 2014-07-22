@@ -23,7 +23,7 @@
     cell.countdownLabel.text = countdown;
     
     if (item.letterTitle) {
-        NSMutableAttributedString *titleAttributed = [[NSMutableAttributedString alloc] initWithString:[item.letterTitle uppercaseString]];
+        NSMutableAttributedString *titleAttributed = [[NSMutableAttributedString alloc] initWithString:item.letterTitle];
         
         [titleAttributed addAttribute:NSKernAttributeName value:[NSNumber numberWithFloat:2.0] range:NSMakeRange(0, item.letterTitle.length)];
         
@@ -33,7 +33,7 @@
     
     
     
-    cell.blackView.layer.cornerRadius = 15;
+    cell.blackView.layer.cornerRadius = 10;
     
 }
 

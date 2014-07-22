@@ -9,6 +9,7 @@
 #import "MSReadLetterViewController.h"
 #import "LetterStatusEnum.h"
 #import "NSNumber+MSStatusLetter.h"
+#import "NSDate+CustomizableDate.h"
 
 @interface MSReadLetterViewController ()
 @property (weak, nonatomic) IBOutlet UIView *blackBackgroundView;
@@ -32,9 +33,15 @@
 
 -(void)loadLetter{
     self.titleLetterLabel.text = self.letter.letterTitle;
-    self.sendDateLabel.text = [self.letter.letterSendDate description];
-    self.openDateLabel.text = [self.letter.letterOpenDate description];
+    
+    self.sendDateLabel.text = [NSString stringWithFormat:@"Creada el: %@",[self.letter.letterSendDate dateWithMyFormat]];
+    self.openDateLabel.text = [NSString stringWithFormat:@"Abierta el: %@",[self.letter.letterOpenDate dateWithMyFormat]];
+    
+    
+    
     self.contentTextView.text = self.letter.letterContent;
+    [self.contentTextView setTextColor:[UIColor whiteColor]];
+    [self.contentTextView setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0]];
 }
 
 -(void)setLetter:(Letter *)letter{

@@ -23,19 +23,21 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-RD-bFU">
                                             <rect key="frame" x="10" y="10" width="300" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkP-Nv-Iqd">
+                                                    <rect key="frame" x="10" y="20" width="280" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dias restantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-e8-oxZ">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dias restantes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-e8-oxZ">
                                             <rect key="frame" x="20" y="58" width="280" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkP-Nv-Iqd">
-                                            <rect key="frame" x="20" y="30" width="280" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -43,14 +45,11 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="xRw-RD-bFU" secondAttribute="trailing" constant="10" id="0lF-7Z-N4Y"/>
                                         <constraint firstItem="xRw-RD-bFU" firstAttribute="leading" secondItem="PfO-9Y-4IL" secondAttribute="leading" constant="10" id="6wD-SK-SC4"/>
-                                        <constraint firstItem="fkP-Nv-Iqd" firstAttribute="leading" secondItem="PfO-9Y-4IL" secondAttribute="leading" constant="20" id="F1J-gT-2eB"/>
                                         <constraint firstItem="xRw-RD-bFU" firstAttribute="top" secondItem="PfO-9Y-4IL" secondAttribute="top" constant="10" id="JxX-ow-lMK"/>
-                                        <constraint firstItem="Dfa-e8-oxZ" firstAttribute="top" secondItem="fkP-Nv-Iqd" secondAttribute="bottom" constant="8" id="Lv6-2d-Qr0"/>
                                         <constraint firstAttribute="trailing" secondItem="Dfa-e8-oxZ" secondAttribute="trailing" constant="20" id="R4v-Br-Dmr"/>
                                         <constraint firstItem="Dfa-e8-oxZ" firstAttribute="leading" secondItem="PfO-9Y-4IL" secondAttribute="leading" constant="20" id="WeN-9C-kfO"/>
                                         <constraint firstAttribute="bottom" secondItem="Dfa-e8-oxZ" secondAttribute="bottom" constant="20" id="cyB-UK-vf1"/>
                                         <constraint firstAttribute="bottom" secondItem="xRw-RD-bFU" secondAttribute="bottom" id="qpr-xQ-DU3"/>
-                                        <constraint firstAttribute="trailing" secondItem="fkP-Nv-Iqd" secondAttribute="trailing" constant="20" id="z71-Bo-8aK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
@@ -170,17 +169,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-af-n2L">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TITULO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-af-n2L">
                                             <rect key="frame" x="20" y="32" width="267" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creada el:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-d9-Wkh">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Creada el:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-d9-Wkh">
                                             <rect key="frame" x="20" y="61" width="267" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -243,48 +242,48 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Carta de cumpleaños" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8I-sD-wPy" userLabel="Title - Label">
                                         <rect key="frame" x="11" y="20" width="280" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Creada el 22/06/2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-MF-dMW" userLabel="SendDate - Label">
                                         <rect key="frame" x="11" y="64" width="280" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Abierta el 25/06/2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8b-BQ-ldp" userLabel="OpenDate - Label">
-                                        <rect key="frame" x="11" y="91" width="280" height="37"/>
+                                        <rect key="frame" x="11" y="91" width="280" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVh-jB-ZEM" userLabel="Content - TextView">
-                                        <rect key="frame" x="20" y="136" width="271" height="353"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVh-jB-ZEM" userLabel="Content - TextView">
+                                        <rect key="frame" x="20" y="119" width="260" height="365"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="top" secondItem="F8I-sD-wPy" secondAttribute="bottom" constant="8" id="6EI-yw-PkC"/>
-                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="9Fw-Fc-hEH"/>
-                                    <constraint firstAttribute="trailing" secondItem="F8I-sD-wPy" secondAttribute="trailing" constant="20" id="EW3-pu-adp"/>
-                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="GEz-ll-feA"/>
-                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="GcS-9I-MSn"/>
-                                    <constraint firstAttribute="trailing" secondItem="T8b-BQ-ldp" secondAttribute="trailing" constant="20" id="N39-ll-pq1"/>
-                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="top" secondItem="ysK-YZ-CZ1" secondAttribute="top" constant="20" id="OuV-tk-hW2"/>
-                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="top" secondItem="lOE-MF-dMW" secondAttribute="bottom" constant="8" id="VMx-kj-glh"/>
-                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="top" secondItem="T8b-BQ-ldp" secondAttribute="bottom" constant="8" id="W1n-R1-V7R"/>
-                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="kHb-wI-MZU"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZVh-jB-ZEM" secondAttribute="bottom" id="rs6-ow-1iC"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZVh-jB-ZEM" secondAttribute="trailing" constant="20" id="yww-J8-Cbc"/>
-                                    <constraint firstAttribute="trailing" secondItem="lOE-MF-dMW" secondAttribute="trailing" constant="20" id="zXJ-0I-fZ1"/>
+                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="top" secondItem="lOE-MF-dMW" secondAttribute="bottom" constant="8" id="7bB-wN-H8d"/>
+                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="9ak-vc-for"/>
+                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="EFa-sH-Tsu"/>
+                                    <constraint firstAttribute="trailing" secondItem="lOE-MF-dMW" secondAttribute="trailing" constant="20" id="Hbp-j4-LLe"/>
+                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="R7S-aE-JDh"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZVh-jB-ZEM" secondAttribute="bottom" id="c7H-Jv-n8o"/>
+                                    <constraint firstAttribute="trailing" secondItem="T8b-BQ-ldp" secondAttribute="trailing" constant="20" id="dFR-m8-uxT"/>
+                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="top" secondItem="T8b-BQ-ldp" secondAttribute="bottom" constant="24" id="dMM-RE-ASd"/>
+                                    <constraint firstAttribute="trailing" secondItem="F8I-sD-wPy" secondAttribute="trailing" constant="20" id="dXf-0B-Cwu"/>
+                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="top" secondItem="ysK-YZ-CZ1" secondAttribute="top" constant="20" id="dxS-KT-y4x"/>
+                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="emq-k3-9wK"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZVh-jB-ZEM" secondAttribute="trailing" constant="20" id="itn-nc-ze2"/>
+                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="top" secondItem="F8I-sD-wPy" secondAttribute="bottom" constant="8" id="kYH-9E-w0p"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -613,7 +612,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="16s-yk-bNK"/>
-        <segue reference="NRr-3N-GbR"/>
+        <segue reference="ocv-XF-OO6"/>
+        <segue reference="zgB-Xp-e8U"/>
     </inferredMetricsTieBreakers>
 </document>
