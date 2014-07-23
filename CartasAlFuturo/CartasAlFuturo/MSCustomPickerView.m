@@ -19,7 +19,6 @@
 #pragma mark - UIPickerView Datasource methods
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    
     return 1;
 }
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -33,14 +32,26 @@
     [self.delegate dateDidSelect:self.datesPickerComponentes[row] andHisName:self.pickerComponents[row]];
 }
 
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    NSString *title = self.pickerComponents[row];
-    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    
-    return attString;
-    
+//- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    NSString *title = self.pickerComponents[row];
+//    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0], NSKernAttributeName:@0.2}];
+//    
+//    return attString;
+//    
+//}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* tView = (UILabel*)view;
+    if (!tView){
+        tView = [[UILabel alloc] init];
+        tView.textAlignment = NSTextAlignmentCenter;
+    }
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:self.pickerComponents[row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:22.0], NSKernAttributeName:@0.2}];
+    tView.attributedText = attString;
+    return tView;
 }
+
+
 
 #pragma mark -
 #pragma mark - Getters & Setters

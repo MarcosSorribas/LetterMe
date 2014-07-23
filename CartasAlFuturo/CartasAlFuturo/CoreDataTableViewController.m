@@ -191,7 +191,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@2}];
+    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@0.5,NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]}];
     labelView.textAlignment = NSTextAlignmentCenter;
     labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
     labelView.adjustsFontSizeToFitWidth = YES;

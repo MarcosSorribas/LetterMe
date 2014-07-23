@@ -10,8 +10,10 @@
 #import "LetterStatusEnum.h"
 #import "NSNumber+MSStatusLetter.h"
 #import "NSDate+CustomizableDate.h"
+#import "NSString+Styles.h"
 
 @interface MSReadLetterViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *blackBackgroundView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLetterLabel;
@@ -28,20 +30,17 @@
     [super viewDidLoad];
     [self loadLetter];
     self.blackBackgroundView.layer.cornerRadius = 15;
-    
 }
 
 -(void)loadLetter{
-    self.titleLetterLabel.text = self.letter.letterTitle;
-    
+    self.titleLetterLabel.attributedText = [self.letter.letterTitle addKernStyle:@1.2];
     self.sendDateLabel.text = [NSString stringWithFormat:@"Creada el %@",[self.letter.letterSendDate dateWithMyFormat]];
     self.openDateLabel.text = [NSString stringWithFormat:@"Abierta el %@",[self.letter.letterOpenDate dateWithMyFormat]];
     
     
-    
-    self.contentTextView.text = self.letter.letterContent;
+    self.contentTextView.attributedText = [self.letter.letterContent addKernStyle:@1.2];
     [self.contentTextView setTextColor:[UIColor whiteColor]];
-    [self.contentTextView setFont:[UIFont fontWithName:@"Baskerville-Italic" size:24]];
+    [self.contentTextView setFont:[UIFont fontWithName:@"Baskerville-Italic" size:22]];
 }
 
 -(void)setLetter:(Letter *)letter{

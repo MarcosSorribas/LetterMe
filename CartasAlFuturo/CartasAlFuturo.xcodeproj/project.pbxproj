@@ -31,6 +31,7 @@
 		6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */; };
 		6A60D5B7197E57F30021838F /* MSCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A60D5B6197E57F30021838F /* MSCustomTabBar.m */; };
 		6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */; };
+		6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72E7198061270032BFDE /* NSString+Styles.m */; };
 		6AF35367197905BB009CEAF0 /* MSCreateLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */; };
 		6AF3536B1979312D009CEAF0 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A1979312D009CEAF0 /* Letter.m */; };
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
@@ -92,6 +93,8 @@
 		6A60D5B6197E57F30021838F /* MSCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCustomTabBar.m; sourceTree = "<group>"; };
 		6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedTableViewCell.h; sourceTree = "<group>"; };
 		6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedTableViewCell.m; sourceTree = "<group>"; };
+		6ADE72E6198061270032BFDE /* NSString+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Styles.h"; sourceTree = "<group>"; };
+		6ADE72E7198061270032BFDE /* NSString+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Styles.m"; sourceTree = "<group>"; };
 		6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCreateLetterViewController.h; sourceTree = "<group>"; };
 		6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCreateLetterViewController.m; sourceTree = "<group>"; };
 		6AF353691979312D009CEAF0 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 				6A46B5C01973E8FC001CF9C6 /* NSDate+CustomizableDate.m */,
 				6AF353DB197A8C36009CEAF0 /* NSNumber+MSStatusLetter.h */,
 				6AF353DC197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m */,
+				6ADE72E6198061270032BFDE /* NSString+Styles.h */,
+				6ADE72E7198061270032BFDE /* NSString+Styles.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				6AF353D0197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m in Sources */,
 				6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */,
 				6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */,
+				6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */,
 				6A60D5B7197E57F30021838F /* MSCustomTabBar.m in Sources */,
 				6AF353CD197A868F009CEAF0 /* MSPendingLetterDrawer.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,

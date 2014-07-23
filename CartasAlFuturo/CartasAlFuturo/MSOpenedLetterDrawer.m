@@ -10,6 +10,7 @@
 #import "MSOpenedTableViewCell.h"
 #import "Letter.h"
 #import "NSDate+CustomizableDate.h"
+#import "NSString+Styles.h"
 
 @implementation MSOpenedLetterDrawer
 
@@ -17,10 +18,11 @@
     return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MSOpenedTableViewCell class]) forIndexPath:indexPath];
 }
 
--(void)drawCell:(MSOpenedTableViewCell *)cell withItem:(Letter*)item{
+-(void)drawCell:(MSOpenedTableViewCell *)cell withItem:(Letter*)letter{
     
     cell.backgroundColor = [UIColor clearColor];
-    cell.titleLabel.text = item.letterTitle;
+    cell.titleLabel.attributedText = [letter.letterTitle addKernStyle:@1.5];
+
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "Letter.h"
 #import "MSPendingLetterTableViewCell.h"
 #import "NSDate+CustomizableDate.h"
+#import "NSString+Styles.h"
 
 @implementation MSPendingLetterDrawer
 
@@ -17,24 +18,15 @@
     return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MSPendingLetterTableViewCell class]) forIndexPath:indexPath];
 }
 
--(void)drawCell:(MSPendingLetterTableViewCell *)cell withItem:(Letter*)item{
+-(void)drawCell:(MSPendingLetterTableViewCell *)cell withItem:(Letter*)letter{
     
-    NSString *countdown = [self calculateCountdown:item];
+    NSString *countdown = [self calculateCountdown:letter];
     cell.countdownLabel.text = countdown;
-    
-    if (item.letterTitle) {
-        NSMutableAttributedString *titleAttributed = [[NSMutableAttributedString alloc] initWithString:item.letterTitle];
-        
-        [titleAttributed addAttribute:NSKernAttributeName value:[NSNumber numberWithFloat:2.0] range:NSMakeRange(0, item.letterTitle.length)];
-        
-        cell.titleLabel.attributedText = titleAttributed;
+    if (letter.letterTitle) {
+        cell.titleLabel.attributedText = [letter.letterTitle addKernStyle:@1.5];
     }
     cell.backgroundColor = [UIColor clearColor];
-    
-    
-    
     cell.blackView.layer.cornerRadius = 10;
-    
 }
 
 -(NSString*)calculateCountdown:(Letter *)letter{

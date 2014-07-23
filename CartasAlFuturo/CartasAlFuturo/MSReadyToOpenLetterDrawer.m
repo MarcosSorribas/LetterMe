@@ -9,7 +9,7 @@
 #import "MSReadyToOpenLetterDrawer.h"
 #import "Letter.h"
 #import "MSReadyToOpenTableViewCell.h"
-#import "NSDate+CustomizableDate.h"
+#import "NSString+Styles.h"
 
 @implementation MSReadyToOpenLetterDrawer
 
@@ -20,7 +20,7 @@
 -(void)drawCell:(MSReadyToOpenTableViewCell *)cell withItem:(Letter*)letter{
     
     cell.blackBackgroundView.layer.cornerRadius = 10;
-    cell.titleLetterLabel.text = letter.letterTitle;
+    cell.titleLetterLabel.attributedText = [letter.letterTitle addKernStyle:@1.5];
     cell.backgroundColor = [UIColor clearColor];
 }
 

@@ -10,6 +10,7 @@
 #import "Letter+myAPI.h"
 #import "MSLetterValidator.h"
 #import "MSCustomPickerView.h"
+#import "NSString+Styles.h"
 
 enum : NSUInteger {
     TitleState = 1,
@@ -47,6 +48,7 @@ enum : NSUInteger {
 
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UILabel *dateHeader;
+@property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 
 
 
@@ -100,13 +102,26 @@ CGFloat const animationDuration = 0.35;
     self.contentTextView.alpha = 0;
     self.pickerView.alpha = 0;
     self.dateLabelView.alpha = 0;
+    [self labelsHeaderConfig];
+}
+
+-(void)labelsHeaderConfig{
+    NSNumber * const kern = @3;
+    self.titleHeader.attributedText = [self.titleHeader.text addKernStyle:kern];
+    self.dateHeader.attributedText = [self.dateHeader.text addKernStyle:kern];
+    self.contentHeader.attributedText = [self.contentHeader.text addKernStyle:kern];
+    
+    self.titleHeader.adjustsFontSizeToFitWidth = YES;
+    self.dateHeader.adjustsFontSizeToFitWidth = YES;
+    self.contentHeader.adjustsFontSizeToFitWidth = YES;
+
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@2}];
+    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@0.5,NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]}];
     labelView.textAlignment = NSTextAlignmentCenter;
     labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
     labelView.adjustsFontSizeToFitWidth = YES;
