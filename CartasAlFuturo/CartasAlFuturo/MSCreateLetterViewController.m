@@ -317,12 +317,11 @@ CGFloat const animationDuration = 0.35;
     }else{
         switch ([self localizeMistakesInState]) {
             case TitleState:{
-                [UIView animateWithDuration:0.45 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.titleBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
+                    
                     [self.titleBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
                 } completion:^(BOOL finished) {
-                    [self viewInTitleState];
-                
                 }];
                 break;
             }
@@ -373,5 +372,4 @@ CGFloat const animationDuration = 0.35;
     }
     return _customPicker;
 }
-
 @end

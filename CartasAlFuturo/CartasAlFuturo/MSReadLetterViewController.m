@@ -41,7 +41,7 @@
     
     self.contentTextView.text = self.letter.letterContent;
     [self.contentTextView setTextColor:[UIColor whiteColor]];
-    [self.contentTextView setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0]];
+    [self.contentTextView setFont:[UIFont fontWithName:@"Baskerville-Italic" size:24]];
 }
 
 -(void)setLetter:(Letter *)letter{
