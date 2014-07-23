@@ -61,6 +61,12 @@ NSString * const kOpenedLettersTitle = @"Leídas";
     }
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * const deleteButtonText = @"Eliminar";
+    return deleteButtonText;
+}
+
 #pragma mark -
 #pragma mark - Private methods
 
