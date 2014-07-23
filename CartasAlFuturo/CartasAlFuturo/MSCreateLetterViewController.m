@@ -67,9 +67,16 @@ CGFloat const animationDuration = 0.35;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initialConfig];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
     self.navigationItem.title = @"Crea tu carta";
+}
+
+-(void)initialConfig{
+    self.titleTextField.alpha = 0;
+
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -167,6 +174,7 @@ CGFloat const animationDuration = 0.35;
     [self.titleTextField becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
                      animations:^{
+                         self.titleTextField.alpha = 1;
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
@@ -183,6 +191,7 @@ CGFloat const animationDuration = 0.35;
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          [self.view endEditing:YES];
+                         self.titleTextField.alpha = 0;
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
@@ -203,6 +212,7 @@ CGFloat const animationDuration = 0.35;
     [self.contentTextView becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
                      animations:^{
+                         self.titleTextField.alpha = 0;
                          self.titleViewHeightConstraint.constant = 0;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 125;
@@ -219,6 +229,7 @@ CGFloat const animationDuration = 0.35;
     [self.view endEditing:YES];
     [UIView animateWithDuration:animationDuration
                      animations:^{
+                         self.titleTextField.alpha = 0;
                          self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
                          self.titleViewHeightConstraint.constant = 0;
                          

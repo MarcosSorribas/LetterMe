@@ -349,6 +349,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="908"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prueba_background" translatesAutoresizingMaskIntoConstraints="NO" id="7Rs-yd-avo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="908"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om3-rH-KzK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="908"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,10 +365,11 @@
                                                 <rect key="frame" x="20" y="17" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.6480601748" blue="0.44522868329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="BlP-bp-kRk"/>
@@ -383,7 +388,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5M-1G-XpO">
-                                                <rect key="frame" x="20" y="63" width="280" height="30"/>
+                                                <rect key="frame" x="89" y="2" width="26" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -406,10 +411,11 @@
                                                 <rect key="frame" x="20" y="14" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.72169550381590253" blue="0.90316037561911067" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Q49-aq-sLj" firstAttribute="leading" secondItem="mxy-IC-qxg" secondAttribute="leading" constant="20" id="659-1j-jE4"/>
@@ -428,7 +434,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9DR-r8-qcW">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                                                <rect key="frame" x="-43" y="44" width="0.0" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -451,10 +457,11 @@
                                                 <rect key="frame" x="20" y="17" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.29114510821184592" blue="0.2792333259996137" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="MNb-Rb-e9w"/>
@@ -473,7 +480,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-8l-4R0">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                                <rect key="frame" x="-5" y="-71" width="480" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </pickerView>
                                         </subviews>
@@ -517,9 +524,13 @@
                             <constraint firstItem="om3-rH-KzK" firstAttribute="top" secondItem="b4u-Et-KBd" secondAttribute="top" id="11s-P5-aUg"/>
                             <constraint firstAttribute="height" secondItem="om3-rH-KzK" secondAttribute="height" id="AVA-RB-LJx"/>
                             <constraint firstAttribute="width" secondItem="om3-rH-KzK" secondAttribute="width" id="BmB-Jm-Aed"/>
+                            <constraint firstAttribute="centerX" secondItem="7Rs-yd-avo" secondAttribute="centerX" id="Qy5-z4-aZG"/>
+                            <constraint firstAttribute="centerY" secondItem="7Rs-yd-avo" secondAttribute="centerY" id="Rif-fh-bhW"/>
                             <constraint firstItem="GMg-te-xcN" firstAttribute="top" secondItem="om3-rH-KzK" secondAttribute="bottom" id="SEv-vU-J4u"/>
                             <constraint firstAttribute="trailing" secondItem="om3-rH-KzK" secondAttribute="trailing" id="XrZ-P9-bq9"/>
                             <constraint firstItem="om3-rH-KzK" firstAttribute="leading" secondItem="b4u-Et-KBd" secondAttribute="leading" id="ZtZ-WD-nwY"/>
+                            <constraint firstItem="7Rs-yd-avo" firstAttribute="height" secondItem="b4u-Et-KBd" secondAttribute="height" id="f8J-jG-HRP"/>
+                            <constraint firstItem="7Rs-yd-avo" firstAttribute="width" secondItem="b4u-Et-KBd" secondAttribute="width" id="mki-NB-9aH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="reX-DG-Oiy">

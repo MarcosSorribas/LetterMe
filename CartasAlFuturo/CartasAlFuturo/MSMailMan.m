@@ -30,4 +30,5 @@
     }
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:document];
 }
+
 @end
