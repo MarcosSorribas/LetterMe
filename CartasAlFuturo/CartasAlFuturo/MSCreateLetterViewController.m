@@ -30,6 +30,8 @@ enum : NSUInteger {
 
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
+
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
@@ -75,7 +77,7 @@ CGFloat const animationDuration = 0.35;
 
 -(void)initialConfig{
     self.titleTextField.alpha = 0;
-
+    self.titleLabelView.alpha = 0;
 
 }
 
@@ -106,12 +108,12 @@ CGFloat const animationDuration = 0.35;
                    textView.selectedTextRange.start];
     CGFloat overflow = line.origin.y + line.size.height
     - ( textView.contentOffset.y + textView.bounds.size.height
-       - textView.contentInset.bottom - textView.contentInset.top - 15);
+       - textView.contentInset.bottom - textView.contentInset.top);
     if ( overflow > 0 ) {
         // We are at the bottom of the visible text and introduced a line feed, scroll down (iOS 7 does not do it)
         // Scroll caret to visible area
         CGPoint offset = textView.contentOffset;
-        offset.y += overflow + 7; // leave 7 pixels margin
+        offset.y += overflow; // leave 7 pixels margin
         // Cannot animate with setContentOffset:animated: or caret will not appear
         [UIView animateWithDuration:.2 animations:^{
             [textView setContentOffset:offset];
@@ -175,6 +177,7 @@ CGFloat const animationDuration = 0.35;
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.titleTextField.alpha = 1;
+                         self.titleLabelView.alpha = 0.65;
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
@@ -192,6 +195,7 @@ CGFloat const animationDuration = 0.35;
                      animations:^{
                          [self.view endEditing:YES];
                          self.titleTextField.alpha = 0;
+                         self.titleLabelView.alpha = 0;
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
@@ -213,6 +217,7 @@ CGFloat const animationDuration = 0.35;
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.titleTextField.alpha = 0;
+                         self.titleLabelView.alpha = 0;
                          self.titleViewHeightConstraint.constant = 0;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 125;
@@ -230,6 +235,8 @@ CGFloat const animationDuration = 0.35;
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.titleTextField.alpha = 0;
+                         self.titleLabelView.alpha = 0;
+
                          self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
                          self.titleViewHeightConstraint.constant = 0;
                          
@@ -294,9 +301,6 @@ CGFloat const animationDuration = 0.35;
             default:
                 break;
         }
-        
-        
-        
     }
 }
 
