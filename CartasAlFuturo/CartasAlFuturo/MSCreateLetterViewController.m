@@ -220,10 +220,10 @@ CGFloat const animationDuration = 0.35;
                          self.pickerView.alpha = 0;
                          self.dateLabelView.alpha = 0;
                          
-                         self.dateHeaderHeightConstraint.constant = 55;
-                         self.contentHeaderHeightConstraint.constant = 55;
-                         self.titleHeaderHeightConstraint.constant = 55;
-                         self.titleViewHeightConstraint.constant = 125;
+                         self.dateHeaderHeightConstraint.constant = 60;
+                         self.contentHeaderHeightConstraint.constant = 60;
+                         self.titleHeaderHeightConstraint.constant = 60;
+                         self.titleViewHeightConstraint.constant = 130;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
@@ -242,11 +242,11 @@ CGFloat const animationDuration = 0.35;
                          self.pickerView.alpha = 1;
                          self.dateLabelView.alpha = 0.65;
                          
-                         self.dateHeaderHeightConstraint.constant = 55;
-                         self.contentHeaderHeightConstraint.constant = 55;
-                         self.titleHeaderHeightConstraint.constant = 55;
+                         self.dateHeaderHeightConstraint.constant = 60;
+                         self.contentHeaderHeightConstraint.constant = 60;
+                         self.titleHeaderHeightConstraint.constant = 60;
                          self.titleViewHeightConstraint.constant = 0;
-                         self.dateViewHeightConstraint.constant = 125+214;
+                         self.dateViewHeightConstraint.constant = 125+214+5;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
@@ -271,7 +271,7 @@ CGFloat const animationDuration = 0.35;
                          
                          self.titleViewHeightConstraint.constant = 0;
                          self.dateViewHeightConstraint.constant = 0;
-                         self.contentViewHeightConstraint.constant = 125;
+                         self.contentViewHeightConstraint.constant = 125+20;
                          self.dateHeaderHeightConstraint.constant = 55;
                          self.contentHeaderHeightConstraint.constant = 55;
                          self.titleHeaderHeightConstraint.constant = 55;
@@ -291,13 +291,13 @@ CGFloat const animationDuration = 0.35;
                          self.pickerView.alpha = 0;
                          self.dateLabelView.alpha = 0;
                          
-                         self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
+                         self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64+20)/3;
                          self.titleViewHeightConstraint.constant = 0;
                          
-                         self.dateHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
+                         self.dateHeaderHeightConstraint.constant = (self.view.bounds.size.height-64+20)/3;
                          self.dateViewHeightConstraint.constant = 0;
                          
-                         self.contentHeaderHeightConstraint.constant = (self.view.bounds.size.height-64)/3;
+                         self.contentHeaderHeightConstraint.constant = (self.view.bounds.size.height-64+20)/3;
                          self.contentViewHeightConstraint.constant = 0;
                          
                          [self.view layoutIfNeeded];
