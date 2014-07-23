@@ -178,6 +178,16 @@
 #pragma mark - Marcos methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UIBarButtonItem *backButton =
+    [[UIBarButtonItem alloc] initWithTitle:@"Volver"
+                                     style:UIBarButtonItemStyleBordered
+                                    target:nil
+                                    action:nil];
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]};
+    [backButton setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    self.navigationItem.backBarButtonItem = backButton;
+    
     if ([[segue identifier] isEqualToString:NSStringFromClass([MSReadLetterViewController class])]) {
         MSReadLetterViewController *dController = [segue destinationViewController];
         dController.letter = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];

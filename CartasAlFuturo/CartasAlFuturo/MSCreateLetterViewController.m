@@ -94,6 +94,13 @@ CGFloat const animationDuration = 0.35;
     [self viewInEmptyState];
     [self configurePickerAndTextView];
     [self configureNavigationBar:@"Crea tu carta"];
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]};
+    NSDictionary *attributes2 = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:18.0]};
+
+    
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:attributes2 forState:UIControlStateNormal];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
 }
 
 -(void)initialConfig{

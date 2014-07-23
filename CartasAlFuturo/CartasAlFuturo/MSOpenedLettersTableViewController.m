@@ -18,7 +18,7 @@
 #pragma mark -
 #pragma mark - Constans
 
-NSString * const kOpenedLettersTitle = @"Leidas";
+NSString * const kOpenedLettersTitle = @"Leídas";
 
 
 -(void)viewDidLoad{

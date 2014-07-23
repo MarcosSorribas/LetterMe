@@ -32,14 +32,6 @@
     [self.delegate dateDidSelect:self.datesPickerComponentes[row] andHisName:self.pickerComponents[row]];
 }
 
-//- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    NSString *title = self.pickerComponents[row];
-//    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0], NSKernAttributeName:@0.2}];
-//    
-//    return attString;
-//    
-//}
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     UILabel* tView = (UILabel*)view;
     if (!tView){
@@ -58,7 +50,7 @@
 
 -(NSArray *)pickerComponents{
     if (!_pickerComponents) {
-        _pickerComponents = @[@"Dentro de un dia",@"Dentro de tres dias",@"Dentro de una semana",@"Dentro de tres semanas",@"Dentro de un mes",@"Dentro de tres meses",@"Dentro de seis meses",@"Dentro de nueve meses",@"Dentro de un año",@"Dentro de tres años"];
+        _pickerComponents = @[@"Dentro de un día",@"Dentro de tres días",@"Dentro de una semana",@"Dentro de tres semanas",@"Dentro de un mes",@"Dentro de tres meses",@"Dentro de seis meses",@"Dentro de nueve meses",@"Dentro de un año",@"Dentro de tres años"];
     }
     return _pickerComponents;
 }

@@ -43,6 +43,9 @@
     [self.contentTextView setFont:[UIFont fontWithName:@"Baskerville-Italic" size:22]];
 }
 
+#pragma mark -
+#pragma mark - Getters & Setters
+
 -(void)setLetter:(Letter *)letter{
     _letter = letter;
     if ([_letter.letterStatus statusValue] == MSReadyToOpen) {
