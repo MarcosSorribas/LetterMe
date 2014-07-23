@@ -16,6 +16,7 @@ enum : NSUInteger {
     DateState = 2,
     ContentState = 3,
     EmptyState = 4,
+    CorrectState = 5,
 }; typedef NSInteger ControllerState;
 
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate>
@@ -24,7 +25,6 @@ enum : NSUInteger {
 #pragma mark - Private properties
 
 @property (nonatomic) ControllerState controllerState;
-@property (nonatomic,strong) Letter *letter;
 @property (nonatomic,strong) MSLetterValidator *validator;
 @property (nonatomic,strong) MSCustomPickerView *customPicker;
 
@@ -51,7 +51,7 @@ enum : NSUInteger {
 
 
 #pragma mark -
-#pragma mark - Constains
+#pragma mark - Constrains
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
@@ -59,6 +59,15 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
+
+
+
+#pragma mark -
+#pragma mark - Temporal letter
+
+@property (strong,nonatomic) NSString *letterTitle;
+@property (strong,nonatomic) NSString *letterContent;
+@property (strong,nonatomic) NSDate *letterOpenDate;
 
 @end
 
@@ -107,7 +116,6 @@ CGFloat const animationDuration = 0.35;
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self createALetterWithoutData];
     [self.pickerView selectRow:4 inComponent:0 animated:NO];
 }
 
@@ -115,7 +123,7 @@ CGFloat const animationDuration = 0.35;
 #pragma mark - TextFieldDelegate methods
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    self.letter.letterTitle = textField.text;
+    self.letterTitle = textField.text;
     if ([self.validator isAValidLetterTitle:textField.text]) {
         self.titleHeader.text = textField.text;
     }
@@ -125,7 +133,7 @@ CGFloat const animationDuration = 0.35;
 #pragma mark - TextViewDelegate methods
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
-    self.letter.letterContent = textView.text;
+    self.letterContent = textView.text;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -135,11 +143,8 @@ CGFloat const animationDuration = 0.35;
     - ( textView.contentOffset.y + textView.bounds.size.height
        - textView.contentInset.bottom - textView.contentInset.top);
     if ( overflow > 0 ) {
-        // We are at the bottom of the visible text and introduced a line feed, scroll down (iOS 7 does not do it)
-        // Scroll caret to visible area
         CGPoint offset = textView.contentOffset;
         offset.y += overflow; // leave 7 pixels margin
-        // Cannot animate with setContentOffset:animated: or caret will not appear
         [UIView animateWithDuration:.2 animations:^{
             [textView setContentOffset:offset];
         }];
@@ -147,7 +152,7 @@ CGFloat const animationDuration = 0.35;
 }
 
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
-    self.letter.letterOpenDate = date;
+    self.letterOpenDate = date;
     self.dateHeader.text = name;
 }
 
@@ -190,13 +195,6 @@ CGFloat const animationDuration = 0.35;
 
 #pragma mark -
 #pragma mark - Private methods
-
--(void)createALetterWithoutData{
-    [self.manageDocument.undoManager beginUndoGrouping];
-    self.letter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
-    
-}
-
 -(void)viewInTitleState{
     [self.titleTextField becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
@@ -294,16 +292,25 @@ CGFloat const animationDuration = 0.35;
 }
 
 -(ControllerState)localizeMistakesInState{
-    if (![self.validator isAValidLetterTitle:self.letter.letterTitle]) {
+    if (![self.validator isAValidLetterTitle:self.letterTitle]) {
         return TitleState;
     }
-    if (![self.validator isAValidLetterContent:self.letter.letterContent]) {
+    if (![self.validator isAValidLetterContent:self.letterContent]) {
         return ContentState;
     }
-    if (![self.validator isAValidLetterOpenDate:self.letter.letterOpenDate]) {
+    if (![self.validator isAValidLetterOpenDate:self.letterOpenDate]) {
         return DateState;
     }
-    return EmptyState;
+    return CorrectState;
+}
+
+-(void)createLetterWithUserData{
+    [self.manageDocument.managedObjectContext.undoManager beginUndoGrouping];
+    Letter *letter = [Letter createLetterInContext:self.manageDocument.managedObjectContext];
+    letter.letterTitle = self.letterTitle;
+    letter.letterContent = self.letterContent;
+    letter.letterOpenDate = self.letterOpenDate;
+    [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
 }
 
 #pragma mark -
@@ -311,36 +318,32 @@ CGFloat const animationDuration = 0.35;
 
 - (IBAction)createLetter:(id)sender {
     [self viewInEmptyState];
-    if ([self.validator isAValidLetter:self.letter]) {
-        [self.manageDocument.undoManager endUndoGrouping];
+    if ([self localizeMistakesInState] == CorrectState) {
+        [self createLetterWithUserData];
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
         switch ([self localizeMistakesInState]) {
             case TitleState:{
                 [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.titleBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
-                    
                     [self.titleBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
                 } completion:^(BOOL finished) {
                 }];
                 break;
             }
             case ContentState:{
-                [UIView animateWithDuration:0.45 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.contentBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
                     [self.contentBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
                 } completion:^(BOOL finished) {
-                    [self viewInContentState];
-                    
                 }];
                 break;
             }
             case DateState:{
-                [UIView animateWithDuration:0.45 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.dateBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
                     [self.dateBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
                 } completion:^(BOOL finished) {
-                    [self viewInDateState];
                 }];
                 break;
             }
@@ -351,8 +354,6 @@ CGFloat const animationDuration = 0.35;
 }
 
 - (IBAction)cancelLetter:(id)sender {
-    [self.manageDocument.undoManager endUndoGrouping];
-    [self.manageDocument.undoManager undo];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
