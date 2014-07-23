@@ -488,8 +488,8 @@
                                         <rect key="frame" x="0.0" y="329" width="320" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9DR-r8-qcW">
-                                                <rect key="frame" x="5" y="3" width="310" height="150"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DR-r8-qcW">
+                                                <rect key="frame" x="5" y="1" width="310" height="154"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -558,14 +558,47 @@
                                         <rect key="frame" x="0.0" y="539" width="320" height="369"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-8l-4R0">
-                                                <rect key="frame" x="52" y="28" width="480" height="162"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            </pickerView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cuánto tiempo quieres esperar?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3m-fP-Xp4">
+                                                <rect key="frame" x="20" y="40" width="280" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWP-C4-lum">
+                                                <rect key="frame" x="10" y="76" width="300" height="162"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-8l-4R0">
+                                                        <rect key="frame" x="0.0" y="1" width="300" height="162"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </pickerView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.22" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="centerY" secondItem="fqz-8l-4R0" secondAttribute="centerY" constant="-0.5" id="9Yv-Js-rub"/>
+                                                    <constraint firstAttribute="width" secondItem="fqz-8l-4R0" secondAttribute="width" id="Od2-Ij-ooG"/>
+                                                    <constraint firstAttribute="centerX" secondItem="fqz-8l-4R0" secondAttribute="centerX" id="T8f-EF-zFI"/>
+                                                    <constraint firstAttribute="height" secondItem="fqz-8l-4R0" secondAttribute="height" id="lbF-fc-eFR"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.56609260470602552" green="0.6796152232295809" blue="0.99675941469999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="3pC-CN-34a"/>
+                                            <constraint firstAttribute="trailing" secondItem="KWP-C4-lum" secondAttribute="trailing" constant="10" id="Kct-ev-8J6"/>
+                                            <constraint firstItem="KWP-C4-lum" firstAttribute="leading" secondItem="4Yq-Ir-Cl5" secondAttribute="leading" constant="10" id="MzG-26-dPo"/>
+                                            <constraint firstItem="e3m-fP-Xp4" firstAttribute="leading" secondItem="4Yq-Ir-Cl5" secondAttribute="leading" constant="20" id="XyT-53-S8P"/>
+                                            <constraint firstItem="e3m-fP-Xp4" firstAttribute="top" secondItem="4Yq-Ir-Cl5" secondAttribute="top" constant="40" id="eCt-Jx-AIG"/>
+                                            <constraint firstAttribute="trailing" secondItem="e3m-fP-Xp4" secondAttribute="trailing" constant="20" id="fHf-r9-eTk"/>
+                                            <constraint firstItem="KWP-C4-lum" firstAttribute="top" secondItem="e3m-fP-Xp4" secondAttribute="bottom" constant="16" id="ktD-Hf-lRV"/>
                                             <constraint firstAttribute="height" constant="369" id="mBF-O6-APO"/>
                                         </constraints>
                                     </view>
@@ -632,6 +665,7 @@
                         <outlet property="contentViewHeightConstraint" destination="eo0-xN-0Xq" id="E1j-mL-bW5"/>
                         <outlet property="dateHeader" destination="nnt-J9-VRl" id="cmy-Kx-zKY"/>
                         <outlet property="dateHeaderHeightConstraint" destination="kC2-1R-n7D" id="Nqv-rr-i0w"/>
+                        <outlet property="dateLabelView" destination="e3m-fP-Xp4" id="Lsv-n0-nMb"/>
                         <outlet property="dateViewHeightConstraint" destination="mBF-O6-APO" id="Zy3-W3-RMv"/>
                         <outlet property="pickerView" destination="fqz-8l-4R0" id="96e-id-jAj"/>
                         <outlet property="titleHeader" destination="joj-fq-Oxu" id="cB8-Ke-aAJ"/>
