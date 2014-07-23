@@ -89,7 +89,6 @@
 - (void) testCanCreateALetterWithNotNilNotOptionalValues{
     XCTAssertNotNil(sut.letterSendDate, @"Letter sendDate can't be nil");
     XCTAssertNotNil(sut.letterOpenDate, @"Letter OpenDate can't be nil");
-    XCTAssertNotNil(sut.letterContent, @"Letter Content can't be nil");
     XCTAssertNotNil(sut.letterStatus, @"Letter Status can't be nil");
 }
 

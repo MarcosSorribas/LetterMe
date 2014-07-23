@@ -660,14 +660,17 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="908"/>
                     <connections>
+                        <outlet property="contentBlackView" destination="zvo-67-wY2" id="Tlr-jH-uDQ"/>
                         <outlet property="contentHeaderHeightConstraint" destination="6O6-Os-Zao" id="Afu-85-CV8"/>
                         <outlet property="contentTextView" destination="9DR-r8-qcW" id="90W-nZ-zlc"/>
                         <outlet property="contentViewHeightConstraint" destination="eo0-xN-0Xq" id="E1j-mL-bW5"/>
+                        <outlet property="dateBlackView" destination="Vjw-7l-YyO" id="3ld-YN-9Bh"/>
                         <outlet property="dateHeader" destination="nnt-J9-VRl" id="cmy-Kx-zKY"/>
                         <outlet property="dateHeaderHeightConstraint" destination="kC2-1R-n7D" id="Nqv-rr-i0w"/>
                         <outlet property="dateLabelView" destination="e3m-fP-Xp4" id="Lsv-n0-nMb"/>
                         <outlet property="dateViewHeightConstraint" destination="mBF-O6-APO" id="Zy3-W3-RMv"/>
                         <outlet property="pickerView" destination="fqz-8l-4R0" id="96e-id-jAj"/>
+                        <outlet property="titleBlackView" destination="tgR-Vf-Iob" id="CiF-8K-cbd"/>
                         <outlet property="titleHeader" destination="joj-fq-Oxu" id="cB8-Ke-aAJ"/>
                         <outlet property="titleHeaderHeightConstraint" destination="BlP-bp-kRk" id="Pwi-b7-tZk"/>
                         <outlet property="titleLabelView" destination="OVD-6w-wNy" id="dY9-3M-tYB"/>

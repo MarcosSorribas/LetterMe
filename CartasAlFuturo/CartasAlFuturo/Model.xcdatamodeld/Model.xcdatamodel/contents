@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Letter" representedClassName="Letter" syncable="YES">
-        <attribute name="letterContent" attributeType="String" minValueString="1" defaultValueString="Default content" syncable="YES"/>
+        <attribute name="letterContent" attributeType="String" minValueString="1" syncable="YES"/>
         <attribute name="letterOpenDate" attributeType="Date" defaultDateTimeInterval="0" indexed="YES" syncable="YES"/>
         <attribute name="letterSendDate" attributeType="Date" syncable="YES"/>
         <attribute name="letterStatus" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>

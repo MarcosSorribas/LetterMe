@@ -31,12 +31,16 @@ enum : NSUInteger {
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
+@property (weak, nonatomic) IBOutlet UIView *titleBlackView;
+
 
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet UIView *contentBlackView;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabelView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UIView *dateBlackView;
 
 
 
@@ -234,7 +238,7 @@ CGFloat const animationDuration = 0.35;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          self.controllerState = DateState;
-
+                         
                          if ([self.pickerView selectedRowInComponent:0] == 4) {
 #warning OJO ESTO HUELE MAL
                              [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:@"Dentro de un mes"];
@@ -293,11 +297,11 @@ CGFloat const animationDuration = 0.35;
     if (![self.validator isAValidLetterTitle:self.letter.letterTitle]) {
         return TitleState;
     }
-    if (![self.validator isAValidLetterOpenDate:self.letter.letterOpenDate]) {
-        return DateState;
-    }
     if (![self.validator isAValidLetterContent:self.letter.letterContent]) {
         return ContentState;
+    }
+    if (![self.validator isAValidLetterOpenDate:self.letter.letterOpenDate]) {
+        return DateState;
     }
     return EmptyState;
 }
@@ -313,26 +317,32 @@ CGFloat const animationDuration = 0.35;
     }else{
         switch ([self localizeMistakesInState]) {
             case TitleState:{
-                //Falla el titulo
-                UIAlertView *ee = [[UIAlertView alloc]initWithTitle:@"Error en el titulo" message:nil delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
+                [UIView animateWithDuration:0.45 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                    [self.titleBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
+                    [self.titleBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
+                } completion:^(BOOL finished) {
+                    [self viewInTitleState];
                 
-                [ee show];
-                
+                }];
                 break;
             }
             case ContentState:{
-                //Falla el contenido
-                UIAlertView *ee = [[UIAlertView alloc]initWithTitle:@"Error en el contenido" message:nil delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
-                
-                [ee show];
-                
+                [UIView animateWithDuration:0.45 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                    [self.contentBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
+                    [self.contentBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
+                } completion:^(BOOL finished) {
+                    [self viewInContentState];
+                    
+                }];
                 break;
             }
             case DateState:{
-                //Falla la fecha
-                UIAlertView *ee = [[UIAlertView alloc]initWithTitle:@"Error en la fecha" message:nil delegate:nil cancelButtonTitle:@"Cancelar" otherButtonTitles:nil];
-                
-                [ee show];
+                [UIView animateWithDuration:0.45 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                    [self.dateBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
+                    [self.dateBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
+                } completion:^(BOOL finished) {
+                    [self viewInDateState];
+                }];
                 break;
             }
             default:
