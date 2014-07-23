@@ -737,6 +737,7 @@
         <image name="icoLeidas" width="30" height="30"/>
         <image name="prueba_background" width="640" height="1136"/>
     </resources>
+    <color key="tintColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
