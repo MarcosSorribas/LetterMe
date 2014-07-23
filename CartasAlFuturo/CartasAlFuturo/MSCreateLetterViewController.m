@@ -78,7 +78,7 @@ CGFloat const animationDuration = 0.35;
     [self initialConfig];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
-    self.navigationItem.title = @"Crea tu carta";
+    [self configureNavigationBar:@"Crea tu carta"];
 }
 
 -(void)initialConfig{
@@ -89,9 +89,22 @@ CGFloat const animationDuration = 0.35;
     self.dateLabelView.alpha = 0;
 }
 
+-(void)configureNavigationBar:(NSString*)titleString{
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@2}];
+    labelView.textAlignment = NSTextAlignmentCenter;
+    labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
+    labelView.adjustsFontSizeToFitWidth = YES;
+    labelView.attributedText = titleWithAtt;
+    self.navigationItem.titleView = labelView;
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self createALetterWithoutData];
+    [self.pickerView selectRow:4 inComponent:0 animated:NO];
 }
 
 #pragma mark -
@@ -221,9 +234,10 @@ CGFloat const animationDuration = 0.35;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          self.controllerState = DateState;
-                         if ([self.pickerView selectedRowInComponent:0] == 0) {
+
+                         if ([self.pickerView selectedRowInComponent:0] == 4) {
 #warning OJO ESTO HUELE MAL
-                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24] andHisName:@"Dentro de un dia"];
+                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:@"Dentro de un mes"];
                          }
                      }];
 }

@@ -21,7 +21,6 @@
 
     [self prepareFirstController];
     [self mailManStart];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mailManStart) name:UIDocumentStateChangedNotification object:self.managedDocument];
     return YES;
 }
 

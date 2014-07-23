@@ -28,17 +28,23 @@
 
 #pragma mark -
 #pragma mark - UIPickerView Delegate methods 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return self.pickerComponents[row];
-}
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     [self.delegate dateDidSelect:self.datesPickerComponentes[row] andHisName:self.pickerComponents[row]];
 }
 
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *title = self.pickerComponents[row];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
+    
+}
 
 #pragma mark -
 #pragma mark - Getters & Setters
+
 -(NSArray *)pickerComponents{
     if (!_pickerComponents) {
         _pickerComponents = @[@"Dentro de un dia",@"Dentro de tres dias",@"Dentro de una semana",@"Dentro de tres semanas",@"Dentro de un mes",@"Dentro de tres meses",@"Dentro de seis meses",@"Dentro de nueve meses",@"Dentro de un año",@"Dentro de tres años"];
