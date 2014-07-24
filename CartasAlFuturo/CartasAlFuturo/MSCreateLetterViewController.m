@@ -177,7 +177,6 @@ CGFloat const animationDuration = 0.35;
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
     self.letterOpenDate = date;
     self.dateHeader.text = name;
-    [self.dateHeader setNeedsDisplay];
 }
 
 #pragma mark -
@@ -402,5 +401,3 @@ CGFloat const animationDuration = 0.35;
 }
 
 @end
-
-
