@@ -11,6 +11,17 @@
 
 @implementation MSLetterValidator
 
+#pragma mark -
+#pragma mark - Contantes
+
+static NSInteger const maxCharactersTitle = 50;
+static NSInteger const minCharactersTitle = 1;
+static NSInteger const secondsDay = 55*50*24;
+
+#pragma mark -
+#pragma mark - Validator methods
+
+
 -(BOOL)isAValidLetter:(Letter*)letter{
     if (![self isAValidLetterTitle:letter.letterTitle]){
         return NO;
@@ -28,7 +39,7 @@
 }
 
 -(BOOL)isAValidLetterTitle:(NSString*)letterTitle{
-    if (letterTitle.length > 50 || letterTitle.length < 1) {
+    if (letterTitle.length > maxCharactersTitle || letterTitle.length < minCharactersTitle) {
         return NO;
     }
     NSString *aux = letterTitle;
@@ -40,11 +51,10 @@
 }
 
 -(BOOL)isAValidLetterOpenDate:(NSDate*)letterOpenDate{
-    //Minimo un dia
     if (!letterOpenDate) {
         return NO;
     }
-    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:55*50*24];
+    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:secondsDay];
     if ([now compare:letterOpenDate] == NSOrderedDescending) {
         return NO;
     }
@@ -52,7 +62,7 @@
 }
 
 -(BOOL)isAValidLetterContent:(NSString*)letterContent{
-    if (letterContent.length < 1) {
+    if (letterContent.length < minCharactersTitle) {
         return NO;
     }
     NSString *aux = letterContent;

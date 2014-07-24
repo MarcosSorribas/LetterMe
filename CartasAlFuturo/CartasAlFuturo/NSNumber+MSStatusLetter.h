@@ -9,7 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "LetterStatusEnum.h"
 @interface NSNumber (MSStatusLetter)
-
 -(MSStatusLetter)statusValue;
-
 @end

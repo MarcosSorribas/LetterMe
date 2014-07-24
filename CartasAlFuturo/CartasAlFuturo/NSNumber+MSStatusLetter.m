@@ -9,7 +9,6 @@
 #import "NSNumber+MSStatusLetter.h"
 
 @implementation NSNumber (MSStatusLetter)
-
 -(MSStatusLetter)statusValue{
     if ([self integerValue] == MSPending) {
         return MSPending;
