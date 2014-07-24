@@ -52,7 +52,7 @@
 
 
 
-//MARCOS
+//MARCOS METHODS
 @property (nonatomic,strong,readwrite) UIManagedDocument *manageDocument;
 -(void)configureNavigationBar:(NSString*)titleString;
 -(void)configureBackground;

@@ -25,12 +25,15 @@ enum : NSUInteger {
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate>
 
 #pragma mark -
-#pragma mark - Private properties
+#pragma mark - Objects properties
 
 @property (nonatomic) ControllerState controllerState;
 @property (nonatomic,strong) MSLetterValidator *validator;
 @property (nonatomic,strong) MSCustomPickerView *customPicker;
 
+
+#pragma mark -
+#pragma mark - Oulets properties
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
@@ -55,7 +58,7 @@ enum : NSUInteger {
 
 
 #pragma mark -
-#pragma mark - Constrains
+#pragma mark - Animatable Constrains
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
@@ -67,7 +70,7 @@ enum : NSUInteger {
 
 
 #pragma mark -
-#pragma mark - Temporal letter
+#pragma mark - Temporal letter Data
 
 @property (strong,nonatomic) NSString *letterTitle;
 @property (strong,nonatomic) NSString *letterContent;
@@ -77,17 +80,14 @@ enum : NSUInteger {
 
 @implementation MSCreateLetterViewController
 
+#pragma mark -
+#pragma mark - Constants
+
 CGFloat const animationDuration = 0.35;
+NSString *const navBarTitle = @"Crea tu carta";
 
 #pragma mark -
 #pragma mark - View methods
-
--(void)configurePickerAndTextView{
-    self.pickerView.dataSource = self.customPicker;
-    self.pickerView.delegate = self.customPicker;
-    self.customPicker.delegate = self;
-    self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
-}
 
 - (void)viewDidLoad
 {
@@ -95,15 +95,16 @@ CGFloat const animationDuration = 0.35;
     [self initialConfig];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
-    [self configureNavigationBar:@"Crea tu carta"];
-    NSDictionary *attributes = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]};
-    NSDictionary *attributes2 = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:18.0]};
-    
-    
-    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:attributes2 forState:UIControlStateNormal];
-    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    
+    [self configureNavigationBar:navBarTitle];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.pickerView selectRow:4 inComponent:0 animated:NO];
+}
+
+#pragma mark -
+#pragma mark - Initial configure methods 
 
 -(void)initialConfig{
     self.titleTextField.alpha = 0;
@@ -113,6 +114,14 @@ CGFloat const animationDuration = 0.35;
     self.dateLabelView.alpha = 0;
     [self labelsHeaderConfig];
 }
+
+-(void)configurePickerAndTextView{
+    self.pickerView.dataSource = self.customPicker;
+    self.pickerView.delegate = self.customPicker;
+    self.customPicker.delegate = self;
+    self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+}
+
 
 -(void)labelsHeaderConfig{
     NSNumber * const kern = @3;
@@ -126,21 +135,21 @@ CGFloat const animationDuration = 0.35;
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000]];
+    [[UINavigationBar appearance] setTintColor:MAIN_COLOR];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@0.5,NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]}];
+    NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@0.5,NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:19.0]}];
     labelView.textAlignment = NSTextAlignmentCenter;
-    labelView.textColor = [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000];
+    labelView.textColor = MAIN_COLOR;
     labelView.adjustsFontSizeToFitWidth = YES;
     labelView.attributedText = titleWithAtt;
     self.navigationItem.titleView = labelView;
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:19.0]};
+    NSDictionary *attributes2 = @{NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:18.0]};
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:attributes2 forState:UIControlStateNormal];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self.pickerView selectRow:4 inComponent:0 animated:NO];
-}
 
 #pragma mark -
 #pragma mark - TextFieldDelegate methods
@@ -174,18 +183,20 @@ CGFloat const animationDuration = 0.35;
     }
 }
 
+#pragma mark -
+#pragma mark - DatePickerDelegate methods
+
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
     self.letterOpenDate = date;
     self.dateHeader.text = name;
 }
 
 #pragma mark -
-#pragma mark - Touched methods
+#pragma mark - Touched Cicle methods
 
 - (IBAction)titleHeaderTouched:(UITapGestureRecognizer *)sender {
     switch (self.controllerState) {
         case TitleState:
-            //Volvemos al estado vacio, se cierra el titulo
             [self viewInEmptyState];
             break;
         default:
@@ -217,7 +228,10 @@ CGFloat const animationDuration = 0.35;
 }
 
 #pragma mark -
-#pragma mark - Private methods
+#pragma mark - Logic view methods
+
+//TODO: Refactor whithout harcode numbers and compatibility with iPhone4
+
 -(void)viewInTitleState{
     [self.titleTextField becomeFirstResponder];
     [UIView animateWithDuration:animationDuration
@@ -259,9 +273,7 @@ CGFloat const animationDuration = 0.35;
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          self.controllerState = DateState;
-                         
                          if ([self.pickerView selectedRowInComponent:0] == 4) {
-#warning OJO ESTO HUELE MAL
                              [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:@"Dentro de un mes"];
                          }
                      }];
@@ -314,6 +326,9 @@ CGFloat const animationDuration = 0.35;
                      }];
 }
 
+#pragma mark -
+#pragma mark - Private methods
+
 -(ControllerState)localizeMistakesInState{
     if (![self.validator isAValidLetterTitle:self.letterTitle]) {
         return TitleState;
@@ -336,6 +351,14 @@ CGFloat const animationDuration = 0.35;
     [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
 }
 
+-(void)animateMistakeIn:(UIView*)view{
+    [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [view setBackgroundColor:RED_MISTAKE_COLOR];
+        [view setBackgroundColor:BLACK_LIGHT_COLOR];
+    } completion:^(BOOL finished) {
+    }];
+}
+
 #pragma mark -
 #pragma mark - IBAction
 
@@ -348,29 +371,17 @@ CGFloat const animationDuration = 0.35;
         switch ([self localizeMistakesInState]) {
             case TitleState:{
                 [self.titleBlackView shakeAnimate];
-                [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    [self.titleBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
-                    [self.titleBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
-                } completion:^(BOOL finished) {
-                }];
+                [self animateMistakeIn:self.titleBlackView];
                 break;
             }
             case ContentState:{
                 [self.contentBlackView shakeAnimate];
-                [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    [self.contentBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
-                    [self.contentBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
-                } completion:^(BOOL finished) {
-                }];
+                [self animateMistakeIn:self.contentBlackView];
                 break;
             }
             case DateState:{
                 [self.dateBlackView shakeAnimate];
-                [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    [self.dateBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
-                    [self.dateBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
-                } completion:^(BOOL finished) {
-                }];
+                [self animateMistakeIn:self.dateBlackView];
                 break;
             }
             default:
@@ -399,5 +410,4 @@ CGFloat const animationDuration = 0.35;
     }
     return _customPicker;
 }
-
 @end

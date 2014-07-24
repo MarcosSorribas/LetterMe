@@ -34,18 +34,8 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    for (UITableViewCell *cell in self.tableView.visibleCells) {
-        if ([cell isKindOfClass:[MSReadyToOpenTableViewCell class]]) {
-            [(MSReadyToOpenTableViewCell*)cell animate];
-        }
-    }
-    
-    if (!self.emptyView.superview) {
-        [self.tableView addSubview:self.emptyView];
-    }
-    
-    
-    
+    [self initialReadyToOpenAnimation];
+    [self configureEmptyView];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -75,12 +65,9 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     if (items == 0) {
         [self.view bringSubviewToFront:self.emptyView];
         self.emptyView.hidden = NO;
-        
     }else{
         self.emptyView.hidden = YES;
-        
     }
-    
     return items;
 }
 
@@ -102,15 +89,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [[tableView cellForRowAtIndexPath:indexPath] shakeAnimate];
-    
-    
-    return indexPath;
-}
-
-
--(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     return indexPath;
 }
 
@@ -124,6 +103,19 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 -(void)checkNewLetterStatus{
     [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.manageDocument];
+}
+
+-(void)initialReadyToOpenAnimation{
+    for (UITableViewCell *cell in self.tableView.visibleCells) {
+        if ([cell isKindOfClass:[MSReadyToOpenTableViewCell class]]) {
+            [(MSReadyToOpenTableViewCell*)cell animate];
+        }
+    }
+}
+-(void)configureEmptyView{
+    if (!self.emptyView.superview) {
+        [self.tableView addSubview:self.emptyView];
+    }
 }
 
 #pragma mark -
