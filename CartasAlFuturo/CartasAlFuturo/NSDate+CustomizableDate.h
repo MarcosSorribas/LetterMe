@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (CustomizableDate)
-+(NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
 -(NSString*)dateWithMyFormat;
 + (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
 @end

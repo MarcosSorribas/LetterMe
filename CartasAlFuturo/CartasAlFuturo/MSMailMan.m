@@ -8,7 +8,6 @@
 
 #import "MSMailMan.h"
 #import "Letter+myAPI.h"
-#import "MSPendingTableViewController.h"
 
 @implementation MSMailMan
 

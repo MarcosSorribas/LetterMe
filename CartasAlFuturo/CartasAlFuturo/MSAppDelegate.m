@@ -9,6 +9,7 @@
 #import "MSAppDelegate.h"
 #import "CoreDataTableViewController.h"
 #import "MSMailMan.h"
+
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
 @property (nonatomic,strong) MSMailMan *mailMan;
@@ -53,7 +54,7 @@
 }
 
 #pragma mark -
-#pragma mark - Controllers methods
+#pragma mark - Private methods
 
 
 -(void)mailManStart{
@@ -61,16 +62,11 @@
 }
 
 -(void)prepareFirstController{
-    
-#warning Muy feo  - Preguntar para refactorizar.
-    
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UINavigationController *navController = (UINavigationController *)[tabBarController.viewControllers firstObject];
-    CoreDataTableViewController *pendingTableView =(CoreDataTableViewController*)navController.topViewController;
-    pendingTableView.manageDocument = self.managedDocument;
-    navController = (UINavigationController *)[tabBarController.viewControllers lastObject];
-    CoreDataTableViewController *openedTableView =(CoreDataTableViewController*)navController.topViewController;
-    openedTableView.manageDocument = self.managedDocument;
+    for (UINavigationController *navController in tabBarController.viewControllers) {
+        CoreDataTableViewController *topController = (CoreDataTableViewController*)navController.topViewController;
+        topController.manageDocument = self.managedDocument;
+    }
 }
 
 #pragma mark -
