@@ -9,8 +9,10 @@
 #import "MSCustomPickerView.h"
 
 @interface MSCustomPickerView ()
+
 @property (copy,nonatomic) NSArray *pickerComponents;
 @property (copy,nonatomic) NSArray *datesPickerComponentes;
+
 @end
 
 @implementation MSCustomPickerView
@@ -38,12 +40,10 @@
         tView = [[UILabel alloc] init];
         tView.textAlignment = NSTextAlignmentCenter;
     }
-    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:self.pickerComponents[row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:22.0], NSKernAttributeName:@0.2}];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:self.pickerComponents[row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:22.0], NSKernAttributeName:@0.2}];
     tView.attributedText = attString;
     return tView;
 }
-
-
 
 #pragma mark -
 #pragma mark - Getters & Setters
@@ -54,10 +54,13 @@
     }
     return _pickerComponents;
 }
+
 -(NSArray *)datesPickerComponentes{
+    NSInteger daySeconds = 60*60*24;
     if (!_datesPickerComponentes) {
-        _datesPickerComponentes = @[[NSDate dateWithTimeIntervalSinceNow:60*60*24],[NSDate dateWithTimeIntervalSinceNow:60*60*24*3],[NSDate dateWithTimeIntervalSinceNow:60*60*24*7],[NSDate dateWithTimeIntervalSinceNow:60*60*24*7*3],[NSDate dateWithTimeIntervalSinceNow:60*60*24*30],[NSDate dateWithTimeIntervalSinceNow:60*60*24*30*3],[NSDate dateWithTimeIntervalSinceNow:60*60*24*30*6],[NSDate dateWithTimeIntervalSinceNow:60*60*24*30*9],[NSDate dateWithTimeIntervalSinceNow:60*60*24*365],[NSDate dateWithTimeIntervalSinceNow:60*60*24*30*365*3]];
+        _datesPickerComponentes = @[[NSDate dateWithTimeIntervalSinceNow:daySeconds],[NSDate dateWithTimeIntervalSinceNow:daySeconds*3],[NSDate dateWithTimeIntervalSinceNow:daySeconds*7],[NSDate dateWithTimeIntervalSinceNow:daySeconds*7*3],[NSDate dateWithTimeIntervalSinceNow:daySeconds*30],[NSDate dateWithTimeIntervalSinceNow:daySeconds*30*3],[NSDate dateWithTimeIntervalSinceNow:daySeconds*30*6],[NSDate dateWithTimeIntervalSinceNow:daySeconds*30*9],[NSDate dateWithTimeIntervalSinceNow:daySeconds*365],[NSDate dateWithTimeIntervalSinceNow:daySeconds*365*3]];
     }
     return _datesPickerComponentes;
 }
+
 @end

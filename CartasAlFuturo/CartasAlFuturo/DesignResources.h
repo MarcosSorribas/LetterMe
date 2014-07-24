@@ -12,5 +12,9 @@
 #define MAIN_COLOR [UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1]
 
 #define FONT_HELVETICA_NEUE_THIN @"HelveticaNeue-Thin"
+#define FONT_HELVETICA_NEUE_LIGHT @"HelveticaNeue-Light"
 
+
+
+#define FONT_BASKERVILLE_ITALIC @"Baskerville-Italic"
 #endif
