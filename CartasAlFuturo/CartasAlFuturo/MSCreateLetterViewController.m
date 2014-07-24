@@ -123,7 +123,6 @@ CGFloat const animationDuration = 0.35;
     self.titleHeader.adjustsFontSizeToFitWidth = YES;
     self.dateHeader.adjustsFontSizeToFitWidth = YES;
     self.contentHeader.adjustsFontSizeToFitWidth = YES;
-    
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
@@ -401,4 +400,7 @@ CGFloat const animationDuration = 0.35;
     }
     return _customPicker;
 }
+
 @end
+
+

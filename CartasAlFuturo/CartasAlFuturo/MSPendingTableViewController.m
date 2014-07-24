@@ -17,7 +17,9 @@
 
 #import "MSReadyToOpenTableViewCell.h"
 #import "UIView+Animations.h"
+
 @interface MSPendingTableViewController ()
+@property (nonatomic,strong) UIView *emptyView;
 @end
 
 @implementation MSPendingTableViewController
@@ -37,6 +39,18 @@ NSString * const kPendingControllerTitle = @"Pendientes";
             [(MSReadyToOpenTableViewCell*)cell animate];
         }
     }
+    
+    if (!self.emptyView.superview) {
+        [self.tableView addSubview:self.emptyView];
+    }
+    
+    if (![self.fetchedResultsController.fetchedObjects count]) {
+        [self.view bringSubviewToFront:self.emptyView];
+        self.emptyView.hidden = NO;
+    }else{
+        self.emptyView.hidden = YES;
+    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -109,4 +123,16 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [super prepareForSegue:segue sender:sender];
 }
+
+#pragma mark -
+#pragma mark - Getters & Setters
+
+-(UIView *)emptyView{
+    if (_emptyView == nil) {
+        _emptyView = [[[NSBundle mainBundle] loadNibNamed:@"MSEmptyTableViewController" owner:self options:nil] firstObject];
+        _emptyView.frame = CGRectMake(self.tableView.bounds.origin.x, self.tableView.bounds.origin.y, self.tableView.bounds.size.width, self.tableView.bounds.size.height-self.navigationController.navigationBar.bounds.size.height-self.navigationController.navigationBar.bounds.size.height);
+    }
+    return _emptyView;
+}
+
 @end
