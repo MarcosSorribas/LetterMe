@@ -44,12 +44,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
         [self.tableView addSubview:self.emptyView];
     }
     
-    if (![self.fetchedResultsController.fetchedObjects count]) {
-        [self.view bringSubviewToFront:self.emptyView];
-        self.emptyView.hidden = NO;
-    }else{
-        self.emptyView.hidden = YES;
-    }
+    
     
 }
 
@@ -68,12 +63,26 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     [self configureFetchResultController];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
-
-
+    
+    
 }
 
 #pragma mark -
 #pragma mark - Table view data source
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSInteger items = [super tableView:tableView numberOfRowsInSection:section];
+    if (items == 0) {
+        [self.view bringSubviewToFront:self.emptyView];
+        self.emptyView.hidden = NO;
+        
+    }else{
+        self.emptyView.hidden = YES;
+        
+    }
+    
+    return items;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
