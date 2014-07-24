@@ -34,6 +34,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
     [self initialReadyToOpenAnimation];
     [self configureEmptyView];
 }
@@ -53,8 +54,13 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     [self configureFetchResultController];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundBack) name:UIApplicationDidBecomeActiveNotification object:nil];
     
-    
+}
+//TODO: Fixed bug -> BackBackground animate lost 
+-(void)backgroundBack{
+    [self.tableView reloadData];
+    [self initialReadyToOpenAnimation];
 }
 
 #pragma mark -

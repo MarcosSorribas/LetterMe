@@ -14,6 +14,7 @@
 @implementation MSReadyToOpenTableViewCell
 
 - (void)animate{
+    [self.titleLetterLabel.layer removeAllAnimations];
     [self.titleLetterLabel setAlpha:1.0];
         [UIView animateWithDuration:0.9
                               delay:0
