@@ -371,20 +371,20 @@
                                                 <rect key="frame" x="10" y="10" width="300" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joj-fq-Oxu">
-                                                        <rect key="frame" x="10" y="-8" width="280" height="58"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Titulo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZe-yK-Gpa">
+                                                        <rect key="frame" x="10" y="-9" width="280" height="58"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="centerX" secondItem="joj-fq-Oxu" secondAttribute="centerX" id="21Z-J5-OBt"/>
-                                                    <constraint firstAttribute="trailing" secondItem="joj-fq-Oxu" secondAttribute="trailing" constant="10" id="43P-6D-sLK"/>
-                                                    <constraint firstItem="joj-fq-Oxu" firstAttribute="leading" secondItem="tgR-Vf-Iob" secondAttribute="leading" constant="10" id="cXL-XZ-yaz"/>
-                                                    <constraint firstAttribute="centerY" secondItem="joj-fq-Oxu" secondAttribute="centerY" constant="-0.5" id="y9z-4p-edQ"/>
+                                                    <constraint firstItem="eZe-yK-Gpa" firstAttribute="leading" secondItem="tgR-Vf-Iob" secondAttribute="leading" constant="10" id="4Ch-ir-Oen"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eZe-yK-Gpa" secondAttribute="trailing" constant="10" id="H8b-4A-G37"/>
+                                                    <constraint firstAttribute="centerY" secondItem="eZe-yK-Gpa" secondAttribute="centerY" id="L7n-kD-1tu"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -524,21 +524,21 @@
                                                 <rect key="frame" x="10" y="5" width="300" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnt-J9-VRl">
-                                                        <rect key="frame" x="10" y="-8" width="280" height="58"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Fecha" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-f9-a2a">
+                                                        <rect key="frame" x="10" y="-9" width="280" height="58"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="nnt-J9-VRl" firstAttribute="leading" secondItem="Vjw-7l-YyO" secondAttribute="leading" constant="10" id="gLe-kA-lnX"/>
-                                                    <constraint firstAttribute="centerX" secondItem="nnt-J9-VRl" secondAttribute="centerX" id="jt7-ds-2pj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="nnt-J9-VRl" secondAttribute="trailing" constant="10" id="pfa-Vo-tPX"/>
-                                                    <constraint firstAttribute="centerY" secondItem="nnt-J9-VRl" secondAttribute="centerY" constant="-0.5" id="xHH-Uz-dN7"/>
+                                                    <constraint firstAttribute="centerX" secondItem="8ar-f9-a2a" secondAttribute="centerX" id="FAA-pg-xdo"/>
+                                                    <constraint firstAttribute="centerY" secondItem="8ar-f9-a2a" secondAttribute="centerY" id="M44-wj-s5I"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8ar-f9-a2a" secondAttribute="trailing" constant="10" id="Xfa-2J-ST7"/>
+                                                    <constraint firstItem="8ar-f9-a2a" firstAttribute="leading" secondItem="Vjw-7l-YyO" secondAttribute="leading" constant="10" id="cBg-xG-Xut"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -676,13 +676,13 @@
                         <outlet property="contentTextView" destination="9DR-r8-qcW" id="90W-nZ-zlc"/>
                         <outlet property="contentViewHeightConstraint" destination="eo0-xN-0Xq" id="E1j-mL-bW5"/>
                         <outlet property="dateBlackView" destination="Vjw-7l-YyO" id="3ld-YN-9Bh"/>
-                        <outlet property="dateHeader" destination="nnt-J9-VRl" id="cmy-Kx-zKY"/>
+                        <outlet property="dateHeader" destination="8ar-f9-a2a" id="XMR-xf-SRF"/>
                         <outlet property="dateHeaderHeightConstraint" destination="kC2-1R-n7D" id="Nqv-rr-i0w"/>
                         <outlet property="dateLabelView" destination="e3m-fP-Xp4" id="Lsv-n0-nMb"/>
                         <outlet property="dateViewHeightConstraint" destination="mBF-O6-APO" id="Zy3-W3-RMv"/>
                         <outlet property="pickerView" destination="fqz-8l-4R0" id="96e-id-jAj"/>
                         <outlet property="titleBlackView" destination="tgR-Vf-Iob" id="CiF-8K-cbd"/>
-                        <outlet property="titleHeader" destination="joj-fq-Oxu" id="cB8-Ke-aAJ"/>
+                        <outlet property="titleHeader" destination="eZe-yK-Gpa" id="ihy-ot-dca"/>
                         <outlet property="titleHeaderHeightConstraint" destination="BlP-bp-kRk" id="Pwi-b7-tZk"/>
                         <outlet property="titleLabelView" destination="OVD-6w-wNy" id="dY9-3M-tYB"/>
                         <outlet property="titleTextField" destination="X5M-1G-XpO" id="g7y-I0-sIp"/>

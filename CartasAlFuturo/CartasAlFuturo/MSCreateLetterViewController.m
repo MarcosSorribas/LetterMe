@@ -48,8 +48,8 @@ enum : NSUInteger {
 
 
 
-@property (weak, nonatomic) IBOutlet UILabel *titleHeader;
-@property (weak, nonatomic) IBOutlet UILabel *dateHeader;
+@property (weak, nonatomic) IBOutlet UITextField *titleHeader;
+@property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 
 
