@@ -19,7 +19,6 @@
 }
 
 -(void)drawCell:(MSPendingLetterTableViewCell *)cell withItem:(Letter*)letter{
-    
     NSString *countdown = [self calculateCountdown:letter];
     cell.countdownLabel.text = countdown;
     if (letter.letterTitle) {
@@ -27,6 +26,8 @@
         cell.backgroundColor = [UIColor clearColor];
     }
 }
+
+
 
 -(NSString*)calculateCountdown:(Letter *)letter{
     NSInteger days = [NSDate daysBetweenDate:letter.letterOpenDate andDate:[NSDate date]];

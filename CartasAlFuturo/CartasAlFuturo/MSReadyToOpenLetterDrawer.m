@@ -22,17 +22,7 @@
     cell.backgroundColor = [UIColor clearColor];
     
     [cell.titleLetterLabel setAlpha:1.0];
-
-    [UIView animateWithDuration:0.9
-                          delay:0
-                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse | UIViewAnimationCurveEaseIn
-                     animations:^(void){
-                         [cell.titleLetterLabel setAlpha:0.0];
-                     }
-                     completion:^(BOOL finished){
-                            NSLog(@"Hurray. Label fadedIn & fadedOut");
-                     }];
-    
+    [cell animate];
 }
 
 @end

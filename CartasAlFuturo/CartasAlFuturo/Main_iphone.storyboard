@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSPendingLetterTableViewCell" rowHeight="100" id="PLZ-Y7-7fk" customClass="MSPendingLetterTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MSPendingLetterTableViewCell" rowHeight="100" id="PLZ-Y7-7fk" customClass="MSPendingLetterTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PLZ-Y7-7fk" id="PfO-9Y-4IL">
@@ -757,7 +757,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zgB-Xp-e8U"/>
-        <segue reference="ocv-XF-OO6"/>
+        <segue reference="NRr-3N-GbR"/>
+        <segue reference="16s-yk-bNK"/>
     </inferredMetricsTieBreakers>
 </document>

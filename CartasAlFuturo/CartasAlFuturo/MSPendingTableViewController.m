@@ -14,6 +14,8 @@
 #import "MSLetterItemProtocol.h"
 #import "MSCellDrawerProtocol.h"
 
+
+#import "MSReadyToOpenTableViewCell.h"
 @interface MSPendingTableViewController ()
 @end
 
@@ -29,6 +31,12 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSArray *array = self.tableView.visibleCells;
+    for (UITableViewCell *cell in array) {
+        if ([cell isKindOfClass:[MSReadyToOpenTableViewCell class]]) {
+            [(MSReadyToOpenTableViewCell*)cell animate];
+        }
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -56,11 +64,11 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    id<MSLetterItemProtocol> item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    id<MSLetterItemProtocol> letter = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    UITableViewCell *cell = [item.cellDrawer cellForTableView:tableView atIndexPath:indexPath];
+    UITableViewCell *cell = [letter.cellDrawer cellForTableView:tableView atIndexPath:indexPath];
     
-    [item.cellDrawer drawCell:cell withItem:item];
+    [letter.cellDrawer drawCell:cell withItem:letter];
     
     return cell;
     
@@ -71,6 +79,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     return indexPath;
 }
 

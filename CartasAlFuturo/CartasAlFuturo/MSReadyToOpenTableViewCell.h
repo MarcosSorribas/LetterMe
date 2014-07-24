@@ -12,5 +12,5 @@
 
 @property (weak, nonatomic) IBOutlet UIView *blackBackgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLetterLabel;
-
+- (void)animate;
 @end
