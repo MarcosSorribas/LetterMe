@@ -30,7 +30,7 @@
 }
 
 -(NSString*)calculateCountdown:(Letter *)letter{
-    NSInteger days = [letter.letterOpenDate countdownInDays];
+    NSInteger days = [NSDate daysBetweenDate:letter.letterOpenDate andDate:[NSDate date]];
     if (days == 0) {
         return [NSString stringWithFormat:@"Solo quedan unas horas."];
     }else{

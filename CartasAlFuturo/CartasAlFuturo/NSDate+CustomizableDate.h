@@ -11,5 +11,5 @@
 @interface NSDate (CustomizableDate)
 +(NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
 -(NSString*)dateWithMyFormat;
--(NSInteger)countdownInDays;
++ (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
 @end

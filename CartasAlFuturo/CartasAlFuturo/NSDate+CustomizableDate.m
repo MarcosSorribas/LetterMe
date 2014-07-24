@@ -23,15 +23,27 @@
 -(NSString *)dateWithMyFormat{
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"d MMMM 'de' YYYY"];
+    [dateFormat setDateFormat:@"d 'de' MMMM 'de' YYYY"];
     NSString *dateString = [dateFormat stringFromDate:self];
     return dateString;
 }
 
--(NSInteger)countdownInDays{
-    NSTimeInterval timeInterval = [self timeIntervalSinceNow];
-    NSUInteger days = roundf(timeInterval/(60*60*24));
-    return days;
++ (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return labs([difference day]);
 }
 
 @end

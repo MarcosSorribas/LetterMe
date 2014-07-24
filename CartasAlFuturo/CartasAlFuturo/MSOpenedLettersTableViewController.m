@@ -63,8 +63,8 @@ NSString * const kOpenedLettersTitle = @"Leídas";
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * const deleteButtonText = @"Eliminar";
-    return deleteButtonText;
+    static NSString * const kDeleteButtonText = @"Eliminar";
+    return kDeleteButtonText;
 }
 
 #pragma mark -
@@ -74,8 +74,6 @@ NSString * const kOpenedLettersTitle = @"Leídas";
     NSFetchedResultsController *results = [Letter openedLettersToShowInContext:self.manageDocument.managedObjectContext];
     self.fetchedResultsController = results;
 }
-
-
 
 #pragma mark -
 #pragma mark - Navegation methods

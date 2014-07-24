@@ -34,10 +34,15 @@
 
 -(void)loadLetter{
     self.titleLetterLabel.attributedText = [self.letter.letterTitle addKernStyle:@1.2];
-    self.sendDateLabel.text = [NSString stringWithFormat:@"Creada el %@",[self.letter.letterSendDate dateWithMyFormat]];
-    self.openDateLabel.text = [NSString stringWithFormat:@"Abierta el %@",[self.letter.letterOpenDate dateWithMyFormat]];
-    
-    
+    self.sendDateLabel.text = [NSString stringWithFormat:@"Escrita el %@",[self.letter.letterSendDate dateWithMyFormat]];
+    NSInteger days = [NSDate daysBetweenDate:self.letter.letterSendDate andDate:self.letter.letterOpenDate];
+    NSString *dateLabel;
+    if (days == 1) {
+        dateLabel = [NSString stringWithFormat:@"Abierta %ld día después",days];
+    }else{
+        dateLabel = [NSString stringWithFormat:@"Abierta %ld días después",days];
+    }
+    self.openDateLabel.text = dateLabel;
     self.contentTextView.attributedText = [self.letter.letterContent addKernStyle:@1.2];
     [self.contentTextView setTextColor:[UIColor whiteColor]];
     [self.contentTextView setFont:[UIFont fontWithName:@"Baskerville-Italic" size:22]];

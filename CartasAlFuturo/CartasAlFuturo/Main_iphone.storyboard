@@ -236,59 +236,50 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carta de cumpleaños" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8I-sD-wPy" userLabel="Title - Label">
-                                        <rect key="frame" x="20" y="20" width="260" height="34"/>
+                                        <rect key="frame" x="20" y="26" width="260" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creada el 22/06/2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-MF-dMW" userLabel="SendDate - Label">
-                                        <rect key="frame" x="20" y="62" width="260" height="16"/>
+                                        <rect key="frame" x="20" y="434" width="260" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abierta el 25/06/2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8b-BQ-ldp" userLabel="OpenDate - Label">
-                                        <rect key="frame" x="20" y="82" width="260" height="16"/>
+                                        <rect key="frame" x="20" y="455" width="260" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVh-jB-ZEM" userLabel="Content - TextView">
-                                        <rect key="frame" x="20" y="122" width="260" height="305"/>
+                                        <rect key="frame" x="20" y="76" width="260" height="342"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marcos Sorribas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHM-eC-O9k">
-                                        <rect key="frame" x="140" y="436" width="140" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="14"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="top" secondItem="lOE-MF-dMW" secondAttribute="bottom" constant="4" id="7bB-wN-H8d"/>
-                                    <constraint firstAttribute="trailing" secondItem="fHM-eC-O9k" secondAttribute="trailing" constant="20" id="8XV-QG-Jwo"/>
-                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="9ak-vc-for"/>
-                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="EFa-sH-Tsu"/>
-                                    <constraint firstAttribute="trailing" secondItem="lOE-MF-dMW" secondAttribute="trailing" constant="20" id="Hbp-j4-LLe"/>
-                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="R7S-aE-JDh"/>
-                                    <constraint firstAttribute="bottom" secondItem="fHM-eC-O9k" secondAttribute="bottom" id="bsE-v1-HVP"/>
-                                    <constraint firstAttribute="trailing" secondItem="T8b-BQ-ldp" secondAttribute="trailing" constant="20" id="dFR-m8-uxT"/>
-                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="top" secondItem="T8b-BQ-ldp" secondAttribute="bottom" constant="24" id="dMM-RE-ASd"/>
-                                    <constraint firstAttribute="trailing" secondItem="F8I-sD-wPy" secondAttribute="trailing" constant="20" id="dXf-0B-Cwu"/>
-                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="top" secondItem="ysK-YZ-CZ1" secondAttribute="top" constant="20" id="dxS-KT-y4x"/>
-                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="emq-k3-9wK"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZVh-jB-ZEM" secondAttribute="trailing" constant="20" id="itn-nc-ze2"/>
-                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="top" secondItem="F8I-sD-wPy" secondAttribute="bottom" constant="8" id="kYH-9E-w0p"/>
-                                    <constraint firstItem="fHM-eC-O9k" firstAttribute="top" secondItem="ZVh-jB-ZEM" secondAttribute="bottom" constant="9" id="mcU-1O-dEw"/>
+                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="9pJ-0w-4AA"/>
+                                    <constraint firstAttribute="bottom" secondItem="T8b-BQ-ldp" secondAttribute="bottom" constant="10" id="GhG-vF-yWQ"/>
+                                    <constraint firstItem="lOE-MF-dMW" firstAttribute="top" secondItem="ZVh-jB-ZEM" secondAttribute="bottom" constant="16" id="Jsg-k7-rvy"/>
+                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="Mv8-hl-Ifp"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZVh-jB-ZEM" secondAttribute="trailing" constant="20" id="OKW-TZ-VPq"/>
+                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="top" secondItem="F8I-sD-wPy" secondAttribute="bottom" constant="16" id="OdX-Dr-6xt"/>
+                                    <constraint firstItem="ZVh-jB-ZEM" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="QPV-7N-85F"/>
+                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="top" secondItem="ysK-YZ-CZ1" secondAttribute="top" constant="26" id="UvE-qn-vNb"/>
+                                    <constraint firstAttribute="trailing" secondItem="T8b-BQ-ldp" secondAttribute="trailing" constant="20" id="YUw-7R-OUE"/>
+                                    <constraint firstAttribute="trailing" secondItem="lOE-MF-dMW" secondAttribute="trailing" constant="20" id="n3C-vO-bfo"/>
+                                    <constraint firstItem="F8I-sD-wPy" firstAttribute="leading" secondItem="ysK-YZ-CZ1" secondAttribute="leading" constant="20" id="nIs-xf-sd0"/>
+                                    <constraint firstItem="T8b-BQ-ldp" firstAttribute="top" secondItem="lOE-MF-dMW" secondAttribute="bottom" constant="2" id="sXx-Zf-HxN"/>
+                                    <constraint firstAttribute="trailing" secondItem="F8I-sD-wPy" secondAttribute="trailing" constant="20" id="tND-lx-xu4"/>
                                 </constraints>
                             </view>
                         </subviews>
