@@ -166,7 +166,7 @@ CGFloat const animationDuration = 0.35;
        - textView.contentInset.bottom - textView.contentInset.top);
     if ( overflow > 0 ) {
         CGPoint offset = textView.contentOffset;
-        offset.y += overflow; // leave 7 pixels margin
+        offset.y += overflow;
         [UIView animateWithDuration:.2 animations:^{
             [textView setContentOffset:offset];
         }];
@@ -234,7 +234,7 @@ CGFloat const animationDuration = 0.35;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
-                     } completion:^(BOOL finished) {
+                     } completion:^(BOOL finished) {                         
                          self.controllerState = TitleState;
                      }];
 }

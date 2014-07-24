@@ -29,7 +29,6 @@
 {
     [super viewDidLoad];
     [self loadLetter];
-    self.blackBackgroundView.layer.cornerRadius = 15;
 }
 
 -(void)loadLetter{

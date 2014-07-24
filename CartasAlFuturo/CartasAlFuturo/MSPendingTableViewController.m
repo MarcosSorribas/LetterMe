@@ -71,13 +71,11 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     return indexPath;
 }
 
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-
     return indexPath;
 }
 

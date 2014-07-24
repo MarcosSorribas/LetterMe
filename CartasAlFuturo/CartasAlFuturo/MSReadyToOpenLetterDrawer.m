@@ -18,10 +18,21 @@
 }
 
 -(void)drawCell:(MSReadyToOpenTableViewCell *)cell withItem:(Letter*)letter{
-    
-    cell.blackBackgroundView.layer.cornerRadius = 10;
     cell.titleLetterLabel.attributedText = [letter.letterTitle addKernStyle:@1.5];
     cell.backgroundColor = [UIColor clearColor];
+    
+    [cell.titleLetterLabel setAlpha:1.0];
+
+    [UIView animateWithDuration:0.9
+                          delay:0
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse | UIViewAnimationCurveEaseIn
+                     animations:^(void){
+                         [cell.titleLetterLabel setAlpha:0.0];
+                     }
+                     completion:^(BOOL finished){
+                            NSLog(@"Hurray. Label fadedIn & fadedOut");
+                     }];
+    
 }
 
 @end

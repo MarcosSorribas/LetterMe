@@ -24,9 +24,8 @@
     cell.countdownLabel.text = countdown;
     if (letter.letterTitle) {
         cell.titleLabel.attributedText = [letter.letterTitle addKernStyle:@1.5];
+        cell.backgroundColor = [UIColor clearColor];
     }
-    cell.backgroundColor = [UIColor clearColor];
-    cell.blackView.layer.cornerRadius = 10;
 }
 
 -(NSString*)calculateCountdown:(Letter *)letter{
