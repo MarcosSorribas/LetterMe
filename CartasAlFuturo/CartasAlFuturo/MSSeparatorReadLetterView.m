@@ -10,15 +10,6 @@
 
 @implementation MSSeparatorReadLetterView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 
 -(void)awakeFromNib{
     [self drawDottedLineSeparator];
@@ -41,6 +32,7 @@
     [shapeLayer setPath:path];
     CGPathRelease(path);
     [[self layer] addSublayer:shapeLayer];
+
 }
 
 @end

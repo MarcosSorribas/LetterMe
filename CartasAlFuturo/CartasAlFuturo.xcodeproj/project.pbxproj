@@ -106,6 +106,7 @@
 		6ADE72F319813C5A0032BFDE /* MSEmptyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSEmptyTableViewController.xib; sourceTree = "<group>"; };
 		6ADE72F7198153230032BFDE /* MSEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEmptyView.h; sourceTree = "<group>"; };
 		6ADE72F8198153230032BFDE /* MSEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEmptyView.m; sourceTree = "<group>"; };
+		6ADE72FA198182EC0032BFDE /* DesignResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignResources.h; sourceTree = "<group>"; };
 		6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCreateLetterViewController.h; sourceTree = "<group>"; };
 		6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCreateLetterViewController.m; sourceTree = "<group>"; };
 		6AF353691979312D009CEAF0 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 			children = (
 				6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */,
 				6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */,
+				6ADE72FB198182F80032BFDE /* Headers */,
 				6AF353C8197A8551009CEAF0 /* Protocols */,
 				6A46B5BE1973E893001CF9C6 /* Categories */,
 				6A46B59A1973C517001CF9C6 /* Model */,
@@ -287,7 +289,6 @@
 		6A46B59D1973C52E001CF9C6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */,
 				6AF353691979312D009CEAF0 /* Letter.h */,
 				6AF3536A1979312D009CEAF0 /* Letter.m */,
 				6A46B5B31973E2F4001CF9C6 /* Letter+myAPI.h */,
@@ -322,6 +323,15 @@
 				6ADE72EA19806B380032BFDE /* MSSeparatorReadLetterView.m */,
 			);
 			name = CustomControllers;
+			sourceTree = "<group>";
+		};
+		6ADE72FB198182F80032BFDE /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE72FA198182EC0032BFDE /* DesignResources.h */,
+				6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 		6AF353641979058E009CEAF0 /* Main controllers */ = {

@@ -10,29 +10,22 @@
 #import "NSString+Styles.h"
 
 @interface MSEmptyView ()
+
 @property (weak, nonatomic) IBOutlet UILabel *createLetterLabel;
 
 @end
 
 @implementation MSEmptyView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 -(void)awakeFromNib{
     NSMutableAttributedString *attString = [self.createLetterLabel.text addKernStyle:@0.3].mutableCopy;
     
-    NSDictionary *attPlus = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:45.0],NSForegroundColorAttributeName:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000]};
+    NSDictionary *attPlus = @{NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_THIN size:45.0],NSForegroundColorAttributeName:MAIN_COLOR};
     
-    
+    //Only + character.
     [attString addAttributes:attPlus range:NSMakeRange(6, 1)];
     
     self.createLetterLabel.attributedText = attString;
 }
+
 @end
