@@ -16,6 +16,7 @@
 
 
 #import "MSReadyToOpenTableViewCell.h"
+#import "UIView+Animations.h"
 @interface MSPendingTableViewController ()
 @end
 
@@ -31,8 +32,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSArray *array = self.tableView.visibleCells;
-    for (UITableViewCell *cell in array) {
+    for (UITableViewCell *cell in self.tableView.visibleCells) {
         if ([cell isKindOfClass:[MSReadyToOpenTableViewCell class]]) {
             [(MSReadyToOpenTableViewCell*)cell animate];
         }
@@ -79,6 +79,9 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [[tableView cellForRowAtIndexPath:indexPath] shakeAnimate];
+    
     
     return indexPath;
 }

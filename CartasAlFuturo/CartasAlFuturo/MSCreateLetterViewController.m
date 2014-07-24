@@ -12,6 +12,8 @@
 #import "MSCustomPickerView.h"
 #import "NSString+Styles.h"
 
+#import "UIView+Animations.h"
+
 enum : NSUInteger {
     TitleState = 1,
     DateState = 2,
@@ -96,7 +98,7 @@ CGFloat const animationDuration = 0.35;
     [self configureNavigationBar:@"Crea tu carta"];
     NSDictionary *attributes = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:19.0]};
     NSDictionary *attributes2 = @{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:18.0]};
-
+    
     
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:attributes2 forState:UIControlStateNormal];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
@@ -121,7 +123,7 @@ CGFloat const animationDuration = 0.35;
     self.titleHeader.adjustsFontSizeToFitWidth = YES;
     self.dateHeader.adjustsFontSizeToFitWidth = YES;
     self.contentHeader.adjustsFontSizeToFitWidth = YES;
-
+    
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
@@ -176,6 +178,7 @@ CGFloat const animationDuration = 0.35;
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
     self.letterOpenDate = date;
     self.dateHeader.text = name;
+    [self.dateHeader setNeedsDisplay];
 }
 
 #pragma mark -
@@ -234,7 +237,7 @@ CGFloat const animationDuration = 0.35;
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
                          [self.view layoutIfNeeded];
-                     } completion:^(BOOL finished) {                         
+                     } completion:^(BOOL finished) {
                          self.controllerState = TitleState;
                      }];
 }
@@ -346,6 +349,7 @@ CGFloat const animationDuration = 0.35;
     }else{
         switch ([self localizeMistakesInState]) {
             case TitleState:{
+                [self.titleBlackView shakeAnimate];
                 [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.titleBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
                     [self.titleBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
@@ -354,6 +358,7 @@ CGFloat const animationDuration = 0.35;
                 break;
             }
             case ContentState:{
+                [self.contentBlackView shakeAnimate];
                 [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.contentBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
                     [self.contentBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
@@ -362,6 +367,7 @@ CGFloat const animationDuration = 0.35;
                 break;
             }
             case DateState:{
+                [self.dateBlackView shakeAnimate];
                 [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.dateBlackView setBackgroundColor:[UIColor colorWithRed:1.000 green:0.000 blue:0.000 alpha:0.19]];
                     [self.dateBlackView setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.150]];
