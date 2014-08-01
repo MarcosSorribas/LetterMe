@@ -17,6 +17,7 @@
 
 #import "MSReadyToOpenTableViewCell.h"
 #import "UIView+Animations.h"
+#import "MSCreateLetterViewController.h"
 
 @interface MSPendingTableViewController ()
 @property (nonatomic,strong) UIView *emptyView;
@@ -131,6 +132,10 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     [super prepareForSegue:segue sender:sender];
 }
 
+-(void)createFirstLetter{
+    [self performSegueWithIdentifier:@"MSCreateLetterViewController" sender:self];
+}
+
 #pragma mark -
 #pragma mark - Getters & Setters
 
@@ -138,6 +143,8 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     if (_emptyView == nil) {
         _emptyView = [[[NSBundle mainBundle] loadNibNamed:@"MSEmptyTableViewController" owner:self options:nil] firstObject];
         _emptyView.frame = CGRectMake(self.tableView.bounds.origin.x, self.tableView.bounds.origin.y, self.tableView.bounds.size.width, self.tableView.bounds.size.height-self.navigationController.navigationBar.bounds.size.height-self.navigationController.navigationBar.bounds.size.height);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createFirstLetter)];
+        [_emptyView addGestureRecognizer:tap];
     }
     return _emptyView;
 }
