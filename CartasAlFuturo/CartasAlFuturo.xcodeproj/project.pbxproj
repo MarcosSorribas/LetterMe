@@ -29,7 +29,6 @@
 		6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C41973F445001CF9C6 /* LetterTests.m */; };
 		6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
 		6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */; };
-		6A60D5B7197E57F30021838F /* MSCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A60D5B6197E57F30021838F /* MSCustomTabBar.m */; };
 		6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */; };
 		6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72E7198061270032BFDE /* NSString+Styles.m */; };
 		6ADE72EB19806B380032BFDE /* MSSeparatorReadLetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72EA19806B380032BFDE /* MSSeparatorReadLetterView.m */; };
@@ -93,8 +92,6 @@
 		6A46B5C41973F445001CF9C6 /* LetterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterTests.m; sourceTree = "<group>"; };
 		6A46B5CD19741853001CF9C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		6A60D5B5197E57F30021838F /* MSCustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCustomTabBar.h; sourceTree = "<group>"; };
-		6A60D5B6197E57F30021838F /* MSCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCustomTabBar.m; sourceTree = "<group>"; };
 		6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedTableViewCell.h; sourceTree = "<group>"; };
 		6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedTableViewCell.m; sourceTree = "<group>"; };
 		6ADE72E6198061270032BFDE /* NSString+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Styles.h"; sourceTree = "<group>"; };
@@ -317,8 +314,6 @@
 		6ADE72F619813C6E0032BFDE /* CustomControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6A60D5B5197E57F30021838F /* MSCustomTabBar.h */,
-				6A60D5B6197E57F30021838F /* MSCustomTabBar.m */,
 				6ADE72E919806B380032BFDE /* MSSeparatorReadLetterView.h */,
 				6ADE72EA19806B380032BFDE /* MSSeparatorReadLetterView.m */,
 			);
@@ -504,7 +499,6 @@
 				6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */,
 				6ADE72EE19810D880032BFDE /* UIView+Animations.m in Sources */,
 				6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */,
-				6A60D5B7197E57F30021838F /* MSCustomTabBar.m in Sources */,
 				6ADE72EB19806B380032BFDE /* MSSeparatorReadLetterView.m in Sources */,
 				6AF353CD197A868F009CEAF0 /* MSPendingLetterDrawer.m in Sources */,
 				6A46B5B21973E285001CF9C6 /* MSPendingLetterTableViewCell.m in Sources */,

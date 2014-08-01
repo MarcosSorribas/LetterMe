@@ -136,11 +136,11 @@
             </objects>
             <point key="canvasLocation" x="3205" y="-596"/>
         </scene>
-        <!--Navigation Controller - Pendientes-->
+        <!--Navigation Controller-->
         <scene sceneID="PIc-qT-ntJ">
             <objects>
                 <navigationController storyboardIdentifier="PendingController" automaticallyAdjustsScrollViewInsets="NO" id="uPa-mP-PuU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pendientes" image="icoEnviadas" id="Ylk-1M-3xa"/>
+                    <tabBarItem key="tabBarItem" title="" id="Ylk-1M-3xa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="eSK-kf-R8F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -324,11 +324,11 @@
             </objects>
             <point key="canvasLocation" x="4538" y="37"/>
         </scene>
-        <!--Navigation Controller - Leidas-->
+        <!--Navigation Controller-->
         <scene sceneID="6Jl-qI-1W8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9E-BS-UQg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Leidas" image="icoLeidas" id="CSB-Eh-CC8"/>
+                    <tabBarItem key="tabBarItem" title="" id="CSB-Eh-CC8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gfk-NT-pjG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -714,7 +714,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ifc-yK-i4b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="WIt-3d-2no" customClass="MSCustomTabBar">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" barStyle="black" id="WIt-3d-2no">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -747,8 +747,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icoEnviadas" width="30" height="30"/>
-        <image name="icoLeidas" width="30" height="30"/>
         <image name="prueba_background" width="640" height="1136"/>
     </resources>
     <color key="tintColor" red="0.87726056575775146" green="0.76089751720428467" blue="0.72643089294433594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -758,7 +756,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zgB-Xp-e8U"/>
-        <segue reference="ocv-XF-OO6"/>
+        <segue reference="NRr-3N-GbR"/>
+        <segue reference="16s-yk-bNK"/>
     </inferredMetricsTieBreakers>
 </document>

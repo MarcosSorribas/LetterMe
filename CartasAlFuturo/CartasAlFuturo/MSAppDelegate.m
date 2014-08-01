@@ -19,8 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-    [self prepareFirstController];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    [self customizeTabBarController:tabBarController.tabBar];
+    [self prepareFirstControllerFrom:tabBarController];
     [self mailManStart];
     return YES;
 }
@@ -61,8 +63,22 @@
     [self.mailMan showAlertViewIfLettersArePrepared:self.managedDocument];
 }
 
--(void)prepareFirstController{
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+
+-(void)customizeTabBarController:(UITabBar*)tabBar{
+#warning refactor magic numbers
+    
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    tabBarItem1.title = @"Pendientes";
+    tabBarItem2.title = @"Leídas";
+    [tabBarItem1 setImage:[[UIImage imageNamed:@"SelectedItem"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [[UITabBar appearance] setTintColor:MAIN_COLOR];
+    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -14)];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:19.0]} forState:UIControlStateNormal];
+    
+}
+
+-(void)prepareFirstControllerFrom:(UITabBarController*)tabBarController{
     for (UINavigationController *navController in tabBarController.viewControllers) {
         CoreDataTableViewController *topController = (CoreDataTableViewController*)navController.topViewController;
         topController.manageDocument = self.managedDocument;

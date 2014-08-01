@@ -50,13 +50,13 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     [super configureNavigationBar:kPendingControllerTitle];
     [super configureBackground];
     
-    
     [self configureFetchResultController];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backgroundBack) name:UIApplicationDidBecomeActiveNotification object:nil];
     
 }
+
 //TODO: Fixed bug -> BackBackground animate lost 
 -(void)backgroundBack{
     [self.tableView reloadData];

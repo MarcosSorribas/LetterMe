@@ -198,7 +198,7 @@
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.845 green:0.708 blue:0.671 alpha:1.000]];
+    [[UINavigationBar appearance] setTintColor:MAIN_COLOR];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
     NSMutableAttributedString *titleWithAtt = [[NSMutableAttributedString alloc] initWithString:titleString attributes:@{NSKernAttributeName:@0.5,NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:19.0]}];
