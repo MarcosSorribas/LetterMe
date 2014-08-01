@@ -38,7 +38,6 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
 @property (weak, nonatomic) IBOutlet UIView *titleBlackView;
-@property (weak, nonatomic) IBOutlet UILabel *titleWarningCharactersLabel;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
