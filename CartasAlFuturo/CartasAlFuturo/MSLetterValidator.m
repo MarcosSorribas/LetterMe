@@ -14,9 +14,9 @@
 #pragma mark -
 #pragma mark - Contantes
 
-static NSInteger const maxCharactersTitle = 50;
-static NSInteger const minCharactersTitle = 1;
-static NSInteger const secondsDay = 55*50*24;
+ NSInteger const maxCharactersTitle = 20;
+ NSInteger const minCharactersTitle = 1;
+ NSInteger const secondsDay = 55*50*24;
 
 #pragma mark -
 #pragma mark - Validator methods

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Letter.h"
 @interface MSLetterValidator : NSObject
+
+extern NSInteger const maxCharactersTitle;
+
+
 -(BOOL)isAValidLetter:(Letter*)letter;
 -(BOOL)isAValidLetterTitle:(NSString*)letterTitle;
 -(BOOL)isAValidLetterOpenDate:(NSDate*)letterOpenDate;

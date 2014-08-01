@@ -38,6 +38,7 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
 @property (weak, nonatomic) IBOutlet UIView *titleBlackView;
+@property (weak, nonatomic) IBOutlet UILabel *titleWarningCharactersLabel;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
@@ -153,6 +154,11 @@ NSString *const navBarTitle = @"Crea tu carta";
 
 #pragma mark -
 #pragma mark - TextFieldDelegate methods
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    return (newLength > maxCharactersTitle) ? NO : YES;
+}
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     self.letterTitle = textField.text;

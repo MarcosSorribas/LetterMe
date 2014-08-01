@@ -133,7 +133,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 }
 
 -(void)createFirstLetter{
-    [self performSegueWithIdentifier:@"MSCreateLetterViewController" sender:self];
+    [self performSegueWithIdentifier:NSStringFromClass([MSCreateLetterViewController class]) sender:self];
 }
 
 #pragma mark -
