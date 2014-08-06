@@ -675,6 +675,7 @@
                         <outlet property="contentHeaderHeightConstraint" destination="6O6-Os-Zao" id="Afu-85-CV8"/>
                         <outlet property="contentTextView" destination="9DR-r8-qcW" id="90W-nZ-zlc"/>
                         <outlet property="contentViewHeightConstraint" destination="eo0-xN-0Xq" id="E1j-mL-bW5"/>
+                        <outlet property="customPicker" destination="3Pq-yr-8mQ" id="sdV-rJ-rbG"/>
                         <outlet property="dateBlackView" destination="Vjw-7l-YyO" id="3ld-YN-9Bh"/>
                         <outlet property="dateHeader" destination="8ar-f9-a2a" id="XMR-xf-SRF"/>
                         <outlet property="dateHeaderHeightConstraint" destination="kC2-1R-n7D" id="Nqv-rr-i0w"/>
@@ -687,9 +688,12 @@
                         <outlet property="titleLabelView" destination="OVD-6w-wNy" id="dY9-3M-tYB"/>
                         <outlet property="titleTextField" destination="X5M-1G-XpO" id="g7y-I0-sIp"/>
                         <outlet property="titleViewHeightConstraint" destination="Yh3-hf-hKj" id="vrp-LM-zcw"/>
+                        <outlet property="validator" destination="ZsS-Fh-xEQ" id="9ub-Wl-n9r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1Y-ma-gSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="3Pq-yr-8mQ" customClass="MSCustomPickerView"/>
+                <customObject id="ZsS-Fh-xEQ" customClass="MSLetterValidator"/>
                 <tapGestureRecognizer id="crw-Qh-HcQ" userLabel="Title Header Tap">
                     <connections>
                         <action selector="titleHeaderTouched:" destination="DV6-YT-htg" id="Jlk-re-faH"/>

@@ -28,8 +28,8 @@ enum : NSUInteger {
 #pragma mark - Objects properties
 
 @property (nonatomic) ControllerState controllerState;
-@property (nonatomic,strong) MSLetterValidator *validator;
-@property (nonatomic,strong) MSCustomPickerView *customPicker;
+@property (strong, nonatomic) IBOutlet MSLetterValidator *validator;
+@property (strong, nonatomic) IBOutlet MSCustomPickerView *customPicker;
 
 
 #pragma mark -
@@ -69,6 +69,11 @@ enum : NSUInteger {
 
 
 
+
+#pragma mark -
+#pragma mark - Keyboard data
+@property (nonatomic) CGRect keyboardSize;
+
 #pragma mark -
 #pragma mark - Temporal letter Data
 
@@ -85,7 +90,8 @@ enum : NSUInteger {
 
 CGFloat const animationDuration = 0.35;
 NSString *const navBarTitle = @"Crea tu carta";
-
+NSInteger const statusBarheight = 20;
+NSInteger const navigationBarheight = 64;
 #pragma mark -
 #pragma mark - View methods
 
@@ -96,6 +102,14 @@ NSString *const navBarTitle = @"Crea tu carta";
     [self viewInEmptyState];
     [self configurePickerAndTextView];
     [self configureNavigationBar:navBarTitle];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prueba:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prueba:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)prueba:(NSNotification*)notification{
+    NSDictionary* keyboardInfo = [notification userInfo];
+    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    self.keyboardSize = [keyboardFrameBegin CGRectValue];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -104,7 +118,7 @@ NSString *const navBarTitle = @"Crea tu carta";
 }
 
 #pragma mark -
-#pragma mark - Initial configure methods 
+#pragma mark - Initial configure methods
 
 -(void)initialConfig{
     self.titleTextField.alpha = 0;
@@ -238,21 +252,38 @@ NSString *const navBarTitle = @"Crea tu carta";
 //TODO: Refactor whithout harcode numbers and compatibility with iPhone4
 
 -(void)viewInTitleState{
+    
     [self.titleTextField becomeFirstResponder];
+    
+    
     [UIView animateWithDuration:animationDuration
                      animations:^{
+                         NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
+                         screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
+
                          self.titleTextField.alpha = 1;
                          self.titleLabelView.alpha = 0.65;
                          self.contentTextView.alpha = 0;
                          self.pickerView.alpha = 0;
                          self.dateLabelView.alpha = 0;
                          
-                         self.dateHeaderHeightConstraint.constant = 60;
-                         self.contentHeaderHeightConstraint.constant = 60;
-                         self.titleHeaderHeightConstraint.constant = 60;
-                         self.titleViewHeightConstraint.constant = 130;
+                         NSInteger dataSectionHeight = ceil(screenHeight/5);
+                         
+                         self.dateHeaderHeightConstraint.constant = dataSectionHeight;
+                         screenHeight = screenHeight - dataSectionHeight;
+                         self.contentHeaderHeightConstraint.constant = dataSectionHeight;
+                         screenHeight = screenHeight - dataSectionHeight;
+
+                         self.titleHeaderHeightConstraint.constant = dataSectionHeight;
+                         screenHeight = screenHeight - dataSectionHeight;
+
+                         
+                         self.titleViewHeightConstraint.constant = screenHeight;
+                         
+                         
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
+                         
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          self.controllerState = TitleState;
@@ -263,19 +294,34 @@ NSString *const navBarTitle = @"Crea tu carta";
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          [self.view endEditing:YES];
+                         NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
+                         
                          self.titleTextField.alpha = 0;
                          self.titleLabelView.alpha = 0;
                          self.contentTextView.alpha = 0;
                          self.pickerView.alpha = 1;
                          self.dateLabelView.alpha = 0.65;
                          
-                         self.dateHeaderHeightConstraint.constant = 60;
-                         self.contentHeaderHeightConstraint.constant = 60;
-                         self.titleHeaderHeightConstraint.constant = 60;
                          self.titleViewHeightConstraint.constant = 0;
-                         self.dateViewHeightConstraint.constant = 125+214+5;
+                         self.dateViewHeightConstraint.constant = screenHeight*0.7;
                          self.contentViewHeightConstraint.constant = 0;
+                         
+                         
+                         
+                         NSInteger dataSectionHeight = ceil((screenHeight*(1-0.7))/3);
+
+                         
+                         self.dateHeaderHeightConstraint.constant = dataSectionHeight;
+
+                         self.contentHeaderHeightConstraint.constant = dataSectionHeight;
+
+
+                         self.titleHeaderHeightConstraint.constant = dataSectionHeight;
+
+
+                         
                          [self.view layoutIfNeeded];
+                         
                      } completion:^(BOOL finished) {
                          self.controllerState = DateState;
                          if ([self.pickerView selectedRowInComponent:0] == 4) {
@@ -296,10 +342,28 @@ NSString *const navBarTitle = @"Crea tu carta";
                          
                          self.titleViewHeightConstraint.constant = 0;
                          self.dateViewHeightConstraint.constant = 0;
-                         self.contentViewHeightConstraint.constant = 125+20;
-                         self.dateHeaderHeightConstraint.constant = 55;
-                         self.contentHeaderHeightConstraint.constant = 55;
-                         self.titleHeaderHeightConstraint.constant = 55;
+                         
+                         
+                         
+                         NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
+                         
+                         screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
+                         
+                         NSInteger dataSectionHeight = ceil(screenHeight/5);
+
+                         
+                         self.dateHeaderHeightConstraint.constant = dataSectionHeight;
+                         screenHeight = screenHeight - dataSectionHeight;
+
+                         self.contentHeaderHeightConstraint.constant = dataSectionHeight;
+                         screenHeight = screenHeight - dataSectionHeight;
+
+                         self.titleHeaderHeightConstraint.constant = dataSectionHeight;
+                         screenHeight = screenHeight - dataSectionHeight;
+
+                         
+                         self.contentViewHeightConstraint.constant = screenHeight;
+                         
                          [self.view layoutIfNeeded];
                      } completion:^(BOOL finished) {
                          self.controllerState = ContentState;
@@ -308,6 +372,7 @@ NSString *const navBarTitle = @"Crea tu carta";
 
 -(void)viewInEmptyState{
     [self.view endEditing:YES];
+    NSInteger headersHeight =  ceil((self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height)/3);
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.titleTextField.alpha = 0;
@@ -316,13 +381,13 @@ NSString *const navBarTitle = @"Crea tu carta";
                          self.pickerView.alpha = 0;
                          self.dateLabelView.alpha = 0;
                          
-                         self.titleHeaderHeightConstraint.constant = (self.view.bounds.size.height-64+20)/3;
+                         self.titleHeaderHeightConstraint.constant = headersHeight;
                          self.titleViewHeightConstraint.constant = 0;
                          
-                         self.dateHeaderHeightConstraint.constant = (self.view.bounds.size.height-64+20)/3;
+                         self.dateHeaderHeightConstraint.constant = headersHeight;
                          self.dateViewHeightConstraint.constant = 0;
                          
-                         self.contentHeaderHeightConstraint.constant = (self.view.bounds.size.height-64+20)/3;
+                         self.contentHeaderHeightConstraint.constant = headersHeight;
                          self.contentViewHeightConstraint.constant = 0;
                          
                          [self.view layoutIfNeeded];
@@ -397,22 +462,5 @@ NSString *const navBarTitle = @"Crea tu carta";
 
 - (IBAction)cancelLetter:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark -
-#pragma mark - Getters & Setters
-
--(MSLetterValidator *)validator{
-    if (_validator == nil) {
-        _validator = [[MSLetterValidator alloc]init];
-    }
-    return _validator;
-}
-
--(MSCustomPickerView *)customPicker{
-    if (!_customPicker) {
-        _customPicker = [[MSCustomPickerView alloc]init];
-    }
-    return _customPicker;
 }
 @end
