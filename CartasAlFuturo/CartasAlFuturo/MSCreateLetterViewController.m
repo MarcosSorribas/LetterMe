@@ -31,7 +31,6 @@ enum : NSUInteger {
 @property (strong, nonatomic) IBOutlet MSLetterValidator *validator;
 @property (strong, nonatomic) IBOutlet MSCustomPickerView *customPicker;
 
-
 #pragma mark -
 #pragma mark - Oulets properties
 
@@ -51,7 +50,7 @@ enum : NSUInteger {
 
 
 
-@property (weak, nonatomic) IBOutlet UITextField *titleHeader;
+@property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 
@@ -146,6 +145,14 @@ NSInteger const navigationBarheight = 64;
     self.titleHeader.adjustsFontSizeToFitWidth = YES;
     self.dateHeader.adjustsFontSizeToFitWidth = YES;
     self.contentHeader.adjustsFontSizeToFitWidth = YES;
+    
+    if (([UIScreen mainScreen].bounds.size.height == 480)){
+        //iPhone 3,5"
+        UIFont *headerFont = [UIFont fontWithName:FONT_HELVETICA_NEUE_ULTRALIGHT size:35];
+        self.titleHeader.font = headerFont;
+        self.dateHeader.font = headerFont;
+        self.contentHeader.font = headerFont;
+    }
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
@@ -177,6 +184,9 @@ NSInteger const navigationBarheight = 64;
     self.letterTitle = textField.text;
     if ([self.validator isAValidLetterTitle:textField.text]) {
         self.titleHeader.text = textField.text;
+    }else{
+        NSString *failText = @"Título";
+        self.titleHeader.attributedText = [failText addKernStyle:@3];
     }
 }
 
@@ -249,13 +259,9 @@ NSInteger const navigationBarheight = 64;
 #pragma mark -
 #pragma mark - Logic view methods
 
-//TODO: Refactor whithout harcode numbers and compatibility with iPhone4
-
 -(void)viewInTitleState{
     
     [self.titleTextField becomeFirstResponder];
-    
-    
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
