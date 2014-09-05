@@ -35,7 +35,6 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
     [self initialReadyToOpenAnimation];
     [self configureEmptyView];
 }
@@ -58,9 +57,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     
 }
 
-//TODO: Fixed bug -> BackBackground animate lost 
 -(void)backgroundBack{
-    [self.tableView reloadData];
     [self initialReadyToOpenAnimation];
 }
 
@@ -119,6 +116,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
         }
     }
 }
+
 -(void)configureEmptyView{
     if (!self.emptyView.superview) {
         [self.tableView addSubview:self.emptyView];
