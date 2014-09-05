@@ -432,7 +432,7 @@ NSInteger const navigationBarheight = 64;
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
     notification.fireDate = openDate;
-    notification.alertBody = @"¡Te acaba de llegar una carta del pasado! Entra para leerla ahora mismo.";
+    notification.alertBody = @"¡¡Una de tus cartas pendientes ya se puede abrir!!";
     notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
 
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
