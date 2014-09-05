@@ -425,6 +425,17 @@ NSInteger const navigationBarheight = 64;
     letter.letterContent = self.letterContent;
     letter.letterOpenDate = self.letterOpenDate;
     [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
+    [self createLocalNotification:letter.letterOpenDate];
+}
+
+-(void)createLocalNotification:(NSDate*)openDate{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    
+    notification.fireDate = openDate;
+    notification.alertBody = @"¡Te acaba de llegar una carta del pasado! Entra para leerla ahora mismo.";
+    notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 -(void)animateMistakeIn:(UIView*)view{
