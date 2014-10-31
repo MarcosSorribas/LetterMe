@@ -48,12 +48,9 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIView *dateBlackView;
 
 
-
-
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
-
 
 
 #pragma mark -
@@ -66,11 +63,9 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
 
-
-
-
 #pragma mark -
 #pragma mark - Keyboard data
+
 @property (nonatomic) CGRect keyboardSize;
 
 #pragma mark -
@@ -91,6 +86,7 @@ CGFloat const animationDuration = 0.35;
 NSString *const navBarTitle = @"Crea tu carta";
 NSInteger const statusBarheight = 20;
 NSInteger const navigationBarheight = 64;
+
 #pragma mark -
 #pragma mark - View methods
 
@@ -101,14 +97,7 @@ NSInteger const navigationBarheight = 64;
     [self viewInEmptyState];
     [self configurePickerAndTextView];
     [self configureNavigationBar:navBarTitle];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prueba:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prueba:) name:UIKeyboardWillHideNotification object:nil];
-}
-
--(void)prueba:(NSNotification*)notification{
-    NSDictionary* keyboardInfo = [notification userInfo];
-    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
-    self.keyboardSize = [keyboardFrameBegin CGRectValue];
+    [self registerKeyboardNotifications];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -126,6 +115,17 @@ NSInteger const navigationBarheight = 64;
     self.pickerView.alpha = 0;
     self.dateLabelView.alpha = 0;
     [self labelsHeaderConfig];
+}
+
+-(void)registerKeyboardNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calculateKeyboardSize:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calculateKeyboardSize:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)calculateKeyboardSize:(NSNotification*)notification{
+    NSDictionary* keyboardInfo = [notification userInfo];
+    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    self.keyboardSize = [keyboardFrameBegin CGRectValue];
 }
 
 -(void)configurePickerAndTextView{
@@ -453,7 +453,9 @@ NSInteger const navigationBarheight = 64;
     [self viewInEmptyState];
     if ([self localizeMistakesInState] == CorrectState) {
         [self createLetterWithUserData];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            NSLog(@"Carta creada correctamente! 👏");
+        }];
     }else{
         switch ([self localizeMistakesInState]) {
             case TitleState:{
@@ -478,6 +480,8 @@ NSInteger const navigationBarheight = 64;
 }
 
 - (IBAction)cancelLetter:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 @end
