@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ifc-yK-i4b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ifc-yK-i4b">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Pending Table View Controller - Pendientes-->
+        <!--Pendientes-->
         <scene sceneID="AhA-V9-b89">
             <objects>
                 <tableViewController storyboardIdentifier="MSPendingTableViewController" id="oiF-n2-yZh" customClass="MSPendingTableViewController" sceneMemberID="viewController">
@@ -354,7 +355,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgR-Vf-Iob">
                                                 <rect key="frame" x="10" y="10" width="300" height="40"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="40" text="Título" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="I3X-gF-ear">
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="40" text="Título" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="25" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="I3X-gF-ear">
                                                         <rect key="frame" x="10" y="1" width="280" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
@@ -367,6 +368,7 @@
                                                     <constraint firstAttribute="centerY" secondItem="I3X-gF-ear" secondAttribute="centerY" constant="-0.5" id="2Cr-hQ-7u4"/>
                                                     <constraint firstAttribute="centerX" secondItem="I3X-gF-ear" secondAttribute="centerX" id="g98-z8-Mi4"/>
                                                     <constraint firstItem="I3X-gF-ear" firstAttribute="leading" secondItem="tgR-Vf-Iob" secondAttribute="leading" priority="10" constant="10" id="lKc-Df-uhV"/>
+                                                    <constraint firstAttribute="height" secondItem="I3X-gF-ear" secondAttribute="height" id="syg-vP-t5R"/>
                                                     <constraint firstAttribute="trailing" secondItem="I3X-gF-ear" secondAttribute="trailing" constant="10" id="toM-v2-nnm"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
