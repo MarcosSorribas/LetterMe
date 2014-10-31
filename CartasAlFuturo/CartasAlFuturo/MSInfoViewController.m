@@ -7,31 +7,48 @@
 //
 
 #import "MSInfoViewController.h"
+#import "MSInfoTableViewManager.h"
 
 @interface MSInfoViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *infoBackgroundImage;
 
+@property (weak, nonatomic) IBOutlet UITableView *infoTableView;
+
+@property (strong,nonatomic) UIImage *screenshot;
+@property (strong,nonatomic) MSInfoTableViewManager *infoTableViewManager;
 @end
 
 @implementation MSInfoViewController
 
+
+- (instancetype)initWithBackgroundImage:(UIImage*)image
+{
+    self = [super init];
+    if (self) {
+        _screenshot = image;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.infoBackgroundImage.image = self.screenshot;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)cancelButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(MSInfoTableViewManager *)infoTableViewManager{
+    if (_infoTableViewManager == nil) {
+        _infoTableViewManager = [[MSInfoTableViewManager alloc]init];
+        [_infoTableViewManager setInfoTableView:self.infoTableView];
+    }
+    return _infoTableViewManager;
 }
-*/
 
 @end

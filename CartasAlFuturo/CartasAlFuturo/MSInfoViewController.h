@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MSInfoViewController : UIViewController
+- (instancetype)initWithBackgroundImage:(UIImage*)image;
 
 @end
