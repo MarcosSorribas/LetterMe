@@ -26,8 +26,7 @@
 {
    
     if ([self getUserDefaultData] == nil) {
-        //iCLOUD
-        
+        //first time
         
         
         [self setUserDefaultsData];
