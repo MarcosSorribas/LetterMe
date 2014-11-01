@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *infoBackgroundImage;
 
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @property (strong,nonatomic) UIImage *screenshot;
 @property (strong,nonatomic) MSInfoTableViewManager *infoTableViewManager;
