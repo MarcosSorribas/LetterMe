@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface MSInfoTableViewManager : NSObject<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *infoTableView;

@@ -17,14 +17,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z5j-oR-3NK">
-                    <rect key="frame" x="82" y="-52" width="60" height="10"/>
+                <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5j-oR-3NK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCa-nx-RqY">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-97-a9y">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-9u-joN">
-                            <rect key="frame" x="101" y="436" width="119" height="64"/>
+                            <rect key="frame" x="101" y="452" width="119" height="64"/>
                             <state key="normal" image="closeButton">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -32,18 +32,36 @@
                                 <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="Cva-17-Sda"/>
                             </connections>
                         </button>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-lR-Afk">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-lR-Afk">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="409"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                </scrollView>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="oGo-lR-Afk" secondAttribute="centerX" id="Cho-uD-9Tf"/>
+                        <constraint firstAttribute="width" secondItem="oGo-lR-Afk" secondAttribute="width" id="Iux-3C-ieH"/>
+                        <constraint firstAttribute="bottom" secondItem="oGo-lR-Afk" secondAttribute="bottom" constant="159" id="aQK-2T-zuT"/>
+                        <constraint firstItem="oGo-lR-Afk" firstAttribute="leading" secondItem="eZy-97-a9y" secondAttribute="leading" id="ecH-pa-Xmp"/>
+                        <constraint firstItem="oGo-lR-Afk" firstAttribute="top" secondItem="eZy-97-a9y" secondAttribute="top" id="hTk-8c-Bz3"/>
+                        <constraint firstAttribute="trailing" secondItem="oGo-lR-Afk" secondAttribute="trailing" id="xT6-YR-DpP"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="height" secondItem="Z5j-oR-3NK" secondAttribute="height" id="4hc-H0-07e"/>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="centerX" secondItem="Z5j-oR-3NK" secondAttribute="centerX" id="FhH-iS-bzL"/>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="width" secondItem="Z5j-oR-3NK" secondAttribute="width" id="IfJ-x5-0Pw"/>
+                <constraint firstAttribute="bottom" secondItem="Z5j-oR-3NK" secondAttribute="bottom" id="YVw-bw-Cbu"/>
+                <constraint firstItem="Z5j-oR-3NK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c2i-ER-Xk5"/>
+                <constraint firstAttribute="trailing" secondItem="Z5j-oR-3NK" secondAttribute="trailing" id="f8t-MB-Fw5"/>
+                <constraint firstItem="Z5j-oR-3NK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nSe-WC-EqX"/>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="centerY" secondItem="Z5j-oR-3NK" secondAttribute="centerY" id="yf7-vA-Jg8"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="267" y="378"/>
+            <point key="canvasLocation" x="273" y="378"/>
         </view>
     </objects>
     <resources>

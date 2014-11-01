@@ -33,6 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.infoBackgroundImage.image = self.screenshot;
+    self.infoTableViewManager;
+    
+    
+    
 }
 
 
