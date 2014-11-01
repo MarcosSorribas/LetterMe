@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSInfoViewController">
             <connections>
+                <outlet property="closeButton" destination="Jr1-9u-joN" id="hns-3B-uLm"/>
                 <outlet property="infoBackgroundImage" destination="Z5j-oR-3NK" id="FVM-Cd-wKd"/>
                 <outlet property="infoTableView" destination="oGo-lR-Afk" id="uBr-kV-gPV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,8 +24,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-97-a9y">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-9u-joN">
-                            <rect key="frame" x="101" y="452" width="119" height="64"/>
+                        <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-lR-Afk">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="409"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-9u-joN" customClass="MSCloseButton">
+                            <rect key="frame" x="145" y="439" width="30" height="30"/>
                             <state key="normal" image="closeButton">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -32,19 +38,16 @@
                                 <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="Cva-17-Sda"/>
                             </connections>
                         </button>
-                        <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-lR-Afk">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="409"/>
-                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </tableView>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="oGo-lR-Afk" secondAttribute="centerX" id="Cho-uD-9Tf"/>
                         <constraint firstAttribute="width" secondItem="oGo-lR-Afk" secondAttribute="width" id="Iux-3C-ieH"/>
+                        <constraint firstItem="Jr1-9u-joN" firstAttribute="top" secondItem="oGo-lR-Afk" secondAttribute="bottom" constant="30" id="ZT2-IL-Ybu"/>
                         <constraint firstAttribute="bottom" secondItem="oGo-lR-Afk" secondAttribute="bottom" constant="159" id="aQK-2T-zuT"/>
                         <constraint firstItem="oGo-lR-Afk" firstAttribute="leading" secondItem="eZy-97-a9y" secondAttribute="leading" id="ecH-pa-Xmp"/>
                         <constraint firstItem="oGo-lR-Afk" firstAttribute="top" secondItem="eZy-97-a9y" secondAttribute="top" id="hTk-8c-Bz3"/>
+                        <constraint firstAttribute="centerX" secondItem="Jr1-9u-joN" secondAttribute="centerX" id="w6c-Qe-oIg"/>
                         <constraint firstAttribute="trailing" secondItem="oGo-lR-Afk" secondAttribute="trailing" id="xT6-YR-DpP"/>
                     </constraints>
                 </view>
@@ -65,6 +68,6 @@
         </view>
     </objects>
     <resources>
-        <image name="closeButton" width="64" height="64"/>
+        <image name="closeButton" width="30" height="30"/>
     </resources>
 </document>
