@@ -15,6 +15,7 @@
 
 #define FONT_HELVETICA_NEUE_THIN @"HelveticaNeue-Thin"
 #define FONT_HELVETICA_NEUE_LIGHT @"HelveticaNeue-Light"
+#define FONT_HELVETICA_NEUE_LIGHT_ITALIC @"HelveticaNeue-LightItalic"
 #define FONT_HELVETICA_NEUE_ULTRALIGHT @"HelveticaNeue-UltraLight"
 
 

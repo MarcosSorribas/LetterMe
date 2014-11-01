@@ -24,7 +24,7 @@ typedef enum : NSUInteger {
     _infoTableView.delegate = self;
     _infoTableView.dataSource = self;
     _infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _infoTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    _infoTableView.contentInset = UIEdgeInsetsMake(56, 0, 0, 0);
 }
 
 
@@ -40,10 +40,10 @@ typedef enum : NSUInteger {
     CGFloat cellHeight;
     switch (indexPath.row) {
         case authorInfoCell:
-            cellHeight = 40;
+            cellHeight = 80;
             break;
         default:
-            cellHeight = 80;
+            cellHeight = 90;
             break;
     }
     return cellHeight;
@@ -55,40 +55,29 @@ typedef enum : NSUInteger {
     
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
-    
+    cell.textLabel.font = [UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:17];
+    cell.textLabel.numberOfLines = 2;
+    cell.textLabel.textColor = [UIColor whiteColor];
+
     switch (indexPath.row) {
         case addLetterInfoCell:
-            cell.selectionStyle = UITableViewCellStyleDefault;
-            cell.imageView.image = [UIImage imageNamed:@"closeButton"];
-            cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
-            cell.imageView.clipsToBounds = YES;
-            cell.textLabel.text = @"Pulsa para crear carta";
-            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.imageView.image = [UIImage imageNamed:@"addButton"];
+            cell.textLabel.text = @"Crea una carta para enviarla al futuro.";
             break;
         case PendingLettersInfoCell:
-            cell.selectionStyle = UITableViewCellStyleDefault;
-            cell.imageView.image = [UIImage imageNamed:@"closeButton"];
-            cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
-            cell.imageView.clipsToBounds = YES;
-            cell.textLabel.text = @"Pulsa para crear carta";
-            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.imageView.image = [UIImage imageNamed:@"PendientesImage"];
+            cell.textLabel.text = @"Listado de cartas que aún no puedes abrir.";
             break;
         case ReadLettersInfoCell:
-            cell.selectionStyle = UITableViewCellStyleDefault;
-            cell.imageView.image = [UIImage imageNamed:@"closeButton"];
-            cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
-            cell.imageView.clipsToBounds = YES;
-            cell.textLabel.text = @"Pulsa para crear carta";
-            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.imageView.image = [UIImage imageNamed:@"LeidasImage"];
+            cell.textLabel.text = @"Listado de cartas ya abiertas que puedes volver a leer.";
+            cell.textLabel.numberOfLines = 3;
             break;
         case authorInfoCell:
-            cell.selectionStyle = UITableViewCellStyleDefault;
-            cell.textLabel.text = @"Pulsa para crear carta";
-            cell.textLabel.textColor = [UIColor whiteColor];
-            cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            break;
-        default:
-            cell = nil;
+        {
+            cell.textLabel.font = [UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT_ITALIC size:17];
+            cell.textLabel.text = @"Aplicación creada y liberada en GitHub por: Marcos Sorribas López.";
+        }
             break;
     }
     return cell;
