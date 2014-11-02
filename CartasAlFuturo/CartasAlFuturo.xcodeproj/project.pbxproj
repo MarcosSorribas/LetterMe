@@ -29,6 +29,7 @@
 		6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C41973F445001CF9C6 /* LetterTests.m */; };
 		6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
 		6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */; };
+		6A7C56FF1A0643E600E108DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A7C57011A0643E600E108DB /* Localizable.strings */; };
 		6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */; };
 		6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72E7198061270032BFDE /* NSString+Styles.m */; };
 		6ADE72EB19806B380032BFDE /* MSSeparatorReadLetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72EA19806B380032BFDE /* MSSeparatorReadLetterView.m */; };
@@ -95,6 +96,8 @@
 		6A46B5C41973F445001CF9C6 /* LetterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterTests.m; sourceTree = "<group>"; };
 		6A46B5CD19741853001CF9C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		6A7C57001A0643E600E108DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6A7C57051A06450200E108DB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedTableViewCell.h; sourceTree = "<group>"; };
 		6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedTableViewCell.m; sourceTree = "<group>"; };
 		6ADE72E6198061270032BFDE /* NSString+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Styles.h"; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 		6A46B5691973C1D8001CF9C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A7C57011A0643E600E108DB /* Localizable.strings */,
 				6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */,
 				6A46B56B1973C1D8001CF9C6 /* InfoPlist.strings */,
 				6A46B56E1973C1D8001CF9C6 /* main.m */,
@@ -467,6 +471,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 6A46B5561973C1D8001CF9C6;
 			productRefGroup = 6A46B5601973C1D8001CF9C6 /* Products */;
@@ -485,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
+				6A7C56FF1A0643E600E108DB /* Localizable.strings in Resources */,
 				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
 				6ADE72F519813C5A0032BFDE /* MSEmptyTableViewController.xib in Resources */,
 				6AF142AC1A0395BC000ED304 /* MSInfoViewController.xib in Resources */,
@@ -574,6 +580,15 @@
 				6A46B5851973C1D8001CF9C6 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6A7C57011A0643E600E108DB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A7C57001A0643E600E108DB /* en */,
+				6A7C57051A06450200E108DB /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
