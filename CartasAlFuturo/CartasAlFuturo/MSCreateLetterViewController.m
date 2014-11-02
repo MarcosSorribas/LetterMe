@@ -52,6 +52,8 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelNavButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendNavButton;
 
 #pragma mark -
 #pragma mark - Animatable Constrains
@@ -83,7 +85,6 @@ enum : NSUInteger {
 #pragma mark - Constants
 
 CGFloat const animationDuration = 0.35;
-NSString *const navBarTitle = @"Crea tu carta";
 NSInteger const statusBarheight = 20;
 NSInteger const navigationBarheight = 64;
 
@@ -93,10 +94,11 @@ NSInteger const navigationBarheight = 64;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self localizeInterfaz];
     [self initialConfig];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
-    [self configureNavigationBar:navBarTitle];
+    [self configureNavigationBar:NSLocalizedString(@"creation_viewController_title", nil)];
     [self registerKeyboardNotifications];
 }
 
@@ -105,6 +107,15 @@ NSInteger const navigationBarheight = 64;
     [self.pickerView selectRow:4 inComponent:0 animated:NO];
 }
 
+-(void)localizeInterfaz{
+    self.titleLabelView.text = NSLocalizedString(@"creation_viewController_letter_title_description", nil);
+    self.contentHeader.text = NSLocalizedString(@"creation_viewController_letter_content", nil);
+    self.dateHeader.text = NSLocalizedString(@"creation_viewController_letter_date", nil);
+    self.dateLabelView.text = NSLocalizedString(@"creation_viewController_letter_date_description", nil);
+    self.cancelNavButton.title = NSLocalizedString(@"creation_viewController_cancel_button", nil);
+    self.sendNavButton.title = NSLocalizedString(@"creation_viewController_send_button", nil);
+
+}
 #pragma mark -
 #pragma mark - Initial configure methods
 
@@ -185,7 +196,7 @@ NSInteger const navigationBarheight = 64;
     if ([self.validator isAValidLetterTitle:textField.text]) {
         self.titleHeader.text = textField.text;
     }else{
-        NSString *failText = @"Título";
+        NSString *failText = NSLocalizedString(@"creation_viewController_letter_title", nil);
         self.titleHeader.attributedText = [failText addKernStyle:@3];
     }
 }
@@ -331,7 +342,7 @@ NSInteger const navigationBarheight = 64;
                      } completion:^(BOOL finished) {
                          self.controllerState = DateState;
                          if ([self.pickerView selectedRowInComponent:0] == 4) {
-                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:@"Dentro de un mes"];
+                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:NSLocalizedString(@"datePicker_1_month", nil)];
                          }
                      }];
 }
@@ -432,7 +443,7 @@ NSInteger const navigationBarheight = 64;
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
     notification.fireDate = openDate;
-    notification.alertBody = @"¡¡Una de tus cartas pendientes ya se puede abrir!!";
+    notification.alertBody = NSLocalizedString(@"letter_received_notification_body", nil);
     notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
 
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];

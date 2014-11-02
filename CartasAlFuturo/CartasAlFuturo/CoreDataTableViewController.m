@@ -216,7 +216,7 @@
 
 -(void)configureBackButtonItem{
     UIBarButtonItem *backButton =
-    [[UIBarButtonItem alloc] initWithTitle:@"Volver"
+    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"letter_back_button", nil)
                                      style:UIBarButtonItemStyleBordered
                                     target:nil
                                     action:nil];

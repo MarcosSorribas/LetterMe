@@ -13,7 +13,7 @@
 -(NSString *)dateWithMyFormat{
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"d 'de' MMMM 'de' YYYY"];
+    [dateFormat setDateFormat:NSLocalizedString(@"date_format", nil)];
     NSString *dateString = [dateFormat stringFromDate:self];
     return dateString;
 }

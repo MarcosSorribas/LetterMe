@@ -62,21 +62,21 @@ typedef enum : NSUInteger {
     switch (indexPath.row) {
         case addLetterInfoCell:
             cell.imageView.image = [UIImage imageNamed:@"addButton"];
-            cell.textLabel.text = @"Crea una carta para enviarla al futuro.";
+            cell.textLabel.text = NSLocalizedString(@"Info_addLetter_button_description", nil);
             break;
         case PendingLettersInfoCell:
             cell.imageView.image = [UIImage imageNamed:@"PendientesImage"];
-            cell.textLabel.text = @"Listado de cartas que aún no puedes abrir.";
+            cell.textLabel.text = NSLocalizedString(@"Info_pendingTab_description", nil);
             break;
         case ReadLettersInfoCell:
             cell.imageView.image = [UIImage imageNamed:@"LeidasImage"];
-            cell.textLabel.text = @"Listado de cartas ya abiertas que puedes volver a leer.";
+            cell.textLabel.text = NSLocalizedString(@"Info_readTab_description", nil);
             cell.textLabel.numberOfLines = 3;
             break;
         case authorInfoCell:
         {
             cell.textLabel.font = [UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT_ITALIC size:17];
-            cell.textLabel.text = @"Aplicación creada y liberada en GitHub por: Marcos Sorribas López.";
+            cell.textLabel.text = NSLocalizedString(@"Info_author_description", nil);
         }
             break;
     }

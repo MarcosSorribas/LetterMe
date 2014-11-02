@@ -8,63 +8,69 @@
 
 //InfoViewController
 
-"Info_addLetter_button_description"="";
-"Info_pendingTab_description"="";
-"Info_readTab_description"="";
-"Info_author_description"="";
+"Info_addLetter_button_description"="Crea una carta para enviarla al futuro.";
+"Info_pendingTab_description"="Listado de cartas que aún no puedes abrir.";
+"Info_readTab_description"="Listado de cartas ya abiertas que puedes volver a leer.";
+"Info_author_description"="Aplicación creada y liberada en GitHub por: Marcos Sorribas López.";
 
 //MainViewController
 
-"Pending_TableViewTitle"="";
-"Read_TableViewTitle"="";
+"Pending_TableViewTitle"="Pendientes";
+"Read_TableViewTitle"="Leídas";
 
-"create_first_letter_notice"="";
-
+"create_first_letter_notice"="Pulsa + para escribir una nueva carta.";
 
 //ReadLetter ViewController
 
-"Delete_letter_button"="";
-"letter_back_button"="";
+"Delete_letter_button"="Eliminar";
+"letter_back_button"="Volver";
+"letter_day_writing"="Escrita el %@";
+"letter_opening_days_countdwon_singular"="Abierta %ld día después";
+"letter_opening_days_countdwon_plural"="Abierta %ld días después";
 
 //PendingLetterCell
 
-"calculateCountdown_hours"="";
-"calculateCountdown_tomorrow"="";
-"calculateCountdown_days"="";
+"calculateCountdown_hours"="Solo quedan unas horas.";
+"calculateCountdown_tomorrow"="Mañana podrás abrirla.";
+"calculateCountdown_days"="%ld días restantes.";
 
 //CreationViewController
 
-"creation_viewController_title"="";
-"creation_viewController_send_button"="";
-"creation_viewController_cancel_button"="";
+"creation_viewController_title"="Crea tu carta";
+"creation_viewController_send_button"="Enviar";
+"creation_viewController_cancel_button"="Cancelar";
 
-"creation_viewController_letter_title"="";
-"creation_viewController_letter_title_description"="";
+"creation_viewController_letter_title"="Título";
+"creation_viewController_letter_title_description"="Escribe el título de tu carta:";
 
-"creation_viewController_letter_content"="";
+"creation_viewController_letter_content"="Contenido";
 
-"creation_viewController_letter_date"="";
-"creation_viewController_letter_date_description"="";
+"creation_viewController_letter_date"="Fecha";
+"creation_viewController_letter_date_description"="¿Cuánto tiempo quieres esperar?";
 
 //DatePicker strings
 
-"datePicker_1_day"="";
-"datePicker_3_days"="";
-"datePicker_1_week"="";
-"datePicker_3_weeks"="";
-"datePicker_1_month"="";
-"datePicker_3_months"="";
-"datePicker_6_months"="";
-"datePicker_9_months"="";
-"datePicker_1_year"="";
-"datePicker_3_years"="";
+"datePicker_1_day"="Dentro de un día";
+"datePicker_3_days"="Dentro de tres días";
+"datePicker_1_week"="Dentro de una semana";
+"datePicker_3_weeks"="Dentro de tres semanas";
+"datePicker_1_month"="Dentro de un mes";
+"datePicker_3_months"="Dentro de tres meses";
+"datePicker_6_months"="Dentro de seis meses";
+"datePicker_9_months"="Dentro de nueve meses";
+"datePicker_1_year"="Dentro de un año";
+"datePicker_3_years"="Dentro de tres años";
 
 //AlertsView
 
-"letter_received_alertView_title"="";
-"letter_received_alertView_description"="";
-"letter_received_alertView_accept_button"="";
+"letter_received_alertView_title"="¡Te ha llegado una carta!";
+"letter_received_alertView_description"="Una de tus cartas pendientes ya se puede abrir. ¡No esperes más y leela!";
+"letter_received_alertView_accept_button"="Aceptar";
 
 //LocalNotifications
 
 "letter_received_notification_body"="¡¡Una de tus cartas pendientes ya se puede abrir!!";
+
+//Others
+
+"date_format"="d 'de' MMMM 'de' YYYY";
