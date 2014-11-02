@@ -11,6 +11,8 @@
 #import "MSReadLetterViewController.h"
 #import "MSCreateLetterViewController.h"
 
+#import "MSInfoViewController.h"
+
 @interface CoreDataTableViewController()
 @property (nonatomic) BOOL beganUpdates;
 @end
@@ -200,6 +202,12 @@
     labelView.adjustsFontSizeToFitWidth = YES;
     labelView.attributedText = titleWithAtt;
     self.navigationItem.titleView = labelView;
+    
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(infoButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *navBarInfoButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    self.navigationItem.leftBarButtonItem = navBarInfoButton;
+    
 }
 
 -(void)configureBackground{
@@ -216,5 +224,26 @@
     [backButton setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     self.navigationItem.backBarButtonItem = backButton;
+}
+
+-(UIImage*)getScreenshot{
+    CALayer *layer = [[UIApplication sharedApplication] keyWindow].layer;
+    CGFloat scale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, scale);
+    
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    return  UIGraphicsGetImageFromCurrentImageContext();
+}
+
+-(void)infoButtonTapped{
+    
+    MSInfoViewController *infoViewController = [[MSInfoViewController alloc]initWithBackgroundImage:[self getScreenshot]];
+    infoViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:infoViewController animated:YES completion:^{
+        
+    }];
+    
+    
+
 }
 @end

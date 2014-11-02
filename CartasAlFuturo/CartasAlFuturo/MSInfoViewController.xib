@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSInfoViewController">
+            <connections>
+                <outlet property="infoBackgroundImage" destination="Z5j-oR-3NK" id="FVM-Cd-wKd"/>
+                <outlet property="infoTableView" destination="oGo-lR-Afk" id="uBr-kV-gPV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5j-oR-3NK" userLabel="screenShoot">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZy-97-a9y" userLabel="FadeView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-lR-Afk" userLabel="InfoTableView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="oGo-lR-Afk" secondAttribute="bottom" id="3Me-5H-0Za"/>
+                        <constraint firstAttribute="width" secondItem="oGo-lR-Afk" secondAttribute="width" id="3dO-2P-PTx"/>
+                        <constraint firstItem="oGo-lR-Afk" firstAttribute="top" secondItem="eZy-97-a9y" secondAttribute="top" id="Lvk-Eh-Tte"/>
+                        <constraint firstAttribute="height" secondItem="oGo-lR-Afk" secondAttribute="height" id="b8k-u6-eIW"/>
+                        <constraint firstAttribute="trailing" secondItem="oGo-lR-Afk" secondAttribute="trailing" id="s29-h5-9Po"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-9u-joN" userLabel="closeButton">
+                    <rect key="frame" x="145" y="450" width="30" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" image="closeButton">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="Cva-17-Sda"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="height" secondItem="Z5j-oR-3NK" secondAttribute="height" id="4hc-H0-07e"/>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="centerX" secondItem="Z5j-oR-3NK" secondAttribute="centerX" id="FhH-iS-bzL"/>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="width" secondItem="Z5j-oR-3NK" secondAttribute="width" id="IfJ-x5-0Pw"/>
+                <constraint firstAttribute="bottom" secondItem="Z5j-oR-3NK" secondAttribute="bottom" id="YVw-bw-Cbu"/>
+                <constraint firstItem="Z5j-oR-3NK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c2i-ER-Xk5"/>
+                <constraint firstAttribute="trailing" secondItem="Z5j-oR-3NK" secondAttribute="trailing" id="f8t-MB-Fw5"/>
+                <constraint firstAttribute="centerX" secondItem="Jr1-9u-joN" secondAttribute="centerX" id="gL8-2Z-JTm"/>
+                <constraint firstAttribute="trailing" secondItem="Jr1-9u-joN" secondAttribute="trailing" constant="145" id="hzK-Qf-M8T"/>
+                <constraint firstItem="Z5j-oR-3NK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nSe-WC-EqX"/>
+                <constraint firstItem="Jr1-9u-joN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="145" id="xPW-9X-ftE"/>
+                <constraint firstItem="eZy-97-a9y" firstAttribute="centerY" secondItem="Z5j-oR-3NK" secondAttribute="centerY" id="yf7-vA-Jg8"/>
+                <constraint firstAttribute="bottom" secondItem="Jr1-9u-joN" secondAttribute="bottom" constant="88" id="zFx-Dc-ZYK"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="273" y="378"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeButton" width="30" height="30"/>
+    </resources>
+</document>
