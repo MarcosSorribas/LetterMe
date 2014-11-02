@@ -32,16 +32,19 @@
         [self setUserDefaultsData];
     }
     
+    [self registerForLocalNotifications:application];
+
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     [self customizeTabBarController:tabBarController.tabBar];
     [self prepareFirstControllerFrom:tabBarController];
     [self mailManStart];
-
+    
     application.applicationIconBadgeNumber = 0;
 
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -71,6 +74,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 #pragma mark -
 #pragma mark - Private methods
@@ -113,6 +117,17 @@
     }
 }
 
+-(void)registerForLocalNotifications:(UIApplication*)application{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    // The following line must only run under iOS 8. This runtime check prevents
+    // it from running if it doesn't exist (such as running under iOS 7 or earlier).
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+#endif
+    
+}
+
 #pragma mark -
 #pragma mark - Core Data stack
 
@@ -124,18 +139,21 @@
             [_managedDocument openWithCompletionHandler:^(BOOL success) {
                 if (!success) {
                     //ERROR
+                    NSLog(@"Error al abrir el ManagedDocument");
                 }
             }];
         } else {
             [_managedDocument saveToURL:myModelURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
                 if (!success) {
                     //ERROR
+                    NSLog(@"Error al crear el ManagedDocument");
                 }
             }];
         }
     }
     return _managedDocument;
 }
+
 
 -(NSURL*)getDocumentsDirectory{
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
