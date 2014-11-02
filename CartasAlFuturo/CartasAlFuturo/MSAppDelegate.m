@@ -97,12 +97,13 @@
 
 
 -(void)customizeTabBarController:(UITabBar*)tabBar{
-#warning refactor magic numbers
     
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    
     tabBarItem1.title = NSLocalizedString(@"Pending_TableViewTitle", nil);
     tabBarItem2.title = NSLocalizedString(@"Read_TableViewTitle", nil);
+    
     [tabBarItem1 setImage:[[UIImage imageNamed:@"SelectedItem"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [[UITabBar appearance] setTintColor:MAIN_COLOR];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -14)];
