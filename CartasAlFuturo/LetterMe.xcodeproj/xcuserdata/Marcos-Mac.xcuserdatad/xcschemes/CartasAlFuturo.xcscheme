@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A46B55E1973C1D8001CF9C6"
-               BuildableName = "CartasAlFuturo.app"
-               BlueprintName = "CartasAlFuturo"
-               ReferencedContainer = "container:CartasAlFuturo.xcodeproj">
+               BuildableName = "LetterMe.app"
+               BlueprintName = "LetterMe"
+               ReferencedContainer = "container:LetterMe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A46B5791973C1D8001CF9C6"
-               BuildableName = "CartasAlFuturoTests.xctest"
-               BlueprintName = "CartasAlFuturoTests"
-               ReferencedContainer = "container:CartasAlFuturo.xcodeproj">
+               BuildableName = "LetterMeTests.xctest"
+               BlueprintName = "LetterMeTests"
+               ReferencedContainer = "container:LetterMe.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A46B55E1973C1D8001CF9C6"
-            BuildableName = "CartasAlFuturo.app"
-            BlueprintName = "CartasAlFuturo"
-            ReferencedContainer = "container:CartasAlFuturo.xcodeproj">
+            BuildableName = "LetterMe.app"
+            BlueprintName = "LetterMe"
+            ReferencedContainer = "container:LetterMe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A46B55E1973C1D8001CF9C6"
-            BuildableName = "CartasAlFuturo.app"
-            BlueprintName = "CartasAlFuturo"
-            ReferencedContainer = "container:CartasAlFuturo.xcodeproj">
+            BuildableName = "LetterMe.app"
+            BlueprintName = "LetterMe"
+            ReferencedContainer = "container:LetterMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A46B55E1973C1D8001CF9C6"
-            BuildableName = "CartasAlFuturo.app"
-            BlueprintName = "CartasAlFuturo"
-            ReferencedContainer = "container:CartasAlFuturo.xcodeproj">
+            BuildableName = "LetterMe.app"
+            BlueprintName = "LetterMe"
+            ReferencedContainer = "container:LetterMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

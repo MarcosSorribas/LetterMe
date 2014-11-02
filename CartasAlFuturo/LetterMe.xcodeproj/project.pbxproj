@@ -67,20 +67,20 @@
 /* Begin PBXFileReference section */
 		6A0ED7531977BAB4008BD0AE /* MSMailMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMailMan.h; sourceTree = "<group>"; };
 		6A0ED7541977BAB4008BD0AE /* MSMailMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMailMan.m; sourceTree = "<group>"; };
-		6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartasAlFuturo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46B55F1973C1D8001CF9C6 /* LetterMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetterMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A46B5621973C1D8001CF9C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6A46B5661973C1D8001CF9C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturo-Info.plist"; sourceTree = "<group>"; };
+		6A46B56A1973C1D8001CF9C6 /* LetterMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterMe-Info.plist"; sourceTree = "<group>"; };
 		6A46B56C1973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A46B56E1973C1D8001CF9C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A46B5701973C1D8001CF9C6 /* CartasAlFuturo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CartasAlFuturo-Prefix.pch"; sourceTree = "<group>"; };
+		6A46B5701973C1D8001CF9C6 /* LetterMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LetterMe-Prefix.pch"; sourceTree = "<group>"; };
 		6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
 		6A46B5741973C1D8001CF9C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartasAlFuturoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46B57A1973C1D8001CF9C6 /* LetterMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetterMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A46B57B1973C1D8001CF9C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturoTests-Info.plist"; sourceTree = "<group>"; };
+		6A46B5831973C1D8001CF9C6 /* LetterMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterMeTests-Info.plist"; sourceTree = "<group>"; };
 		6A46B5851973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iphone.storyboard; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 		6A46B5601973C1D8001CF9C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */,
-				6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */,
+				6A46B55F1973C1D8001CF9C6 /* LetterMe.app */,
+				6A46B57A1973C1D8001CF9C6 /* LetterMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,10 +231,10 @@
 			isa = PBXGroup;
 			children = (
 				6A7C57011A0643E600E108DB /* Localizable.strings */,
-				6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */,
+				6A46B56A1973C1D8001CF9C6 /* LetterMe-Info.plist */,
 				6A46B56B1973C1D8001CF9C6 /* InfoPlist.strings */,
 				6A46B56E1973C1D8001CF9C6 /* main.m */,
-				6A46B5701973C1D8001CF9C6 /* CartasAlFuturo-Prefix.pch */,
+				6A46B5701973C1D8001CF9C6 /* LetterMe-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 		6A46B5821973C1D8001CF9C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */,
+				6A46B5831973C1D8001CF9C6 /* LetterMeTests-Info.plist */,
 				6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -415,9 +415,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */ = {
+		6A46B55E1973C1D8001CF9C6 /* LetterMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */;
+			buildConfigurationList = 6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMe" */;
 			buildPhases = (
 				6A46B55B1973C1D8001CF9C6 /* Sources */,
 				6A46B55C1973C1D8001CF9C6 /* Frameworks */,
@@ -427,14 +427,14 @@
 			);
 			dependencies = (
 			);
-			name = CartasAlFuturo;
+			name = LetterMe;
 			productName = CartasAlFuturo;
-			productReference = 6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */;
+			productReference = 6A46B55F1973C1D8001CF9C6 /* LetterMe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A46B5791973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
+		6A46B5791973C1D8001CF9C6 /* LetterMeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */;
+			buildConfigurationList = 6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMeTests" */;
 			buildPhases = (
 				6A46B5761973C1D8001CF9C6 /* Sources */,
 				6A46B5771973C1D8001CF9C6 /* Frameworks */,
@@ -445,9 +445,9 @@
 			dependencies = (
 				6A46B5801973C1D8001CF9C6 /* PBXTargetDependency */,
 			);
-			name = CartasAlFuturoTests;
+			name = LetterMeTests;
 			productName = CartasAlFuturoTests;
-			productReference = 6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */;
+			productReference = 6A46B57A1973C1D8001CF9C6 /* LetterMeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -465,7 +465,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "CartasAlFuturo" */;
+			buildConfigurationList = 6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "LetterMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -478,8 +478,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */,
-				6A46B5791973C1D8001CF9C6 /* CartasAlFuturoTests */,
+				6A46B55E1973C1D8001CF9C6 /* LetterMe */,
+				6A46B5791973C1D8001CF9C6 /* LetterMeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -560,7 +560,7 @@
 /* Begin PBXTargetDependency section */
 		6A46B5801973C1D8001CF9C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */;
+			target = 6A46B55E1973C1D8001CF9C6 /* LetterMe */;
 			targetProxy = 6A46B57F1973C1D8001CF9C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -670,10 +670,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
-				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				GCC_PREFIX_HEADER = "CartasAlFuturo/LetterMe-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturo/LetterMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LetterMe;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -684,10 +684,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
-				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				GCC_PREFIX_HEADER = "CartasAlFuturo/LetterMe-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturo/LetterMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LetterMe;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -707,8 +707,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CartasAlFuturoTests/CartasAlFuturoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CartasAlFuturoTests/LetterMeTests-Info.plist";
+				PRODUCT_NAME = LetterMeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -725,8 +725,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
-				INFOPLIST_FILE = "CartasAlFuturoTests/CartasAlFuturoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CartasAlFuturoTests/LetterMeTests-Info.plist";
+				PRODUCT_NAME = LetterMeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -735,7 +735,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "CartasAlFuturo" */ = {
+		6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "LetterMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A46B5891973C1D8001CF9C6 /* Debug */,
@@ -744,7 +744,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */ = {
+		6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A46B58C1973C1D8001CF9C6 /* Debug */,
@@ -753,7 +753,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */ = {
+		6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A46B58F1973C1D8001CF9C6 /* Debug */,
