@@ -28,14 +28,15 @@
     if (self) {
         _screenshot = image;
         _infoTableViewManager = [[MSInfoTableViewManager alloc]init];
-        [_infoTableViewManager setInfoTableView:self.infoTableView];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.infoBackgroundImage.image = self.screenshot;
+    [self.infoTableViewManager setInfoTableView:self.infoTableView];
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
