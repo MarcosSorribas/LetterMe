@@ -10,12 +10,13 @@
 #import "MSInfoTableViewManager.h"
 
 @interface MSInfoViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *infoBackgroundImage;
 
+@property (weak, nonatomic) IBOutlet UIImageView *infoBackgroundImage;
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 
 @property (strong,nonatomic) UIImage *screenshot;
 @property (strong,nonatomic) MSInfoTableViewManager *infoTableViewManager;
+
 @end
 
 @implementation MSInfoViewController
@@ -26,6 +27,8 @@
     self = [super init];
     if (self) {
         _screenshot = image;
+        _infoTableViewManager = [[MSInfoTableViewManager alloc]init];
+        [_infoTableViewManager setInfoTableView:self.infoTableView];
     }
     return self;
 }
@@ -33,24 +36,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.infoBackgroundImage.image = self.screenshot;
-    self.infoTableViewManager;
-    
 }
-
 
 - (IBAction)cancelButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
 }
-
-
--(MSInfoTableViewManager *)infoTableViewManager{
-    if (_infoTableViewManager == nil) {
-        _infoTableViewManager = [[MSInfoTableViewManager alloc]init];
-        [_infoTableViewManager setInfoTableView:self.infoTableView];
-    }
-    return _infoTableViewManager;
-}
-
 @end
