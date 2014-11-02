@@ -5,3 +5,64 @@
   Created by Marcos Sorribas Lopez on 02/11/14.
   Copyright (c) 2014 MarcosSorribas. All rights reserved.
 */
+
+//InfoViewController
+
+"Info_addLetter_button_description"="";
+"Info_pendingTab_description"="";
+"Info_readTab_description"="";
+"Info_author_description"="";
+
+//MainViewController
+
+"Pending_TableViewTitle"="";
+"Read_TableViewTitle"="";
+
+"create_first_letter_notice"="";
+
+
+//ReadLetter ViewController
+
+"Delete_letter_button"="";
+
+//PendingLetterCell
+"calculateCountdown_hours"="";
+"calculateCountdown_tomorrow"="";
+"calculateCountdown_days"="";
+
+//CreationViewController
+
+"creation_viewController_title"="";
+"creation_viewController_send_button"="";
+"creation_viewController_cancel_button"="";
+
+"creation_viewController_letter_title"="";
+"creation_viewController_letter_title_description"="";
+
+"creation_viewController_letter_content"="";
+
+"creation_viewController_letter_date"="";
+"creation_viewController_letter_date_description"="";
+
+//DatePicker strings
+
+"datePicker_1_day"="";
+"datePicker_3_days"="";
+"datePicker_1_week"="";
+"datePicker_3_weeks"="";
+"datePicker_1_month"="";
+"datePicker_3_months"="";
+"datePicker_6_months"="";
+"datePicker_9_months"="";
+"datePicker_1_year"="";
+"datePicker_3_years"="";
+
+//AlertsView
+
+"letter_received_alertView_title"="";
+"letter_received_alertView_description"="";
+"letter_received_alertView_accept_button"="";
+
+//LocalNotifications
+
+"letter_received_notification_body"="¡¡Una de tus cartas pendientes ya se puede abrir!!";
