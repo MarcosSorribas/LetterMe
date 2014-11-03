@@ -52,6 +52,8 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelNavButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendNavButton;
 
 #pragma mark -
 #pragma mark - Animatable Constrains
@@ -92,6 +94,7 @@ NSInteger const navigationBarheight = 64;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self localizeInterfaz];
     [self initialConfig];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
@@ -104,6 +107,15 @@ NSInteger const navigationBarheight = 64;
     [self.pickerView selectRow:4 inComponent:0 animated:NO];
 }
 
+-(void)localizeInterfaz{
+    self.titleLabelView.text = NSLocalizedString(@"creation_viewController_letter_title_description", nil);
+    self.contentHeader.text = NSLocalizedString(@"creation_viewController_letter_content", nil);
+    self.dateHeader.text = NSLocalizedString(@"creation_viewController_letter_date", nil);
+    self.dateLabelView.text = NSLocalizedString(@"creation_viewController_letter_date_description", nil);
+    self.cancelNavButton.title = NSLocalizedString(@"creation_viewController_cancel_button", nil);
+    self.sendNavButton.title = NSLocalizedString(@"creation_viewController_send_button", nil);
+
+}
 #pragma mark -
 #pragma mark - Initial configure methods
 

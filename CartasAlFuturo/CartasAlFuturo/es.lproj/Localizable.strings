@@ -18,7 +18,7 @@
 "Pending_TableViewTitle"="Pendientes";
 "Read_TableViewTitle"="Leídas";
 
-"create_first_letter_notice"="";
+"create_first_letter_notice"="Pulsa + para escribir una nueva carta.";
 
 //ReadLetter ViewController
 
@@ -37,16 +37,16 @@
 //CreationViewController
 
 "creation_viewController_title"="Crea tu carta";
-"creation_viewController_send_button"="";
-"creation_viewController_cancel_button"="";
+"creation_viewController_send_button"="Enviar";
+"creation_viewController_cancel_button"="Cancelar";
 
 "creation_viewController_letter_title"="Título";
-"creation_viewController_letter_title_description"="";
+"creation_viewController_letter_title_description"="Escribe el título de tu carta:";
 
-"creation_viewController_letter_content"="";
+"creation_viewController_letter_content"="Contenido";
 
-"creation_viewController_letter_date"="";
-"creation_viewController_letter_date_description"="";
+"creation_viewController_letter_date"="Fecha";
+"creation_viewController_letter_date_description"="¿Cuánto tiempo quieres esperar?";
 
 //DatePicker strings
 

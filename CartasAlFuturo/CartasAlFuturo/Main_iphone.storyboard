@@ -642,6 +642,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="908"/>
                     <connections>
+                        <outlet property="cancelNavButton" destination="ADE-K4-kh9" id="QsB-oe-wjs"/>
                         <outlet property="contentBlackView" destination="zvo-67-wY2" id="Tlr-jH-uDQ"/>
                         <outlet property="contentHeader" destination="Q49-aq-sLj" id="UH1-4p-1JU"/>
                         <outlet property="contentHeaderHeightConstraint" destination="6O6-Os-Zao" id="Afu-85-CV8"/>
@@ -654,6 +655,7 @@
                         <outlet property="dateLabelView" destination="e3m-fP-Xp4" id="Lsv-n0-nMb"/>
                         <outlet property="dateViewHeightConstraint" destination="mBF-O6-APO" id="Zy3-W3-RMv"/>
                         <outlet property="pickerView" destination="fqz-8l-4R0" id="96e-id-jAj"/>
+                        <outlet property="sendNavButton" destination="lYb-Ej-ETD" id="EvA-gK-yXp"/>
                         <outlet property="titleBlackView" destination="tgR-Vf-Iob" id="CiF-8K-cbd"/>
                         <outlet property="titleHeader" destination="I3X-gF-ear" id="VHB-YD-eAn"/>
                         <outlet property="titleHeaderHeightConstraint" destination="BlP-bp-kRk" id="Pwi-b7-tZk"/>
