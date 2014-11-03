@@ -27,17 +27,15 @@
     }
 }
 
-
-
 -(NSString*)calculateCountdown:(Letter *)letter{
     NSInteger days = [NSDate daysBetweenDate:letter.letterOpenDate andDate:[NSDate date]];
     if (days == 0) {
-        return [NSString stringWithFormat:@"Solo quedan unas horas."];
+        return [NSString stringWithFormat:NSLocalizedString(@"calculateCountdown_hours", nil)];
     }else{
         if (days == 1) {
-            return [NSString stringWithFormat:@"Mañana podrás abrirla."];
+            return [NSString stringWithFormat:NSLocalizedString(@"calculateCountdown_tomorrow", nil)];
         }else{
-            return [NSString stringWithFormat:@"%ld días restantes.",days];
+            return [NSString stringWithFormat:NSLocalizedString(@"calculateCountdown_days", nil),days];
         }
     }
 }

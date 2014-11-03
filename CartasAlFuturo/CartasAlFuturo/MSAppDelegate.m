@@ -10,6 +10,9 @@
 #import "CoreDataTableViewController.h"
 #import "MSMailMan.h"
 
+
+#define FIRSTIME_USER_KEY @"firstTime"
+
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
 @property (nonatomic,strong) MSMailMan *mailMan;
@@ -17,15 +20,31 @@
 
 @implementation MSAppDelegate
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+   
+    if ([self getUserDefaultData] == nil) {
+        //first time
+        
+        
+        [self setUserDefaultsData];
+    }
+    
+    [self registerForLocalNotifications:application];
+
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     [self customizeTabBarController:tabBarController.tabBar];
     [self prepareFirstControllerFrom:tabBarController];
     [self mailManStart];
+    
+    application.applicationIconBadgeNumber = 0;
+
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -48,12 +67,14 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [self mailManStart];
+    application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 #pragma mark -
 #pragma mark - Private methods
@@ -63,14 +84,26 @@
     [self.mailMan showAlertViewIfLettersArePrepared:self.managedDocument];
 }
 
+- (void)setUserDefaultsData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@1 forKey:FIRSTIME_USER_KEY];
+    [defaults synchronize];
+}
+
+-(NSNumber*)getUserDefaultData{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:FIRSTIME_USER_KEY];
+}
+
 
 -(void)customizeTabBarController:(UITabBar*)tabBar{
-#warning refactor magic numbers
     
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
-    tabBarItem1.title = @"Pendientes";
-    tabBarItem2.title = @"Leídas";
+    
+    tabBarItem1.title = NSLocalizedString(@"Pending_TableViewTitle", nil);
+    tabBarItem2.title = NSLocalizedString(@"Read_TableViewTitle", nil);
+    
     [tabBarItem1 setImage:[[UIImage imageNamed:@"SelectedItem"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [[UITabBar appearance] setTintColor:MAIN_COLOR];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -14)];
@@ -85,6 +118,17 @@
     }
 }
 
+-(void)registerForLocalNotifications:(UIApplication*)application{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    // The following line must only run under iOS 8. This runtime check prevents
+    // it from running if it doesn't exist (such as running under iOS 7 or earlier).
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+#endif
+    
+}
+
 #pragma mark -
 #pragma mark - Core Data stack
 
@@ -96,18 +140,21 @@
             [_managedDocument openWithCompletionHandler:^(BOOL success) {
                 if (!success) {
                     //ERROR
+                    NSLog(@"Error al abrir el ManagedDocument");
                 }
             }];
         } else {
             [_managedDocument saveToURL:myModelURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
                 if (!success) {
                     //ERROR
+                    NSLog(@"Error al crear el ManagedDocument");
                 }
             }];
         }
     }
     return _managedDocument;
 }
+
 
 -(NSURL*)getDocumentsDirectory{
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];

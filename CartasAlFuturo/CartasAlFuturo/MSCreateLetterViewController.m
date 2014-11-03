@@ -48,13 +48,12 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIView *dateBlackView;
 
 
-
-
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelNavButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendNavButton;
 
 #pragma mark -
 #pragma mark - Animatable Constrains
@@ -66,11 +65,9 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
 
-
-
-
 #pragma mark -
 #pragma mark - Keyboard data
+
 @property (nonatomic) CGRect keyboardSize;
 
 #pragma mark -
@@ -88,27 +85,21 @@ enum : NSUInteger {
 #pragma mark - Constants
 
 CGFloat const animationDuration = 0.35;
-NSString *const navBarTitle = @"Crea tu carta";
 NSInteger const statusBarheight = 20;
 NSInteger const navigationBarheight = 64;
+
 #pragma mark -
 #pragma mark - View methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self localizeInterfaz];
     [self initialConfig];
     [self viewInEmptyState];
     [self configurePickerAndTextView];
-    [self configureNavigationBar:navBarTitle];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prueba:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prueba:) name:UIKeyboardWillHideNotification object:nil];
-}
-
--(void)prueba:(NSNotification*)notification{
-    NSDictionary* keyboardInfo = [notification userInfo];
-    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
-    self.keyboardSize = [keyboardFrameBegin CGRectValue];
+    [self configureNavigationBar:NSLocalizedString(@"creation_viewController_title", nil)];
+    [self registerKeyboardNotifications];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -116,6 +107,15 @@ NSInteger const navigationBarheight = 64;
     [self.pickerView selectRow:4 inComponent:0 animated:NO];
 }
 
+-(void)localizeInterfaz{
+    self.titleLabelView.text = NSLocalizedString(@"creation_viewController_letter_title_description", nil);
+    self.contentHeader.text = NSLocalizedString(@"creation_viewController_letter_content", nil);
+    self.dateHeader.text = NSLocalizedString(@"creation_viewController_letter_date", nil);
+    self.dateLabelView.text = NSLocalizedString(@"creation_viewController_letter_date_description", nil);
+    self.cancelNavButton.title = NSLocalizedString(@"creation_viewController_cancel_button", nil);
+    self.sendNavButton.title = NSLocalizedString(@"creation_viewController_send_button", nil);
+
+}
 #pragma mark -
 #pragma mark - Initial configure methods
 
@@ -126,6 +126,17 @@ NSInteger const navigationBarheight = 64;
     self.pickerView.alpha = 0;
     self.dateLabelView.alpha = 0;
     [self labelsHeaderConfig];
+}
+
+-(void)registerKeyboardNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calculateKeyboardSize:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calculateKeyboardSize:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)calculateKeyboardSize:(NSNotification*)notification{
+    NSDictionary* keyboardInfo = [notification userInfo];
+    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    self.keyboardSize = [keyboardFrameBegin CGRectValue];
 }
 
 -(void)configurePickerAndTextView{
@@ -185,7 +196,7 @@ NSInteger const navigationBarheight = 64;
     if ([self.validator isAValidLetterTitle:textField.text]) {
         self.titleHeader.text = textField.text;
     }else{
-        NSString *failText = @"Título";
+        NSString *failText = NSLocalizedString(@"creation_viewController_letter_title", nil);
         self.titleHeader.attributedText = [failText addKernStyle:@3];
     }
 }
@@ -331,7 +342,7 @@ NSInteger const navigationBarheight = 64;
                      } completion:^(BOOL finished) {
                          self.controllerState = DateState;
                          if ([self.pickerView selectedRowInComponent:0] == 4) {
-                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:@"Dentro de un mes"];
+                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:NSLocalizedString(@"datePicker_1_month", nil)];
                          }
                      }];
 }
@@ -425,6 +436,17 @@ NSInteger const navigationBarheight = 64;
     letter.letterContent = self.letterContent;
     letter.letterOpenDate = self.letterOpenDate;
     [self.manageDocument.managedObjectContext.undoManager endUndoGrouping];
+    [self createLocalNotification:letter.letterOpenDate];
+}
+
+-(void)createLocalNotification:(NSDate*)openDate{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    
+    notification.fireDate = openDate;
+    notification.alertBody = NSLocalizedString(@"letter_received_notification_body", nil);
+    notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 -(void)animateMistakeIn:(UIView*)view{
@@ -442,7 +464,9 @@ NSInteger const navigationBarheight = 64;
     [self viewInEmptyState];
     if ([self localizeMistakesInState] == CorrectState) {
         [self createLetterWithUserData];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            NSLog(@"Carta creada correctamente! 👏");
+        }];
     }else{
         switch ([self localizeMistakesInState]) {
             case TitleState:{
@@ -467,6 +491,8 @@ NSInteger const navigationBarheight = 64;
 }
 
 - (IBAction)cancelLetter:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 @end

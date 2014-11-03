@@ -18,8 +18,7 @@
 @implementation MSEmptyView
 
 -(void)awakeFromNib{
-    NSMutableAttributedString *attString = [self.createLetterLabel.text addKernStyle:@0.3].mutableCopy;
-    
+    NSMutableAttributedString *attString = [NSLocalizedString(@"create_first_letter_notice", nil) addKernStyle:@0.3].mutableCopy;
     NSDictionary *attPlus = @{NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_THIN size:45.0],NSForegroundColorAttributeName:MAIN_COLOR};
     
     //Only + character.

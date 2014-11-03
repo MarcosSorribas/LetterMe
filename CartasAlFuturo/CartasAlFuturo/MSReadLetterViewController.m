@@ -33,13 +33,13 @@
     NSNumber *const kernAttribute = @1.2;
 
     self.titleLetterLabel.attributedText = [self.letter.letterTitle addKernStyle:kernAttribute];
-    self.sendDateLabel.text = [NSString stringWithFormat:@"Escrita el %@",[self.letter.letterSendDate dateWithMyFormat]];
+    self.sendDateLabel.text = [NSString stringWithFormat:NSLocalizedString(@"letter_day_writing", nil),[self.letter.letterSendDate dateWithMyFormat]];
     NSInteger days = [NSDate daysBetweenDate:self.letter.letterSendDate andDate:self.letter.letterOpenDate];
     NSString *dateLabel;
     if (days == 1) {
-        dateLabel = [NSString stringWithFormat:@"Abierta %ld día después",days];
+        dateLabel = [NSString stringWithFormat:NSLocalizedString(@"letter_opening_days_countdwon_singular", nil),days];
     }else{
-        dateLabel = [NSString stringWithFormat:@"Abierta %ld días después",days];
+        dateLabel = [NSString stringWithFormat:NSLocalizedString(@"letter_opening_days_countdwon_plural", nil),days];
     }
     self.openDateLabel.text = dateLabel;
     self.contentTextView.attributedText = [self.letter.letterContent addKernStyle:kernAttribute];

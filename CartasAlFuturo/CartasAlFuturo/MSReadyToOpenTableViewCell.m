@@ -15,17 +15,19 @@
 
 - (void)animate{
     [self.titleLetterLabel.layer removeAllAnimations];
-    [self.titleLetterLabel setAlpha:1.0];
-        [UIView animateWithDuration:0.9
-                              delay:0
-                            options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse | UIViewAnimationCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState
-                         animations:^(void){
-                             [self.titleLetterLabel setAlpha:0.0];
-                             [self setNeedsLayout];
-                         }
-                         completion:^(BOOL finished){
-                                                      }];
-        
+    CGFloat finalAlpha = 0.0;
+    if (self.titleLetterLabel.alpha == 0) {
+        finalAlpha = 1.0;
+    }
+    [UIView animateWithDuration:0.9
+                          delay:0
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse | UIViewAnimationCurveEaseIn
+                     animations:^(void){
+                         [self.titleLetterLabel setAlpha:finalAlpha];
+                         [self setNeedsLayout];
+                     }
+                     completion:^(BOOL finished){
+                     }];
 }
 
 

@@ -29,12 +29,16 @@
 		6A46B5C51973F445001CF9C6 /* LetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5C41973F445001CF9C6 /* LetterTests.m */; };
 		6A46B5C61973F59F001CF9C6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5941973C2D7001CF9C6 /* Model.xcdatamodeld */; };
 		6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */; };
+		6A7C56FF1A0643E600E108DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A7C57011A0643E600E108DB /* Localizable.strings */; };
 		6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */; };
 		6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72E7198061270032BFDE /* NSString+Styles.m */; };
 		6ADE72EB19806B380032BFDE /* MSSeparatorReadLetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72EA19806B380032BFDE /* MSSeparatorReadLetterView.m */; };
 		6ADE72EE19810D880032BFDE /* UIView+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72ED19810D880032BFDE /* UIView+Animations.m */; };
 		6ADE72F519813C5A0032BFDE /* MSEmptyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ADE72F319813C5A0032BFDE /* MSEmptyTableViewController.xib */; };
 		6ADE72F9198153230032BFDE /* MSEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE72F8198153230032BFDE /* MSEmptyView.m */; };
+		6AF142AB1A0395BC000ED304 /* MSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF142A91A0395BC000ED304 /* MSInfoViewController.m */; };
+		6AF142AC1A0395BC000ED304 /* MSInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF142AA1A0395BC000ED304 /* MSInfoViewController.xib */; };
+		6AF142BA1A03A86C000ED304 /* MSInfoTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF142B91A03A86C000ED304 /* MSInfoTableViewManager.m */; };
 		6AF35367197905BB009CEAF0 /* MSCreateLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */; };
 		6AF3536B1979312D009CEAF0 /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536A1979312D009CEAF0 /* Letter.m */; };
 		6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3536E197931B6009CEAF0 /* MSLetterValidator.m */; };
@@ -63,20 +67,20 @@
 /* Begin PBXFileReference section */
 		6A0ED7531977BAB4008BD0AE /* MSMailMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMailMan.h; sourceTree = "<group>"; };
 		6A0ED7541977BAB4008BD0AE /* MSMailMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMailMan.m; sourceTree = "<group>"; };
-		6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartasAlFuturo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46B55F1973C1D8001CF9C6 /* LetterMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetterMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A46B5621973C1D8001CF9C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A46B5641973C1D8001CF9C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6A46B5661973C1D8001CF9C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturo-Info.plist"; sourceTree = "<group>"; };
+		6A46B56A1973C1D8001CF9C6 /* LetterMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterMe-Info.plist"; sourceTree = "<group>"; };
 		6A46B56C1973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A46B56E1973C1D8001CF9C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A46B5701973C1D8001CF9C6 /* CartasAlFuturo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CartasAlFuturo-Prefix.pch"; sourceTree = "<group>"; };
+		6A46B5701973C1D8001CF9C6 /* LetterMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LetterMe-Prefix.pch"; sourceTree = "<group>"; };
 		6A46B5711973C1D8001CF9C6 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		6A46B5721973C1D8001CF9C6 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
 		6A46B5741973C1D8001CF9C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartasAlFuturoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46B57A1973C1D8001CF9C6 /* LetterMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetterMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A46B57B1973C1D8001CF9C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CartasAlFuturoTests-Info.plist"; sourceTree = "<group>"; };
+		6A46B5831973C1D8001CF9C6 /* LetterMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterMeTests-Info.plist"; sourceTree = "<group>"; };
 		6A46B5851973C1D8001CF9C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A46B5951973C2D7001CF9C6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6A46B5A51973D2EF001CF9C6 /* Main_iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iphone.storyboard; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		6A46B5C41973F445001CF9C6 /* LetterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterTests.m; sourceTree = "<group>"; };
 		6A46B5CD19741853001CF9C6 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		6A46B5CE19741853001CF9C6 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		6A7C57001A0643E600E108DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6A7C57051A06450200E108DB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AD71F051975353400D337AC /* MSOpenedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedTableViewCell.h; sourceTree = "<group>"; };
 		6AD71F061975353400D337AC /* MSOpenedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedTableViewCell.m; sourceTree = "<group>"; };
 		6ADE72E6198061270032BFDE /* NSString+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Styles.h"; sourceTree = "<group>"; };
@@ -104,6 +110,11 @@
 		6ADE72F7198153230032BFDE /* MSEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEmptyView.h; sourceTree = "<group>"; };
 		6ADE72F8198153230032BFDE /* MSEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEmptyView.m; sourceTree = "<group>"; };
 		6ADE72FA198182EC0032BFDE /* DesignResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignResources.h; sourceTree = "<group>"; };
+		6AF142A81A0395BC000ED304 /* MSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSInfoViewController.h; sourceTree = "<group>"; };
+		6AF142A91A0395BC000ED304 /* MSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSInfoViewController.m; sourceTree = "<group>"; };
+		6AF142AA1A0395BC000ED304 /* MSInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSInfoViewController.xib; sourceTree = "<group>"; };
+		6AF142B81A03A86C000ED304 /* MSInfoTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSInfoTableViewManager.h; sourceTree = "<group>"; };
+		6AF142B91A03A86C000ED304 /* MSInfoTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSInfoTableViewManager.m; sourceTree = "<group>"; };
 		6AF35365197905BB009CEAF0 /* MSCreateLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCreateLetterViewController.h; sourceTree = "<group>"; };
 		6AF35366197905BB009CEAF0 /* MSCreateLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCreateLetterViewController.m; sourceTree = "<group>"; };
 		6AF353691979312D009CEAF0 /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
@@ -182,8 +193,8 @@
 		6A46B5601973C1D8001CF9C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */,
-				6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */,
+				6A46B55F1973C1D8001CF9C6 /* LetterMe.app */,
+				6A46B57A1973C1D8001CF9C6 /* LetterMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,10 +230,11 @@
 		6A46B5691973C1D8001CF9C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B56A1973C1D8001CF9C6 /* CartasAlFuturo-Info.plist */,
+				6A7C57011A0643E600E108DB /* Localizable.strings */,
+				6A46B56A1973C1D8001CF9C6 /* LetterMe-Info.plist */,
 				6A46B56B1973C1D8001CF9C6 /* InfoPlist.strings */,
 				6A46B56E1973C1D8001CF9C6 /* main.m */,
-				6A46B5701973C1D8001CF9C6 /* CartasAlFuturo-Prefix.pch */,
+				6A46B5701973C1D8001CF9C6 /* LetterMe-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,7 +253,7 @@
 		6A46B5821973C1D8001CF9C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6A46B5831973C1D8001CF9C6 /* CartasAlFuturoTests-Info.plist */,
+				6A46B5831973C1D8001CF9C6 /* LetterMeTests-Info.plist */,
 				6A46B5841973C1D8001CF9C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -273,6 +285,7 @@
 		6A46B59C1973C521001CF9C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6AF142A71A03953C000ED304 /* MSInfoViewController */,
 				6AF35374197961F2009CEAF0 /* MSReadLetterViewController.h */,
 				6AF35375197961F2009CEAF0 /* MSReadLetterViewController.m */,
 				6AF353E0197ACD7C009CEAF0 /* MSCustomPickerView.h */,
@@ -327,6 +340,18 @@
 				6AF353DA197A8B72009CEAF0 /* LetterStatusEnum.h */,
 			);
 			name = Headers;
+			sourceTree = "<group>";
+		};
+		6AF142A71A03953C000ED304 /* MSInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6AF142A81A0395BC000ED304 /* MSInfoViewController.h */,
+				6AF142A91A0395BC000ED304 /* MSInfoViewController.m */,
+				6AF142AA1A0395BC000ED304 /* MSInfoViewController.xib */,
+				6AF142B81A03A86C000ED304 /* MSInfoTableViewManager.h */,
+				6AF142B91A03A86C000ED304 /* MSInfoTableViewManager.m */,
+			);
+			name = MSInfoViewController;
 			sourceTree = "<group>";
 		};
 		6AF353641979058E009CEAF0 /* Main controllers */ = {
@@ -390,9 +415,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */ = {
+		6A46B55E1973C1D8001CF9C6 /* LetterMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */;
+			buildConfigurationList = 6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMe" */;
 			buildPhases = (
 				6A46B55B1973C1D8001CF9C6 /* Sources */,
 				6A46B55C1973C1D8001CF9C6 /* Frameworks */,
@@ -402,14 +427,14 @@
 			);
 			dependencies = (
 			);
-			name = CartasAlFuturo;
+			name = LetterMe;
 			productName = CartasAlFuturo;
-			productReference = 6A46B55F1973C1D8001CF9C6 /* CartasAlFuturo.app */;
+			productReference = 6A46B55F1973C1D8001CF9C6 /* LetterMe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A46B5791973C1D8001CF9C6 /* CartasAlFuturoTests */ = {
+		6A46B5791973C1D8001CF9C6 /* LetterMeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */;
+			buildConfigurationList = 6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMeTests" */;
 			buildPhases = (
 				6A46B5761973C1D8001CF9C6 /* Sources */,
 				6A46B5771973C1D8001CF9C6 /* Frameworks */,
@@ -420,9 +445,9 @@
 			dependencies = (
 				6A46B5801973C1D8001CF9C6 /* PBXTargetDependency */,
 			);
-			name = CartasAlFuturoTests;
+			name = LetterMeTests;
 			productName = CartasAlFuturoTests;
-			productReference = 6A46B57A1973C1D8001CF9C6 /* CartasAlFuturoTests.xctest */;
+			productReference = 6A46B57A1973C1D8001CF9C6 /* LetterMeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -440,20 +465,21 @@
 					};
 				};
 			};
-			buildConfigurationList = 6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "CartasAlFuturo" */;
+			buildConfigurationList = 6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "LetterMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 6A46B5561973C1D8001CF9C6;
 			productRefGroup = 6A46B5601973C1D8001CF9C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */,
-				6A46B5791973C1D8001CF9C6 /* CartasAlFuturoTests */,
+				6A46B55E1973C1D8001CF9C6 /* LetterMe */,
+				6A46B5791973C1D8001CF9C6 /* LetterMeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -464,8 +490,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A46B56D1973C1D8001CF9C6 /* InfoPlist.strings in Resources */,
+				6A7C56FF1A0643E600E108DB /* Localizable.strings in Resources */,
 				6A46B5751973C1D8001CF9C6 /* Images.xcassets in Resources */,
 				6ADE72F519813C5A0032BFDE /* MSEmptyTableViewController.xib in Resources */,
+				6AF142AC1A0395BC000ED304 /* MSInfoViewController.xib in Resources */,
 				6A46B5A61973D2EF001CF9C6 /* Main_iphone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,12 +518,14 @@
 				6A46B5731973C1D8001CF9C6 /* MSAppDelegate.m in Sources */,
 				6A46B5CF19741853001CF9C6 /* CoreDataTableViewController.m in Sources */,
 				6AF353C2197974A5009CEAF0 /* MSReadyToOpenTableViewCell.m in Sources */,
+				6AF142BA1A03A86C000ED304 /* MSInfoTableViewManager.m in Sources */,
 				6AF3536F197931B6009CEAF0 /* MSLetterValidator.m in Sources */,
 				6AF353D6197A89BF009CEAF0 /* Letter+DrawerItem.m in Sources */,
 				6A46B56F1973C1D8001CF9C6 /* main.m in Sources */,
 				6ADE72F9198153230032BFDE /* MSEmptyView.m in Sources */,
 				6AF353D0197A86A5009CEAF0 /* MSReadyToOpenLetterDrawer.m in Sources */,
 				6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */,
+				6AF142AB1A0395BC000ED304 /* MSInfoViewController.m in Sources */,
 				6AD71F071975353400D337AC /* MSOpenedTableViewCell.m in Sources */,
 				6ADE72EE19810D880032BFDE /* UIView+Animations.m in Sources */,
 				6ADE72E8198061270032BFDE /* NSString+Styles.m in Sources */,
@@ -530,7 +560,7 @@
 /* Begin PBXTargetDependency section */
 		6A46B5801973C1D8001CF9C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6A46B55E1973C1D8001CF9C6 /* CartasAlFuturo */;
+			target = 6A46B55E1973C1D8001CF9C6 /* LetterMe */;
 			targetProxy = 6A46B57F1973C1D8001CF9C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -550,6 +580,15 @@
 				6A46B5851973C1D8001CF9C6 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6A7C57011A0643E600E108DB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A7C57001A0643E600E108DB /* en */,
+				6A7C57051A06450200E108DB /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -631,10 +670,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
-				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				GCC_PREFIX_HEADER = "CartasAlFuturo/LetterMe-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturo/LetterMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LetterMe;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -645,10 +684,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
-				INFOPLIST_FILE = "CartasAlFuturo/CartasAlFuturo-Info.plist";
+				GCC_PREFIX_HEADER = "CartasAlFuturo/LetterMe-Prefix.pch";
+				INFOPLIST_FILE = "CartasAlFuturo/LetterMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LetterMe;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -668,8 +707,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CartasAlFuturoTests/CartasAlFuturoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CartasAlFuturoTests/LetterMeTests-Info.plist";
+				PRODUCT_NAME = LetterMeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -686,8 +725,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CartasAlFuturo/CartasAlFuturo-Prefix.pch";
-				INFOPLIST_FILE = "CartasAlFuturoTests/CartasAlFuturoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CartasAlFuturoTests/LetterMeTests-Info.plist";
+				PRODUCT_NAME = LetterMeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -696,7 +735,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "CartasAlFuturo" */ = {
+		6A46B55A1973C1D8001CF9C6 /* Build configuration list for PBXProject "LetterMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A46B5891973C1D8001CF9C6 /* Debug */,
@@ -705,7 +744,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturo" */ = {
+		6A46B58B1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A46B58C1973C1D8001CF9C6 /* Debug */,
@@ -714,7 +753,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "CartasAlFuturoTests" */ = {
+		6A46B58E1973C1D8001CF9C6 /* Build configuration list for PBXNativeTarget "LetterMeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A46B58F1973C1D8001CF9C6 /* Debug */,

@@ -26,16 +26,10 @@
 @implementation MSPendingTableViewController
 
 #pragma mark -
-#pragma mark - Constans
-
-NSString * const kPendingControllerTitle = @"Pendientes";
-
-#pragma mark -
 #pragma mark - Views Apperance
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
     [self initialReadyToOpenAnimation];
     [self configureEmptyView];
 }
@@ -48,7 +42,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [super configureNavigationBar:kPendingControllerTitle];
+    [super configureNavigationBar:NSLocalizedString(@"Pending_TableViewTitle", nil)];
     [super configureBackground];
     
     [self configureFetchResultController];
@@ -58,9 +52,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
     
 }
 
-//TODO: Fixed bug -> BackBackground animate lost 
 -(void)backgroundBack{
-    [self.tableView reloadData];
     [self initialReadyToOpenAnimation];
 }
 
@@ -119,6 +111,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
         }
     }
 }
+
 -(void)configureEmptyView{
     if (!self.emptyView.superview) {
         [self.tableView addSubview:self.emptyView];
