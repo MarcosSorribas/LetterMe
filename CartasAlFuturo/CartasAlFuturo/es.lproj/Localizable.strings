@@ -24,8 +24,10 @@
 //ReadLetter ViewController
 
 "Delete_letter_button"="";
+"letter_back_button"="";
 
 //PendingLetterCell
+
 "calculateCountdown_hours"="";
 "calculateCountdown_tomorrow"="";
 "calculateCountdown_days"="";
