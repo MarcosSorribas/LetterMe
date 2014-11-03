@@ -15,15 +15,9 @@
 
 @implementation MSOpenedLettersTableViewController
 
-#pragma mark -
-#pragma mark - Constans
-
-NSString * const kOpenedLettersTitle = @"Leídas";
-
-
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [super configureNavigationBar:kOpenedLettersTitle];
+    [super configureNavigationBar:NSLocalizedString(@"Read_TableViewTitle", nil)];
     [super configureBackground];
     [self configureFetchResultController];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configureFetchResultController) name:UIDocumentStateChangedNotification object:self.manageDocument];
@@ -63,8 +57,7 @@ NSString * const kOpenedLettersTitle = @"Leídas";
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * const kDeleteButtonText = @"Eliminar";
-    return kDeleteButtonText;
+    return NSLocalizedString(@"Delete_letter_button", nil);
 }
 
 #pragma mark -

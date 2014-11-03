@@ -26,11 +26,6 @@
 @implementation MSPendingTableViewController
 
 #pragma mark -
-#pragma mark - Constans
-
-NSString * const kPendingControllerTitle = @"Pendientes";
-
-#pragma mark -
 #pragma mark - Views Apperance
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -47,7 +42,7 @@ NSString * const kPendingControllerTitle = @"Pendientes";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [super configureNavigationBar:kPendingControllerTitle];
+    [super configureNavigationBar:NSLocalizedString(@"Pending_TableViewTitle", nil)];
     [super configureBackground];
     
     [self configureFetchResultController];

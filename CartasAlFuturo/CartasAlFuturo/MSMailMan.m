@@ -24,7 +24,7 @@
      NSArray *letters = [Letter checkReadyToOpenLettersInContext:document.managedObjectContext];
     if (letters.count) {
         [MSMailMan checkLettersPreparedAndUpdateThemInContext:document];
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"¡Te ha llegado una carta!" message:@"Una de tus cartas pendientes ya se puede abrir. ¡No esperes más y leela!" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"letter_received_alertView_title", nil) message:NSLocalizedString(@"letter_received_alertView_description", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"letter_received_alertView_accept_button", nil) otherButtonTitles:nil];
         [alertView show];
     }
 }

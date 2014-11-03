@@ -50,7 +50,7 @@
 
 -(NSArray *)pickerComponents{
     if (!_pickerComponents) {
-        _pickerComponents = @[@"Dentro de un día",@"Dentro de tres días",@"Dentro de una semana",@"Dentro de tres semanas",@"Dentro de un mes",@"Dentro de tres meses",@"Dentro de seis meses",@"Dentro de nueve meses",@"Dentro de un año",@"Dentro de tres años"];
+        _pickerComponents = @[NSLocalizedString(@"datePicker_1_day", nil),NSLocalizedString(@"datePicker_3_days", nil),NSLocalizedString(@"datePicker_1_week", nil),NSLocalizedString(@"datePicker_3_weeks", nil),NSLocalizedString(@"datePicker_1_month", nil),NSLocalizedString(@"datePicker_3_months", nil),NSLocalizedString(@"datePicker_6_months", nil),NSLocalizedString(@"datePicker_9_months", nil),NSLocalizedString(@"datePicker_1_year", nil),NSLocalizedString(@"datePicker_3_years", nil)];
     }
     return _pickerComponents;
 }
