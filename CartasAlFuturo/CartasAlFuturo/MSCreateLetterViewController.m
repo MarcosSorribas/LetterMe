@@ -69,6 +69,8 @@ enum : NSUInteger {
 #pragma mark - Keyboard data
 
 @property (nonatomic) CGRect keyboardSize;
+@property (nonatomic) CGFloat animationDuration;
+@property (nonatomic) NSInteger animationCurve;
 
 #pragma mark -
 #pragma mark - Temporal letter Data
@@ -135,8 +137,20 @@ NSInteger const navigationBarheight = 64;
 
 -(void)calculateKeyboardSize:(NSNotification*)notification{
     NSDictionary* keyboardInfo = [notification userInfo];
-    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
-    self.keyboardSize = [keyboardFrameBegin CGRectValue];
+    NSValue* keyboardFrameEnd = [keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
+    self.keyboardSize = [keyboardFrameEnd CGRectValue];
+    self.animationDuration = [[keyboardInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    self.animationCurve = [[keyboardInfo valueForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    switch (self.controllerState) {
+        case ContentState:
+            [self viewInContentState];
+            break;
+        case TitleState:
+            [self viewInTitleState];
+            break;
+        default:
+            break;
+    }
 }
 
 -(void)configurePickerAndTextView{
@@ -273,8 +287,8 @@ NSInteger const navigationBarheight = 64;
 -(void)viewInTitleState{
     
     [self.titleTextField becomeFirstResponder];
-    [UIView animateWithDuration:animationDuration
-                     animations:^{
+    [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
+                          delay:0 options:self.animationCurve animations:^{
                          NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
                          screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
 
@@ -294,9 +308,7 @@ NSInteger const navigationBarheight = 64;
                          self.titleHeaderHeightConstraint.constant = dataSectionHeight;
                          screenHeight = screenHeight - dataSectionHeight;
 
-                         
                          self.titleViewHeightConstraint.constant = screenHeight;
-                         
                          
                          self.dateViewHeightConstraint.constant = 0;
                          self.contentViewHeightConstraint.constant = 0;
@@ -308,8 +320,8 @@ NSInteger const navigationBarheight = 64;
 }
 
 -(void)viewInDateState{
-    [UIView animateWithDuration:animationDuration
-                     animations:^{
+    [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
+                     delay:0 options:self.animationCurve animations:^{
                          [self.view endEditing:YES];
                          NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
                          
@@ -323,20 +335,14 @@ NSInteger const navigationBarheight = 64;
                          self.dateViewHeightConstraint.constant = screenHeight*0.7;
                          self.contentViewHeightConstraint.constant = 0;
                          
-                         
-                         
                          NSInteger dataSectionHeight = ceil((screenHeight*(1-0.7))/3);
 
-                         
                          self.dateHeaderHeightConstraint.constant = dataSectionHeight;
 
                          self.contentHeaderHeightConstraint.constant = dataSectionHeight;
 
-
                          self.titleHeaderHeightConstraint.constant = dataSectionHeight;
 
-
-                         
                          [self.view layoutIfNeeded];
                          
                      } completion:^(BOOL finished) {
@@ -349,8 +355,8 @@ NSInteger const navigationBarheight = 64;
 
 -(void)viewInContentState{
     [self.contentTextView becomeFirstResponder];
-    [UIView animateWithDuration:animationDuration
-                     animations:^{
+    [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
+                      delay:0 options:self.animationCurve animations:^{
                          self.titleTextField.alpha = 0;
                          self.titleLabelView.alpha = 0;
                          self.contentTextView.alpha = 1;
@@ -390,8 +396,8 @@ NSInteger const navigationBarheight = 64;
 -(void)viewInEmptyState{
     [self.view endEditing:YES];
     NSInteger headersHeight =  ceil((self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height)/3);
-    [UIView animateWithDuration:animationDuration
-                     animations:^{
+    [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
+                     delay:0 options:self.animationCurve animations:^{
                          self.titleTextField.alpha = 0;
                          self.titleLabelView.alpha = 0;
                          self.contentTextView.alpha = 0;
