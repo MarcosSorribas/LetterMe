@@ -95,6 +95,45 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:FIRSTIME_USER_KEY];
 }
 
+-(UIImage*)drawBackground:(UITabBar*)tabBar{
+
+    UIGraphicsBeginImageContextWithOptions(tabBar.bounds.size, NO, 0.0);
+    
+    [MAIN_COLOR setStroke];
+    
+    UIBezierPath* bezierPath = UIBezierPath.bezierPath;
+    [bezierPath moveToPoint:CGPointMake(0, 0)];
+    [bezierPath addLineToPoint: CGPointMake(tabBar.bounds.size.width,0)];
+    bezierPath.lineWidth = 5;
+    
+    [bezierPath stroke];
+    
+    UIImage *lineImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return lineImage;
+}
+
+-(void)drawTabBar:(UITabBar*)tabBar{
+    CGRect mainScreenNativeBounds;
+    
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]) {
+        mainScreenNativeBounds = [UIScreen mainScreen].nativeBounds;
+    //iOS 7
+    }else{
+        CGFloat scale = [UIScreen mainScreen].scale;
+        mainScreenNativeBounds = CGRectMake([UIScreen mainScreen].bounds.origin.x, [UIScreen mainScreen].bounds.origin.y, [UIScreen mainScreen].bounds.size.width*scale, [UIScreen mainScreen].bounds.size.height*scale);
+    }
+    
+    CALayer *lineLayer = [CALayer layer];
+    lineLayer.bounds = CGRectMake(tabBar.layer.bounds.size.width/2, 10, 1,tabBar.layer.bounds.size.height-20);
+    
+    lineLayer.position = CGPointMake(mainScreenNativeBounds.size.width/(2*[UIScreen mainScreen].scale), tabBar.bounds.size.height/2);
+    
+    lineLayer.backgroundColor = MAIN_COLOR.CGColor;
+    [tabBar.layer addSublayer:lineLayer];
+}
 
 -(void)customizeTabBarController:(UITabBar*)tabBar{
     
@@ -104,7 +143,7 @@
     tabBarItem1.title = NSLocalizedString(@"Pending_TableViewTitle", nil);
     tabBarItem2.title = NSLocalizedString(@"Read_TableViewTitle", nil);
     
-    [tabBarItem1 setImage:[[UIImage imageNamed:@"SelectedItem"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [self drawTabBar:tabBar];
     [[UITabBar appearance] setTintColor:MAIN_COLOR];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -14)];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT size:19.0]} forState:UIControlStateNormal];
