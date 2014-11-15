@@ -63,15 +63,19 @@ typedef enum : NSUInteger {
             cell.imageView.image = [UIImage imageNamed:@"addButton"];
             cell.textLabel.text = NSLocalizedString(@"Info_addLetter_button_description", nil);
             break;
-        case PendingLettersInfoCell:
-            cell.imageView.image = [UIImage imageNamed:@"PendientesImage"];
+        case PendingLettersInfoCell:{
+            NSString *localizableImage = NSLocalizedString(@"Info_pending_image", nil);
+            cell.imageView.image = [UIImage imageNamed:localizableImage];
             cell.textLabel.text = NSLocalizedString(@"Info_pendingTab_description", nil);
             break;
-        case ReadLettersInfoCell:
-            cell.imageView.image = [UIImage imageNamed:@"LeidasImage"];
+        }
+        case ReadLettersInfoCell:{
+            NSString *localizableImage = NSLocalizedString(@"Info_read_image", nil);
+            cell.imageView.image = [UIImage imageNamed:localizableImage];
             cell.textLabel.text = NSLocalizedString(@"Info_readTab_description", nil);
             cell.textLabel.numberOfLines = 3;
             break;
+        }
         case authorInfoCell:
         {
             cell.textLabel.font = [UIFont fontWithName:FONT_HELVETICA_NEUE_LIGHT_ITALIC size:17];
