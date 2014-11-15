@@ -5,3 +5,72 @@
   Created by Marcos Sorribas Lopez on 02/11/14.
   Copyright (c) 2014 MarcosSorribas. All rights reserved.
 */
+
+//InfoViewController
+
+"Info_addLetter_button_description"="Create a letter to be sent in the future.";
+"Info_pendingTab_description"="List of letters that can not be opened yet.";
+"Info_readTab_description"="List of opened letter that can be read again.";
+"Info_author_description"="Application created and released on GitHub by: Marcos Sorribas López.";
+
+//MainViewController
+
+"Pending_TableViewTitle"="Pending";
+"Read_TableViewTitle"="Read";
+
+"create_first_letter_notice"="Press + for writing a new letter.";
+
+//ReadLetter ViewController
+
+"Delete_letter_button"="Remove";
+"letter_back_button"="Back";
+"letter_day_writing"="Writen the %@";
+"letter_opening_days_countdwon_singular"="Opened after %ld day";
+"letter_opening_days_countdwon_plural"="Opened after %ld days";
+
+//PendingLetterCell
+
+"calculateCountdown_hours"="Only a few hours left.";
+"calculateCountdown_tomorrow"="You can open it tomorrow.";
+"calculateCountdown_days"="%ld days remaining.";
+
+//CreationViewController
+
+"creation_viewController_title"="Create your letter";
+"creation_viewController_send_button"="Send";
+"creation_viewController_cancel_button"="Cancel";
+
+"creation_viewController_letter_title"="Title";
+"creation_viewController_letter_title_description"="Write the title of your letter:";
+
+"creation_viewController_letter_content"="Content";
+
+"creation_viewController_letter_date"="Date";
+"creation_viewController_letter_date_description"="How long do you want to wait for?";
+
+//DatePicker strings
+
+"datePicker_1_day"="Within a day";
+"datePicker_3_days"="Within three days";
+"datePicker_1_week"="Within a week";
+"datePicker_3_weeks"="Within three weeks";
+"datePicker_1_month"="Within a month";
+"datePicker_3_months"="Within three months";
+"datePicker_6_months"="Within six months";
+"datePicker_9_months"="Within nine months";
+"datePicker_1_year"="Within a year";
+"datePicker_3_years"="Within three years";
+
+//AlertsView
+
+"letter_received_alertView_title"="You have received a letter!";
+"letter_received_alertView_description"="One of your pending letters can be opened. Don't wait more! Open it!";
+"letter_received_alertView_accept_button"="Accept";
+
+//LocalNotifications
+
+"letter_received_notification_body"="One of your pending letters can be opened!!";
+
+//Others
+
+"date_format"="d 'of' MMMM ',' YYYY";
