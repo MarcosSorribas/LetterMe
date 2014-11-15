@@ -24,9 +24,8 @@ typedef enum : NSUInteger {
     _infoTableView.delegate = self;
     _infoTableView.dataSource = self;
     _infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _infoTableView.contentInset = UIEdgeInsetsMake(56, 0, 0, 0);
+    _infoTableView.contentInset = UIEdgeInsetsMake(36, 0, 0, 0);
 }
-
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

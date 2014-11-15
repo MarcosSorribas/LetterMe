@@ -39,7 +39,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-9u-joN" userLabel="closeButton">
-                    <rect key="frame" x="145" y="450" width="30" height="30"/>
+                    <rect key="frame" x="145" y="460" width="30" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="18"/>
                     <state key="normal" image="closeButton">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                 <constraint firstItem="Z5j-oR-3NK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nSe-WC-EqX"/>
                 <constraint firstItem="Jr1-9u-joN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="145" id="xPW-9X-ftE"/>
                 <constraint firstItem="eZy-97-a9y" firstAttribute="centerY" secondItem="Z5j-oR-3NK" secondAttribute="centerY" id="yf7-vA-Jg8"/>
-                <constraint firstAttribute="bottom" secondItem="Jr1-9u-joN" secondAttribute="bottom" constant="88" id="zFx-Dc-ZYK"/>
+                <constraint firstAttribute="bottom" secondItem="Jr1-9u-joN" secondAttribute="bottom" constant="78" id="zFx-Dc-ZYK"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="273" y="378"/>
