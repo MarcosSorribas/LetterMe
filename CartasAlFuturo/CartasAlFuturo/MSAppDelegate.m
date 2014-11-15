@@ -24,14 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   
-    if ([self getUserDefaultData] == nil) {
-        //first time
-        
-        
-        [self setUserDefaultsData];
-    }
-    
+
     [self registerForLocalNotifications:application];
 
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -82,17 +75,6 @@
 
 -(void)mailManStart{
     [self.mailMan showAlertViewIfLettersArePrepared:self.managedDocument];
-}
-
-- (void)setUserDefaultsData
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@1 forKey:FIRSTIME_USER_KEY];
-    [defaults synchronize];
-}
-
--(NSNumber*)getUserDefaultData{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:FIRSTIME_USER_KEY];
 }
 
 -(UIImage*)drawBackground:(UITabBar*)tabBar{
