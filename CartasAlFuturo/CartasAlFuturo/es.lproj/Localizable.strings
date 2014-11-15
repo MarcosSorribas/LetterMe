@@ -12,6 +12,9 @@
 "Info_pendingTab_description"="Listado de cartas que aún no puedes abrir.";
 "Info_readTab_description"="Listado de cartas ya abiertas que puedes volver a leer.";
 "Info_author_description"="Aplicación creada y liberada en GitHub por: Marcos Sorribas López.";
+//Images
+"Info_pending_image"="PendientesImage";
+"Info_read_image"="LeidasImage";
 
 //MainViewController
 
