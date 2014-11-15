@@ -116,7 +116,7 @@ NSInteger const navigationBarheight = 64;
     self.dateLabelView.text = NSLocalizedString(@"creation_viewController_letter_date_description", nil);
     self.cancelNavButton.title = NSLocalizedString(@"creation_viewController_cancel_button", nil);
     self.sendNavButton.title = NSLocalizedString(@"creation_viewController_send_button", nil);
-
+    self.titleHeader.attributedText = [NSLocalizedString(@"creation_viewController_letter_title", nil) addKernStyle:@3];
 }
 #pragma mark -
 #pragma mark - Initial configure methods
