@@ -11,7 +11,6 @@
 #import "MSLetterValidator.h"
 #import "MSCustomPickerView.h"
 #import "NSString+Styles.h"
-
 #import "UIView+Animations.h"
 
 enum : NSUInteger {
@@ -136,6 +135,7 @@ NSInteger const navigationBarheight = 64;
 
 -(void)configureNormalPicker{
     self.normalPickerView.minimumDate = [NSDate dateWithTimeIntervalSinceNow:60*60*22];
+    
 }
 
 -(void)presentNormalPicker{

@@ -10,9 +10,6 @@
 #import "CoreDataTableViewController.h"
 #import "MSMailMan.h"
 
-
-#define FIRSTIME_USER_KEY @"firstTime"
-
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
 @property (nonatomic,strong) MSMailMan *mailMan;
@@ -34,6 +31,8 @@
     [self mailManStart];
     
     application.applicationIconBadgeNumber = 0;
+    
+    [[UIDatePicker appearance]setTintColor:[UIColor whiteColor]];
 
     return YES;
 }
