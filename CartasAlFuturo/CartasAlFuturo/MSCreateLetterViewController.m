@@ -27,10 +27,6 @@ typedef enum : NSUInteger {
     transition,
 } PickerState;
 
-#warning TODO-LIST:
-#warning Al abrir dateState tiene que estar el picker seleccionando lo ultimo que dejamos. 
-#warning Color de los textos del pickerView en blanco.
-
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate,UIPickerViewDelegate>
 
 #pragma mark -
@@ -135,39 +131,6 @@ NSInteger const navigationBarheight = 64;
 
 -(void)configureNormalPicker{
     self.normalPickerView.minimumDate = [NSDate dateWithTimeIntervalSinceNow:60*60*22];
-    
-}
-
--(void)presentNormalPicker{
-    if (self.actualPicker == customPickerView) {
-        self.actualPicker = transition;
-        CGRect actualPickerFrame = self.customPickerViewContent.frame;
-        CGRect newPickerRect = CGRectMake(-actualPickerFrame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
-        [UIView animateWithDuration:0.8 animations:^{
-            self.customPickerViewContent.frame = newPickerRect;
-            self.normalPickerViewContent.frame = actualPickerFrame;
-            [self.view layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            self.actualPicker = normalPickerView;
-            self.controlPickerState.currentPage = 1;
-        }];
-    }
-}
--(void)presentCustomPicker{
-    if (self.actualPicker == normalPickerView) {
-        self.actualPicker = transition;
-        CGRect actualPickerFrame = self.normalPickerViewContent.frame;
-        CGRect newVisiblePickerRect = CGRectMake(10, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
-        CGRect newInvisiblePickerRect = CGRectMake(self.dateViewContent.frame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
-        [UIView animateWithDuration:0.8 animations:^{
-            self.normalPickerViewContent.frame = newInvisiblePickerRect;
-            self.customPickerViewContent.frame = newVisiblePickerRect;
-            [self.view layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            self.actualPicker = customPickerView;
-            self.controlPickerState.currentPage = 0;
-        }];
-    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -406,7 +369,6 @@ NSInteger const navigationBarheight = 64;
                           delay:0 options:self.animationCurve animations:^{
                               [self.view endEditing:YES];
                               NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
-                              self.actualPicker = transition;
                               self.titleTextField.alpha = 0;
                               self.titleLabelView.alpha = 0;
                               self.contentTextView.alpha = 0;
@@ -421,21 +383,37 @@ NSInteger const navigationBarheight = 64;
                               NSInteger dataSectionHeight = ceil((screenHeight*(1-0.7))/3);
                               
                               self.dateHeaderHeightConstraint.constant = dataSectionHeight;
-                              
                               self.contentHeaderHeightConstraint.constant = dataSectionHeight;
-                              
                               self.titleHeaderHeightConstraint.constant = dataSectionHeight;
-
-                              [self.view layoutIfNeeded];
                               
+                              [self.view layoutIfNeeded];
+                              [self setUpCorrectPicker];
+
                           } completion:^(BOOL finished) {
                               self.controllerState = DateState;
-                              self.controlPickerState.currentPage = customPickerView;
-                              self.actualPicker = customPickerView;
                               if ([self.pickerView selectedRowInComponent:0] == 4) {
                                   [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:NSLocalizedString(@"datePicker_1_month", nil)];
                               }
                           }];
+}
+
+-(void)setUpCorrectPicker{
+    switch (self.actualPicker) {
+        case normalPickerView:{
+            CGRect actualPickerFrame = self.customPickerViewContent.frame;
+            CGRect newPickerRect = CGRectMake(-actualPickerFrame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+            
+            self.customPickerViewContent.frame = newPickerRect;
+            self.normalPickerViewContent.frame = actualPickerFrame;
+            self.controlPickerState.currentPage = normalPickerView;
+            self.actualPicker = normalPickerView;
+        }break;
+        case customPickerView:
+        case transition:
+            self.controlPickerState.currentPage = customPickerView;
+            self.actualPicker = customPickerView;
+            break;
+    }
 }
 
 -(void)viewInContentState{
@@ -509,6 +487,39 @@ NSInteger const navigationBarheight = 64;
                               self.controllerState = EmptyState;
                           }];
 }
+
+-(void)presentNormalPicker{
+    if (self.actualPicker == customPickerView) {
+        self.actualPicker = transition;
+        CGRect actualPickerFrame = self.customPickerViewContent.frame;
+        CGRect newPickerRect = CGRectMake(-actualPickerFrame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+        [UIView animateWithDuration:0.45 animations:^{
+            self.customPickerViewContent.frame = newPickerRect;
+            self.normalPickerViewContent.frame = actualPickerFrame;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            self.actualPicker = normalPickerView;
+            self.controlPickerState.currentPage = normalPickerView;
+        }];
+    }
+}
+-(void)presentCustomPicker{
+    if (self.actualPicker == normalPickerView) {
+        self.actualPicker = transition;
+        CGRect actualPickerFrame = self.normalPickerViewContent.frame;
+        CGRect newVisiblePickerRect = CGRectMake(10, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+        CGRect newInvisiblePickerRect = CGRectMake(self.dateViewContent.frame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+        [UIView animateWithDuration:0.45 animations:^{
+            self.normalPickerViewContent.frame = newInvisiblePickerRect;
+            self.customPickerViewContent.frame = newVisiblePickerRect;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            self.actualPicker = customPickerView;
+            self.controlPickerState.currentPage = customPickerView;
+        }];
+    }
+}
+
 
 #pragma mark -
 #pragma mark - Private methods
@@ -586,7 +597,6 @@ NSInteger const navigationBarheight = 64;
         }
     }
 }
-
 
 - (IBAction)cancelLetter:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
