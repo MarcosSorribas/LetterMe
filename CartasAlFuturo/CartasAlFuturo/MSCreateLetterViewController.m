@@ -22,6 +22,11 @@ enum : NSUInteger {
     CorrectState = 5,
 }; typedef NSInteger ControllerState;
 
+typedef enum : NSUInteger {
+    customPickerView,
+    normalPickerView,
+} PickerState;
+
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate>
 
 #pragma mark -
@@ -47,10 +52,15 @@ enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UIView *dateBlackView;
 
-
+#pragma mark -
+#pragma mark - Picker logic
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
+@property (weak, nonatomic) IBOutlet UIView *dateViewContent;
+@property (weak, nonatomic) IBOutlet UIView *customPickerViewContent;
+@property (nonatomic) PickerState actualPicker;
+
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelNavButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sendNavButton;
@@ -102,6 +112,40 @@ NSInteger const navigationBarheight = 64;
     [self configurePickerAndTextView];
     [self configureNavigationBar:NSLocalizedString(@"creation_viewController_title", nil)];
     [self registerKeyboardNotifications];
+    [self addPickerGestureRecgonizers];
+}
+
+-(void)addPickerGestureRecgonizers{
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(presentNormalPicker)];
+    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.dateViewContent addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRigth = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(presentCustomPicker)];
+    swipeRigth.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.dateViewContent addGestureRecognizer:swipeRigth];
+}
+
+-(void)presentNormalPicker{
+    if (self.actualPicker == customPickerView) {
+        CGRect actualPickerFrame = self.customPickerViewContent.frame;
+        CGRect newPickerRect = CGRectMake(-actualPickerFrame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+        [UIView animateWithDuration:1 animations:^{
+            self.customPickerViewContent.frame = newPickerRect;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            self.actualPicker = normalPickerView;
+        }];
+    }
+}
+-(void)presentCustomPicker{
+    if (self.actualPicker == normalPickerView) {
+
+        [UIView animateWithDuration:1 animations:^{
+            
+        } completion:^(BOOL finished) {
+            self.actualPicker = customPickerView;
+        }];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -289,134 +333,134 @@ NSInteger const navigationBarheight = 64;
     [self.titleTextField becomeFirstResponder];
     [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
                           delay:0 options:self.animationCurve animations:^{
-                         NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
-                         screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
-
-                         self.titleTextField.alpha = 1;
-                         self.titleLabelView.alpha = 0.65;
-                         self.contentTextView.alpha = 0;
-                         self.pickerView.alpha = 0;
-                         self.dateLabelView.alpha = 0;
-                         
-                         NSInteger dataSectionHeight = ceil(screenHeight/5);
-                         
-                         self.dateHeaderHeightConstraint.constant = dataSectionHeight;
-                         screenHeight = screenHeight - dataSectionHeight;
-                         self.contentHeaderHeightConstraint.constant = dataSectionHeight;
-                         screenHeight = screenHeight - dataSectionHeight;
-
-                         self.titleHeaderHeightConstraint.constant = dataSectionHeight;
-                         screenHeight = screenHeight - dataSectionHeight;
-
-                         self.titleViewHeightConstraint.constant = screenHeight;
-                         
-                         self.dateViewHeightConstraint.constant = 0;
-                         self.contentViewHeightConstraint.constant = 0;
-                         
-                         [self.view layoutIfNeeded];
-                     } completion:^(BOOL finished) {
-                         self.controllerState = TitleState;
-                     }];
+                              NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
+                              screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
+                              
+                              self.titleTextField.alpha = 1;
+                              self.titleLabelView.alpha = 0.65;
+                              self.contentTextView.alpha = 0;
+                              self.pickerView.alpha = 0;
+                              self.dateLabelView.alpha = 0;
+                              
+                              NSInteger dataSectionHeight = ceil(screenHeight/5);
+                              
+                              self.dateHeaderHeightConstraint.constant = dataSectionHeight;
+                              screenHeight = screenHeight - dataSectionHeight;
+                              self.contentHeaderHeightConstraint.constant = dataSectionHeight;
+                              screenHeight = screenHeight - dataSectionHeight;
+                              
+                              self.titleHeaderHeightConstraint.constant = dataSectionHeight;
+                              screenHeight = screenHeight - dataSectionHeight;
+                              
+                              self.titleViewHeightConstraint.constant = screenHeight;
+                              
+                              self.dateViewHeightConstraint.constant = 0;
+                              self.contentViewHeightConstraint.constant = 0;
+                              
+                              [self.view layoutIfNeeded];
+                          } completion:^(BOOL finished) {
+                              self.controllerState = TitleState;
+                          }];
 }
 
 -(void)viewInDateState{
     [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
-                     delay:0 options:self.animationCurve animations:^{
-                         [self.view endEditing:YES];
-                         NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
-                         
-                         self.titleTextField.alpha = 0;
-                         self.titleLabelView.alpha = 0;
-                         self.contentTextView.alpha = 0;
-                         self.pickerView.alpha = 1;
-                         self.dateLabelView.alpha = 0.65;
-                         
-                         self.titleViewHeightConstraint.constant = 0;
-                         self.dateViewHeightConstraint.constant = screenHeight*0.7;
-                         self.contentViewHeightConstraint.constant = 0;
-                         
-                         NSInteger dataSectionHeight = ceil((screenHeight*(1-0.7))/3);
-
-                         self.dateHeaderHeightConstraint.constant = dataSectionHeight;
-
-                         self.contentHeaderHeightConstraint.constant = dataSectionHeight;
-
-                         self.titleHeaderHeightConstraint.constant = dataSectionHeight;
-
-                         [self.view layoutIfNeeded];
-                         
-                     } completion:^(BOOL finished) {
-                         self.controllerState = DateState;
-                         if ([self.pickerView selectedRowInComponent:0] == 4) {
-                             [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:NSLocalizedString(@"datePicker_1_month", nil)];
-                         }
-                     }];
+                          delay:0 options:self.animationCurve animations:^{
+                              [self.view endEditing:YES];
+                              NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
+                              
+                              self.titleTextField.alpha = 0;
+                              self.titleLabelView.alpha = 0;
+                              self.contentTextView.alpha = 0;
+                              self.pickerView.alpha = 1;
+                              self.dateLabelView.alpha = 0.65;
+                              
+                              self.titleViewHeightConstraint.constant = 0;
+                              self.dateViewHeightConstraint.constant = screenHeight*0.7;
+                              self.contentViewHeightConstraint.constant = 0;
+                              
+                              NSInteger dataSectionHeight = ceil((screenHeight*(1-0.7))/3);
+                              
+                              self.dateHeaderHeightConstraint.constant = dataSectionHeight;
+                              
+                              self.contentHeaderHeightConstraint.constant = dataSectionHeight;
+                              
+                              self.titleHeaderHeightConstraint.constant = dataSectionHeight;
+                              
+                              [self.view layoutIfNeeded];
+                              
+                          } completion:^(BOOL finished) {
+                              self.controllerState = DateState;
+                              if ([self.pickerView selectedRowInComponent:0] == 4) {
+                                  [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:NSLocalizedString(@"datePicker_1_month", nil)];
+                              }
+                          }];
 }
 
 -(void)viewInContentState{
     [self.contentTextView becomeFirstResponder];
     [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
-                      delay:0 options:self.animationCurve animations:^{
-                         self.titleTextField.alpha = 0;
-                         self.titleLabelView.alpha = 0;
-                         self.contentTextView.alpha = 1;
-                         self.pickerView.alpha = 0;
-                         self.dateLabelView.alpha = 0;
-                         
-                         self.titleViewHeightConstraint.constant = 0;
-                         self.dateViewHeightConstraint.constant = 0;
-                         
-                         
-                         
-                         NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
-                         
-                         screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
-                         
-                         NSInteger dataSectionHeight = ceil(screenHeight/5);
-
-                         
-                         self.dateHeaderHeightConstraint.constant = dataSectionHeight;
-                         screenHeight = screenHeight - dataSectionHeight;
-
-                         self.contentHeaderHeightConstraint.constant = dataSectionHeight;
-                         screenHeight = screenHeight - dataSectionHeight;
-
-                         self.titleHeaderHeightConstraint.constant = dataSectionHeight;
-                         screenHeight = screenHeight - dataSectionHeight;
-
-                         
-                         self.contentViewHeightConstraint.constant = screenHeight;
-                         
-                         [self.view layoutIfNeeded];
-                     } completion:^(BOOL finished) {
-                         self.controllerState = ContentState;
-                     }];
+                          delay:0 options:self.animationCurve animations:^{
+                              self.titleTextField.alpha = 0;
+                              self.titleLabelView.alpha = 0;
+                              self.contentTextView.alpha = 1;
+                              self.pickerView.alpha = 0;
+                              self.dateLabelView.alpha = 0;
+                              
+                              self.titleViewHeightConstraint.constant = 0;
+                              self.dateViewHeightConstraint.constant = 0;
+                              
+                              
+                              
+                              NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
+                              
+                              screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
+                              
+                              NSInteger dataSectionHeight = ceil(screenHeight/5);
+                              
+                              
+                              self.dateHeaderHeightConstraint.constant = dataSectionHeight;
+                              screenHeight = screenHeight - dataSectionHeight;
+                              
+                              self.contentHeaderHeightConstraint.constant = dataSectionHeight;
+                              screenHeight = screenHeight - dataSectionHeight;
+                              
+                              self.titleHeaderHeightConstraint.constant = dataSectionHeight;
+                              screenHeight = screenHeight - dataSectionHeight;
+                              
+                              
+                              self.contentViewHeightConstraint.constant = screenHeight;
+                              
+                              [self.view layoutIfNeeded];
+                          } completion:^(BOOL finished) {
+                              self.controllerState = ContentState;
+                          }];
 }
 
 -(void)viewInEmptyState{
     [self.view endEditing:YES];
     NSInteger headersHeight =  ceil((self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height)/3);
     [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
-                     delay:0 options:self.animationCurve animations:^{
-                         self.titleTextField.alpha = 0;
-                         self.titleLabelView.alpha = 0;
-                         self.contentTextView.alpha = 0;
-                         self.pickerView.alpha = 0;
-                         self.dateLabelView.alpha = 0;
-                         
-                         self.titleHeaderHeightConstraint.constant = headersHeight;
-                         self.titleViewHeightConstraint.constant = 0;
-                         
-                         self.dateHeaderHeightConstraint.constant = headersHeight;
-                         self.dateViewHeightConstraint.constant = 0;
-                         
-                         self.contentHeaderHeightConstraint.constant = headersHeight;
-                         self.contentViewHeightConstraint.constant = 0;
-                         
-                         [self.view layoutIfNeeded];
-                     }completion:^(BOOL finished) {
-                         self.controllerState = EmptyState;
-                     }];
+                          delay:0 options:self.animationCurve animations:^{
+                              self.titleTextField.alpha = 0;
+                              self.titleLabelView.alpha = 0;
+                              self.contentTextView.alpha = 0;
+                              self.pickerView.alpha = 0;
+                              self.dateLabelView.alpha = 0;
+                              
+                              self.titleHeaderHeightConstraint.constant = headersHeight;
+                              self.titleViewHeightConstraint.constant = 0;
+                              
+                              self.dateHeaderHeightConstraint.constant = headersHeight;
+                              self.dateViewHeightConstraint.constant = 0;
+                              
+                              self.contentHeaderHeightConstraint.constant = headersHeight;
+                              self.contentViewHeightConstraint.constant = 0;
+                              
+                              [self.view layoutIfNeeded];
+                          }completion:^(BOOL finished) {
+                              self.controllerState = EmptyState;
+                          }];
 }
 
 #pragma mark -
@@ -451,7 +495,7 @@ NSInteger const navigationBarheight = 64;
     notification.fireDate = openDate;
     notification.alertBody = NSLocalizedString(@"letter_received_notification_body", nil);
     notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-
+    
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 

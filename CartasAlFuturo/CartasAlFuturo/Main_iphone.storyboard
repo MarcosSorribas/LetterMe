@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ifc-yK-i4b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ifc-yK-i4b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -649,10 +649,12 @@
                         <outlet property="contentTextView" destination="9DR-r8-qcW" id="90W-nZ-zlc"/>
                         <outlet property="contentViewHeightConstraint" destination="eo0-xN-0Xq" id="E1j-mL-bW5"/>
                         <outlet property="customPicker" destination="3Pq-yr-8mQ" id="sdV-rJ-rbG"/>
+                        <outlet property="customPickerViewContent" destination="KWP-C4-lum" id="YcA-sC-A8Z"/>
                         <outlet property="dateBlackView" destination="Vjw-7l-YyO" id="3ld-YN-9Bh"/>
                         <outlet property="dateHeader" destination="8ar-f9-a2a" id="XMR-xf-SRF"/>
                         <outlet property="dateHeaderHeightConstraint" destination="kC2-1R-n7D" id="Nqv-rr-i0w"/>
                         <outlet property="dateLabelView" destination="e3m-fP-Xp4" id="Lsv-n0-nMb"/>
+                        <outlet property="dateViewContent" destination="4Yq-Ir-Cl5" id="smj-fm-mdt"/>
                         <outlet property="dateViewHeightConstraint" destination="mBF-O6-APO" id="Zy3-W3-RMv"/>
                         <outlet property="pickerView" destination="fqz-8l-4R0" id="96e-id-jAj"/>
                         <outlet property="sendNavButton" destination="lYb-Ej-ETD" id="EvA-gK-yXp"/>
