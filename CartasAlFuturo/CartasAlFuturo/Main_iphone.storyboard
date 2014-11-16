@@ -566,11 +566,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alO-NA-F4d" userLabel="normalPickerView">
                                                 <rect key="frame" x="414" y="76" width="394" height="162"/>
                                                 <subviews>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ihs-y4-rzc">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ihs-y4-rzc">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="162"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="437834347.47873801">
                                                             <!--2014-11-16 12:39:07 +0000-->
                                                         </date>
+                                                        <connections>
+                                                            <action selector="didSelectDate:" destination="DV6-YT-htg" eventType="valueChanged" id="MBp-3f-eBf"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.22" colorSpace="custom" customColorSpace="sRGB"/>

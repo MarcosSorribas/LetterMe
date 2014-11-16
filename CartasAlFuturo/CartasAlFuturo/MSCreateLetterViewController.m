@@ -28,7 +28,11 @@ typedef enum : NSUInteger {
     transition,
 } PickerState;
 
-@interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate>
+#warning TODO-LIST:
+#warning Al abrir dateState tiene que estar el picker seleccionando lo ultimo que dejamos. 
+#warning Color de los textos del pickerView en blanco.
+
+@interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate,UIPickerViewDelegate>
 
 #pragma mark -
 #pragma mark - Objects properties
@@ -117,6 +121,7 @@ NSInteger const navigationBarheight = 64;
     [self configureNavigationBar:NSLocalizedString(@"creation_viewController_title", nil)];
     [self registerKeyboardNotifications];
     [self addPickerGestureRecgonizers];
+    [self configureNormalPicker];
 }
 
 -(void)addPickerGestureRecgonizers{
@@ -127,6 +132,10 @@ NSInteger const navigationBarheight = 64;
     UISwipeGestureRecognizer *swipeRigth = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(presentCustomPicker)];
     swipeRigth.direction = UISwipeGestureRecognizerDirectionRight;
     [self.dateViewContent addGestureRecognizer:swipeRigth];
+}
+
+-(void)configureNormalPicker{
+    self.normalPickerView.minimumDate = [NSDate dateWithTimeIntervalSinceNow:60*60*22];
 }
 
 -(void)presentNormalPicker{
@@ -303,6 +312,16 @@ NSInteger const navigationBarheight = 64;
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
     self.letterOpenDate = date;
     self.dateHeader.text = name;
+}
+
+- (IBAction)didSelectDate:(UIDatePicker*)sender {
+    NSDateComponents* components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit|NSSecondCalendarUnit|NSMinuteCalendarUnit fromDate:[NSDate date]];
+    NSUInteger secondsToday = components.second+(components.minute*60)+(components.hour*60*60);
+    NSDate *openDate = [[sender date] dateByAddingTimeInterval:secondsToday];
+    self.letterOpenDate = openDate;
+    self.dateHeader.text = [NSDateFormatter localizedStringFromDate:[sender date]
+                                                          dateStyle:NSDateFormatterLongStyle
+                                                          timeStyle:NSDateFormatterNoStyle];
 }
 
 #pragma mark -
@@ -567,6 +586,7 @@ NSInteger const navigationBarheight = 64;
         }
     }
 }
+
 
 - (IBAction)cancelLetter:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
