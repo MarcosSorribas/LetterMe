@@ -25,6 +25,7 @@ enum : NSUInteger {
 typedef enum : NSUInteger {
     customPickerView,
     normalPickerView,
+    transition,
 } PickerState;
 
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate>
@@ -49,6 +50,7 @@ typedef enum : NSUInteger {
 
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabelView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *normalPickerView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UIView *dateBlackView;
 
@@ -59,6 +61,8 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 @property (weak, nonatomic) IBOutlet UIView *dateViewContent;
 @property (weak, nonatomic) IBOutlet UIView *customPickerViewContent;
+@property (weak, nonatomic) IBOutlet UIView *normalPickerViewContent;
+@property (weak, nonatomic) IBOutlet UIPageControl *controlPickerState;
 @property (nonatomic) PickerState actualPicker;
 
 
@@ -127,23 +131,32 @@ NSInteger const navigationBarheight = 64;
 
 -(void)presentNormalPicker{
     if (self.actualPicker == customPickerView) {
+        self.actualPicker = transition;
         CGRect actualPickerFrame = self.customPickerViewContent.frame;
         CGRect newPickerRect = CGRectMake(-actualPickerFrame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.8 animations:^{
             self.customPickerViewContent.frame = newPickerRect;
+            self.normalPickerViewContent.frame = actualPickerFrame;
             [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
             self.actualPicker = normalPickerView;
+            self.controlPickerState.currentPage = 1;
         }];
     }
 }
 -(void)presentCustomPicker{
     if (self.actualPicker == normalPickerView) {
-
-        [UIView animateWithDuration:1 animations:^{
-            
+        self.actualPicker = transition;
+        CGRect actualPickerFrame = self.normalPickerViewContent.frame;
+        CGRect newVisiblePickerRect = CGRectMake(10, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+        CGRect newInvisiblePickerRect = CGRectMake(self.dateViewContent.frame.size.width, actualPickerFrame.origin.y, actualPickerFrame.size.width, actualPickerFrame.size.height);
+        [UIView animateWithDuration:0.8 animations:^{
+            self.normalPickerViewContent.frame = newInvisiblePickerRect;
+            self.customPickerViewContent.frame = newVisiblePickerRect;
+            [self.view layoutIfNeeded];
         } completion:^(BOOL finished) {
             self.actualPicker = customPickerView;
+            self.controlPickerState.currentPage = 0;
         }];
     }
 }
@@ -170,7 +183,10 @@ NSInteger const navigationBarheight = 64;
     self.titleLabelView.alpha = 0;
     self.contentTextView.alpha = 0;
     self.pickerView.alpha = 0;
+    self.normalPickerView.alpha =0;
+
     self.dateLabelView.alpha = 0;
+    self.controlPickerState.alpha = 0;
     [self labelsHeaderConfig];
 }
 
@@ -340,7 +356,10 @@ NSInteger const navigationBarheight = 64;
                               self.titleLabelView.alpha = 0.65;
                               self.contentTextView.alpha = 0;
                               self.pickerView.alpha = 0;
+                              self.normalPickerView.alpha = 0;
+
                               self.dateLabelView.alpha = 0;
+                              self.controlPickerState.alpha = 0;
                               
                               NSInteger dataSectionHeight = ceil(screenHeight/5);
                               
@@ -368,13 +387,14 @@ NSInteger const navigationBarheight = 64;
                           delay:0 options:self.animationCurve animations:^{
                               [self.view endEditing:YES];
                               NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
-                              
+                              self.actualPicker = transition;
                               self.titleTextField.alpha = 0;
                               self.titleLabelView.alpha = 0;
                               self.contentTextView.alpha = 0;
-                              self.pickerView.alpha = 1;
                               self.dateLabelView.alpha = 0.65;
-                              
+                              self.pickerView.alpha = 1;
+                              self.normalPickerView.alpha = 1;
+                              self.controlPickerState.alpha = 1;
                               self.titleViewHeightConstraint.constant = 0;
                               self.dateViewHeightConstraint.constant = screenHeight*0.7;
                               self.contentViewHeightConstraint.constant = 0;
@@ -386,11 +406,13 @@ NSInteger const navigationBarheight = 64;
                               self.contentHeaderHeightConstraint.constant = dataSectionHeight;
                               
                               self.titleHeaderHeightConstraint.constant = dataSectionHeight;
-                              
+
                               [self.view layoutIfNeeded];
                               
                           } completion:^(BOOL finished) {
                               self.controllerState = DateState;
+                              self.controlPickerState.currentPage = customPickerView;
+                              self.actualPicker = customPickerView;
                               if ([self.pickerView selectedRowInComponent:0] == 4) {
                                   [self dateDidSelect:[NSDate dateWithTimeIntervalSinceNow:60*60*24*30] andHisName:NSLocalizedString(@"datePicker_1_month", nil)];
                               }
@@ -405,7 +427,10 @@ NSInteger const navigationBarheight = 64;
                               self.titleLabelView.alpha = 0;
                               self.contentTextView.alpha = 1;
                               self.pickerView.alpha = 0;
+                              self.normalPickerView.alpha = 0;
+
                               self.dateLabelView.alpha = 0;
+                              self.controlPickerState.alpha = 0;
                               
                               self.titleViewHeightConstraint.constant = 0;
                               self.dateViewHeightConstraint.constant = 0;
@@ -446,7 +471,10 @@ NSInteger const navigationBarheight = 64;
                               self.titleLabelView.alpha = 0;
                               self.contentTextView.alpha = 0;
                               self.pickerView.alpha = 0;
+                              self.normalPickerView.alpha =0;
+
                               self.dateLabelView.alpha = 0;
+                              self.controlPickerState.alpha = 0;
                               
                               self.titleHeaderHeightConstraint.constant = headersHeight;
                               self.titleViewHeightConstraint.constant = 0;
