@@ -51,6 +51,7 @@
 		6AF353D6197A89BF009CEAF0 /* Letter+DrawerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353D5197A89BF009CEAF0 /* Letter+DrawerItem.m */; };
 		6AF353DD197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353DC197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m */; };
 		6AF353E2197ACD7C009CEAF0 /* MSCustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF353E1197ACD7C009CEAF0 /* MSCustomPickerView.m */; };
+		6AF4E3961A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF4E3951A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.m */; };
 		6AFFDF8E1975133B008C1F19 /* MSOpenedLettersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,8 @@
 		6AF353DC197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MSStatusLetter.m"; sourceTree = "<group>"; };
 		6AF353E0197ACD7C009CEAF0 /* MSCustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCustomPickerView.h; sourceTree = "<group>"; };
 		6AF353E1197ACD7C009CEAF0 /* MSCustomPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCustomPickerView.m; sourceTree = "<group>"; };
+		6AF4E3941A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MSWhiteUIDatePickerLabels.h"; sourceTree = "<group>"; };
+		6AF4E3951A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MSWhiteUIDatePickerLabels.m"; sourceTree = "<group>"; };
 		6AFFDF8C1975133B008C1F19 /* MSOpenedLettersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOpenedLettersTableViewController.h; sourceTree = "<group>"; };
 		6AFFDF8D1975133B008C1F19 /* MSOpenedLettersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOpenedLettersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,6 +323,8 @@
 				6ADE72E7198061270032BFDE /* NSString+Styles.m */,
 				6ADE72EC19810D880032BFDE /* UIView+Animations.h */,
 				6ADE72ED19810D880032BFDE /* UIView+Animations.m */,
+				6AF4E3941A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.h */,
+				6AF4E3951A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				6AF3536B1979312D009CEAF0 /* Letter.m in Sources */,
 				6A0ED7551977BAB4008BD0AE /* MSMailMan.m in Sources */,
 				6AF353D3197A86BE009CEAF0 /* MSOpenedLetterDrawer.m in Sources */,
+				6AF4E3961A1917C30058C33D /* UILabel+MSWhiteUIDatePickerLabels.m in Sources */,
 				6A46B5C11973E8FC001CF9C6 /* NSDate+CustomizableDate.m in Sources */,
 				6A46B5B51973E2F4001CF9C6 /* Letter+myAPI.m in Sources */,
 				6AF353DD197A8C36009CEAF0 /* NSNumber+MSStatusLetter.m in Sources */,
