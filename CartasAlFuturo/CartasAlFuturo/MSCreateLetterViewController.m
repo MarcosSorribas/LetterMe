@@ -29,16 +29,12 @@ typedef enum : NSUInteger {
 
 @interface MSCreateLetterViewController ()<UITextFieldDelegate,UITextViewDelegate,MSCustomPickerViewDelegate,UIPickerViewDelegate>
 
-#pragma mark -
 #pragma mark - Objects properties
-
 @property (nonatomic) ControllerState controllerState;
 @property (strong, nonatomic) IBOutlet MSLetterValidator *validator;
 @property (strong, nonatomic) IBOutlet MSCustomPickerView *customPicker;
 
-#pragma mark -
 #pragma mark - Oulets properties
-
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
 @property (weak, nonatomic) IBOutlet UIView *titleBlackView;
@@ -53,7 +49,6 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UIView *dateBlackView;
 
-#pragma mark -
 #pragma mark - Picker logic
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
 @property (weak, nonatomic) IBOutlet UITextField *dateHeader;
@@ -68,9 +63,7 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelNavButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sendNavButton;
 
-#pragma mark -
 #pragma mark - Animatable Constrains
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateViewHeightConstraint;
@@ -78,32 +71,25 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeaderHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dateHeaderHeightConstraint;
 
-#pragma mark -
 #pragma mark - Keyboard data
-
 @property (nonatomic) CGRect keyboardSize;
 @property (nonatomic) CGFloat animationDuration;
 @property (nonatomic) NSInteger animationCurve;
 
-#pragma mark -
 #pragma mark - Temporal letter Data
-
 @property (strong,nonatomic) NSString *letterTitle;
 @property (strong,nonatomic) NSString *letterContent;
 @property (strong,nonatomic) NSDate *letterOpenDate;
-
 @end
 
 @implementation MSCreateLetterViewController
 
-#pragma mark -
 #pragma mark - Constants
 
 CGFloat const animationDuration = 0.35;
 NSInteger const statusBarheight = 20;
 NSInteger const navigationBarheight = 64;
 
-#pragma mark -
 #pragma mark - View methods
 
 - (void)viewDidLoad
@@ -147,7 +133,7 @@ NSInteger const navigationBarheight = 64;
     self.sendNavButton.title = NSLocalizedString(@"creation_viewController_send_button", nil);
     self.titleHeader.attributedText = [NSLocalizedString(@"creation_viewController_letter_title", nil) addKernStyle:@3];
 }
-#pragma mark -
+
 #pragma mark - Initial configure methods
 
 -(void)initialConfig{
@@ -192,7 +178,6 @@ NSInteger const navigationBarheight = 64;
     self.contentTextView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
 }
 
-
 -(void)labelsHeaderConfig{
     NSNumber * const kern = @3;
     self.titleHeader.attributedText = [self.titleHeader.text addKernStyle:kern];
@@ -228,8 +213,6 @@ NSInteger const navigationBarheight = 64;
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
 }
 
-
-#pragma mark -
 #pragma mark - TextFieldDelegate methods
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -247,7 +230,6 @@ NSInteger const navigationBarheight = 64;
     }
 }
 
-#pragma mark -
 #pragma mark - TextViewDelegate methods
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
@@ -269,7 +251,6 @@ NSInteger const navigationBarheight = 64;
     }
 }
 
-#pragma mark -
 #pragma mark - DatePickerDelegate methods
 
 -(void)dateDidSelect:(NSDate *)date andHisName:(NSString *)name{
@@ -287,7 +268,6 @@ NSInteger const navigationBarheight = 64;
                                                           timeStyle:NSDateFormatterNoStyle];
 }
 
-#pragma mark -
 #pragma mark - Touched Cicle methods
 
 - (IBAction)titleHeaderTouched:(UITapGestureRecognizer *)sender {
@@ -323,7 +303,6 @@ NSInteger const navigationBarheight = 64;
     }
 }
 
-#pragma mark -
 #pragma mark - Logic view methods
 
 -(void)viewInTitleState{
@@ -420,45 +399,35 @@ NSInteger const navigationBarheight = 64;
     [self.contentTextView becomeFirstResponder];
     [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
                           delay:0 options:self.animationCurve animations:^{
+                              
                               self.titleTextField.alpha = 0;
                               self.titleLabelView.alpha = 0;
                               self.contentTextView.alpha = 1;
                               self.pickerView.alpha = 0;
                               self.normalPickerView.alpha = 0;
-
                               self.dateLabelView.alpha = 0;
                               self.controlPickerState.alpha = 0;
-                              
                               self.titleViewHeightConstraint.constant = 0;
                               self.dateViewHeightConstraint.constant = 0;
-                              
-                              
-                              
+                            
                               NSInteger screenHeight = self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height;
-                              
                               screenHeight = screenHeight - self.keyboardSize.size.height; //Keyboard
-                              
                               NSInteger dataSectionHeight = ceil(screenHeight/5);
-                              
                               
                               self.dateHeaderHeightConstraint.constant = dataSectionHeight;
                               screenHeight = screenHeight - dataSectionHeight;
-                              
                               self.contentHeaderHeightConstraint.constant = dataSectionHeight;
                               screenHeight = screenHeight - dataSectionHeight;
-                              
                               self.titleHeaderHeightConstraint.constant = dataSectionHeight;
                               screenHeight = screenHeight - dataSectionHeight;
-                              
-                              
                               self.contentViewHeightConstraint.constant = screenHeight;
-                              
+                
                               [self.view layoutIfNeeded];
+                              
                           } completion:^(BOOL finished) {
                               self.controllerState = ContentState;
                           }];
 }
-
 -(void)viewInEmptyState{
     [self.view endEditing:YES];
     NSInteger headersHeight =  ceil((self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height)/3);
@@ -487,7 +456,6 @@ NSInteger const navigationBarheight = 64;
                               self.controllerState = EmptyState;
                           }];
 }
-
 -(void)presentNormalPicker{
     if (self.actualPicker == customPickerView) {
         self.actualPicker = transition;
@@ -520,8 +488,6 @@ NSInteger const navigationBarheight = 64;
     }
 }
 
-
-#pragma mark -
 #pragma mark - Private methods
 
 -(ControllerState)localizeMistakesInState{
@@ -565,7 +531,6 @@ NSInteger const navigationBarheight = 64;
     }];
 }
 
-#pragma mark -
 #pragma mark - IBAction
 
 - (IBAction)createLetter:(id)sender {
