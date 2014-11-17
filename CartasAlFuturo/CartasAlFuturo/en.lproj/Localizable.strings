@@ -12,6 +12,9 @@
 "Info_pendingTab_description"="List of letters that can not be opened yet.";
 "Info_readTab_description"="List of opened letter that can be read again.";
 "Info_author_description"="Application created and released on GitHub by: Marcos Sorribas López.";
+//Images
+"Info_pending_image"="PendientesImage_en";
+"Info_read_image"="LeidasImage_en";
 
 //MainViewController
 

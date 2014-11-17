@@ -10,9 +10,6 @@
 #import "CoreDataTableViewController.h"
 #import "MSMailMan.h"
 
-
-#define FIRSTIME_USER_KEY @"firstTime"
-
 @interface MSAppDelegate ()
 @property (nonatomic,strong,readwrite) UIManagedDocument *managedDocument;
 @property (nonatomic,strong) MSMailMan *mailMan;
@@ -24,14 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   
-    if ([self getUserDefaultData] == nil) {
-        //first time
-        
-        
-        [self setUserDefaultsData];
-    }
-    
+
     [self registerForLocalNotifications:application];
 
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -41,6 +31,8 @@
     [self mailManStart];
     
     application.applicationIconBadgeNumber = 0;
+    
+    [[UIDatePicker appearance]setTintColor:[UIColor whiteColor]];
 
     return YES;
 }
@@ -82,17 +74,6 @@
 
 -(void)mailManStart{
     [self.mailMan showAlertViewIfLettersArePrepared:self.managedDocument];
-}
-
-- (void)setUserDefaultsData
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@1 forKey:FIRSTIME_USER_KEY];
-    [defaults synchronize];
-}
-
--(NSNumber*)getUserDefaultData{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:FIRSTIME_USER_KEY];
 }
 
 -(UIImage*)drawBackground:(UITabBar*)tabBar{
