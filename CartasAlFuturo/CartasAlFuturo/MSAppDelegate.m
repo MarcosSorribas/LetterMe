@@ -28,8 +28,15 @@
     
     [self customizeTabBarController:tabBarController.tabBar];
     [self prepareFirstControllerFrom:tabBarController];
-    [self mailManStart];
     
+    UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+
+    if (localNotif) {
+        [MSMailMan checkLettersPreparedAndUpdateThemInContext:self.managedDocument];
+    }else{
+        [self mailManStart];
+
+    }
     [[UIDatePicker appearance]setTintColor:[UIColor whiteColor]];
 
     return YES;
