@@ -533,16 +533,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yq-Ir-Cl5" userLabel="Date View">
                                         <rect key="frame" x="0.0" y="519" width="414" height="369"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="¿Cuánto tiempo quieres esperar?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3m-fP-Xp4">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¿Cuánto tiempo quieres esperar?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3m-fP-Xp4">
                                                 <rect key="frame" x="20" y="94" width="374" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KWP-C4-lum">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KWP-C4-lum">
                                                 <rect key="frame" x="10" y="130" width="394" height="162"/>
                                                 <subviews>
-                                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-8l-4R0">
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-8l-4R0">
                                                         <rect key="frame" x="0.0" y="1" width="394" height="162"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -561,10 +561,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alO-NA-F4d" userLabel="normalPickerView">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alO-NA-F4d" userLabel="normalPickerView">
                                                 <rect key="frame" x="414" y="130" width="394" height="162"/>
                                                 <subviews>
-                                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ihs-y4-rzc">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ihs-y4-rzc">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="162"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="437834347.47873801">
                                                             <!--2014-11-16 12:39:07 +0000-->
@@ -587,7 +587,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-71-qLc">
+                                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-71-qLc">
                                                 <rect key="frame" x="196" y="332" width="23" height="37"/>
                                             </pageControl>
                                         </subviews>
@@ -600,8 +600,8 @@
                                             <constraint firstItem="alO-NA-F4d" firstAttribute="top" secondItem="e3m-fP-Xp4" secondAttribute="bottom" constant="16" id="OH3-9c-WY3"/>
                                             <constraint firstItem="alO-NA-F4d" firstAttribute="leading" secondItem="KWP-C4-lum" secondAttribute="trailing" constant="10" id="WQQ-pK-bEQ"/>
                                             <constraint firstItem="e3m-fP-Xp4" firstAttribute="leading" secondItem="4Yq-Ir-Cl5" secondAttribute="leading" constant="20" id="XyT-53-S8P"/>
-                                            <constraint firstItem="KEq-71-qLc" firstAttribute="top" relation="lessThanOrEqual" secondItem="alO-NA-F4d" secondAttribute="bottom" constant="40" id="YPT-10-cpd"/>
-                                            <constraint firstItem="e3m-fP-Xp4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4Yq-Ir-Cl5" secondAttribute="top" constant="20" id="eCt-Jx-AIG"/>
+                                            <constraint firstItem="KEq-71-qLc" firstAttribute="top" relation="lessThanOrEqual" secondItem="alO-NA-F4d" secondAttribute="bottom" constant="30" id="YPT-10-cpd"/>
+                                            <constraint firstItem="e3m-fP-Xp4" firstAttribute="top" secondItem="4Yq-Ir-Cl5" secondAttribute="top" constant="20" id="eCt-Jx-AIG"/>
                                             <constraint firstAttribute="trailing" secondItem="e3m-fP-Xp4" secondAttribute="trailing" constant="20" id="fHf-r9-eTk"/>
                                             <constraint firstItem="KWP-C4-lum" firstAttribute="top" secondItem="e3m-fP-Xp4" secondAttribute="bottom" constant="16" id="ktD-Hf-lRV"/>
                                             <constraint firstAttribute="height" constant="369" id="mBF-O6-APO"/>
