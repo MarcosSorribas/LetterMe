@@ -51,7 +51,7 @@ typedef enum : NSUInteger {
 
 #pragma mark - Picker logic
 @property (weak, nonatomic) IBOutlet UILabel *titleHeader;
-@property (weak, nonatomic) IBOutlet UITextField *dateHeader;
+@property (weak, nonatomic) IBOutlet UILabel *dateHeader;
 @property (weak, nonatomic) IBOutlet UILabel *contentHeader;
 @property (weak, nonatomic) IBOutlet UIView *dateViewContent;
 @property (weak, nonatomic) IBOutlet UIView *customPickerViewContent;
@@ -183,18 +183,6 @@ NSInteger const navigationBarheight = 64;
     self.titleHeader.attributedText = [self.titleHeader.text addKernStyle:kern];
     self.dateHeader.attributedText = [self.dateHeader.text addKernStyle:kern];
     self.contentHeader.attributedText = [self.contentHeader.text addKernStyle:kern];
-    
-    self.titleHeader.adjustsFontSizeToFitWidth = YES;
-    self.dateHeader.adjustsFontSizeToFitWidth = YES;
-    self.contentHeader.adjustsFontSizeToFitWidth = YES;
-    
-    if (([UIScreen mainScreen].bounds.size.height == 480)){
-        //iPhone 3,5"
-        UIFont *headerFont = [UIFont fontWithName:FONT_HELVETICA_NEUE_ULTRALIGHT size:35];
-        self.titleHeader.font = headerFont;
-        self.dateHeader.font = headerFont;
-        self.contentHeader.font = headerFont;
-    }
 }
 
 -(void)configureNavigationBar:(NSString*)titleString{
@@ -433,6 +421,7 @@ NSInteger const navigationBarheight = 64;
     NSInteger headersHeight =  ceil((self.view.bounds.size.height-self.navigationController.navigationBar.frame.size.height)/3);
     [UIView animateWithDuration:self.animationDuration == 0?animationDuration:self.animationDuration
                           delay:0 options:self.animationCurve animations:^{
+
                               self.titleTextField.alpha = 0;
                               self.titleLabelView.alpha = 0;
                               self.contentTextView.alpha = 0;
