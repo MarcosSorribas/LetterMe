@@ -32,6 +32,7 @@
     [super viewWillAppear:animated];
     [self initialReadyToOpenAnimation];
     [self configureEmptyView];
+    [self.tableView reloadData];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
