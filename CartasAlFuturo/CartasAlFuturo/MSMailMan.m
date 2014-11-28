@@ -23,10 +23,23 @@
 -(void)showAlertViewIfLettersArePrepared:(UIManagedDocument*)document{
      NSArray *letters = [Letter checkReadyToOpenLettersInContext:document.managedObjectContext];
     if (letters.count) {
+        [self updateApplicationBadgeWithNewLetters:letters.count];
         [MSMailMan checkLettersPreparedAndUpdateThemInContext:document];
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"letter_received_alertView_title", nil) message:NSLocalizedString(@"letter_received_alertView_description", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"letter_received_alertView_accept_button", nil) otherButtonTitles:nil];
         [alertView show];
     }
 }
 
+-(void)updateApplicationBadgeWithNewLetters:(NSInteger)newLettersCount{
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    NSNumber *actualBadge = [[NSUserDefaults standardUserDefaults] valueForKey:@"AppBadge"];
+    NSInteger refreshBadge = actualBadge.integerValue - newLettersCount;
+    if (refreshBadge < 0) {
+        actualBadge = 0;
+    }else{
+        actualBadge =[NSNumber numberWithInteger:refreshBadge];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:actualBadge forKey:@"AppBadge"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end

@@ -518,7 +518,12 @@ NSInteger const navigationBarheight = 64;
     
     notification.fireDate = openDate;
     notification.alertBody = NSLocalizedString(@"letter_received_notification_body", nil);
-    notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    
+    NSNumber *actualBadge = [[NSUserDefaults standardUserDefaults] valueForKey:@"AppBadge"];
+    actualBadge = [NSNumber numberWithInteger:(actualBadge.integerValue+1)];
+    notification.applicationIconBadgeNumber = actualBadge.integerValue;
+    [[NSUserDefaults standardUserDefaults] setObject:actualBadge forKey:@"AppBadge"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }

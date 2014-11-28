@@ -30,8 +30,6 @@
     [self prepareFirstControllerFrom:tabBarController];
     [self mailManStart];
     
-    application.applicationIconBadgeNumber = 0;
-    
     [[UIDatePicker appearance]setTintColor:[UIColor whiteColor]];
 
     return YES;
@@ -59,7 +57,6 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [self mailManStart];
-    application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
