@@ -2,7 +2,6 @@ LetterMe
 ========
 
 ##Objetivos
-___
 
 Se trata de mi primera aplicación de iPhone. Fue desarrollada en tan solo **dos semanas** durante el curso de desarrollo de [ironhack](http://ironhack.com/es/) y presentada como mi proyecto final. 
 
@@ -12,7 +11,6 @@ Con _LetterMe_ he pretendido formar un proyecto real desde cero, partiendo tan s
 
 
 ##Descripcion de LetterMe 
-___
 ¿Te imaginas a ti mismo dentro de tres meses? ¿Y dentro de un año? ¿Que te gustaría decirle a tu yo futuro ahora mismo? ¿Se habrán cumplido todos los objetivos que esperabas? ¿O el tiempo ha cambiado tu perspectiva?
 
 Con LetterMe puedes jugar con el tiempo a tu antojo. Felicitate el cumpleaños de dentro de 3 años, escribe alguna prevision para tus próximos tres meses y observa lo que se ha cumplido. Sorpréndete al darte cuenta de tu forma de pensar de hace tan solo un año. 
@@ -22,8 +20,6 @@ Con LetterMe podrás escribirte cartas que no volverás a leer hasta que llegue 
 
 
 ##Funcionamiento: 
-___
-
 - Escribe una carta con un título, una fecha de entrega de las preestablecidas o cualquier fecha concreta y un contenido que no podrás volver a leer hasta que llegue la fecha seleccionada. 
 
 - Todos los días podrás ver el titulo de tu carta y los días restantes hasta que la puedas abrir. 
@@ -33,14 +29,10 @@ ___
 - Finalmente, una vez leída por primera vez ya puede volver a ser leída siempre que quieras.
 
 ##Agradecimientos:  
-___
-
-* Fernando Rodríguez (@_Frodrig) que fue mi mentor durante las dos últimas semanas de ironHack y me ayudo mucho en todo el desarrollo de la app. 
-* Victor Garcia (@VictorrGarcia20) que ha sido el que ha diseñado el marivilloso icono de la app. 
-* Pablo G Thuillier (@pablogthuillier) que me ha ayudado a traducirla. 
+* Fernando Rodríguez ([@_Frodrig](https://twitter.com/_Frodrig)) que fue mi mentor durante las dos últimas semanas de ironHack y me ayudo mucho en todo el desarrollo de la app. 
+* Victor Garcia ([@VictorrGarcia20](https://twitter.com/VictorrGarcia20)) que ha sido el que ha diseñado el marivilloso icono de la app. 
+* Pablo G Thuillier ([@pablogthuillier](https://twitter.com/pablogthuillier)) que me ha ayudado a traducirla. 
 
 ##Algunos enlaces interesantes: 
-___
-
 * LetterMe en el App Store 
 * [Presentacion pública de LetterMe en el hackshow](https://www.youtube.com/watch?v=CeZ_Hmlh568)  
