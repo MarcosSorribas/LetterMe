@@ -34,5 +34,5 @@ Con LetterMe podrás escribirte cartas que no volverás a leer hasta que llegue 
 * Pablo G Thuillier ([@pablogthuillier](https://twitter.com/pablogthuillier)) que me ha ayudado a traducirla. 
 
 ##Algunos enlaces interesantes: 
-* LetterMe en el App Store 
+* [LetterMe en el App Store](https://itunes.apple.com/us/app/letterme/id942363299)
 * [Presentacion pública de LetterMe en el hackshow](https://www.youtube.com/watch?v=CeZ_Hmlh568)  
