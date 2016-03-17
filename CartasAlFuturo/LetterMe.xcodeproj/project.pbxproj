@@ -466,7 +466,7 @@
 				ORGANIZATIONNAME = MarcosSorribas;
 				TargetAttributes = {
 					6A46B55E1973C1D8001CF9C6 = {
-						DevelopmentTeam = E7TVQ8AK2B;
+						DevelopmentTeam = Y5B8W6LWG6;
 					};
 					6A46B5791973C1D8001CF9C6 = {
 						TestTargetID = 6A46B55E1973C1D8001CF9C6;
@@ -680,13 +680,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Marcos Sorribas Lopez (LK3JV5RYHH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Marcos Sorribas Lopez (LK3JV5RYHH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CartasAlFuturo/LetterMe-Prefix.pch";
 				INFOPLIST_FILE = "CartasAlFuturo/LetterMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = LetterMe;
-				PROVISIONING_PROFILE = "49c58bc0-53f9-4a22-a903-d628413df29a";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -696,14 +697,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Marcos Sorribas Lopez (E7TVQ8AK2B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Marcos Sorribas Lopez (LK3JV5RYHH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Marcos Sorribas Lopez (LK3JV5RYHH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CartasAlFuturo/LetterMe-Prefix.pch";
 				INFOPLIST_FILE = "CartasAlFuturo/LetterMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = LetterMe;
-				PROVISIONING_PROFILE = "49c58bc0-53f9-4a22-a903-d628413df29a";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
